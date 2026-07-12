@@ -1,0 +1,291 @@
+/* ==========================================
+   NEXTORY11 HERO V11 FINAL
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+  .heroV11 {
+    min-height: 960px;
+    border-radius: 34px;
+  }
+
+  .heroV11__content {
+    width: 94%;
+    min-height: 960px;
+    padding: 42px 22px 50px;
+  }
+
+  .heroV11__logoWrap {
+    width: min(220px, 42vw);
+  }
+
+  .heroV11__title {
+    font-size: clamp(38px, 5vw, 56px);
+  }
+
+  .heroV11__earth {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heroV11__cityLights,
+  .heroV11__rimLight,
+  .heroV11__sun,
+  .heroV11__godRays,
+  .heroV11__galaxyCore {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heroV11__rimLight {
+    opacity: .86;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroV11 {
+    width: calc(100vw - 32px);
+    max-width: 100%;
+    min-width: 0;
+    min-height: 980px;
+    margin: 0;
+    border-radius: 22px;
+  }
+
+  .heroV11__content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 980px;
+    padding: 92px 14px 44px;
+    overflow: hidden;
+  }
+
+  .heroV11__center {
+    min-height: calc(980px - 136px);
+    max-width: 100%;
+    min-width: 0;
+    transform: none;
+  }
+
+  .heroV11__logoWrap {
+    width: min(160px, 44vw);
+    margin-bottom: 14px;
+  }
+
+  .heroV11__badge {
+    font-size: 10px;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    letter-spacing: .14em;
+  }
+
+  .heroV11__title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-inline: 8px;
+    box-sizing: border-box;
+    font-size: clamp(16px, 4.35vw, 20px);
+    line-height: 1.58;
+    letter-spacing: 0;
+  }
+
+  .heroV11__subtitle {
+    margin-top: 18px;
+    font-size: clamp(22px, 6vw, 26px);
+    letter-spacing: .08em;
+  }
+
+  .heroV11__subtitle::before,
+  .heroV11__subtitle::after {
+    width: 42px;
+  }
+
+  .heroV11__subtitle::before {
+    right: calc(100% + 10px);
+  }
+
+  .heroV11__subtitle::after {
+    left: calc(100% + 10px);
+  }
+
+  .heroV11__description {
+    font-size: 14px;
+    line-height: 1.9;
+    width: min(330px, 88vw);
+  }
+
+  .heroV11__description br {
+    display: none;
+  }
+
+  .heroV11__button {
+    width: min(296px, 76vw);
+    min-height: 60px;
+    font-size: 14px;
+    gap: 10px;
+    letter-spacing: .04em;
+  }
+
+  .heroV11__features {
+    grid-template-columns: 1fr;
+    width: min(296px, 76vw);
+    gap: 16px;
+    margin-top: 42px;
+  }
+
+  .heroV11__feature {
+    min-height: 154px;
+    padding: 24px 22px 24px 92px;
+    border-radius: 18px;
+  }
+
+  .heroV11__featureIcon {
+    left: 24px;
+    width: 52px;
+    height: 52px;
+    font-size: 25px;
+  }
+
+  .heroV11__featureTitle {
+    font-size: 17px;
+  }
+
+  .heroV11__featureText {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .heroV11__brandPill {
+    top: 22px;
+    left: 14px;
+    min-width: 118px;
+    padding: 9px 10px 8px;
+    font-size: 12px;
+    letter-spacing: .11em;
+  }
+
+  .heroV11__controls {
+    top: 21px;
+    right: 92px;
+    gap: 6px;
+  }
+
+  .heroV11__control {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .heroV11__earth {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    object-fit: cover;
+    object-position: 48% 50%;
+  }
+
+  .heroV11__rimLight {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    object-fit: cover;
+    object-position: 48% 50%;
+    opacity: .82;
+  }
+
+  .heroV11__horizonGlow {
+    left: -62%;
+    bottom: 24%;
+    width: 150vw;
+    height: 90vw;
+  }
+
+  .heroV11__sun {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 48% 50%;
+    opacity: .92;
+  }
+
+  .heroV11__sunGlow {
+    left: -48%;
+    bottom: 16%;
+    width: 128vw;
+    height: 128vw;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .heroV11__godRays {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 48% 50%;
+    opacity: .58;
+  }
+
+  .heroV11__galaxyCore {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .54;
+    object-fit: cover;
+    object-position: 58% 50%;
+  }
+
+  .heroV11__comet,
+  .heroV11__cometLeft {
+    opacity: .42;
+  }
+
+  .heroV11__footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: min(296px, 78vw);
+    margin-top: 18px;
+    transform: none;
+  }
+
+  .heroV11__footerText {
+    font-size: 9px;
+    letter-spacing: .13em;
+    line-height: 1.8;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroV11__title {
+    padding-inline: 10px;
+    font-size: clamp(15px, 4.15vw, 17px);
+  }
+
+  .heroV11__subtitle {
+    font-size: 20px;
+  }
+
+  .heroV11__description {
+    font-size: 13px;
+  }
+
+  .heroV11__feature {
+    min-height: 154px;
+  }
+
+  .heroV11__footerText {
+    font-size: 8px;
+    letter-spacing: .11em;
+  }
+}

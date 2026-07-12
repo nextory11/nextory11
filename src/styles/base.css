@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Sans",
+    "Yu Gothic",
+    "Yu Gothic UI",
+    sans-serif;
+
+  color: #fff;
+  background: #02030a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --color-black: #02030a;
+  --color-deep: #050716;
+  --color-navy: #081126;
+  --color-purple: #8b5cf6;
+  --color-blue: #62d9ff;
+
+  --color-gold: #f7d27a;
+  --color-gold-soft: #ffe8a8;
+  --color-gold-deep: #c98625;
+
+  --text-main: #fff8e9;
+  --text-soft: rgba(255, 255, 255, 0.78);
+  --text-muted: rgba(255, 255, 255, 0.52);
+
+  --glass-bg: rgba(255, 255, 255, 0.085);
+  --glass-border: rgba(255, 232, 170, 0.22);
+
+  --radius-xl: 42px;
+  --radius-lg: 28px;
+  --radius-md: 22px;
+  --radius-pill: 999px;
+
+  --shadow-cosmic:
+    0 50px 140px rgba(0, 0, 0, 0.72),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background: #02030a;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 90%, rgba(247, 210, 122, 0.1), transparent 38%),
+    #02030a;
+}

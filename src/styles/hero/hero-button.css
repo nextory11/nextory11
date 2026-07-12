@@ -1,0 +1,137 @@
+/* ==========================================
+   NEXTORY11 HERO V11 FINAL
+   BUTTON
+========================================== */
+
+.heroV11__button {
+  position: relative;
+  z-index: 150;
+
+  overflow: hidden;
+
+  width: min(438px, 92%);
+  min-height: 78px;
+
+  margin: 4px auto 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  border: 1px solid rgba(255, 225, 160, .58);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  color: #fff8dd;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: .08em;
+
+  background:
+    radial-gradient(circle at 18% 50%, rgba(255,213,115,.56), transparent 31%),
+    radial-gradient(circle at 82% 42%, rgba(108,218,255,.16), transparent 34%),
+    linear-gradient(
+      90deg,
+      rgba(232,169,62,.7),
+      rgba(79,53,205,.78) 48%,
+      rgba(158,69,255,.66)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.5),
+    0 0 30px rgba(255,190,90,.24),
+    0 0 58px rgba(110,90,255,.24),
+    inset 0 1px 0 rgba(255,255,255,.38),
+    inset 0 -1px 0 rgba(255, 219, 132, .18);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.heroV11__button:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.56),
+    0 0 40px rgba(255,200,100,.34),
+    0 0 74px rgba(140,90,255,.3),
+    inset 0 1px 0 rgba(255,255,255,.34);
+
+}
+
+.heroV11__button:active {
+
+  transform: translateY(-1px);
+
+}
+
+.heroV11__buttonGlow {
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255,255,255,.24) 50%,
+      transparent 80%
+    );
+
+  transform: translateX(-120%);
+}
+
+.heroV11__buttonIcon,
+.heroV11__buttonText,
+.heroV11__buttonArrow {
+
+  position: relative;
+  z-index: 2;
+
+}
+
+.heroV11__buttonIcon {
+
+  font-size: 20px;
+
+}
+
+.heroV11__buttonText {
+
+  white-space: nowrap;
+
+}
+
+.heroV11__buttonArrow {
+
+  font-size: 22px;
+
+}
+
+@media (max-width:768px){
+
+  .heroV11__button{
+
+    width:100%;
+    min-height:62px;
+
+    font-size:16px;
+
+    gap:14px;
+
+  }
+
+  .heroV11__buttonArrow{
+
+    font-size:18px;
+
+  }
+
+}

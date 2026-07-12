@@ -1,0 +1,171 @@
+/* ==========================================
+   NEXTORY11 HERO V11 FINAL
+   ANIMATION / CINEMATIC MOTION
+========================================== */
+
+.heroV11__space {
+  animation: heroSpaceBreath 24s ease-in-out infinite;
+}
+
+.heroV11__brightStars {
+  animation: heroStarsTwinkle 7s ease-in-out infinite;
+}
+
+.heroV11__sparkles {
+  animation: heroSparklesTwinkle 5.5s ease-in-out infinite;
+}
+
+.heroV11__sparkles2 {
+  animation: heroSparklesTwinkle 8s ease-in-out infinite reverse;
+}
+
+.heroV11__comet {
+  animation: heroCometFloat 16s ease-in-out infinite;
+}
+
+.heroV11__cometLeft {
+  animation: heroCometLeftFloat 18s ease-in-out infinite;
+}
+
+.heroV11__sun,
+.heroV11__sunGlow,
+.heroV11__lensFlare,
+.heroV11__godRays {
+  animation: heroSunPulse 9s ease-in-out infinite;
+}
+
+.heroV11__earth {
+  animation: heroEarthFloat 12s ease-in-out infinite;
+}
+
+.heroV11__logo {
+  animation: heroLogoFloat 8s ease-in-out infinite;
+}
+
+.heroV11__logoAura {
+  animation: heroLogoPulse 8s ease-in-out infinite;
+}
+
+.heroV11__buttonGlow {
+  animation: heroButtonShine 5s ease-in-out infinite;
+}
+
+@keyframes heroSpaceBreath {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.018);
+  }
+}
+
+@keyframes heroStarsTwinkle {
+  0%, 100% {
+    opacity: 0.42;
+  }
+
+  50% {
+    opacity: 0.76;
+  }
+}
+
+@keyframes heroSparklesTwinkle {
+  0%, 100% {
+    opacity: 0.24;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: scale(1.012);
+  }
+}
+
+@keyframes heroCometFloat {
+  0%, 100% {
+    transform: rotate(20deg) translate3d(0, 0, 0);
+    opacity: 0.64;
+  }
+
+  50% {
+    transform: rotate(20deg) translate3d(-18px, 8px, 0);
+    opacity: 0.82;
+  }
+}
+
+@keyframes heroCometLeftFloat {
+  0%, 100% {
+    transform: rotate(-31deg) translate3d(0, 0, 0);
+    opacity: 0.82;
+  }
+
+  50% {
+    transform: rotate(-31deg) translate3d(14px, -6px, 0);
+    opacity: 0.95;
+  }
+}
+
+@keyframes heroSunPulse {
+  0%, 100% {
+    opacity: 0.86;
+    filter: brightness(1);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.18);
+  }
+}
+
+@keyframes heroEarthFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.004);
+  }
+}
+
+@keyframes heroLogoFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+@keyframes heroLogoPulse {
+  0%, 100% {
+    opacity: 0.68;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.07);
+  }
+}
+
+@keyframes heroButtonShine {
+  0%, 65% {
+    transform: translateX(-130%);
+  }
+
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroV11 *,
+  .heroV11 *::before,
+  .heroV11 *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

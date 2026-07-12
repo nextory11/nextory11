@@ -1,0 +1,59 @@
+/* Shared glass UI */
+
+.answerButton,
+.adviceBox,
+.paidBox,
+.progressBar,
+.subButton {
+  backdrop-filter: blur(22px) saturate(1.25);
+  -webkit-backdrop-filter: blur(22px) saturate(1.25);
+}
+
+.answerButton,
+.adviceBox,
+.paidBox {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.055)
+    );
+
+  border: 1px solid rgba(255, 232, 170, 0.24);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.answerButton::before,
+.adviceBox::before,
+.paidBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.22), transparent 32%),
+    linear-gradient(135deg, rgba(98, 217, 255, 0.08), transparent 48%);
+
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.answerButton > *,
+.adviceBox > *,
+.paidBox > * {
+  position: relative;
+  z-index: 2;
+}
+
+.paidBox {
+  box-shadow:
+    0 0 70px rgba(247, 210, 122, 0.16),
+    0 24px 70px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}

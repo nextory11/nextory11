@@ -1,10 +1,10 @@
-function ProgressBar({ step, total }) {
-  const percent = ((step + 1) / total) * 100;
+function ProgressBar({ current, total }) {
+  const percent = (current / total) * 100;
 
   return (
     <>
       <div className="progressText">
-        Question {step + 1} / {total}
+        Question {current} / {total}
       </div>
 
       <div className="progressBar">

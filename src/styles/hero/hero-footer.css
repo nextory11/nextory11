@@ -1,0 +1,77 @@
+/* ==========================================
+   NEXTORY11 HERO V11 FINAL
+   FOOTER
+========================================== */
+
+.heroV11__footer {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 120;
+
+  width: max-content;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.heroV11__footerLine {
+  display: none;
+}
+
+.heroV11__footerText {
+  margin: 0;
+
+  color: rgba(255,226,160,.9);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 16px rgba(255,205,110,.22),
+    0 0 28px rgba(90,210,255,.12);
+}
+
+.heroV11__copyright {
+  margin: -3px 0 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width:768px) {
+  .heroV11__footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 28px;
+    transform: none;
+  }
+
+  .heroV11__footerLine {
+    width: min(320px,80vw);
+  }
+
+  .heroV11__footerText {
+    font-size: 10px;
+    letter-spacing: .18em;
+  }
+
+  .heroV11__copyright {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    white-space: normal;
+    text-align: center;
+  }
+
+}

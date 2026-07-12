@@ -1,0 +1,477 @@
+/* ==========================================
+   NEXTORY11 V11
+   RESULT SCREEN
+========================================== */
+
+.app:has(.resultHero) {
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.resultHero {
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
+
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(40px, 7vh, 72px) clamp(18px, 4vw, 48px) clamp(44px, 7vh, 80px);
+
+  color: var(--text-main);
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 15% 13%, rgba(137, 79, 255, 0.2) 0, transparent 28%),
+    radial-gradient(circle at 84% 10%, rgba(50, 171, 255, 0.18) 0, transparent 25%),
+    radial-gradient(circle at 47% 46%, rgba(116, 60, 255, 0.16) 0, transparent 34%),
+    linear-gradient(180deg, #01030f 0%, #030616 45%, #02020b 100%);
+}
+
+.resultHero::before,
+.resultHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.resultHero::before {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(126, 211, 255, 0.9) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(218, 166, 255, 0.8) 0 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    38px 54px,
+    92px 20px;
+  background-size:
+    132px 132px,
+    190px 190px,
+    254px 254px;
+  opacity: 0.42;
+  animation: resultStars 9s ease-in-out infinite alternate;
+}
+
+.resultHero::after {
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 102%, rgba(255, 190, 86, 0.22) 0, transparent 36%),
+    radial-gradient(ellipse at 15% 85%, rgba(255, 190, 86, 0.18) 0, transparent 34%),
+    radial-gradient(ellipse at 78% 88%, rgba(59, 157, 255, 0.16) 0, transparent 30%),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+.resultHeader {
+  margin-bottom: 28px;
+}
+
+.resultHeader__logo {
+  width: 140px;
+  margin: 0 auto 16px;
+  display: block;
+
+  filter:
+    drop-shadow(0 0 18px rgba(255, 232, 170, 0.38))
+    drop-shadow(0 0 44px rgba(139, 92, 246, 0.42));
+}
+
+.resultCard {
+  position: relative;
+  z-index: 3;
+
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 54px) clamp(18px, 4.5vw, 52px) clamp(26px, 4.8vw, 48px);
+
+  border: 1px solid rgba(255, 225, 154, 0.28);
+  border-radius: 34px;
+
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 232, 170, 0.13), transparent 38%),
+    radial-gradient(circle at 10% 18%, rgba(80, 193, 255, 0.13), transparent 32%),
+    radial-gradient(circle at 88% 28%, rgba(164, 74, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(8, 10, 28, 0.54));
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 0 96px rgba(72, 144, 255, 0.18),
+    0 36px 110px rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(26px) saturate(1.35);
+  -webkit-backdrop-filter: blur(26px) saturate(1.35);
+}
+
+.resultCard::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.resultCard__aura {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  width: min(580px, 88vw);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle, rgba(255, 232, 170, 0.18) 0, transparent 44%),
+    conic-gradient(from 120deg, transparent, rgba(83, 176, 255, 0.22), rgba(174, 79, 255, 0.28), transparent);
+  filter: blur(18px);
+  opacity: 0.78;
+  pointer-events: none;
+  animation: resultBreath 6s ease-in-out infinite;
+}
+
+.resultBadge {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+  padding: 8px 24px;
+  border: 1px solid rgba(255, 214, 135, 0.42);
+  border-radius: 999px;
+
+  color: #ffe3a2;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+
+  background: rgba(5, 7, 22, 0.58);
+  box-shadow:
+    0 0 28px rgba(247, 210, 122, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.resultIcon {
+  position: relative;
+  z-index: 2;
+
+  width: clamp(82px, 10vw, 112px);
+  height: clamp(82px, 10vw, 112px);
+  margin: 22px auto 14px;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  color: #fff5ce;
+  font-size: clamp(42px, 6vw, 62px);
+
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 247, 210, 0.34), transparent 32%),
+    linear-gradient(135deg, rgba(255, 196, 93, 0.38), rgba(120, 72, 255, 0.26) 56%, rgba(37, 171, 255, 0.28));
+  border: 1px solid rgba(255, 232, 170, 0.36);
+
+  box-shadow:
+    0 0 26px rgba(255, 214, 135, 0.34),
+    0 0 58px rgba(122, 88, 255, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.resultKicker {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.resultTitle {
+  position: relative;
+  z-index: 2;
+
+  max-width: 920px;
+  margin: 0 auto;
+  color: #fff;
+
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.12;
+  font-weight: 950;
+  letter-spacing: 0;
+
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.34),
+    0 0 44px rgba(139, 92, 246, 0.36),
+    0 0 72px rgba(98, 217, 255, 0.2);
+}
+
+.english {
+  position: relative;
+  z-index: 2;
+
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px auto 0;
+  padding: 0 34px;
+
+  color: var(--color-gold-soft);
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+
+  text-shadow: 0 0 28px rgba(247, 210, 122, 0.42);
+}
+
+.english::before,
+.english::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: clamp(34px, 8vw, 96px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 218, 139, 0.8), transparent);
+}
+
+.english::before {
+  right: 100%;
+}
+
+.english::after {
+  left: 100%;
+}
+
+.resultLead {
+  position: relative;
+  z-index: 2;
+
+  max-width: 680px;
+  margin: 18px auto 34px;
+
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(15px, 1.8vw, 18px);
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.resultGrid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2.2vw, 22px);
+
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.resultHero .adviceBox {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 190px;
+  padding: 26px 24px 24px;
+  border-radius: 24px;
+
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.85;
+  text-align: left;
+
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 232, 170, 0.2), transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(75, 172, 255, 0.16), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(8, 12, 32, 0.62));
+
+  border: 1px solid rgba(255, 232, 170, 0.26);
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    0 0 40px rgba(85, 133, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.resultHero .adviceBox::before {
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.22), transparent 32%),
+    radial-gradient(circle at 20% 100%, rgba(165, 89, 255, 0.2), transparent 34%);
+  opacity: 0.76;
+}
+
+.adviceBox__number {
+  display: inline-flex;
+  margin-bottom: 18px;
+
+  color: rgba(255, 221, 150, 0.64);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.resultHero .adviceBox strong {
+  display: block;
+  margin-bottom: 11px;
+
+  color: #ffe5a9;
+  font-size: clamp(16px, 1.6vw, 19px);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+
+  text-shadow: 0 0 18px rgba(247, 210, 122, 0.28);
+}
+
+.resultHero .adviceBox p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.85;
+}
+
+.buttonGroup {
+  position: relative;
+  z-index: 4;
+  width: min(820px, 100%);
+  margin: 28px auto 0;
+}
+
+.subButton {
+  min-height: 54px;
+  padding: 0 26px;
+  border: 1px solid rgba(255, 225, 154, 0.34);
+  border-radius: 999px;
+
+  color: rgba(255, 245, 220, 0.9);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  background:
+    linear-gradient(135deg, rgba(255, 205, 113, 0.12), rgba(116, 73, 255, 0.16)),
+    rgba(4, 6, 18, 0.58);
+  box-shadow:
+    0 0 34px rgba(247, 210, 122, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+}
+
+.subButton:hover {
+  border-color: rgba(255, 225, 154, 0.56);
+  color: #fff;
+  box-shadow:
+    0 0 36px rgba(247, 210, 122, 0.2),
+    0 0 46px rgba(117, 86, 255, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+@keyframes resultStars {
+  from {
+    opacity: 0.32;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0.52;
+    transform: translate3d(-12px, 8px, 0);
+  }
+}
+
+@keyframes resultBreath {
+  0%,
+  100% {
+    opacity: 0.64;
+    transform: translateX(-50%) scale(0.96);
+  }
+
+  50% {
+    opacity: 0.86;
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+@media (max-width: 900px) {
+  .resultGrid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+
+  .resultHero .adviceBox {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .resultHero {
+    padding: 28px 14px 42px;
+  }
+
+  .resultCard {
+    padding: 24px 16px 22px;
+    border-radius: 26px;
+  }
+
+  .resultCard::before {
+    inset: 7px;
+    border-radius: 21px;
+  }
+
+  .resultBadge {
+    min-height: 32px;
+    padding: 7px 17px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .resultIcon {
+    margin-top: 18px;
+  }
+
+  .resultKicker {
+    letter-spacing: 0.1em;
+  }
+
+  .resultTitle {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .english {
+    padding: 0 18px;
+    font-size: clamp(16px, 5vw, 20px);
+    letter-spacing: 0.04em;
+  }
+
+  .english::before,
+  .english::after {
+    width: 24px;
+  }
+
+  .resultLead {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .resultHero .adviceBox {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .resultHero .adviceBox p {
+    font-size: 14px;
+  }
+
+  .subButton {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 18px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+}

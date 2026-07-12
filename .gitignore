@@ -12,6 +12,32 @@ dist
 dist-ssr
 *.local
 
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Private/generated customer data
+private-reports/
+generated-reports/
+report-requests/
+private-data/
+user-data/
+local-archives/
+artwork-masters/
+*.pdf
+
+# Local visual QA artifacts
+/*.png
+/*.jpg
+/*.webp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

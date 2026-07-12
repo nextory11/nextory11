@@ -1,0 +1,200 @@
+.reportApp {
+  display: block;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(139, 92, 246, 0.2), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(56, 189, 248, 0.14), transparent 30%),
+    #02030d;
+}
+
+.reportDelivery {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0 80px;
+  color: #fffaf0;
+}
+
+.reportHeader {
+  padding: clamp(28px, 6vw, 58px);
+  text-align: center;
+  border: 1px solid rgba(255, 224, 153, 0.28);
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(50,35,120,.2));
+  box-shadow: 0 30px 90px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.14);
+}
+
+.reportPreviewLabel {
+  display: inline-block;
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 183, 88, .58);
+  color: #ffe0a0;
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: .1em;
+  background: rgba(35, 14, 8, .58);
+}
+
+.reportEyebrow {
+  margin: 28px 0 10px;
+  color: rgba(255, 228, 164, .68);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+
+.reportHeader h1 {
+  margin: 0;
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.2;
+}
+
+.reportEnglish {
+  margin: 8px 0 0;
+  color: #ffe2a0;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: .12em;
+}
+
+.reportRequestId {
+  margin: 24px 0 0;
+  color: rgba(255,255,255,.42);
+  font-size: 10px;
+  letter-spacing: .1em;
+  overflow-wrap: anywhere;
+}
+
+.reportSections {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.reportSection {
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(255, 225, 154, .18);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(37,28,92,.22));
+  box-shadow: inset 0 1px rgba(255,255,255,.1);
+}
+
+.reportSection > span {
+  color: rgba(255, 215, 132, .72);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .18em;
+}
+
+.reportSection h2 {
+  margin: 8px 0 14px;
+  color: #ffe5aa;
+  font-size: clamp(22px, 4vw, 30px);
+}
+
+.reportSection p,
+.reportSection li {
+  color: rgba(255,255,255,.82);
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+.reportSection ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.reportDisclosure {
+  margin: 24px auto;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.reportActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reportPrimaryButton,
+.reportSecondaryButton {
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  color: #fff8e4;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.reportPrimaryButton {
+  border: 1px solid rgba(255, 226, 162, .52);
+  background: linear-gradient(110deg, #c89242, #7050df 58%, #5b81d8);
+}
+
+.reportSecondaryButton {
+  border: 1px solid rgba(255, 226, 162, .24);
+  background: rgba(255,255,255,.07);
+}
+
+@media (max-width: 640px) {
+  .reportDelivery {
+    width: min(100% - 24px, 960px);
+    padding: 28px 0 54px;
+  }
+
+  .reportHeader,
+  .reportSection {
+    border-radius: 20px;
+  }
+
+  .reportPreviewLabel {
+    max-width: 100%;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+  .reportSection p,
+  .reportSection li {
+    font-size: 14px;
+  }
+
+  .reportPrimaryButton,
+  .reportSecondaryButton {
+    width: 100%;
+  }
+}
+
+@media print {
+  .reportApp {
+    background: #fff;
+  }
+
+  .reportDelivery {
+    width: 100%;
+    padding: 0;
+    color: #111;
+  }
+
+  .reportHeader,
+  .reportSection {
+    color: #111;
+    background: #fff;
+    border-color: #bbb;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .reportSection p,
+  .reportSection li,
+  .reportDisclosure,
+  .reportRequestId {
+    color: #222;
+  }
+
+  .noPrint {
+    display: none !important;
+  }
+}

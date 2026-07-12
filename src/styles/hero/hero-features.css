@@ -1,0 +1,179 @@
+/* ==========================================
+   NEXTORY11 HERO V11 FINAL
+   FEATURES
+========================================== */
+
+.heroV11__features {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  z-index: 120;
+
+  width: min(982px, 82vw);
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  transform: translateX(-50%);
+}
+
+.heroV11__feature {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 170px;
+  padding: 31px 30px 26px 112px;
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 231, 164, .16), transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(122, 74, 255, .32), transparent 36%),
+    linear-gradient(
+      180deg,
+      rgba(20, 30, 70, .7),
+      rgba(5, 8, 24, .8)
+    );
+
+  border: 1px solid rgba(255,225,160,.32);
+
+  backdrop-filter: blur(26px) saturate(1.25);
+  -webkit-backdrop-filter: blur(26px) saturate(1.25);
+
+  box-shadow:
+    0 30px 86px rgba(0,0,0,.68),
+    0 0 48px rgba(80,210,255,.24),
+    0 0 44px rgba(255, 202, 116, .18),
+    0 0 18px rgba(141, 77, 255, .16),
+    inset 0 1px 0 rgba(255,255,255,.20);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.heroV11__feature:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.50),
+    0 0 50px rgba(120,90,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.24);
+
+}
+
+.heroV11__feature::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 15% 0%,
+      rgba(255,255,255,.12),
+      transparent 34%),
+
+    linear-gradient(
+      135deg,
+      rgba(80,210,255,.12),
+      transparent 50%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(140,90,255,.16),
+      transparent 72%
+    );
+
+  pointer-events: none;
+
+}
+
+.heroV11__featureIcon,
+.heroV11__featureTitle,
+.heroV11__featureText {
+
+  position: relative;
+  z-index: 2;
+
+}
+
+.heroV11__featureIcon {
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  margin: 0;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffe39a;
+  font-size: 29px;
+  border: 1px solid rgba(255, 221, 142, .56);
+  background:
+    radial-gradient(circle, rgba(131, 84, 255, .6), rgba(20, 24, 64, .62));
+  box-shadow:
+    0 0 22px rgba(120, 76, 255, .44),
+    0 0 34px rgba(255, 208, 112, .22),
+    inset 0 0 18px rgba(255, 255, 255, .12);
+  text-shadow:
+    0 0 18px rgba(255, 218, 130, .48),
+    0 0 34px rgba(98, 217, 255, .16);
+
+}
+
+.heroV11__featureTitle {
+
+  margin: 0 0 8px;
+
+  color: #fff8e9;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: .04em;
+
+}
+
+.heroV11__featureText {
+
+  margin: 0;
+
+  color: rgba(255,255,255,.78);
+
+  font-size: 13px;
+  line-height: 1.72;
+  letter-spacing: .04em;
+
+}
+
+@media (max-width:900px){
+
+  .heroV11__features{
+
+    position: relative;
+    left: auto;
+    bottom: auto;
+    grid-template-columns:1fr;
+    width:min(460px,94%);
+    margin: 28px auto 0;
+    transform: none;
+
+  }
+
+}
+
+.heroV11__featureArrow {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  z-index: 2;
+  transform: translateX(-50%);
+  color: #fff1bd;
+  font-size: 18px;
+}
