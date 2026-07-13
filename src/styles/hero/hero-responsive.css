@@ -46,6 +46,38 @@
   }
 }
 
+/* Reduced-height desktop and landscape tablet: keep CTA, cards, and footer in flow. */
+@media (min-width: 769px) and (max-width: 1400px) and (max-height: 820px) {
+  .heroV11 {
+    min-height: max(100vh, 980px);
+  }
+
+  .heroV11__content,
+  .heroV11__center {
+    min-height: 0;
+  }
+
+  .heroV11__content {
+    padding-bottom: 34px;
+  }
+
+  .heroV11__features {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 38px auto 0;
+    transform: none;
+  }
+
+  .heroV11__footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 24px auto 0;
+    transform: none;
+  }
+}
+
 @media (max-width: 768px) {
   .heroV11 {
     width: calc(100vw - 32px);
