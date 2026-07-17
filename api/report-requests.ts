@@ -5,6 +5,9 @@ import type { VercelRequestLike, VercelResponseLike } from "../server/http/verce
 import { logger } from "../server/logging/logger.js";
 import { calculateDiagnosisResult } from "../server/reports/result-calculator.js";
 import { generateRequestId } from "../server/security/tokens.js";
+import { generateAccessToken, hashAccessToken } from "../server/security/tokens.js";
+import { AccessTokensRepository } from "../server/db/repositories/access-tokens.js";
+import { parseReportAccessEnv } from "../server/config/env.js";
 import {
   MAX_REPORT_REQUEST_BYTES,
   parseReportRequest,
@@ -48,6 +51,13 @@ export default async function handler(request: VercelRequestLike, response: Verc
       deliveryStatus: "not_requested",
       retentionDeleteAt,
     });
+    const accessEnv = parseReportAccessEnv();
+    const accessToken = generateAccessToken();
+    await new AccessTokensRepository().create({
+      reportRequestId: record.id,
+      tokenHash: hashAccessToken(accessToken, accessEnv.REPORT_TOKEN_PEPPER),
+      expiresAt: new Date(Date.now() + accessEnv.REPORT_LINK_TTL_SECONDS * 1_000),
+    });
 
     logger.info("report_request_created", { requestId: record.id });
     return response.status(201).json({
@@ -56,6 +66,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
       result: calculated,
       paymentStatus: record.paymentStatus,
       generationStatus: record.generationStatus,
+      accessToken,
     });
   } catch (error) {
     if (error instanceof ZodError) {

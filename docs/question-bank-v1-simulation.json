@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-07-16T19:39:20.504Z",
+  "seed": "0x4e313156",
+  "sessions": 10000,
+  "questionsPerSession": 11,
+  "duplicateSessions": 0,
+  "questionFrequency": {
+    "minimum": 440,
+    "maximum": 560,
+    "mean": 500,
+    "maximumDeviationPercent": 12
+  },
+  "targetFrequency": {
+    "challenge": 10000,
+    "creator": 10000,
+    "empath": 10000,
+    "evolver": 10000,
+    "explorer": 10000,
+    "guardian": 10000,
+    "harmonizer": 10000,
+    "intuitive": 10000,
+    "light-bringer": 10000,
+    "pioneer": 10000,
+    "visionary": 10000
+  },
+  "targetMaximumDeviationPercent": 0,
+  "answerPositionFrequency": {
+    "a": [
+      27617,
+      27532,
+      27543,
+      27308
+    ],
+    "b": [
+      27215,
+      27568,
+      27541,
+      27676
+    ],
+    "c": [
+      27634,
+      27658,
+      27357,
+      27351
+    ],
+    "d": [
+      27534,
+      27242,
+      27559,
+      27665
+    ]
+  }
+}

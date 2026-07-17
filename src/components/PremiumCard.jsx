@@ -1,6 +1,9 @@
+import PanelFrameOrnaments from "./PanelFrameOrnaments";
+
 function PremiumCard({ checkoutError, isEnabled, isLoading, onClick }) {
   return (
     <section className="paidBox" aria-label="Your Star Report preview">
+      <PanelFrameOrnaments />
       <div className="paidLabel">YOUR STAR REPORT</div>
 
       <h2 className="premiumTitle">
@@ -38,24 +41,37 @@ function PremiumCard({ checkoutError, isEnabled, isLoading, onClick }) {
       </ul>
 
       <div className="premiumCtaPanel">
+        <PanelFrameOrnaments />
         <p>
           {isEnabled
             ? "Stripe Checkoutで安全に決済します。決済完了後、専用ページへ移動します。"
             : "現在はプライベートプレビュー中です。有料レポートの購入は、本番の配信基盤が整うまで停止しています。"}
         </p>
 
-        <button
-          type="button"
-          className="premiumButton"
-          disabled={!isEnabled || isLoading}
-          onClick={onClick}
-        >
-          {isLoading
-            ? "Stripe Checkoutへ移動中"
-            : isEnabled
-              ? "今すぐレポートを受け取る"
-              : "プライベートプレビュー中"}
-        </button>
+        <div className="premiumButtonFrame">
+          <span className="premiumButtonFrame__perimeter" aria-hidden="true" />
+          <i className="premiumButtonFrame__corner premiumButtonFrame__corner--tl" aria-hidden="true" />
+          <i className="premiumButtonFrame__corner premiumButtonFrame__corner--tr" aria-hidden="true" />
+          <i className="premiumButtonFrame__corner premiumButtonFrame__corner--bl" aria-hidden="true" />
+          <i className="premiumButtonFrame__corner premiumButtonFrame__corner--br" aria-hidden="true" />
+          <i className="premiumButtonFrame__ornament premiumButtonFrame__ornament--top" aria-hidden="true" />
+          <i className="premiumButtonFrame__ornament premiumButtonFrame__ornament--bottom" aria-hidden="true" />
+          <button
+            type="button"
+            className="premiumButton"
+            disabled={!isEnabled || isLoading}
+            onClick={onClick}
+          >
+            <span className="premiumButton__label">
+              {isLoading
+                ? "Stripe Checkoutへ移動中"
+                : isEnabled
+                  ? "今すぐレポートを受け取る"
+                  : "プライベートプレビュー中"}
+            </span>
+            <span className="premiumButton__arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
       </div>
 
       {checkoutError ? (

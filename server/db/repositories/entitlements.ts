@@ -22,4 +22,17 @@ export class EntitlementsRepository {
       .limit(1);
     return record?.status === "active" && !record.revokedAt ? record : null;
   }
+
+  async findStatusByRequestId(reportRequestId: string) {
+    const [record] = await this.db
+      .select({
+        status: entitlements.status,
+        grantedAt: entitlements.grantedAt,
+        revokedAt: entitlements.revokedAt,
+      })
+      .from(entitlements)
+      .where(eq(entitlements.reportRequestId, reportRequestId))
+      .limit(1);
+    return record ?? null;
+  }
 }

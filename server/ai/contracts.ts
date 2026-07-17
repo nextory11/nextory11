@@ -13,6 +13,21 @@ export interface ReportGenerationInput {
   reportVersion: string;
   promptVersion: string;
   templateVersion: string;
+  profile: PremiumReportProfile;
+}
+
+export interface PremiumReportProfile {
+  profileSignature: string;
+  questionSetVersion: string;
+  selectedQuestionIds: string[];
+  selectedAnswerIds: string[];
+  primaryTrait: string;
+  secondaryTrait: string | null;
+  thirdTrait: string | null;
+  hiddenTraits: string[];
+  normalizedDistribution: Record<string, number>;
+  categorySignals: Array<{ category: string; count: number }>;
+  relevantTags: string[];
 }
 
 export interface GenerationContext {

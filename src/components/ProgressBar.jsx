@@ -1,8 +1,11 @@
+import PanelFrameOrnaments from "./PanelFrameOrnaments";
+
 function ProgressBar({ current, total }) {
   const percent = (current / total) * 100;
 
   return (
-    <>
+    <div className="progressContainer">
+      <PanelFrameOrnaments />
       <div className="progressText">
         Question {current} / {total}
       </div>
@@ -13,7 +16,7 @@ function ProgressBar({ current, total }) {
           style={{ width: `${percent}%` }}
         />
       </div>
-    </>
+    </div>
   );
 }
 

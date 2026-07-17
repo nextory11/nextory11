@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { getDatabase, type Database } from "../client.js";
 import { reports } from "../schema.js";
 
@@ -18,6 +18,12 @@ export class ReportsRepository {
         and(eq(reports.reportRequestId, reportRequestId), eq(reports.reportVersion, reportVersion)),
       )
       .limit(1);
+    return record ?? null;
+  }
+
+  async findLatestByRequestId(reportRequestId: string) {
+    const [record] = await this.db.select().from(reports)
+      .where(eq(reports.reportRequestId, reportRequestId)).orderBy(desc(reports.createdAt)).limit(1);
     return record ?? null;
   }
 }

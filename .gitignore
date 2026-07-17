@@ -48,3 +48,6 @@ artwork-masters/
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*

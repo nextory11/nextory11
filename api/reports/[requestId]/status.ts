@@ -1,11 +1,36 @@
 import { ServerConfigurationError } from "../../../server/config/env.js";
 import { ReportRequestsRepository } from "../../../server/db/repositories/report-requests.js";
+import { EntitlementsRepository } from "../../../server/db/repositories/entitlements.js";
+import { ReportsRepository } from "../../../server/db/repositories/reports.js";
+import { authorizeReportAccess } from "../../../server/security/authorize-report-access.js";
 import type {
   VercelRequestLike,
   VercelResponseLike,
 } from "../../../server/http/vercel.js";
 import { logger } from "../../../server/logging/logger.js";
 import { requestIdSchema } from "../../../server/validation/identifiers.js";
+
+export function toSafeReportStatus(
+  status: Awaited<ReturnType<ReportRequestsRepository["findStatusById"]>> & {},
+  entitlement: Awaited<ReturnType<EntitlementsRepository["findStatusByRequestId"]>>,
+  storedReport?: Awaited<ReturnType<ReportsRepository["findLatestByRequestId"]>>,
+) {
+  const rawReport = storedReport?.reportJson as Record<string, unknown> | undefined;
+  const publicReport = rawReport ? Object.fromEntries(Object.entries(rawReport).filter(([key]) => key !== "metadata")) : null;
+  return {
+    requestId: status.id,
+    createdAt: status.createdAt.toISOString(),
+    updatedAt: status.updatedAt.toISOString(),
+    paymentStatus: status.paymentStatus,
+    generationStatus: status.generationStatus,
+    deliveryStatus: status.deliveryStatus,
+    entitlementStatus: entitlement?.status ?? "none",
+    entitlementGrantedAt: entitlement?.grantedAt.toISOString() ?? null,
+    entitlementRevokedAt: entitlement?.revokedAt?.toISOString() ?? null,
+    expiresAt: status.expiresAt?.toISOString() ?? null,
+    report: entitlement?.status === "active" && status.generationStatus === "completed" ? publicReport : null,
+  };
+}
 
 export default async function handler(request: VercelRequestLike, response: VercelResponseLike) {
   response.setHeader("Cache-Control", "no-store");
@@ -24,27 +49,17 @@ export default async function handler(request: VercelRequestLike, response: Verc
   }
 
   try {
-    const repository = new ReportRequestsRepository();
-    const status = await repository.findStatusById(parsedId.data);
+    if (!await authorizeReportAccess(request, parsedId.data)) return response.status(404).json({ error: "report_unavailable" });
+    const [status, entitlement, storedReport] = await Promise.all([
+      new ReportRequestsRepository().findStatusById(parsedId.data),
+      new EntitlementsRepository().findStatusByRequestId(parsedId.data),
+      new ReportsRepository().findLatestByRequestId(parsedId.data),
+    ]);
     if (!status) {
       return response.status(404).json({ error: "report_request_not_found" });
     }
 
-    return response.status(200).json({
-      requestId: status.id,
-      createdAt: status.createdAt.toISOString(),
-      updatedAt: status.updatedAt.toISOString(),
-      result: {
-        resultType: status.resultType,
-        resultNameJa: status.resultNameJa,
-        resultNameEn: status.resultNameEn,
-      },
-      paymentStatus: status.paymentStatus,
-      generationStatus: status.generationStatus,
-      deliveryStatus: status.deliveryStatus,
-      reportVersion: status.reportVersion,
-      expiresAt: status.expiresAt?.toISOString() ?? null,
-    });
+    return response.status(200).json(toSafeReportStatus(status, entitlement, storedReport));
   } catch (error) {
     if (error instanceof ServerConfigurationError) {
       logger.error("server_configuration_unavailable", { issueCount: error.issues.length });

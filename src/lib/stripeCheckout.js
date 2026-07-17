@@ -1,67 +1,26 @@
 const CHECKOUT_SNAPSHOT_KEY = "nextory11.checkoutSnapshot";
 const RUNTIME_CONFIG_PATH = "/stripe-config.json";
 
-function normalizeCheckoutUrl(rawUrl) {
-  if (!rawUrl) {
-    return null;
-  }
-
-  try {
-    const url = new URL(rawUrl);
-    const allowedHosts = ["checkout.stripe.com", "buy.stripe.com"];
-
-    if (url.protocol !== "https:" || !allowedHosts.includes(url.hostname)) {
-      return null;
-    }
-
-    return url;
-  } catch {
-    return null;
-  }
+function parsePublicBoolean(value) {
+  return value === true || value === "true" || value === "1";
 }
 
 async function readRuntimeConfig() {
   try {
     const response = await fetch(RUNTIME_CONFIG_PATH, { cache: "no-store" });
-
-    if (!response.ok) {
-      return {};
-    }
-
-    const config = await response.json();
-
-    return config;
+    return response.ok ? response.json() : {};
   } catch {
     return {};
   }
 }
 
-function parsePublicBoolean(value) {
-  return value === true || value === "true" || value === "1";
-}
-
-export async function getStripeCheckoutUrl() {
-  const windowUrl = window.__NEXTORY11_STRIPE_CHECKOUT_URL__;
-  const envUrl = import.meta.env.VITE_STRIPE_CHECKOUT_URL;
-  const config = await readRuntimeConfig();
-
-  return normalizeCheckoutUrl(windowUrl || envUrl || config.checkoutUrl);
-}
-
 export async function getPaidCtaEnabled() {
+  if (!import.meta.env.DEV) return false;
   const windowFlag = window.__NEXTORY11_PAID_CTA_ENABLED__;
+  if (windowFlag !== undefined) return parsePublicBoolean(windowFlag);
   const envFlag = import.meta.env.VITE_PAID_CTA_ENABLED;
-
-  if (windowFlag !== undefined) {
-    return parsePublicBoolean(windowFlag);
-  }
-
-  if (envFlag !== undefined) {
-    return parsePublicBoolean(envFlag);
-  }
-
-  const config = await readRuntimeConfig();
-  return parsePublicBoolean(config.paidCtaEnabled);
+  if (envFlag !== undefined) return parsePublicBoolean(envFlag);
+  return parsePublicBoolean((await readRuntimeConfig()).paidCtaEnabled);
 }
 
 export function saveCheckoutSnapshot(snapshot) {
@@ -71,7 +30,6 @@ export function saveCheckoutSnapshot(snapshot) {
 export function readCheckoutSnapshot() {
   try {
     const stored = window.localStorage.getItem(CHECKOUT_SNAPSHOT_KEY);
-
     return stored ? JSON.parse(stored) : null;
   } catch {
     return null;
@@ -82,19 +40,45 @@ export function clearCheckoutSnapshot() {
   window.localStorage.removeItem(CHECKOUT_SNAPSHOT_KEY);
 }
 
-function createLocalRequestId() {
-  if (window.crypto?.randomUUID) {
-    return window.crypto.randomUUID();
-  }
-
-  return `nextory11-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+async function postJson(path, body) {
+  const response = await fetch(path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(payload.error || "payment_backend_unavailable");
+  return payload;
 }
 
-export function createReportRequest({ answers, result, resultType }) {
-  return {
-    requestId: createLocalRequestId(),
-    createdAt: new Date().toISOString(),
-    status: "awaiting_payment_verification",
+function normalizeCheckoutUrl(rawUrl) {
+  try {
+    const url = new URL(rawUrl);
+    return url.protocol === "https:" && url.hostname === "checkout.stripe.com" ? url : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function redirectToStripeCheckout({ answers, result, resultType, questionBankContext = null }) {
+  if (!import.meta.env.DEV) throw new Error("paid_checkout_disabled");
+  const reportRequest = await postJson("/api/report-requests", {
+    answers: answers.map((answer, index) => ({
+      questionId: answer.questionId ?? index + 1,
+      answerId: answer.answerLabel,
+    })),
+    questionBankContext,
+  });
+  const checkout = await postJson("/api/checkout-sessions", {
+    reportRequestId: reportRequest.requestId,
+  });
+  const checkoutUrl = normalizeCheckoutUrl(checkout.checkoutUrl);
+  if (!checkoutUrl) throw new Error("invalid_checkout_url");
+
+  saveCheckoutSnapshot({
+    requestId: reportRequest.requestId,
+    accessToken: reportRequest.accessToken,
+    createdAt: reportRequest.createdAt,
     result: {
       type: resultType,
       ja: result.title,
@@ -104,27 +88,8 @@ export function createReportRequest({ answers, result, resultType }) {
       strength: result.strength,
       mission: result.mission,
     },
-    answers: answers.map((answer, index) => ({
-      questionNumber: index + 1,
-      questionId: answer.questionId ?? index + 1,
-      question: answer.question ?? "",
-      answerLabel: answer.answerLabel ?? "",
-      answer: answer.text,
-      type: answer.type,
-      score: answer.score,
-    })),
-  };
-}
-
-export async function redirectToStripeCheckout({ answers, result, resultType }) {
-  const checkoutUrl = await getStripeCheckoutUrl();
-
-  if (!checkoutUrl) {
-    throw new Error("Stripe Checkout URL is not configured.");
-  }
-
-  const snapshot = createReportRequest({ answers, result, resultType });
-
-  saveCheckoutSnapshot(snapshot);
+    answers,
+    questionBankContext,
+  });
   window.location.assign(checkoutUrl.toString());
 }

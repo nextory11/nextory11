@@ -18,4 +18,13 @@ export class PaymentsRepository {
       .limit(1);
     return record ?? null;
   }
+
+  async findByPaymentIntentId(paymentIntentId: string) {
+    const [record] = await this.db
+      .select()
+      .from(payments)
+      .where(eq(payments.paymentIntentId, paymentIntentId))
+      .limit(1);
+    return record ?? null;
+  }
 }

@@ -1,14 +1,24 @@
 # NEXTORY11
 
-NEXTORY11 is a Japanese, cinematic 11-question self-discovery experience. It currently includes the public diagnosis, result experience, Stripe Payment Link handoff, and a clearly labeled local development preview for the future Personal Star Report.
+## Question Bank v1 rollout
+
+The official 220-question pack lives at `src/data/questionBank/nextory11-question-pack-v1.json`.
+Set `VITE_ENABLE_QUESTION_BANK_V1=true` to use dynamic 11-question sessions. The default is `false`, which preserves the legacy diagnosis for one-setting rollback.
+
+In local development, reset anonymous question history from the browser console with:
+
+```js
+window.__NEXTORY11_RESET_QUESTION_HISTORY__()
+```
+
+NEXTORY11 is a Japanese, cinematic 11-question self-discovery experience. It includes the public diagnosis, result experience, and a Development/Test-only server-created Stripe Checkout foundation for the future Personal Star Report.
 
 ## Current delivery status
 
 - The diagnosis and result experience are functional.
-- The Stripe Payment Link is public configuration, not a secret.
+- Stripe Checkout Sessions are created server-side from an approved test Price ID.
 - Checkout preserves a local development report request with a unique request ID.
-- `/payment-success` can generate a local mock preview for UX testing.
-- The mock preview is **not** the final paid report and does not verify payment.
+- `/payment-success` polls only the safe server payment status and cannot grant entitlement.
 - Public paid production remains blocked until the server-side webhook and report pipeline are implemented.
 
 ## Local development
@@ -17,6 +27,8 @@ NEXTORY11 is a Japanese, cinematic 11-question self-discovery experience. It cur
 npm install
 npm run dev
 ```
+
+`npm run dev` serves both the Vite application and the existing `/api` handlers on the same local origin. Stripe CLI webhook forwarding should target the same port.
 
 Quality checks:
 
@@ -51,7 +63,7 @@ tests/unit/              Phase A backend unit and schema-constraint tests
 
 ## Environment configuration
 
-Copy `.env.example` to `.env.local` only when a local Payment Link override is needed. Never commit `.env`, secret keys, webhook secrets, OpenAI keys, customer report data, or private prompts.
+Copy `.env.example` to `.env.local` for local server configuration. Never commit `.env`, secret keys, webhook secrets, OpenAI keys, customer report data, or private prompts.
 
 Only values prefixed with `VITE_` are available to the browser. Therefore, `VITE_` variables must never contain secrets.
 
@@ -60,11 +72,11 @@ contains names and nonfunctional placeholders only. Phase A requires only the
 database connection; Stripe, OpenAI, email, storage, and rate-limit variables
 remain reserved for later approved phases.
 
-The paid CTA is fail-closed. `paidCtaEnabled` is `false` in the tracked runtime configuration. Internal testing can opt in with `VITE_PAID_CTA_ENABLED=true` in an ignored `.env.local`; production must remain disabled until verified payment entitlement and report delivery are operational.
+The paid CTA is enabled only for the approved Development/Test Checkout exercise. `getPaidCtaEnabled` and the checkout redirect remain fail-closed outside Vite Development mode.
 
 ## Payment and report security
 
-The browser-side checkout snapshot is for development continuity only. It is user-controlled and cannot prove payment. Production report access must be created by a server after verifying a signed Stripe webhook.
+The browser-side checkout snapshot is for development continuity only. It is user-controlled and cannot prove payment. Entitlement is created only after a signed Stripe test webhook passes server-side payment validation.
 
 See [docs/paid-report-architecture.md](docs/paid-report-architecture.md) for the required production architecture.
 

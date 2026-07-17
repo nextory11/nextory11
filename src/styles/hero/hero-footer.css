@@ -49,6 +49,10 @@
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
 }
 
+.heroV11__footerNav{display:flex;flex-wrap:wrap;justify-content:center;gap:5px 18px;max-width:min(760px,92vw)}
+.heroV11__footerNav a{color:rgba(255,239,196,.68);font-family:system-ui,sans-serif;font-size:9px;font-weight:600;letter-spacing:.04em;text-decoration:none;text-shadow:0 1px 9px rgba(0,0,0,.8)}
+.heroV11__footerNav a:hover,.heroV11__footerNav a:focus-visible{color:#fff1bf;text-decoration:underline;text-underline-offset:3px}
+
 @media (max-width:768px) {
   .heroV11__footer {
     position: relative;
@@ -73,5 +77,8 @@
     white-space: normal;
     text-align: center;
   }
+
+  .heroV11__footerNav{max-width:340px;gap:7px 14px}
+  .heroV11__footerNav a{font-size:9px}
 
 }

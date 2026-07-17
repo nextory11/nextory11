@@ -1,16 +1,21 @@
+import PanelFrameOrnaments from "./PanelFrameOrnaments";
+
 function QuestionCard({ question, onAnswer }) {
   return (
-    <>
-      <h2>{question.question}</h2>
+    <section className="questionCardFrame" data-question-id={question.id}>
+      <PanelFrameOrnaments />
+      <h2>{question.question ?? question.text}</h2>
 
       <div className="answerList">
         {question.answers.map((answer, index) => (
           <button
-            key={index}
+            key={answer.id ?? index}
             type="button"
             className="answerButton"
+            data-answer-id={answer.id}
             onClick={() => onAnswer(answer)}
           >
+            <PanelFrameOrnaments />
             <span className="answerButton__letter">
               {String.fromCharCode(65 + index)}
             </span>
@@ -18,7 +23,7 @@ function QuestionCard({ question, onAnswer }) {
           </button>
         ))}
       </div>
-    </>
+    </section>
   );
 }
 

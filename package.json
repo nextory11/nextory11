@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:stripe": "vitest run tests/unit/stripe-phase-b.test.ts",
+    "question-bank:simulate": "node scripts/simulate-question-bank-v1.mjs 10000 docs/question-bank-v1-simulation.json",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "typecheck": "tsc --noEmit"
@@ -19,6 +21,7 @@
     "drizzle-orm": "^0.45.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "stripe": "^22.3.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
