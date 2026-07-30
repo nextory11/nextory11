@@ -1,8 +1,17 @@
-const CHECKOUT_SNAPSHOT_KEY = "nextory11.checkoutSnapshot";
+const LEGACY_CHECKOUT_SNAPSHOT_KEY = "nextory11.checkoutSnapshot";
+const CHECKOUT_SNAPSHOT_PREFIX = "nextory11.checkoutSnapshot.v2.";
+const CHECKOUT_SESSION_PREFIX = "nextory11.checkoutSnapshot.session.v2.";
+const ACTIVE_CHECKOUT_POINTER_KEY = "nextory11.checkoutSnapshot.active.v2";
+const CHECKOUT_SNAPSHOT_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 const RUNTIME_CONFIG_PATH = "/stripe-config.json";
 
 function parsePublicBoolean(value) {
   return value === true || value === "true" || value === "1";
+}
+
+function isLocalDevelopmentCheckout() {
+  if (!import.meta.env.DEV) return false;
+  return ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
 }
 
 async function readRuntimeConfig() {
@@ -15,7 +24,7 @@ async function readRuntimeConfig() {
 }
 
 export async function getPaidCtaEnabled() {
-  if (!import.meta.env.DEV) return false;
+  if (!isLocalDevelopmentCheckout()) return false;
   const windowFlag = window.__NEXTORY11_PAID_CTA_ENABLED__;
   if (windowFlag !== undefined) return parsePublicBoolean(windowFlag);
   const envFlag = import.meta.env.VITE_PAID_CTA_ENABLED;
@@ -23,21 +32,100 @@ export async function getPaidCtaEnabled() {
   return parsePublicBoolean((await readRuntimeConfig()).paidCtaEnabled);
 }
 
-export function saveCheckoutSnapshot(snapshot) {
-  window.localStorage.setItem(CHECKOUT_SNAPSHOT_KEY, JSON.stringify(snapshot));
+function snapshotKey(requestId) {
+  return `${CHECKOUT_SNAPSHOT_PREFIX}${requestId}`;
 }
 
-export function readCheckoutSnapshot() {
+function sessionKey(checkoutSessionId) {
+  return `${CHECKOUT_SESSION_PREFIX}${checkoutSessionId}`;
+}
+
+function isValidSnapshot(snapshot) {
+  if (!snapshot || typeof snapshot !== "object") return false;
+  if (typeof snapshot.requestId !== "string" || !snapshot.requestId) return false;
+  if (typeof snapshot.accessToken !== "string" || !snapshot.accessToken) return false;
+  const createdAt = Date.parse(snapshot.createdAt);
+  return Number.isFinite(createdAt) && Date.now() - createdAt <= CHECKOUT_SNAPSHOT_MAX_AGE_MS;
+}
+
+function readStoredSnapshot(key) {
   try {
-    const stored = window.localStorage.getItem(CHECKOUT_SNAPSHOT_KEY);
-    return stored ? JSON.parse(stored) : null;
+    const stored = window.localStorage.getItem(key);
+    const snapshot = stored ? JSON.parse(stored) : null;
+    if (isValidSnapshot(snapshot)) return snapshot;
+    if (stored) window.localStorage.removeItem(key);
   } catch {
-    return null;
+    window.localStorage.removeItem(key);
+  }
+  return null;
+}
+
+export function saveCheckoutSnapshot(snapshot) {
+  if (!isValidSnapshot(snapshot)) throw new Error("invalid_checkout_snapshot");
+  window.localStorage.setItem(snapshotKey(snapshot.requestId), JSON.stringify(snapshot));
+  window.localStorage.setItem(ACTIVE_CHECKOUT_POINTER_KEY, snapshot.requestId);
+  if (snapshot.checkoutSessionId) {
+    window.localStorage.setItem(sessionKey(snapshot.checkoutSessionId), snapshot.requestId);
   }
 }
 
-export function clearCheckoutSnapshot() {
-  window.localStorage.removeItem(CHECKOUT_SNAPSHOT_KEY);
+export function readCheckoutSnapshot(identifier = null) {
+  let requestId = identifier;
+  let checkoutSessionId = null;
+  if (identifier?.startsWith("cs_")) {
+    checkoutSessionId = identifier;
+    requestId = window.localStorage.getItem(sessionKey(identifier));
+    if (!requestId) return null;
+  }
+  if (!identifier && !requestId) requestId = window.localStorage.getItem(ACTIVE_CHECKOUT_POINTER_KEY);
+  if (requestId) {
+    const snapshot = readStoredSnapshot(snapshotKey(requestId));
+    if (snapshot) return snapshot;
+    if (window.localStorage.getItem(ACTIVE_CHECKOUT_POINTER_KEY) === requestId) {
+      window.localStorage.removeItem(ACTIVE_CHECKOUT_POINTER_KEY);
+    }
+  }
+  if (checkoutSessionId) window.localStorage.removeItem(sessionKey(checkoutSessionId));
+
+  if (!identifier) {
+    const legacy = readStoredSnapshot(LEGACY_CHECKOUT_SNAPSHOT_KEY);
+    if (legacy) {
+      saveCheckoutSnapshot(legacy);
+      window.localStorage.removeItem(LEGACY_CHECKOUT_SNAPSHOT_KEY);
+      return legacy;
+    }
+  }
+  return null;
+}
+
+export function clearCheckoutSnapshot(identifier = null) {
+  let requestId = identifier;
+  let checkoutSessionId = null;
+  if (identifier?.startsWith("cs_")) {
+    checkoutSessionId = identifier;
+    requestId = window.localStorage.getItem(sessionKey(identifier));
+    if (!requestId) return;
+  }
+  if (!identifier && !requestId) requestId = window.localStorage.getItem(ACTIVE_CHECKOUT_POINTER_KEY);
+  const snapshot = requestId ? readStoredSnapshot(snapshotKey(requestId)) : null;
+  if (snapshot?.checkoutSessionId) {
+    window.localStorage.removeItem(sessionKey(snapshot.checkoutSessionId));
+  }
+  if (checkoutSessionId) window.localStorage.removeItem(sessionKey(checkoutSessionId));
+  if (requestId) {
+    window.localStorage.removeItem(snapshotKey(requestId));
+    if (window.localStorage.getItem(ACTIVE_CHECKOUT_POINTER_KEY) === requestId) {
+      window.localStorage.removeItem(ACTIVE_CHECKOUT_POINTER_KEY);
+    }
+  }
+  if (!identifier) window.localStorage.removeItem(LEGACY_CHECKOUT_SNAPSHOT_KEY);
+}
+
+export async function recoverCheckoutSnapshot(checkoutSessionId) {
+  const recovered = await postJson("/api/checkout-session-recovery", { checkoutSessionId });
+  const snapshot = { ...recovered, checkoutSessionId };
+  saveCheckoutSnapshot(snapshot);
+  return snapshot;
 }
 
 async function postJson(path, body) {
@@ -60,14 +148,21 @@ function normalizeCheckoutUrl(rawUrl) {
   }
 }
 
-export async function redirectToStripeCheckout({ answers, result, resultType, questionBankContext = null }) {
-  if (!import.meta.env.DEV) throw new Error("paid_checkout_disabled");
+export async function redirectToStripeCheckout({
+  answers,
+  result,
+  resultType,
+  questionBankContext = null,
+  diagnosisSessionId = null,
+}) {
+  if (!(await getPaidCtaEnabled())) throw new Error("paid_checkout_disabled");
   const reportRequest = await postJson("/api/report-requests", {
     answers: answers.map((answer, index) => ({
       questionId: answer.questionId ?? index + 1,
       answerId: answer.answerLabel,
     })),
     questionBankContext,
+    diagnosisSessionId,
   });
   const checkout = await postJson("/api/checkout-sessions", {
     reportRequestId: reportRequest.requestId,
@@ -90,6 +185,8 @@ export async function redirectToStripeCheckout({ answers, result, resultType, qu
     },
     answers,
     questionBankContext,
+    diagnosisSessionId,
+    checkoutSessionId: checkout.checkoutSessionId,
   });
   window.location.assign(checkoutUrl.toString());
 }

@@ -15,7 +15,7 @@ export const validPremiumReport = {
   executiveSummary: section("星の輪郭"), corePersonality: section("核となる個性"), hiddenStrengths: section("隠れた強み"),
   traitInteraction: section("特性の相互作用"), decisionMakingStyle: section("意思決定"), relationships: section("人とのつながり"),
   careerAndTalent: section("仕事と才能"), currentGrowthStage: section("成長ステージ"), blindSpots: section("盲点"),
-  growthPlan30Days: { title: "30日間の成長プラン", summary: "無理のない実験を重ね、自分に合う方法を見つけるための四週間です。", weeks: Array.from({ length: 4 }, (_, index) => ({ dayRange: `${index * 7 + 1}〜${index * 7 + 7}日`, title: `第${index + 1}週`, actions: ["一日の終わりに小さな気づきを一つ記録する", "週に一度、試した行動の手応えを言葉にする"], reflection: "続けやすかった行動と、その理由を振り返ってみましょう。" })) },
+  growthPlan30Days: { title: "今日からの具体的な3行動", summary: "無理のない小さな実験を重ね、自分に合う方法を見つけるための三つの行動です。", actions: Array.from({ length: 3 }, (_, index) => ({ timing: `行動${index + 1}`, title: `小さな一歩${index + 1}`, action: `一日の終わりに小さな気づき${index + 1}を記録し、次に試したいことを一つ選びます。`, purpose: `続けやすかった行動${index + 1}と、その理由を振り返り、自分に合う方法を見つけるためです。` })) },
   personalRecommendations: section("個別提案"),
   aiJuzaClosingMessage: "この星図はあなたを決める答えではありません。今日見つけた光を手がかりに、自分に合う一歩を選んでいってください。",
   emailSummary: "回答から見えた強みと特性の組み合わせを、日常で活かすための視点と30日間の行動としてまとめました。",

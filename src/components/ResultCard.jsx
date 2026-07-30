@@ -36,6 +36,58 @@ function CelestialTraitIcon({ index, type }) {
 }
 
 function ResultCard({ answers, result, resultType, scene, questionBankContext = null }) {
+  const isChallenge = resultType === "challenger";
+  const isCreator = resultType === "creator";
+  const isIntuitive = resultType === "intuition";
+  const isHarmonizer = resultType === "thinker";
+  const isPioneer = resultType === "action";
+  const isVisionary = resultType === "leader";
+  const architecturalFrames = {
+    empathy: {
+      folder: "empath",
+      emblem: "emblem.png",
+    },
+    adaptability: {
+      folder: "evolver",
+      emblem: "emblem.png",
+    },
+    expression: {
+      folder: "light-bringer",
+      emblem: "emblem.png",
+      insightFrame: "frame02.png",
+    },
+    persistence: {
+      folder: "guardian",
+      emblem: "Guardian_Emblem.png",
+      insightFrame: "frame03.png",
+    },
+    explorer: {
+      folder: "explorer",
+      emblem: "emblem.png",
+      insightFrame: "frame02.png",
+    },
+    intuition: {
+      folder: "intuitive",
+      emblem: "emblem.png",
+      insightFrame: "frame02.png",
+    },
+    thinker: {
+      folder: "harmonizer",
+      emblem: "emblem.png",
+      insightFrame: "frame02.png",
+    },
+    action: {
+      folder: "pioneer",
+      emblem: "emblem.png",
+      insightFrame: "frame02.png",
+    },
+    leader: {
+      folder: "visionary",
+      emblem: "Visionary_Emblem.png",
+      insightFrame: "frame02.png",
+    },
+  };
+  const architecturalFrame = architecturalFrames[resultType] ?? null;
   const reading = useMemo(
     () => createAiJuzaReading({ answers, result, resultType, questionBankContext }),
     [answers, result, resultType, questionBankContext],
@@ -58,51 +110,83 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
         setSpokenMessage(reading.message.slice(0, cursor));
         if (cursor >= reading.message.length) window.clearInterval(intervalId);
       }, 34);
-    }, 6600);
+    }, isChallenge ? 1800 : 6600);
 
     return () => {
       window.clearTimeout(startId);
       window.clearInterval(intervalId);
     };
-  }, [reading.message]);
+  }, [isChallenge, reading.message]);
 
-  return (
-    <div className="resultCard" aria-label="NEXTORY11 diagnosis result">
-      <div className="resultCard__aura" aria-hidden="true" />
-      <div className="resultBadge">YOUR STAR TYPE</div>
-      <div className="resultRealm">{scene.realm}</div>
-      <div className="resultIcon" aria-hidden="true">
-        <span>{scene.glyph}</span>
-      </div>
-
-      <p className="resultKicker">あなたの中で目覚めた星</p>
-      <h1 className="resultTitle">{result.title}</h1>
-      <div className="english">{result.en}</div>
-      <p className="resultLead">
-        11の回答から映し出された、今のあなたを導く星の輪郭です。
+  const juzaPanel = (
+    <blockquote
+      className="juzaMessage juzaMessage--personalized"
+      data-answer-count={reading.profile.answerCount}
+      data-primary-score={reading.profile.primaryScore}
+      data-speaking={spokenMessage.length > 0 && spokenMessage.length < reading.message.length}
+      aria-label={`AI JUZAからのメッセージ: ${reading.message}`}
+    >
+      <PanelFrameOrnaments />
+      {isCreator ? <img className="creatorFrameAsset creatorFrameAsset--juza" src="/images/result-scenes/creator/overlays/ai_juza_frame.png" alt="" aria-hidden="true" /> : null}
+      {isHarmonizer ? (
+        <>
+          <span className="harmonizerJuzaGlass" aria-hidden="true" />
+          <img className="harmonizerJuzaFrame" src="/images/result-scenes/harmonizer/overlays/ai_juza_frame.png" alt="" aria-hidden="true" />
+          <img className="harmonizerJuzaPortrait" src="/images/result-scenes/harmonizer/characters/ai_juza_portrait.png" alt="" aria-hidden="true" />
+        </>
+      ) : null}
+      {isPioneer ? (
+        <>
+          <span className="pioneerJuzaGlass" aria-hidden="true" />
+          <img className="pioneerJuzaPortrait" src="/images/result-scenes/pioneer/characters/ai_juza_portrait_cosmic.png" alt="" aria-hidden="true" />
+          <img className="pioneerJuzaFrame" src="/images/result-scenes/pioneer/overlays/ai_juza_frame.png" alt="" aria-hidden="true" />
+        </>
+      ) : null}
+      {isVisionary ? (
+        <>
+          <span className="visionaryJuzaGlass" aria-hidden="true" />
+          <img className="visionaryJuzaPortrait" src="/images/result-scenes/visionary/characters/ai_juza_portrait.png" alt="" aria-hidden="true" />
+          <img className="visionaryJuzaFrame" src="/images/result-scenes/visionary/overlays/ai_juza_frame.png" alt="" aria-hidden="true" />
+        </>
+      ) : null}
+      {resultType === "expression" ? (
+        <img
+          className="luminaryJuzaPortrait"
+          src="/images/result-scenes/light-bringer/characters/ai_juza_portrait.png"
+          alt=""
+          aria-hidden="true"
+        />
+      ) : null}
+      {architecturalFrame && !isPioneer && resultType !== "leader" ? <img className="typeFrameAsset typeFrameAsset--juza" src={`/images/result-scenes/${architecturalFrame.folder}/overlays/${isIntuitive ? "ai_juza_frame_transparent.png" : "ai_juza_frame.png"}`} alt="" aria-hidden="true" /> : null}
+      {resultType === "expression" ? (
+        <img
+          className="luminaryJuzaForeground"
+          src="/images/result-scenes/light-bringer/overlays/ai_juza_frame.png"
+          alt=""
+          aria-hidden="true"
+        />
+      ) : null}
+      {resultType === "expression" ? <span className="luminaryGlass luminaryGlass--juza" aria-hidden="true" /> : null}
+      {resultType === "persistence" ? <img className="typeFrameAsset guardianJuzaPortrait" src="/images/result-scenes/guardian/characters/ai_juza_portrait.png" alt="" aria-hidden="true" /> : null}
+      <b className="juzaMessage__particles" aria-hidden="true">
+        {Array.from({ length: 6 }, (_, index) => <i key={index} />)}
+      </b>
+      <p aria-hidden="true">
+        {spokenMessage}
+        <i className="juzaMessage__cursor" aria-hidden="true" />
       </p>
+    </blockquote>
+  );
 
-      <blockquote
-        className="juzaMessage juzaMessage--personalized"
-        data-answer-count={reading.profile.answerCount}
-        data-primary-score={reading.profile.primaryScore}
-        data-speaking={spokenMessage.length > 0 && spokenMessage.length < reading.message.length}
-        aria-label={`AI JUZAからのメッセージ: ${reading.message}`}
-      >
-        <PanelFrameOrnaments />
-        <span>MESSAGE FROM AI JUZA</span>
-        <b className="juzaMessage__particles" aria-hidden="true">
-          {Array.from({ length: 6 }, (_, index) => <i key={index} />)}
-        </b>
-        <p aria-hidden="true">
-          {spokenMessage}
-          <i className="juzaMessage__cursor" aria-hidden="true" />
-        </p>
-      </blockquote>
-
+  const insightSection = (
+    <>
+      {isChallenge ? <div className="challengeSectionTitle"><span>YOUR STRENGTHS</span></div> : null}
       <div className="resultGrid">
         <article className="adviceBox">
           <PanelFrameOrnaments />
+          {isCreator ? <img className="creatorFrameAsset creatorFrameAsset--insight" src="/images/result-scenes/creator/overlays/frame02.png" alt="" aria-hidden="true" /> : null}
+          {architecturalFrame ? <img className="typeFrameAsset typeFrameAsset--insight" src={`/images/result-scenes/${architecturalFrame.folder}/overlays/${architecturalFrame.insightFrame ?? "frame02.png"}`} alt="" aria-hidden="true" /> : null}
+          {resultType === "expression" ? <span className="luminaryGlass luminaryGlass--insight" aria-hidden="true" /> : null}
           <CelestialTraitIcon type={resultType} index={0} />
           <strong>あなたの星の本質</strong>
           <p>{result.essence}</p>
@@ -110,6 +194,9 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
 
         <article className="adviceBox">
           <PanelFrameOrnaments />
+          {isCreator ? <img className="creatorFrameAsset creatorFrameAsset--insight" src="/images/result-scenes/creator/overlays/frame02.png" alt="" aria-hidden="true" /> : null}
+          {architecturalFrame ? <img className="typeFrameAsset typeFrameAsset--insight" src={`/images/result-scenes/${architecturalFrame.folder}/overlays/${architecturalFrame.insightFrame ?? "frame02.png"}`} alt="" aria-hidden="true" /> : null}
+          {resultType === "expression" ? <span className="luminaryGlass luminaryGlass--insight" aria-hidden="true" /> : null}
           <CelestialTraitIcon type={resultType} index={1} />
           <strong>あなたの才能</strong>
           <p>{result.strength}</p>
@@ -117,11 +204,65 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
 
         <article className="adviceBox">
           <PanelFrameOrnaments />
+          {isCreator ? <img className="creatorFrameAsset creatorFrameAsset--insight" src="/images/result-scenes/creator/overlays/frame02.png" alt="" aria-hidden="true" /> : null}
+          {architecturalFrame ? <img className="typeFrameAsset typeFrameAsset--insight" src={`/images/result-scenes/${architecturalFrame.folder}/overlays/${architecturalFrame.insightFrame ?? "frame02.png"}`} alt="" aria-hidden="true" /> : null}
+          {resultType === "expression" ? <span className="luminaryGlass luminaryGlass--insight" aria-hidden="true" /> : null}
           <CelestialTraitIcon type={resultType} index={2} />
           <strong>今日の一歩</strong>
           <p>{result.mission}</p>
         </article>
       </div>
+    </>
+  );
+
+  return (
+    <div className={`resultCard${isChallenge ? " resultCard--challengeMaster" : ""}`} aria-label="NEXTORY11 diagnosis result">
+      <div className="resultCard__aura" aria-hidden="true" />
+      {isChallenge ? (
+        <section className="challengeTopArtifact">
+          <PanelFrameOrnaments />
+          <header className="challengeIdentity">
+            <div className="resultIcon challengeIdentity__emblem" aria-hidden="true">
+              <img src="/images/result-scenes/challenge/icons/emblem.png" alt="" />
+            </div>
+            <div className="english challengeIdentity__english">CHALLENGE</div>
+            <h1 className="resultTitle challengeIdentity__title">{result.title}</h1>
+            <p className="challengeIdentity__message">限界を超え、未来を切り拓く勇気を持つあなたへ。</p>
+            <p className="resultLead challengeIdentity__lead">Break the limit. Become your future.</p>
+          </header>
+          {juzaPanel}
+          {insightSection}
+        </section>
+      ) : (
+        <>
+          <div className="resultBadge">YOUR STAR TYPE</div>
+          {resultType !== "persistence" ? <div className="resultRealm">{scene.realm}</div> : null}
+          <div className="resultIcon" aria-hidden="true">
+            {isCreator ? <img src="/images/result-scenes/creator/icons/emblem.png" alt="" /> : architecturalFrame ? <img src={`/images/result-scenes/${architecturalFrame.folder}/icons/${architecturalFrame.emblem}`} alt="" /> : <span>{scene.glyph}</span>}
+          </div>
+
+          <p className="resultKicker">あなたの中で目覚めた星</p>
+          {resultType === "persistence" ? <div className="guardianEnglishTitle">GUARDIAN</div> : null}
+          <h1 className="resultTitle">{result.title}</h1>
+          <div className="english">{result.en}</div>
+          <p className="resultLead">
+            11の回答から映し出された、今のあなたを導く星の輪郭です。
+          </p>
+          {isIntuitive ? (
+            <section className="intuitiveGuidanceFrame" aria-label="AI JUZA and intuitive insights">
+              <img
+                className="intuitiveGuidanceFrame__asset"
+                src="/images/result-scenes/intuitive/overlays/frame02.png"
+                alt=""
+                aria-hidden="true"
+              />
+              {juzaPanel}
+              {insightSection}
+            </section>
+          ) : juzaPanel}
+        </>
+      )}
+      {!isChallenge && !isIntuitive ? insightSection : null}
     </div>
   );
 }

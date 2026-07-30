@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import checkoutSessionsHandler from "./api/checkout-sessions.ts";
+import checkoutSessionRecoveryHandler from "./api/checkout-session-recovery.ts";
 import reportRequestsHandler from "./api/report-requests.ts";
 import reportStatusHandler from "./api/reports/[requestId]/status.ts";
 import reportGenerateHandler from "./api/reports/[requestId]/generate.ts";
@@ -58,6 +59,8 @@ function localApiPlugin() {
             ? { handler: reportRequestsHandler, rawBody: false }
             : url.pathname === "/api/checkout-sessions"
               ? { handler: checkoutSessionsHandler, rawBody: false }
+              : url.pathname === "/api/checkout-session-recovery"
+                ? { handler: checkoutSessionRecoveryHandler, rawBody: false }
               : url.pathname === "/api/stripe/webhook"
                 ? { handler: stripeWebhookHandler, rawBody: true }
                 : statusMatch

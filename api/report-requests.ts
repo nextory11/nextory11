@@ -35,6 +35,27 @@ export default async function handler(request: VercelRequestLike, response: Verc
   try {
     const parsed = parseReportRequest(request.body);
     const calculated = calculateDiagnosisResult(parsed.answers);
+    const selectedQuestionContext = new Map(
+      (parsed.questionBankContext?.selectedQuestions ?? []).map((question) => [question.id, question]),
+    );
+    const selectedAnswerContext = new Map(
+      (parsed.questionBankContext?.selectedAnswers ?? []).map((answer) => [answer.questionId, answer]),
+    );
+    const purchasedQuestions = parsed.answers.map((answer, index) => {
+      const questionContext = selectedQuestionContext.get(String(answer.questionId));
+      const answerContext = selectedAnswerContext.get(String(answer.questionId));
+      return {
+        order: index,
+        questionId: answer.questionId,
+        questionText: answer.question,
+        answerId: answer.answerId,
+        answerText: answer.answer,
+        typeScores: answer.metadata?.weights ?? null,
+        category: answer.metadata?.category ?? questionContext?.category ?? null,
+        tags: answer.metadata?.tags ?? questionContext?.tags ?? [],
+        displayOrder: answerContext?.displayOrder ?? null,
+      };
+    });
     const requestId = generateRequestId();
     const retentionDeleteAt = new Date(
       Date.now() + DEFAULT_RETENTION_DAYS * 24 * 60 * 60 * 1_000,
@@ -42,7 +63,18 @@ export default async function handler(request: VercelRequestLike, response: Verc
     const repository = new ReportRequestsRepository();
     const record = await repository.create({
       id: requestId,
-      answersJson: parsed.answers,
+      answersJson: {
+        snapshotVersion: "nextory11-paid-diagnosis-v1",
+        diagnosisSessionId: parsed.diagnosisSessionId,
+        questionPackVersion: parsed.questionBankContext?.questionBank.version ?? null,
+        selectedQuestions: parsed.questionBankContext?.selectedQuestions ?? null,
+        selectedAnswers: parsed.questionBankContext?.selectedAnswers ?? null,
+        answers: parsed.answers,
+        purchasedQuestions,
+        serverCalculatedResultType: calculated.resultType,
+        calculatedResult: calculated,
+        completedAt: new Date().toISOString(),
+      },
       resultType: calculated.resultType,
       resultNameJa: calculated.resultNameJa,
       resultNameEn: calculated.resultNameEn,

@@ -1,0 +1,1497 @@
+/*
+ * NEXTORY11 Universal Premium Report
+ * Structure is shared by all 11 result types. Type identity is expressed only
+ * through restrained accent variables on the existing Result Scene.
+ */
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport {
+  --premium-accent: 206, 159, 76;
+  --premium-accent-soft: 111, 92, 217;
+  --premium-glow: 93, 122, 255;
+  position: relative !important;
+  isolation: isolate !important;
+  z-index: 4 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  left: auto !important;
+  width: min(1180px, calc(100vw - 48px)) !important;
+  max-width: none !important;
+  min-height: 760px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  margin: clamp(54px, 6vw, 92px) 0 clamp(82px, 8vw, 124px) !important;
+  padding: clamp(78px, 7vw, 100px) clamp(72px, 8vw, 126px) clamp(76px, 7vw, 98px) !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  align-self: center !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: translateX(var(--premium-center-shift, 0px)) !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background:
+    radial-gradient(circle at 50% 7%, rgba(var(--premium-glow), .2), transparent 33%),
+    radial-gradient(circle at 18% 72%, rgba(var(--premium-accent-soft), .12), transparent 34%),
+    linear-gradient(145deg, rgba(2, 8, 29, .82), rgba(3, 12, 40, .76) 48%, rgba(4, 8, 29, .88)) !important;
+  box-shadow:
+    inset 0 0 100px rgba(var(--premium-glow), .08),
+    0 28px 80px rgba(0, 3, 18, .45),
+    0 0 52px rgba(var(--premium-accent-soft), .1) !important;
+  backdrop-filter: blur(8px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(1.08) !important;
+  translate: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport::before,
+#root .resultHero[data-star-type] > .paidBox.premiumReport::after {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="challenger"] > .paidBox.premiumReport {
+  --premium-accent: 242, 164, 67;
+  --premium-accent-soft: 199, 64, 25;
+  --premium-glow: 255, 183, 83;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="persistence"] > .paidBox.premiumReport {
+  --premium-accent: 228, 201, 139;
+  --premium-accent-soft: 85, 133, 205;
+  --premium-glow: 190, 226, 255;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] > .paidBox.premiumReport {
+  --premium-accent: 217, 184, 116;
+  --premium-accent-soft: 92, 75, 181;
+  --premium-glow: 109, 170, 255;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="expression"] > .paidBox.premiumReport {
+  --premium-accent: 239, 214, 157;
+  --premium-accent-soft: 135, 164, 219;
+  --premium-glow: 223, 240, 255;
+}
+
+#root .resultHero[data-star-type="thinker"] > .paidBox.premiumReport {
+  --premium-accent: 214, 181, 113;
+  --premium-accent-soft: 65, 180, 164;
+  --premium-glow: 121, 102, 210;
+}
+
+#root .resultHero[data-star-type="creator"] > .paidBox.premiumReport {
+  --premium-accent: 225, 181, 96;
+  --premium-accent-soft: 141, 75, 195;
+  --premium-glow: 217, 112, 223;
+}
+
+#root .resultHero[data-star-type="adaptability"] > .paidBox.premiumReport {
+  --premium-accent: 218, 181, 91;
+  --premium-accent-soft: 56, 151, 89;
+  --premium-glow: 133, 213, 106;
+}
+
+#root .resultHero[data-star-type="empathy"] > .paidBox.premiumReport {
+  --premium-accent: 221, 182, 119;
+  --premium-accent-soft: 175, 105, 178;
+  --premium-glow: 116, 194, 223;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="explorer"] > .paidBox.premiumReport {
+  --premium-accent: 218, 176, 94;
+  --premium-accent-soft: 40, 115, 201;
+  --premium-glow: 104, 203, 244;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="leader"] > .paidBox.premiumReport {
+  --premium-accent: 224, 178, 91;
+  --premium-accent-soft: 114, 75, 211;
+  --premium-glow: 215, 132, 241;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="action"] > .paidBox.premiumReport {
+  --premium-accent: 225, 178, 89;
+  --premium-accent-soft: 44, 124, 201;
+  --premium-glow: 102, 206, 244;
+}
+
+#root .resultHero[data-star-type] .premiumReport__outerFrame {
+  position: absolute !important;
+  inset: 18px !important;
+  z-index: 2 !important;
+  display: block !important;
+  border: 1px solid rgba(var(--premium-accent), .82) !important;
+  border-radius: 4px !important;
+  background:
+    linear-gradient(90deg, transparent 8%, rgba(var(--premium-accent), .58) 50%, transparent 92%) top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent 8%, rgba(var(--premium-accent), .58) 50%, transparent 92%) bottom / 100% 1px no-repeat !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 239, 188, .08),
+    inset 0 0 32px rgba(var(--premium-glow), .04),
+    0 0 22px rgba(var(--premium-accent), .08) !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type] .premiumReport__outerFrame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: clamp(120px, 18vw, 240px);
+  height: 14px;
+  translate: -50% 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(var(--premium-accent), .8) 25%, rgba(255, 237, 180, .95) 50%, rgba(var(--premium-accent), .8) 75%, transparent);
+  clip-path: polygon(0 46%, 42% 46%, 47% 0, 53% 0, 58% 46%, 100% 46%, 100% 54%, 58% 54%, 53% 100%, 47% 100%, 42% 54%, 0 54%);
+  filter: drop-shadow(0 0 6px rgba(var(--premium-accent), .42));
+}
+
+#root .resultHero[data-star-type] .premiumReport__outerFrame::before { top: -7px; }
+#root .resultHero[data-star-type] .premiumReport__outerFrame::after { bottom: -7px; }
+
+#root .resultHero[data-star-type] .premiumReport__corner {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-color: rgba(var(--premium-accent), .94);
+  filter: drop-shadow(0 0 7px rgba(var(--premium-glow), .24));
+}
+
+#root .resultHero[data-star-type] .premiumReport__corner::after {
+  content: "◆";
+  position: absolute;
+  color: rgb(var(--premium-accent));
+  font: 18px/1 Georgia, serif;
+  text-shadow: 0 0 9px rgba(var(--premium-glow), .6);
+}
+
+#root .resultHero[data-star-type] .premiumReport__corner--tl {
+  top: -1px;
+  left: -1px;
+  border-top: 3px double;
+  border-left: 3px double;
+  border-radius: 4px 0 0;
+}
+#root .resultHero[data-star-type] .premiumReport__corner--tl::after { top: -9px; left: -8px; }
+
+#root .resultHero[data-star-type] .premiumReport__corner--tr {
+  top: -1px;
+  right: -1px;
+  border-top: 3px double;
+  border-right: 3px double;
+  border-radius: 0 4px 0 0;
+}
+#root .resultHero[data-star-type] .premiumReport__corner--tr::after { top: -9px; right: -8px; }
+
+#root .resultHero[data-star-type] .premiumReport__corner--bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 3px double;
+  border-left: 3px double;
+  border-radius: 0 0 0 4px;
+}
+#root .resultHero[data-star-type] .premiumReport__corner--bl::after { bottom: -9px; left: -8px; }
+
+#root .resultHero[data-star-type] .premiumReport__corner--br {
+  right: -1px;
+  bottom: -1px;
+  border-right: 3px double;
+  border-bottom: 3px double;
+  border-radius: 0 0 4px;
+}
+#root .resultHero[data-star-type] .premiumReport__corner--br::after { right: -8px; bottom: -9px; }
+
+#root .resultHero[data-star-type] .premiumReport__gem {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  translate: -50% 0;
+  rotate: 45deg;
+  border: 1px solid rgba(255, 237, 183, .88);
+  background: linear-gradient(135deg, rgb(var(--premium-accent-soft)), rgb(var(--premium-glow)));
+  box-shadow: 0 0 14px rgba(var(--premium-glow), .5);
+}
+
+#root .resultHero[data-star-type] .premiumReport__gem--top { top: -7px; }
+#root .resultHero[data-star-type] .premiumReport__gem--bottom { bottom: -7px; }
+
+#root .resultHero[data-star-type] .premiumReport__glass {
+  position: absolute !important;
+  inset: clamp(44px, 5vw, 64px) clamp(66px, 8vw, 116px) !important;
+  z-index: 1 !important;
+  display: block !important;
+  border: 1px solid rgba(var(--premium-accent), .4) !important;
+  border-radius: clamp(28px, 4vw, 46px) !important;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(var(--premium-glow), .12), transparent 44%),
+    linear-gradient(150deg, rgba(3, 8, 30, .9), rgba(4, 12, 43, .84) 54%, rgba(7, 7, 29, .92)) !important;
+  box-shadow:
+    inset 0 1px rgba(255, 244, 209, .13),
+    inset 0 0 70px rgba(var(--premium-accent-soft), .08),
+    0 18px 55px rgba(0, 3, 18, .28) !important;
+  backdrop-filter: blur(12px) saturate(1.06) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.06) !important;
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > :not(
+  .premiumReport__outerFrame,
+  .premiumReport__glass
+) {
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .paidLabel {
+  order: 1 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  width: min(860px, 100%) !important;
+  min-height: 82px !important;
+  margin: 0 auto clamp(22px, 2.4vw, 32px) !important;
+  padding: 13px 32px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(var(--premium-accent), .68) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, rgba(7, 13, 40, .72), rgba(16, 18, 56, .84), rgba(7, 13, 40, .72)) !important;
+  box-shadow: inset 0 0 24px rgba(var(--premium-glow), .07) !important;
+}
+
+#root .resultHero[data-star-type] .paidLabel__copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+#root .resultHero[data-star-type] .paidLabel__primary {
+  color: rgb(var(--premium-accent)) !important;
+  font: 600 clamp(19px, 2vw, 26px)/1.3 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  letter-spacing: .16em !important;
+  text-align: center !important;
+  text-shadow: 0 2px 8px rgba(0, 3, 18, .9), 0 0 16px rgba(var(--premium-accent), .16) !important;
+}
+
+#root .resultHero[data-star-type] .paidLabel__secondary {
+  color: rgba(var(--premium-accent), .92) !important;
+  font: 600 clamp(10px, .9vw, 13px)/1.2 Cinzel, Georgia, serif !important;
+  letter-spacing: .28em !important;
+  text-align: center !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumTitle {
+  order: 2 !important;
+  display: block !important;
+  width: min(900px, 100%) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  color: rgb(var(--premium-accent)) !important;
+  font: 600 clamp(34px, 4vw, 54px)/1.42 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  letter-spacing: .055em !important;
+  text-align: center !important;
+  text-wrap: balance;
+  text-shadow:
+    0 3px 12px rgba(0, 3, 18, .94),
+    0 0 24px rgba(var(--premium-accent), .13) !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumTitle::after {
+  display: none !important;
+  content: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice {
+  order: 3 !important;
+  display: flex !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 64px !important;
+  height: auto !important;
+  margin: clamp(22px, 2.6vw, 34px) auto 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgb(var(--premium-accent)) !important;
+  text-align: center !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice strong {
+  color: inherit !important;
+  font: 500 clamp(40px, 4.4vw, 58px)/1 Cinzel, Georgia, serif !important;
+  letter-spacing: .08em !important;
+  text-shadow: 0 0 22px rgba(var(--premium-accent), .3), 0 3px 10px rgba(0, 3, 18, .9) !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumDescription {
+  order: 4 !important;
+  display: block !important;
+  width: min(820px, 100%) !important;
+  max-width: none !important;
+  margin: clamp(17px, 2vw, 24px) auto 0 !important;
+  padding: 0 !important;
+  color: rgba(255, 249, 233, .9) !important;
+  font: 500 clamp(13px, 1.25vw, 17px)/1.85 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  letter-spacing: .035em !important;
+  text-align: center !important;
+  text-shadow: 0 2px 8px rgba(0, 3, 18, .98) !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList {
+  order: 5 !important;
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: min(830px, 100%) !important;
+  max-width: none !important;
+  margin: clamp(26px, 3vw, 38px) auto 0 !important;
+  padding: 0 !important;
+  gap: 18px 52px !important;
+  list-style: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList li {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: 62px minmax(0, 1fr) !important;
+  min-height: 74px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  gap: 15px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgba(255, 249, 234, .94) !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__icon {
+  box-sizing: border-box !important;
+  display: grid !important;
+  flex: 0 0 58px !important;
+  position: static !important;
+  width: 58px !important;
+  min-width: 58px !important;
+  max-width: 58px !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+  place-items: center !important;
+  margin: 0 !important;
+  transform: none !important;
+  border: 1px solid rgba(var(--premium-accent), .8) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 42% 36%, rgba(var(--premium-glow), .18), rgba(4, 10, 34, .86) 66%) !important;
+  color: rgb(var(--premium-accent)) !important;
+  font: 24px/1 Georgia, serif !important;
+  box-shadow:
+    inset 0 0 16px rgba(var(--premium-glow), .12),
+    0 0 18px rgba(var(--premium-accent), .1) !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__copy {
+  display: flex !important;
+  position: static !important;
+  flex: none !important;
+  width: 100% !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  flex-direction: column !important;
+  align-self: center !important;
+  gap: 5px !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__copy strong {
+  display: block !important;
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: rgb(var(--premium-accent)) !important;
+  font: 600 clamp(15px, 1.35vw, 18px)/1.35 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  letter-spacing: .035em !important;
+  white-space: normal !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__copy small {
+  display: block !important;
+  position: static !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: rgba(255, 249, 234, .76) !important;
+  font: 500 clamp(11px, 1vw, 13px)/1.5 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  white-space: normal !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumCtaPanel {
+  order: 6 !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  width: min(760px, 100%) !important;
+  max-width: none !important;
+  min-height: 82px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  margin: clamp(28px, 3vw, 40px) auto 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 82px !important;
+  margin: 0 auto !important;
+  padding: 7px !important;
+  border-radius: 999px !important;
+  filter:
+    drop-shadow(0 0 12px rgba(var(--premium-accent), .18))
+    drop-shadow(0 0 22px rgba(var(--premium-glow), .16)) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton {
+  width: 100% !important;
+  min-height: 68px !important;
+  padding: 15px 76px 15px 38px !important;
+  border: 1px solid rgba(255, 235, 184, .82) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(110deg,
+      rgba(35, 65, 166, .96),
+      rgba(var(--premium-glow), .78) 48%,
+      rgba(var(--premium-accent-soft), .92)) !important;
+  color: #fff9e9 !important;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, .45),
+    inset 0 -10px 28px rgba(23, 16, 83, .18),
+    0 0 28px rgba(var(--premium-glow), .24),
+    0 12px 30px rgba(0, 3, 18, .35) !important;
+  font: 600 clamp(16px, 1.6vw, 21px)/1.4 "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+  letter-spacing: .08em !important;
+  text-align: center !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton:disabled {
+  opacity: .9 !important;
+  cursor: not-allowed;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton__arrow {
+  right: 34px !important;
+  color: rgba(255, 246, 215, .92) !important;
+  font-size: 27px !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumError {
+  order: 7 !important;
+  width: min(760px, 100%) !important;
+  margin: 14px auto 0 !important;
+  text-align: center !important;
+}
+
+#root .resultHero[data-star-type] .premiumConfirmationNotice {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 0 4px;
+  color: rgba(255, 245, 218, 0.92);
+  font-size: clamp(12px, 1.15vw, 14px);
+  line-height: 1.6;
+  text-align: left;
+  text-wrap: balance;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.88);
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type] > .paidBox.premiumReport {
+    width: min(720px, calc(100vw - 32px)) !important;
+    min-height: 0 !important;
+    padding: 72px clamp(52px, 8vw, 82px) 74px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport__glass {
+    inset: 42px 38px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList {
+    gap: 16px 28px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type] > .paidBox.premiumReport {
+    width: calc(100vw - 20px) !important;
+    max-width: 390px !important;
+    margin: 42px 0 74px !important;
+    padding: 58px 34px 60px !important;
+    overflow: hidden !important;
+    border-radius: 5px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport__outerFrame {
+    inset: 8px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport__corner {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport__corner::after {
+    font-size: 13px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport__glass {
+    inset: 28px 20px !important;
+    border-radius: 24px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .paidLabel {
+    width: 100% !important;
+    min-height: 70px !important;
+    margin-bottom: 22px !important;
+    padding: 11px 14px !important;
+  }
+
+  #root .resultHero[data-star-type] .paidLabel__primary {
+    font-size: clamp(15px, 4.5vw, 18px) !important;
+    letter-spacing: .08em !important;
+  }
+
+  #root .resultHero[data-star-type] .paidLabel__secondary {
+    font-size: 9px !important;
+    letter-spacing: .2em !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumTitle {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: clamp(25px, 7vw, 31px) !important;
+    line-height: 1.43 !important;
+    letter-spacing: .035em !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice {
+    margin-top: 20px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice strong {
+    font-size: clamp(38px, 11vw, 47px) !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumDescription {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 16px !important;
+    font-size: 12.5px !important;
+    line-height: 1.75 !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumDescription br {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 24px !important;
+    gap: 13px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList li {
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    min-height: 62px !important;
+    gap: 12px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__icon {
+    flex-basis: 46px !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    max-width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    font-size: 20px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__copy strong {
+    font-size: 14px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumList > li > .premiumList__copy small {
+    font-size: 11px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumCtaPanel {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 26px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame {
+    min-height: 68px !important;
+    padding: 5px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButton {
+    min-height: 58px !important;
+    padding: 12px 48px 12px 20px !important;
+    font-size: 14px !important;
+    letter-spacing: .04em !important;
+    white-space: normal !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButton__arrow {
+    right: 19px !important;
+    font-size: 22px !important;
+  }
+}
+
+.premiumPurchaseSummary,
+.purchaseRecord {
+  position: relative;
+  z-index: 4;
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(230, 194, 107, .44);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(5, 13, 38, .88), rgba(18, 15, 48, .78));
+  box-shadow: inset 0 1px 0 rgba(255, 246, 211, .14), 0 12px 28px rgba(0, 0, 12, .3);
+  color: #f7f2e8;
+  text-align: left;
+}
+
+.premiumPurchaseSummary h3,
+.purchaseRecord h2 {
+  margin: 0 0 12px;
+  color: #f1d486;
+  font-family: "Noto Serif JP", Georgia, serif;
+  text-align: center;
+}
+
+.premiumPurchaseSummary dl,
+.purchaseRecord dl {
+  margin: 0;
+}
+
+.premiumPurchaseSummary dl > div,
+.purchaseRecord dl > div {
+  display: grid;
+  grid-template-columns: minmax(110px, .38fr) 1fr;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(230, 194, 107, .14);
+}
+
+.premiumPurchaseSummary dt,
+.purchaseRecord dt {
+  color: #dbc47f;
+}
+
+.premiumPurchaseSummary dd,
+.purchaseRecord dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.premiumPurchaseSummary p,
+.purchaseRecord p {
+  margin: 12px 0 0;
+  line-height: 1.75;
+}
+
+.premiumPurchaseSummary a,
+.purchaseRecord a {
+  color: #f3d98e;
+}
+
+.premiumPurchaseConsent {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.premiumPurchaseConsent input {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  flex: 0 0 auto;
+  accent-color: #cba64d;
+  cursor: pointer;
+}
+
+.premiumPurchaseConsent span {
+  line-height: 1.6;
+}
+
+.premiumPurchaseConsent:focus-within {
+  border-color: rgba(241, 212, 134, .68);
+  background: rgba(241, 212, 134, .07);
+  box-shadow: 0 0 0 2px rgba(241, 212, 134, .12);
+}
+
+.premiumPurchaseConsent--highlight {
+  border-color: rgba(255, 221, 132, .92);
+  background: rgba(241, 212, 134, .13);
+  box-shadow:
+    0 0 0 2px rgba(241, 212, 134, .18),
+    0 0 18px rgba(241, 212, 134, .2);
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton[aria-disabled="true"],
+#root .resultHero[data-star-type] .premiumReport .premiumButton[data-purchase-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .9 !important;
+}
+
+.purchaseRecord .paymentSecondaryButton {
+  display: block;
+  min-height: 44px;
+  margin: 16px auto 0;
+}
+
+@media (max-width: 520px) {
+  .premiumPurchaseSummary,
+  .purchaseRecord {
+    width: calc(100% - 20px);
+    padding: 16px;
+  }
+
+  .premiumPurchaseSummary dl > div,
+  .purchaseRecord dl > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media print {
+  .purchaseRecord {
+    break-inside: avoid;
+    color: #111;
+    background: #fff;
+    border-color: #777;
+    box-shadow: none;
+  }
+
+  .purchaseRecord h2,
+  .purchaseRecord dt,
+  .purchaseRecord a {
+    color: #111;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .resultHero[data-star-type] .premiumReport,
+  #root .resultHero[data-star-type] .premiumReport * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/*
+ * Challenge Premium Report outer picture frame.
+ * The supplied artwork is applied as a nine-slice border so its corner
+ * sculpture and center crests stay proportionate on both wide and tall
+ * layouts. It replaces only the generic outer ornament for this type.
+ */
+#root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(72px, 9vw, 112px) solid transparent !important;
+  border-right-width: clamp(44px, 5.5vw, 72px) !important;
+  border-bottom-width: clamp(58px, 7vw, 88px) !important;
+  border-left-width: clamp(44px, 5.5vw, 72px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/challenge/overlays/premium_outer_frame.png") !important;
+  border-image-slice: 23% 10% 18% 10% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 182, 63, .48))
+    drop-shadow(0 0 22px rgba(199, 64, 25, .22)) !important;
+}
+
+#root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="challenger"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 68px !important;
+    border-right-width: 31px !important;
+    border-bottom-width: 54px !important;
+    border-left-width: 31px !important;
+  }
+}
+
+/*
+ * Creator Premium Report outer picture frame.
+ * Use the owner-approved Creator/frame.png as the perimeter ornament. The
+ * nine-slice treatment preserves the crystal corners and center gems while
+ * allowing the report to grow vertically on portrait screens.
+ */
+#root .resultHero[data-star-type="creator"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(62px, 7.5vw, 94px) solid transparent !important;
+  border-right-width: clamp(40px, 4.8vw, 60px) !important;
+  border-bottom-width: clamp(54px, 6.5vw, 80px) !important;
+  border-left-width: clamp(40px, 4.8vw, 60px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/creator/overlays/frame.png") !important;
+  border-image-slice: 12% 8% 12% 8% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(223, 172, 69, .34))
+    drop-shadow(0 0 17px rgba(157, 79, 223, .26)) !important;
+}
+
+#root .resultHero[data-star-type="creator"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="creator"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="creator"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="creator"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="creator"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 52px !important;
+    border-right-width: 27px !important;
+    border-bottom-width: 48px !important;
+    border-left-width: 27px !important;
+  }
+}
+
+/*
+ * Empath Premium Report outer picture frame.
+ * The approved floral frame is sliced at its structural rails so the corner
+ * crystals and flowers retain their shape without reducing the reading area.
+ */
+#root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(58px, 7vw, 88px) solid transparent !important;
+  border-right-width: clamp(42px, 5vw, 64px) !important;
+  border-bottom-width: clamp(66px, 8vw, 98px) !important;
+  border-left-width: clamp(42px, 5vw, 64px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/empath/overlays/frame02.png") !important;
+  border-image-slice: 15% 11% 22% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(242, 207, 191, .35))
+    drop-shadow(0 0 18px rgba(190, 102, 216, .27)) !important;
+}
+
+#root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="empathy"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 48px !important;
+    border-right-width: 29px !important;
+    border-bottom-width: 61px !important;
+    border-left-width: 29px !important;
+  }
+}
+
+/*
+ * Evolver Premium Report outer picture frame.
+ * This dedicated asset carries Evolver's living-root, antique-gold and
+ * emerald-crystal identity while leaving the shared report structure intact.
+ */
+#root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(60px, 7.4vw, 92px) solid transparent !important;
+  border-right-width: clamp(44px, 5.2vw, 66px) !important;
+  border-bottom-width: clamp(60px, 7.4vw, 92px) !important;
+  border-left-width: clamp(44px, 5.2vw, 66px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/evolver/overlays/premium_frame.png") !important;
+  border-image-slice: 14% 10% 14% 10% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(104, 222, 112, .31))
+    drop-shadow(0 0 19px rgba(218, 181, 72, .24)) !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+/*
+ * Explorer Premium Report outer picture frame.
+ * The generated observatory frame is mounted on the section perimeter so its
+ * astrolabe corners and sapphire compass crests remain outside the reading bay.
+ */
+#root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(68px, 8vw, 102px) solid transparent !important;
+  border-right-width: clamp(48px, 5.7vw, 72px) !important;
+  border-bottom-width: clamp(68px, 8vw, 102px) !important;
+  border-left-width: clamp(48px, 5.7vw, 72px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/explorer/overlays/premium_frame.png") !important;
+  border-image-slice: 19% 11% 19% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(78, 164, 255, 0.32))
+    drop-shadow(0 0 18px rgba(212, 166, 74, 0.24)) !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 58px !important;
+    border-right-width: 32px !important;
+    border-bottom-width: 58px !important;
+    border-left-width: 32px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="adaptability"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 52px !important;
+    border-right-width: 29px !important;
+    border-bottom-width: 52px !important;
+    border-left-width: 29px !important;
+  }
+}
+
+/*
+ * Guardian Premium Report outer picture frame.
+ * White-silver cathedral rails, royal-blue enamel and guardian-star crests
+ * form a sacred perimeter while the shared report reading bay stays open.
+ */
+#root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(68px, 8vw, 102px) solid transparent !important;
+  border-right-width: clamp(48px, 5.7vw, 72px) !important;
+  border-bottom-width: clamp(68px, 8vw, 102px) !important;
+  border-left-width: clamp(48px, 5.7vw, 72px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/guardian/overlays/premium_frame.png") !important;
+  border-image-slice: 19% 11% 19% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(117, 184, 255, 0.36))
+    drop-shadow(0 0 18px rgba(246, 219, 153, 0.24)) !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="persistence"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 58px !important;
+    border-right-width: 32px !important;
+    border-bottom-width: 58px !important;
+    border-left-width: 32px !important;
+  }
+}
+
+/*
+ * Harmonizer Premium Report outer picture frame.
+ * Paired teal-violet crystals, wisteria, lotus and lantern details express
+ * balance and connection while remaining on the outer perimeter.
+ */
+#root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(68px, 8vw, 102px) solid transparent !important;
+  border-right-width: clamp(46px, 5.5vw, 70px) !important;
+  border-bottom-width: clamp(70px, 8.2vw, 104px) !important;
+  border-left-width: clamp(46px, 5.5vw, 70px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/harmonizer/overlays/premium_frame.png") !important;
+  border-image-slice: 18% 11% 18% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(83, 226, 208, 0.34))
+    drop-shadow(0 0 19px rgba(189, 126, 255, 0.27))
+    drop-shadow(0 0 25px rgba(239, 203, 124, 0.16)) !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 60px !important;
+    border-right-width: 30px !important;
+    border-bottom-width: 62px !important;
+    border-left-width: 30px !important;
+  }
+}
+
+/*
+ * Intuitive Premium Report outer picture frame.
+ * Quiet observatory lenses and fine constellation rails create a calm,
+ * contemplative boundary without competing with the shared reading hierarchy.
+ */
+#root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(64px, 7.6vw, 96px) solid transparent !important;
+  border-right-width: clamp(44px, 5.2vw, 66px) !important;
+  border-bottom-width: clamp(64px, 7.6vw, 96px) !important;
+  border-left-width: clamp(44px, 5.2vw, 66px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/intuitive/overlays/premium_frame.png") !important;
+  border-image-slice: 17% 11% 17% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(118, 173, 255, 0.29))
+    drop-shadow(0 0 18px rgba(167, 104, 255, 0.22))
+    drop-shadow(0 0 24px rgba(236, 190, 97, 0.14)) !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="intuition"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 54px !important;
+    border-right-width: 28px !important;
+    border-bottom-width: 54px !important;
+    border-left-width: 28px !important;
+  }
+}
+
+/*
+ * Luminary Premium Report outer picture frame.
+ * White-gold cathedral tracery and opalescent guiding crystals establish a
+ * sacred luminous boundary while preserving the shared reading safe area.
+ */
+#root .resultHero[data-star-type="expression"] > .paidBox.premiumReport {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport__glass {
+  inset:
+    clamp(78px, 8vw, 104px)
+    clamp(70px, 7vw, 92px) !important;
+  border-radius: clamp(22px, 2.5vw, 34px) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(66px, 7.8vw, 100px) solid transparent !important;
+  border-right-width: clamp(44px, 5.2vw, 66px) !important;
+  border-bottom-width: clamp(66px, 7.8vw, 100px) !important;
+  border-left-width: clamp(44px, 5.2vw, 66px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/light-bringer/overlays/premium_frame.png") !important;
+  border-image-slice: 17% 11% 17% 11% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 248, 218, 0.42))
+    drop-shadow(0 0 17px rgba(146, 205, 255, 0.28))
+    drop-shadow(0 0 24px rgba(239, 201, 121, 0.18)) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="expression"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="expression"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="expression"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="expression"] .premiumReport__glass {
+    inset: 58px 30px !important;
+    border-radius: 20px !important;
+  }
+
+  #root .resultHero[data-star-type="expression"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 56px !important;
+    border-right-width: 28px !important;
+    border-bottom-width: 56px !important;
+    border-left-width: 28px !important;
+  }
+}
+
+/*
+ * Pioneer Premium Report outer picture frame.
+ * Blue navigation portals and precise celestial route rails frame the first
+ * horizon while keeping the shared Premium Report reading area unobstructed.
+ */
+#root .resultHero[data-star-type="action"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(68px, 8vw, 102px) solid transparent !important;
+  border-right-width: clamp(48px, 5.6vw, 72px) !important;
+  border-bottom-width: clamp(68px, 8vw, 102px) !important;
+  border-left-width: clamp(48px, 5.6vw, 72px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/pioneer/overlays/premium_frame.png") !important;
+  border-image-slice: 18% 12% 18% 12% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(64, 169, 255, 0.4))
+    drop-shadow(0 0 18px rgba(31, 95, 214, 0.25))
+    drop-shadow(0 0 24px rgba(232, 190, 107, 0.16)) !important;
+}
+
+#root .resultHero[data-star-type="action"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="action"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="action"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="action"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="action"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 58px !important;
+    border-right-width: 30px !important;
+    border-bottom-width: 58px !important;
+    border-left-width: 30px !important;
+  }
+}
+
+/*
+ * Visionary Premium Report outer picture frame.
+ * Celestial command compasses and fine blueprint rails frame the future-facing
+ * report while preserving the shared content hierarchy and safe reading area.
+ */
+#root .resultHero[data-star-type="leader"] .premiumReport__outerFrame {
+  inset: 0 !important;
+  box-sizing: border-box !important;
+  border: clamp(70px, 8.2vw, 104px) solid transparent !important;
+  border-right-width: clamp(48px, 5.6vw, 72px) !important;
+  border-bottom-width: clamp(70px, 8.2vw, 104px) !important;
+  border-left-width: clamp(48px, 5.6vw, 72px) !important;
+  border-radius: 0 !important;
+  border-image-source: url("/images/result-scenes/visionary/overlays/premium_frame.png") !important;
+  border-image-slice: 18% 12% 18% 12% !important;
+  border-image-width: 1 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 0 8px rgba(73, 133, 255, 0.38))
+    drop-shadow(0 0 18px rgba(171, 85, 255, 0.27))
+    drop-shadow(0 0 25px rgba(234, 180, 85, 0.17)) !important;
+}
+
+#root .resultHero[data-star-type="leader"] .premiumReport__outerFrame::before,
+#root .resultHero[data-star-type="leader"] .premiumReport__outerFrame::after,
+#root .resultHero[data-star-type="leader"] .premiumReport__outerFrame > .premiumReport__corner,
+#root .resultHero[data-star-type="leader"] .premiumReport__outerFrame > .premiumReport__gem {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="leader"] .premiumReport__outerFrame {
+    inset: 0 !important;
+    border-top-width: 58px !important;
+    border-right-width: 30px !important;
+    border-bottom-width: 58px !important;
+    border-left-width: 30px !important;
+  }
+}
+
+/*
+ * Universal premium price jewel.
+ * The structure and proportions are shared by all Result Scenes; the existing
+ * per-type premium variables provide only the reflected light colour.
+ */
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice {
+  position: relative !important;
+  isolation: isolate !important;
+  box-sizing: border-box !important;
+  width: clamp(210px, 19vw, 276px) !important;
+  min-width: 210px !important;
+  min-height: 92px !important;
+  margin: clamp(24px, 2.7vw, 36px) auto 0 !important;
+  padding: 17px 34px 18px !important;
+  overflow: visible !important;
+  border: 1px solid rgba(var(--premium-accent), .72) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(115deg, transparent 8%, rgba(255, 250, 226, .12) 29%, transparent 48%),
+    radial-gradient(circle at 50% 0, rgba(var(--premium-glow), .24), transparent 57%),
+    linear-gradient(145deg, rgba(4, 9, 30, .92), rgba(16, 18, 50, .86) 48%, rgba(4, 7, 25, .94)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 249, 221, .32),
+    inset 0 -1px 0 rgba(var(--premium-accent), .24),
+    inset 0 0 28px rgba(var(--premium-glow), .12),
+    0 12px 30px rgba(0, 2, 16, .48),
+    0 0 28px rgba(var(--premium-accent), .2) !important;
+  animation: premiumPriceJewelBreath 5.8s ease-in-out infinite !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  inset: -7px -12px !important;
+  display: block !important;
+  border: 1px solid rgba(var(--premium-accent), .3) !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(90deg, transparent 4%, rgba(var(--premium-accent), .6) 22%, transparent 38% 62%, rgba(var(--premium-accent), .6) 78%, transparent 96%) top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent 4%, rgba(var(--premium-accent), .42) 22%, transparent 38% 62%, rgba(var(--premium-accent), .42) 78%, transparent 96%) bottom / 100% 1px no-repeat !important;
+  box-shadow: 0 0 20px rgba(var(--premium-glow), .1) !important;
+  opacity: .9 !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  top: -5px !important;
+  right: 16% !important;
+  display: block !important;
+  width: 9px !important;
+  height: 9px !important;
+  border: 1px solid rgba(255, 248, 216, .9) !important;
+  background: linear-gradient(135deg, #fffdf0 8%, rgb(var(--premium-accent)) 52%, rgb(var(--premium-glow))) !important;
+  box-shadow:
+    0 0 7px rgba(255, 252, 228, .92),
+    0 0 17px rgba(var(--premium-glow), .7) !important;
+  rotate: 45deg !important;
+  animation: premiumPriceJewelGlint 4.6s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice strong {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  color: #f7d98b !important;
+  background:
+    linear-gradient(
+      180deg,
+      #fff8d2 0%,
+      #f8dfa0 24%,
+      rgb(var(--premium-accent)) 54%,
+      #fff1bd 76%,
+      #bd7d2f 100%
+    ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font: 600 clamp(43px, 4.7vw, 62px)/.95 Cinzel, Georgia, serif !important;
+  letter-spacing: .075em !important;
+  text-shadow: none !important;
+  filter:
+    drop-shadow(0 2px 1px rgba(0, 0, 0, .72))
+    drop-shadow(0 0 10px rgba(var(--premium-accent), .36)) !important;
+}
+
+@keyframes premiumPriceJewelBreath {
+  0%, 100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 249, 221, .32),
+      inset 0 -1px 0 rgba(var(--premium-accent), .24),
+      inset 0 0 24px rgba(var(--premium-glow), .1),
+      0 12px 30px rgba(0, 2, 16, .48),
+      0 0 22px rgba(var(--premium-accent), .16);
+  }
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 249, 221, .4),
+      inset 0 -1px 0 rgba(var(--premium-accent), .3),
+      inset 0 0 34px rgba(var(--premium-glow), .17),
+      0 14px 34px rgba(0, 2, 16, .5),
+      0 0 34px rgba(var(--premium-accent), .27);
+  }
+}
+
+@keyframes premiumPriceJewelGlint {
+  0%, 38%, 100% { opacity: .42; scale: .7; }
+  48% { opacity: 1; scale: 1.22; }
+  58% { opacity: .62; scale: .88; }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice {
+    width: min(184px, calc(100% - 28px)) !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+    margin-top: 20px !important;
+    padding: 13px 24px 14px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice::before {
+    inset: -5px -8px !important;
+  }
+
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice strong {
+    font-size: clamp(35px, 10vw, 42px) !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice,
+  #root .resultHero[data-star-type] > .paidBox.premiumReport > .premiumPrice::after {
+    animation: none !important;
+  }
+}
+
+/* Light-bringer: keep the CTA frame clear of the outer frame's lower crest. */
+#root
+  .resultHero[data-star-type="expression"]
+  > .paidBox.premiumReport
+  > .premiumCtaPanel {
+  margin-bottom: clamp(30px, 2.8vw, 42px) !important;
+}
+
+@media (max-width: 520px) {
+  #root
+    .resultHero[data-star-type="expression"]
+    > .paidBox.premiumReport
+    > .premiumCtaPanel {
+    margin-bottom: 24px !important;
+  }
+}

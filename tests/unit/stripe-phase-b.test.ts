@@ -3,7 +3,10 @@ import Stripe from "stripe";
 import { describe, expect, it, vi } from "vitest";
 import { checkoutRequestBodySchema } from "../../api/checkout-sessions.js";
 import { toSafeReportStatus } from "../../api/reports/[requestId]/status.js";
-import type { StripeServerEnv } from "../../server/config/env.js";
+import {
+  parseStripeServerEnv,
+  type StripeServerEnv,
+} from "../../server/config/env.js";
 import {
   createCheckoutSession,
 } from "../../server/stripe/create-checkout-session.js";
@@ -25,6 +28,7 @@ import {
 const requestId = "11111111-1111-4111-8111-111111111111";
 const env = {
   DATABASE_URL: "postgresql://test:test@example.invalid/test",
+  STRIPE_MODE: "test",
   STRIPE_SECRET_KEY: "sk_test_synthetic",
   STRIPE_WEBHOOK_SECRET: "whsec_synthetic",
   STRIPE_EXPECTED_PRODUCT_ID: "prod_expected",
@@ -33,7 +37,41 @@ const env = {
   STRIPE_API_VERSION: "2026-06-30.basil",
   REPORT_BASE_URL: "http://localhost:5173",
 } as StripeServerEnv;
-const expected = { productId: "prod_expected", priceId: "price_expected", amountJpy: 980 };
+const expected = {
+  productId: "prod_expected",
+  priceId: "price_expected",
+  amountJpy: 980,
+  livemode: false,
+};
+
+const stripeEnvInput = {
+  DATABASE_URL: "postgresql://test:test@example.invalid/test",
+  STRIPE_SECRET_KEY: "sk_test_synthetic",
+  STRIPE_WEBHOOK_SECRET: "whsec_synthetic",
+  STRIPE_EXPECTED_PRODUCT_ID: "prod_expected",
+  STRIPE_EXPECTED_PRICE_ID: "price_expected",
+  STRIPE_EXPECTED_AMOUNT_JPY: "980",
+  STRIPE_API_VERSION: "2026-06-30.basil",
+  REPORT_BASE_URL: "http://localhost:5173",
+};
+
+describe("Stripe environment safety", () => {
+  it("defaults an unspecified mode to test", () => {
+    expect(parseStripeServerEnv(stripeEnvInput).STRIPE_MODE).toBe("test");
+  });
+
+  it("rejects a test key in live mode", () => {
+    expect(() => parseStripeServerEnv({ ...stripeEnvInput, STRIPE_MODE: "live" })).toThrow();
+  });
+
+  it("rejects a live key in test mode", () => {
+    expect(() => parseStripeServerEnv({
+      ...stripeEnvInput,
+      STRIPE_MODE: "test",
+      STRIPE_SECRET_KEY: "sk_live_synthetic",
+    })).toThrow();
+  });
+});
 
 function checkoutRecord(overrides = {}) {
   return {
@@ -162,8 +200,10 @@ describe("Phase B Checkout Session creation", () => {
     expect(result).toMatchObject({ requestId, checkoutSessionId: "cs_test_created" });
     expect(create.mock.calls[0][0]).toMatchObject({
       mode: "payment",
+      branding_settings: { display_name: "NEXTORY11" },
       line_items: [{ price: "price_expected", quantity: 1 }],
       metadata: { report_request_id: requestId },
+      success_url: "http://localhost:5173/payment-success?session_id={CHECKOUT_SESSION_ID}",
     });
     expect(create.mock.calls[0][1].idempotencyKey).toMatch(/^nextory11-checkout-[a-f0-9]{64}$/u);
   });

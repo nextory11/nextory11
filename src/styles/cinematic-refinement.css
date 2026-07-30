@@ -1,0 +1,151 @@
+/* NEXTORY11 — cinematic luxury refinement
+   Atmosphere and material lead; ornament recedes. */
+:root {
+  --cinema-metal-light: rgba(244, 231, 194, .62);
+  --cinema-metal-shadow: rgba(120, 88, 46, .42);
+  --cinema-glass-top: rgba(255, 255, 255, .13);
+}
+
+/* The shared frame becomes a quiet precision-metal edge. */
+.panelFrameOrnaments {
+  inset: 0 !important;
+  overflow: hidden !important;
+  filter: none !important;
+  opacity: .92 !important;
+}
+.panelFrameOrnaments::before {
+  inset: 0 !important;
+  padding: 1px !important;
+  clip-path: none !important;
+  background: linear-gradient(112deg,
+    rgba(255,255,255,.18),
+    var(--cinema-metal-shadow) 13%,
+    var(--cinema-metal-light) 28%,
+    rgba(255,255,255,.18) 50%,
+    rgba(var(--cta-frame-accent),.3) 70%,
+    var(--cinema-metal-shadow) 88%,
+    rgba(255,255,255,.22)) !important;
+  filter: none !important;
+  opacity: .72;
+}
+.panelFrameOrnaments::after {
+  inset: 5px !important;
+  clip-path: none !important;
+  border: 1px solid rgba(255,255,255,.085) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.035), inset 0 0 22px rgba(var(--cta-frame-accent),.025) !important;
+}
+.panelFrameOrnaments__inner {
+  inset: 10px !important;
+  border-color: rgba(255,255,255,.045) !important;
+  border-radius: inherit !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.panelFrameOrnaments__corner,
+.panelFrameOrnaments__crest,
+.panelFrameOrnaments__rail,
+.panelFrameOrnaments__sideJewel,
+.panelFrameOrnaments__sigil {
+  display: none !important;
+}
+.panelFrameOrnaments__reflection {
+  inset: 1px 12% auto !important;
+  height: 34% !important;
+  border-radius: 50% !important;
+  background: linear-gradient(112deg, transparent 24%, rgba(255,255,255,.11) 49%, transparent 71%) !important;
+  filter: blur(10px) !important;
+  opacity: .38 !important;
+}
+
+/* Glass stays dark enough to let the universe remain the main image. */
+.heroV11__feature,
+.questionCardFrame,
+.progressContainer,
+.answerButton,
+.paymentPanel,
+.paymentResult,
+.paymentVerification,
+.reportDelivery,
+.reportHeader,
+.reportSection,
+.reportActions,
+.resultHero .juzaMessage,
+.resultHero .adviceBox,
+.resultHero .paidBox,
+.resultHero .premiumCtaPanel {
+  border-color: transparent !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.13),
+    inset 0 -1px rgba(0,0,0,.28),
+    0 18px 48px rgba(0,3,13,.28),
+    0 1px 18px rgba(var(--cta-frame-accent),.05) !important;
+}
+
+.heroV11__feature {
+  background-image:
+    linear-gradient(118deg, rgba(255,255,255,.07), transparent 27%),
+    linear-gradient(155deg, rgba(13,28,54,.58), rgba(3,8,19,.68)) !important;
+}
+.heroV11__feature:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.17),
+    inset 0 -1px rgba(0,0,0,.25),
+    0 24px 56px rgba(0,3,13,.35),
+    0 1px 22px rgba(var(--cta-frame-accent),.09) !important;
+}
+
+/* CTA: dark, tactile glass with a restrained brushed-metal rim. */
+.heroV11__button {
+  background-image:
+    linear-gradient(112deg, transparent 18%, rgba(255,255,255,.16) 48%, transparent 72%),
+    linear-gradient(160deg, rgba(22,34,61,.92), rgba(7,12,29,.94)) !important;
+  color: #fff9ec !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.25),
+    inset 0 -1px rgba(0,0,0,.45),
+    0 18px 42px rgba(0,0,0,.36),
+    0 0 24px rgba(235,197,119,.11) !important;
+}
+.heroV11__button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.3),
+    inset 0 -1px rgba(0,0,0,.42),
+    0 22px 48px rgba(0,0,0,.42),
+    0 0 28px rgba(235,197,119,.16) !important;
+}
+
+/* Question scene: the answer is light and material, not an ornament. */
+.questionHero .questionCardFrame {
+  background-image:
+    radial-gradient(ellipse at 50% -5%, rgba(206,225,255,.1), transparent 42%),
+    linear-gradient(155deg, rgba(12,27,55,.74), rgba(3,8,19,.78) 62%, rgba(7,11,26,.82)) !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.16),
+    inset 0 0 52px rgba(var(--question-cyan),.045),
+    0 30px 80px rgba(0,0,0,.54) !important;
+}
+.questionHero .answerButton {
+  background-image:
+    linear-gradient(112deg, rgba(255,255,255,.075), transparent 28%),
+    linear-gradient(155deg, rgba(13,29,59,.78), rgba(4,10,25,.84)) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.12), 0 13px 30px rgba(0,0,0,.28) !important;
+}
+.questionHero .answerButton:hover,
+.questionHero .answerButton:focus-visible {
+  transform: translateY(-2px) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.18), 0 18px 38px rgba(0,0,0,.35), 0 0 18px rgba(var(--question-cyan),.1) !important;
+}
+.questionCardFrame__divider span,
+.progress__marker {
+  border-radius: 50% !important;
+  transform: translateY(-50%) !important;
+  background: #fff7dc !important;
+  box-shadow: 0 0 10px rgba(255,236,181,.52) !important;
+}
+.questionCardFrame__divider span { transform: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .panelFrameOrnaments__reflection { display: none; }
+}

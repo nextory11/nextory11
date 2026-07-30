@@ -1,0 +1,2496 @@
+/* Type-specific environmental architecture. Loaded last so a completed type can
+   faithfully override the shared preview skin without affecting its logic. */
+
+.typeFrameAsset {
+  position: absolute !important;
+  z-index: 0 !important;
+  display: none;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.resultHero[data-star-type="persistence"] .typeFrameAsset {
+  display: block;
+}
+
+.resultHero[data-star-type="persistence"] .resultCard {
+  width: min(1180px, calc(100% - 40px));
+  padding-inline: clamp(22px, 4.2vw, 58px);
+  padding-block-end: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* The visible Guardian architecture extends beyond its content boxes. These
+   values reserve that physical overhang before adding the intended silence. */
+.resultHero[data-star-type="persistence"] {
+  --guardian-header-gap: clamp(60px, 5vw, 72px);
+  --guardian-major-gap: clamp(46px, 4vw, 58px);
+  --guardian-premium-gap: clamp(94px, 7.5vw, 120px);
+  --guardian-juza-overhang: clamp(57px, 4.2vw, 61px);
+  --guardian-insight-overhang: clamp(30px, 2.7vw, 36px);
+  padding-block-end: clamp(72px, 6.5vw, 96px);
+}
+
+.resultHero[data-star-type="persistence"] .resultCard::before,
+.resultHero[data-star-type="persistence"] .resultCard__aura,
+.resultHero[data-star-type="persistence"] .juzaMessage > .panelFrameOrnaments,
+.resultHero[data-star-type="persistence"] .adviceBox > .panelFrameOrnaments,
+.resultHero[data-star-type="persistence"] .premiumCtaPanel > .panelFrameOrnaments,
+.resultHero[data-star-type="persistence"] .adviceBox::before,
+.resultHero[data-star-type="persistence"] .adviceBox::after {
+  display: none !important;
+}
+
+.resultHero[data-star-type="persistence"] .resultIcon {
+  overflow: visible;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.resultHero[data-star-type="persistence"] .resultIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(86, 170, 255, .42));
+}
+
+.resultHero[data-star-type="persistence"] .resultRealm {
+  display: inline-block;
+}
+
+.resultHero[data-star-type="persistence"] .resultRealm::after {
+  content: "GUARDIAN" !important;
+}
+
+.resultHero[data-star-type="persistence"] .resultKicker {
+  display: none;
+}
+
+.resultScene--designMaster[data-master-scene="guardian"] .designMasterScene__background {
+  background-size: cover;
+}
+
+.resultScene--designMaster[data-master-scene="evolver"] .designMasterScene__background {
+  background-size: cover;
+}
+
+.resultScene--designMaster[data-master-scene="evolver"] .designMasterScene__stars,
+.resultScene--designMaster[data-master-scene="evolver"] .designMasterScene__dust {
+  display: none;
+}
+
+.resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__background {
+  background-size: cover;
+}
+
+.resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__stars,
+.resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__dust,
+.resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__signature {
+  display: none;
+}
+
+.resultScene--designMaster[data-master-scene="harmonizer"] .designMasterScene__background {
+  background-size: cover;
+}
+
+.resultScene--designMaster[data-master-scene="harmonizer"] .designMasterScene__stars,
+.resultScene--designMaster[data-master-scene="harmonizer"] .designMasterScene__dust,
+.resultScene--designMaster[data-master-scene="harmonizer"] .designMasterScene__signature {
+  display: none;
+}
+
+.resultHero[data-star-type="persistence"] .guardianEnglishTitle {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  margin: clamp(14px, 1.4vw, 20px) auto 8px;
+  padding: 5px 28px 4px;
+  border-block: 1px solid rgba(255, 218, 132, .6);
+  color: #ffe5a5;
+  font: 600 clamp(17px, 1.55vw, 22px) Georgia, "Times New Roman", serif;
+  letter-spacing: .32em;
+  text-indent: .32em;
+  text-shadow: 0 0 18px rgba(90, 174, 255, .5), 0 2px 8px rgba(0, 13, 46, .9);
+}
+
+.resultHero[data-star-type="persistence"] .resultTitle::after {
+  content: "守護力タイプ" !important;
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage {
+  isolation: isolate;
+  width: min(100%, 1120px);
+  max-width: none;
+  min-height: clamp(440px, 34vw, 470px);
+  margin-inline: auto;
+  padding: clamp(78px, 8vw, 105px) clamp(36px, 5vw, 74px) clamp(54px, 6vw, 78px) clamp(300px, 29vw, 350px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="persistence"] .resultLead {
+  margin-block-end: calc(var(--guardian-header-gap) + var(--guardian-juza-overhang)) !important;
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage {
+  margin-block-end: calc(
+    var(--guardian-major-gap) +
+    var(--guardian-juza-overhang) +
+    var(--guardian-insight-overhang)
+  ) !important;
+}
+
+/* Guardian desktop: the approved AI JUZA export carries a deep transparent
+   lower bay. Let the insight portals rise into that bay without touching the
+   frame's visible silver-blue architecture. */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="persistence"] .resultLead {
+    margin-block-end: calc(
+      var(--guardian-juza-overhang) +
+      clamp(26px, 2.4vw, 34px)
+    ) !important;
+  }
+
+  .resultHero[data-star-type="persistence"] .juzaMessage {
+    margin-block-end: clamp(48px, 3.5vw, 56px) !important;
+  }
+}
+
+.resultHero[data-star-type="persistence"] > .paidBox {
+  margin-block-start: calc(var(--guardian-premium-gap) + var(--guardian-insight-overhang)) !important;
+}
+
+.resultHero[data-star-type="persistence"] .typeFrameAsset--juza {
+  z-index: 3 !important;
+  inset: 50% auto auto 50%;
+  width: 112%;
+  height: 126%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage::before {
+  content: "" !important;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 15.1%;
+  width: 16.7%;
+  height: 58%;
+  border: 0 !important;
+  border-radius: 49% 49% 14% 14% / 32% 32% 10% 10%;
+  clip-path: inset(0 round 49% 49% 14% 14% / 32% 32% 10% 10%);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(90, 174, 255, .18), rgba(13, 51, 105, .34) 58%, rgba(3, 20, 52, .54) 100%) !important;
+  box-shadow:
+    inset 0 0 34px rgba(117, 199, 255, .13),
+    inset 0 -24px 32px rgba(0, 17, 48, .22);
+  backdrop-filter: blur(7px) saturate(1.08);
+  -webkit-backdrop-filter: blur(7px) saturate(1.08);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="persistence"] .guardianJuzaPortrait {
+  z-index: 4 !important;
+  inset: 50% auto auto 15.1%;
+  width: 16.7%;
+  height: 58%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 48% 48% 11% 11% / 29% 29% 9% 9%;
+  clip-path: inset(0 round 48% 48% 11% 11% / 29% 29% 9% 9%);
+  filter: drop-shadow(0 0 16px rgba(81, 176, 255, .36));
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage > span {
+  display: block;
+  margin-block-end: 18px;
+  color: #fff0ba;
+  font-family: Georgia, "Yu Mincho", serif;
+  letter-spacing: .18em;
+}
+
+.resultHero[data-star-type="persistence"] .juzaMessage p {
+  margin: 0;
+  padding: clamp(16px, 1.8vw, 22px) clamp(18px, 2.2vw, 28px);
+  border: 1px solid rgba(158, 211, 255, .28);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(10, 42, 91, .62), rgba(3, 20, 52, .48) 58%, rgba(20, 57, 108, .42)),
+    rgba(2, 17, 44, .34);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, .16),
+    inset 0 0 28px rgba(69, 148, 230, .08),
+    0 12px 30px rgba(0, 11, 35, .24);
+  backdrop-filter: blur(9px) saturate(1.12);
+  -webkit-backdrop-filter: blur(9px) saturate(1.12);
+  color: rgba(249, 252, 255, .94);
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.95;
+  text-shadow: 0 2px 7px rgba(0, 8, 30, .92);
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="persistence"] .juzaMessage p {
+    /*
+     * Carry the reading glass through the narrow curved bay at the right
+     * edge, while leaving the approved silver-gold frame unobstructed.
+     */
+    margin-inline-end: clamp(-30px, -2vw, -20px);
+  }
+}
+
+.resultHero[data-star-type="persistence"] .resultGrid {
+  max-width: 1120px;
+  gap: clamp(28px, 2.8vw, 40px);
+}
+
+.resultHero[data-star-type="persistence"] .adviceBox {
+  isolation: isolate;
+  min-height: clamp(230px, 19vw, 252px);
+  padding: clamp(68px, 6vw, 78px) clamp(26px, 2.6vw, 34px) clamp(32px, 3vw, 40px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse at 50% 52%, rgba(3, 24, 61, .7) 0 46%, rgba(4, 30, 72, .48) 68%, transparent 88%) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: finalPanelReveal 1.05s var(--juza-card-delay, .5s) cubic-bezier(.2, .76, .22, 1) both !important;
+}
+
+.resultHero[data-star-type="persistence"] .typeFrameAsset--insight {
+  inset: 50% auto auto 50%;
+  width: 108%;
+  height: 108%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="persistence"] .adviceBox > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+.resultHero[data-star-type="persistence"] .adviceBox__icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 8px;
+  color: #d8efff;
+  filter: drop-shadow(0 0 12px rgba(72, 164, 255, .55));
+}
+
+.resultHero[data-star-type="persistence"] .adviceBox strong {
+  display: block;
+  color: #fff0b6;
+  font-size: clamp(16px, 1.45vw, 18px);
+  text-align: center;
+}
+
+.resultHero[data-star-type="persistence"] .adviceBox p {
+  margin-block-start: 8px;
+  color: rgba(248, 252, 255, .94);
+  font-size: clamp(14px, 1.22vw, 16px);
+  text-align: center;
+  line-height: 1.7;
+  text-shadow: 0 2px 7px rgba(0, 13, 42, .8);
+}
+
+.resultHero[data-star-type="persistence"] > .paidBox {
+  width: min(1120px, calc(100% - 40px));
+}
+
+.resultHero[data-star-type="persistence"] .premiumCtaPanel {
+  isolation: isolate;
+  min-height: clamp(210px, 21vw, 250px);
+  padding: clamp(48px, 5vw, 64px) clamp(50px, 6vw, 82px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="persistence"] .typeFrameAsset--cta {
+  inset: 50% auto auto 50%;
+  width: 108%;
+  height: 120%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero:not([data-star-type="persistence"]) .typeFrameAsset--cta {
+  display: none;
+}
+
+.resultHero[data-star-type="persistence"] .premiumCtaPanel > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 899px) {
+  .resultScene--designMaster {
+    position: fixed !important;
+  }
+
+  .resultHero[data-star-type="persistence"] {
+    --guardian-header-gap: clamp(64px, 9vw, 88px);
+    --guardian-major-gap: clamp(64px, 9vw, 88px);
+    --guardian-premium-gap: clamp(64px, 9vw, 88px);
+    --guardian-juza-overhang: 28px;
+    --guardian-insight-overhang: 29px;
+    padding-block-end: clamp(72px, 9vw, 88px);
+  }
+
+  .resultHero[data-star-type="persistence"] .resultCard,
+  .resultHero[data-star-type="persistence"] > .paidBox {
+    width: min(100% - 24px, 720px);
+  }
+
+  .resultHero[data-star-type="persistence"] .juzaMessage {
+    min-height: 650px;
+    padding: 106px clamp(38px, 5vw, 48px) 72px clamp(214px, 31vw, 254px);
+  }
+
+  .resultHero[data-star-type="persistence"] .typeFrameAsset--juza {
+    width: min(118%, calc(100vw - 24px));
+    height: calc(100% + 56px);
+    object-fit: fill;
+  }
+
+  .resultHero[data-star-type="persistence"] .juzaMessage::before {
+    top: 14%;
+    left: 5%;
+    width: 29%;
+    height: 58%;
+  }
+
+  .resultHero[data-star-type="persistence"] .guardianJuzaPortrait {
+    left: 18%;
+    top: 43%;
+    width: 27%;
+    height: 56%;
+  }
+
+  .resultHero[data-star-type="persistence"] .resultGrid {
+    grid-template-columns: 1fr;
+    gap: calc(
+      clamp(32px, 5vw, 40px) +
+      var(--guardian-insight-overhang) +
+      var(--guardian-insight-overhang)
+    );
+  }
+
+  .resultHero[data-star-type="persistence"] .adviceBox {
+    width: min(100%, 520px);
+    min-height: 300px;
+    margin-inline: auto;
+    padding: 88px 54px 48px;
+  }
+
+  .resultHero[data-star-type="persistence"] .typeFrameAsset--insight {
+    width: 108%;
+    height: 108%;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="persistence"] {
+    --guardian-header-gap: clamp(48px, 14vw, 64px);
+    --guardian-major-gap: clamp(48px, 14vw, 64px);
+    --guardian-premium-gap: clamp(48px, 14vw, 64px);
+    --guardian-juza-overhang: 14px;
+    --guardian-insight-overhang: 28px;
+    padding-block-end: max(72px, env(safe-area-inset-bottom));
+  }
+
+  .resultHero[data-star-type="persistence"] .resultCard,
+  .resultHero[data-star-type="persistence"] > .paidBox {
+    width: calc(100% - 16px);
+  }
+
+  .resultHero[data-star-type="persistence"] .juzaMessage {
+    min-height: 920px;
+    padding: 168px 24px 80px 92px;
+  }
+
+  .resultHero[data-star-type="persistence"] .typeFrameAsset--juza {
+    width: min(124%, calc(100vw - 16px));
+    height: calc(100% + 28px);
+  }
+
+  .resultHero[data-star-type="persistence"] .juzaMessage::before {
+    top: 30px;
+    left: 4%;
+    width: 31%;
+    height: 146px;
+  }
+
+  .resultHero[data-star-type="persistence"] .guardianJuzaPortrait {
+    left: 20%;
+    top: 27%;
+    width: 34%;
+    height: 36%;
+  }
+
+  .resultHero[data-star-type="persistence"] .adviceBox {
+    min-height: 270px;
+    padding: 82px 38px 42px;
+  }
+
+  .resultHero[data-star-type="persistence"] .typeFrameAsset--insight {
+    width: min(108%, calc(100vw - 24px));
+    height: 108%;
+  }
+
+  .resultHero[data-star-type="persistence"] .premiumCtaPanel {
+    min-height: 240px;
+    padding: 52px 30px;
+  }
+
+  .resultHero[data-star-type="persistence"] .typeFrameAsset--cta {
+    width: min(138%, calc(100vw - 24px));
+    height: 112%;
+  }
+}
+
+/* Evolver premium offer outer picture frame. The approved scene frame is
+   reused as an unmistakable frame around the complete ¥980 explanation. */
+#root .resultHero[data-star-type="adaptability"] > .paidBox {
+  isolation: isolate;
+  overflow: visible;
+  padding: clamp(58px, 5.5vw, 74px) clamp(54px, 5vw, 70px);
+  border: 0 !important;
+  border-radius: 0;
+  background:
+    linear-gradient(135deg, rgba(8, 43, 26, .58), rgba(3, 23, 15, .74)),
+    rgba(2, 18, 12, .64) !important;
+  box-shadow:
+    inset 0 0 70px rgba(66, 177, 91, .08),
+    0 30px 70px rgba(0, 9, 5, .42) !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] > .paidBox > .panelFrameOrnaments {
+  position: absolute !important;
+  z-index: 4 !important;
+  display: block !important;
+  inset: -26px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background: url("/images/result-scenes/evolver/overlays/frame.png") center / 100% 100% no-repeat !important;
+  filter:
+    drop-shadow(0 16px 28px rgba(0, 8, 4, .7))
+    drop-shadow(0 0 18px rgba(118, 228, 112, .18))
+    drop-shadow(0 0 12px rgba(239, 194, 72, .16));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="adaptability"] > .paidBox > .panelFrameOrnaments > * {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] > .paidBox > .premiumCtaPanel {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="adaptability"] > .paidBox {
+    width: calc(100% - 28px);
+    padding: 46px 24px;
+  }
+
+  #root .resultHero[data-star-type="adaptability"] > .paidBox > .panelFrameOrnaments {
+    inset: -16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="persistence"] .typeFrameAsset,
+  .resultHero[data-star-type="persistence"] .resultIcon img {
+    animation: none !important;
+  }
+}
+
+/* Explorer's approved transparent observatory structures supersede the
+   provisional CSS-only brass panels above. The source PNG canvases include
+   generous transparent staging space, so each image is scaled from its real
+   alpha bounds rather than cropped or regenerated. */
+.resultHero[data-star-type="explorer"] .typeFrameAsset {
+  display: block;
+  filter: drop-shadow(0 16px 34px rgba(0, 8, 24, .62)) drop-shadow(0 0 12px rgba(98, 184, 255, .12));
+}
+
+.resultHero[data-star-type="explorer"] .resultCard {
+  width: min(1180px, calc(100% - 40px));
+  padding-inline: clamp(22px, 4vw, 56px);
+  padding-block-end: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .resultCard::before,
+.resultHero[data-star-type="explorer"] .resultCard__aura,
+.resultHero[data-star-type="explorer"] .juzaMessage > .panelFrameOrnaments,
+.resultHero[data-star-type="explorer"] .adviceBox > .panelFrameOrnaments,
+.resultHero[data-star-type="explorer"] .premiumCtaPanel > .panelFrameOrnaments,
+.resultHero[data-star-type="explorer"] .adviceBox::before,
+.resultHero[data-star-type="explorer"] .adviceBox::after {
+  display: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .resultIcon {
+  overflow: visible;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .resultIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(79, 172, 255, .34));
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage {
+  isolation: isolate;
+  width: min(100%, 1120px);
+  max-width: none;
+  min-height: clamp(350px, 30vw, 410px);
+  padding: clamp(72px, 7vw, 92px) clamp(44px, 5vw, 70px) clamp(60px, 6vw, 78px) clamp(300px, 28vw, 350px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .typeFrameAsset--juza {
+  inset: 50% auto auto 50%;
+  width: 110%;
+  height: 132%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage > :not(.typeFrameAsset),
+.resultHero[data-star-type="explorer"] .adviceBox > :not(.typeFrameAsset),
+.resultHero[data-star-type="explorer"] .premiumCtaPanel > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+.resultHero[data-star-type="explorer"] .resultGrid {
+  max-width: 1120px;
+  gap: clamp(28px, 2.5vw, 36px) !important;
+}
+
+.resultHero[data-star-type="explorer"] .adviceBox {
+  isolation: isolate;
+  display: flex;
+  min-height: clamp(182px, 16vw, 206px);
+  padding: clamp(34px, 3vw, 42px) 142px clamp(30px, 2.6vw, 38px) clamp(20px, 2vw, 24px);
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .typeFrameAsset--insight {
+  inset: 50% auto auto 50%;
+  width: 112%;
+  height: auto !important;
+  aspect-ratio: auto;
+  object-fit: contain;
+  transform: translate(-50%, -50%) scaleY(1.32);
+}
+
+.resultHero[data-star-type="explorer"] .adviceBox__icon {
+  position: absolute !important;
+  z-index: 2;
+  right: 14.5%;
+  left: auto;
+  top: 50%;
+  width: clamp(46px, 4.2vw, 54px);
+  height: clamp(46px, 4.2vw, 54px);
+  margin: 0;
+  transform: translate(50%, -50%) !important;
+}
+
+.resultHero[data-star-type="explorer"] .adviceBox strong,
+.resultHero[data-star-type="explorer"] .adviceBox p {
+  position: relative;
+  z-index: 2;
+}
+
+.resultHero[data-star-type="explorer"] .adviceBox strong {
+  font-size: 17px;
+  letter-spacing: .02em;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="explorer"] .resultCard {
+    width: min(1320px, calc(100% - 24px));
+    padding-inline: clamp(20px, 2vw, 32px);
+  }
+
+  .resultHero[data-star-type="explorer"] .resultGrid {
+    width: 100%;
+    max-width: 1260px;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(20px, 1.8vw, 28px) !important;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox {
+    width: 100%;
+    min-height: clamp(190px, 15vw, 220px);
+    margin-inline: 0;
+    padding: clamp(40px, 3.4vw, 48px) 118px clamp(34px, 2.8vw, 40px) 20px;
+  }
+
+  .resultHero[data-star-type="explorer"] .typeFrameAsset--insight {
+    width: 112%;
+    transform: translate(-50%, -50%) scaleY(1.58);
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block !important;
+    inset: 32px 20px 26px 122px;
+    border: 1px solid rgba(149, 207, 255, .24);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(2, 18, 48, .78), rgba(8, 47, 92, .58));
+    box-shadow: inset 0 1px rgba(255, 236, 185, .12), 0 12px 28px rgba(0, 8, 30, .22);
+    backdrop-filter: blur(8px) saturate(1.08);
+    -webkit-backdrop-filter: blur(8px) saturate(1.08);
+    pointer-events: none;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox strong,
+  .resultHero[data-star-type="explorer"] .adviceBox p {
+    width: 100%;
+    margin-inline: 0;
+    overflow-wrap: anywhere;
+    transform: translateY(10px);
+    text-shadow: 0 1px 3px rgba(0, 4, 18, .98), 0 0 12px rgba(0, 14, 44, .88);
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox strong {
+    margin-block-end: 10px;
+    font-size: clamp(17px, 1.25vw, 19px);
+    line-height: 1.45;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox p {
+    font-size: clamp(15px, 1.05vw, 16px);
+    line-height: 1.68;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox__icon {
+    right: 10%;
+    left: auto;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+}
+
+.resultHero[data-star-type="explorer"] > .paidBox {
+  width: min(1060px, calc(100% - 40px));
+}
+
+.resultHero[data-star-type="explorer"] > .paidBox > :not(.premiumCtaPanel),
+.resultHero[data-star-type="explorer"] > .paidBox > .panelFrameOrnaments {
+  display: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .premiumCtaPanel {
+  isolation: isolate;
+  min-height: clamp(180px, 18vw, 220px);
+  padding: clamp(42px, 5vw, 58px) clamp(48px, 6vw, 78px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .typeFrameAsset--cta {
+  inset: 50% auto auto 50%;
+  width: 115%;
+  height: 170%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .resultHero[data-star-type="explorer"] .resultCard,
+  .resultHero[data-star-type="explorer"] > .paidBox {
+    width: min(100% - 24px, 720px);
+  }
+
+  .resultHero[data-star-type="explorer"] .juzaMessage {
+    min-height: 570px;
+    padding: 104px 44px 72px clamp(210px, 30vw, 250px);
+  }
+
+  .resultHero[data-star-type="explorer"] .resultGrid {
+    grid-template-columns: 1fr;
+    gap: clamp(44px, 7vw, 58px) !important;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox {
+    width: min(100%, 520px);
+    min-height: 250px;
+    margin-inline: auto;
+    padding: 50px 170px 42px 38px;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox__icon {
+    right: 14.5%;
+    left: auto;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="explorer"] .resultCard,
+  .resultHero[data-star-type="explorer"] > .paidBox {
+    width: calc(100% - 16px);
+  }
+
+  .resultHero[data-star-type="explorer"] .juzaMessage {
+    min-height: 820px;
+    padding: 158px 24px 82px 96px;
+  }
+
+  .resultHero[data-star-type="explorer"] .typeFrameAsset--juza {
+    width: min(126%, calc(100vw - 12px));
+    height: calc(100% + 28px);
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox {
+    min-height: 190px;
+    padding: 42px 120px 34px 24px;
+  }
+
+  .resultHero[data-star-type="explorer"] .typeFrameAsset--insight {
+    width: min(108%, calc(100vw - 16px));
+    height: auto !important;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .resultHero[data-star-type="explorer"] .adviceBox__icon {
+    right: 14.5%;
+    left: auto;
+    width: 44px;
+    height: 44px;
+  }
+
+  .resultHero[data-star-type="explorer"] .premiumCtaPanel {
+    min-height: 230px;
+    padding: 50px 28px;
+  }
+
+  .resultHero[data-star-type="explorer"] .typeFrameAsset--cta {
+    width: min(138%, calc(100vw - 20px));
+    height: 170%;
+  }
+}
+
+/*
+ * Visible-boundary spacing pass.
+ * These scenes use architectural frames whose artwork extends outside the
+ * content box.  The values below are intentionally larger than ordinary CSS
+ * card gaps so the rendered metalwork, crystals and light never touch.
+ */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="thinker"] .resultLead {
+    margin-block-end: clamp(292px, 23vw, 324px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(108px, 8.5vw, 128px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox {
+    margin-block-start: clamp(112px, 9vw, 136px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultLead {
+    margin-block-end: clamp(300px, 24vw, 332px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .juzaMessage {
+    margin-block-end: clamp(116px, 9vw, 136px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] > .paidBox {
+    margin-block-start: clamp(120px, 9.5vw, 144px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(308px, 25vw, 344px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(124px, 9.5vw, 144px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(128px, 10vw, 152px) !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .resultHero[data-star-type="thinker"] .resultLead,
+  .resultHero[data-star-type="intuition"] .resultLead,
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(168px, 22vw, 208px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage,
+  .resultHero[data-star-type="intuition"] .juzaMessage,
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(80px, 11vw, 104px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox,
+  .resultHero[data-star-type="intuition"] > .paidBox,
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(88px, 12vw, 120px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="thinker"] .resultLead,
+  .resultHero[data-star-type="intuition"] .resultLead,
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(88px, 23vw, 112px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage,
+  .resultHero[data-star-type="intuition"] .juzaMessage,
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(88px, 23vw, 104px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(112px, 29vw, 128px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultGrid,
+  .resultHero[data-star-type="intuition"] .resultGrid,
+  .resultHero[data-star-type="expression"] .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox,
+  .resultHero[data-star-type="intuition"] > .paidBox,
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(72px, 19vw, 96px) !important;
+  }
+}
+
+/*
+ * Harmonizer garden rhythm.
+ * Calibrated against rendered outer edges, including ResultCard's closing
+ * space, so water and atmosphere remain visible between each garden chamber.
+ */
+.resultHero[data-star-type="thinker"] .adviceBox {
+  animation: finalPanelReveal 0.82s var(--ease-out-expo) both !important;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="thinker"] {
+    padding-block-end: clamp(88px, 7vw, 104px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultLead {
+    margin-block-end: clamp(96px, 7vw, 112px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(104px, 8vw, 120px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox {
+    margin-block-start: clamp(64px, 5vw, 80px) !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .resultHero[data-star-type="thinker"] {
+    padding-block-end: clamp(80px, 10vw, 88px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultLead {
+    margin-block-end: clamp(76px, 10vw, 92px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(84px, 11vw, 100px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultGrid {
+    gap: clamp(24px, 3.5vw, 32px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox {
+    margin-block-start: clamp(56px, 8vw, 72px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="thinker"] {
+    padding-block-end: clamp(73px, 20vw, 80px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultLead {
+    margin-block-end: clamp(60px, 16vw, 68px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(90px, 24vw, 98px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero[data-star-type="thinker"] > .paidBox {
+    margin-block-start: clamp(52px, 14vw, 62px) !important;
+  }
+}
+
+/*
+ * Intuitive observatory rhythm.
+ * The brass instruments remain at their approved scale; document space keeps
+ * each station independent and lets the existing deep observatory show
+ * between their visible foundations.
+ */
+.resultHero[data-star-type="intuition"] .adviceBox {
+  animation: finalPanelReveal 0.82s var(--ease-out-expo) both !important;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="intuition"] {
+    padding-block-end: clamp(88px, 7vw, 108px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultLead {
+    margin-block-end: clamp(96px, 7.25vw, 112px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .juzaMessage {
+    margin-block-end: clamp(112px, 8.25vw, 128px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] > .paidBox {
+    margin-block-start: clamp(68px, 5vw, 80px) !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .resultHero[data-star-type="intuition"] {
+    padding-block-end: clamp(80px, 10vw, 88px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultLead {
+    margin-block-end: clamp(80px, 10.5vw, 96px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .juzaMessage {
+    margin-block-end: clamp(84px, 12vw, 104px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultGrid {
+    gap: clamp(24px, 3.5vw, 32px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] > .paidBox {
+    margin-block-start: clamp(56px, 8vw, 72px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="intuition"] {
+    padding-block-end: clamp(73px, 20vw, 80px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultLead {
+    margin-block-end: clamp(60px, 16vw, 68px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .juzaMessage {
+    margin-block-end: clamp(68px, 18vw, 76px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero[data-star-type="intuition"] > .paidBox {
+    margin-block-start: clamp(52px, 15vw, 64px) !important;
+  }
+}
+
+/*
+ * Light-bringer palace rhythm.
+ * Preserve the white-gold architecture at full scale while giving every
+ * chamber an illuminated corridor of its own.  A restrained local bloom
+ * keeps adjacent foundations from merging into a single bright band.
+ */
+.resultHero[data-star-type="expression"] .adviceBox {
+  animation: finalPanelReveal 0.82s var(--ease-out-expo) both !important;
+}
+
+.resultHero[data-star-type="expression"] .juzaMessage,
+.resultHero[data-star-type="expression"] .adviceBox,
+.resultHero[data-star-type="expression"] .paidBox,
+.resultHero[data-star-type="expression"] .premiumCtaPanel {
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.28),
+    inset 0 -1px rgba(222, 184, 108, 0.08),
+    0 18px 48px rgba(1, 6, 20, 0.24),
+    0 0 20px rgba(var(--scene-primary), 0.05) !important;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="expression"] {
+    padding-block-end: clamp(92px, 7.5vw, 112px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(104px, 7.75vw, 120px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(120px, 9vw, 136px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(72px, 5.5vw, 88px) !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .resultHero[data-star-type="expression"] {
+    padding-block-end: clamp(80px, 10vw, 92px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(84px, 11vw, 100px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(88px, 12vw, 108px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultGrid {
+    gap: clamp(24px, 3.5vw, 32px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(60px, 8.5vw, 76px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="expression"] {
+    padding-block-end: clamp(73px, 20vw, 84px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultLead {
+    margin-block-end: clamp(60px, 16vw, 68px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .juzaMessage {
+    margin-block-end: clamp(68px, 18vw, 76px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero[data-star-type="expression"] > .paidBox {
+    margin-block-start: clamp(52px, 15vw, 68px) !important;
+  }
+}
+
+/*
+ * Empath and Evolver use the approved transparent architectural assets from
+ * their Design Master folders.  The transparent PNG is the physical structure;
+ * the CSS box is only a layout and text-safety wrapper.
+ */
+.designMasterScene__outerFrame {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset,
+.resultHero[data-star-type="adaptability"] .typeFrameAsset {
+  display: block;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) {
+  padding-block-end: clamp(80px, 7vw, 104px) !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultCard {
+  width: min(1180px, calc(100% - 40px));
+  padding-inline: clamp(22px, 4vw, 56px);
+  padding-block-end: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultCard::before,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultCard__aura,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage > .panelFrameOrnaments,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox > .panelFrameOrnaments,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .premiumCtaPanel > .panelFrameOrnaments,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox::before,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox::after {
+  display: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultIcon {
+  overflow: visible;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(var(--scene-primary), .4));
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultLead {
+  margin-block-end: clamp(96px, 7.5vw, 112px) !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage {
+  isolation: isolate;
+  width: min(100%, 1120px);
+  max-width: none;
+  min-height: clamp(350px, 30vw, 410px);
+  margin-inline: auto;
+  margin-block-end: clamp(112px, 8.5vw, 132px) !important;
+  padding: clamp(70px, 7vw, 90px) clamp(42px, 5vw, 68px) clamp(58px, 6vw, 76px) clamp(300px, 28vw, 350px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--juza {
+  inset: 50% auto auto 50%;
+  width: 111%;
+  height: 122%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage > :not(.typeFrameAsset),
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox > :not(.typeFrameAsset),
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .premiumCtaPanel > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage > span {
+  display: block;
+  margin-block-end: 16px;
+  color: #f8deb0;
+  font-family: Georgia, "Yu Mincho", serif;
+  letter-spacing: .16em;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage p {
+  color: rgba(251, 249, 244, .95);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.92;
+  text-shadow: 0 2px 8px rgba(3, 8, 18, .9);
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultGrid {
+  max-width: 1120px;
+  gap: clamp(46px, 4vw, 64px);
+}
+
+/* Evolver: keep the three insight portals visually connected to the AI JUZA
+   structure. The approved PNGs include generous transparent breathing room,
+   so this smaller layout gap still leaves their visible ornaments separate. */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="adaptability"] .juzaMessage {
+    margin-block-end: clamp(24px, 2vw, 34px) !important;
+  }
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox {
+  isolation: isolate;
+  min-height: clamp(300px, 27vw, 340px);
+  padding: clamp(86px, 8vw, 104px) clamp(30px, 3vw, 42px) clamp(52px, 5vw, 66px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: finalPanelReveal .82s var(--ease-out-expo) both !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--insight {
+  inset: 50% auto auto 50%;
+  width: 116%;
+  height: 116%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox strong,
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox p {
+  text-align: center;
+  text-shadow: 0 2px 7px rgba(2, 9, 18, .85);
+}
+
+/* Evolver insight copy: a restrained inner glass bay improves readability
+   without covering the approved living-wood frame or its crystal ornaments. */
+#root .resultHero[data-star-type="adaptability"] .adviceBox::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  z-index: 0;
+  inset: 43% 11.5% 11.5%;
+  border: 0 !important;
+  border-radius: 24px 24px 34px 34px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(174, 243, 142, .12), transparent 62%),
+    linear-gradient(145deg, rgba(11, 59, 43, .58), rgba(6, 34, 28, .48));
+  box-shadow:
+    inset 0 0 24px rgba(94, 207, 130, .09),
+    inset 0 1px 0 rgba(225, 255, 210, .08);
+  backdrop-filter: blur(3px) saturate(108%);
+  -webkit-backdrop-filter: blur(3px) saturate(108%);
+  pointer-events: none;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox {
+  width: min(1060px, calc(100% - 40px));
+  margin-block-start: clamp(112px, 8vw, 132px) !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox > :not(.premiumCtaPanel),
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox > .panelFrameOrnaments {
+  display: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .premiumCtaPanel {
+  isolation: isolate;
+  min-height: clamp(180px, 18vw, 220px);
+  padding: clamp(42px, 5vw, 58px) clamp(48px, 6vw, 78px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--cta {
+  inset: 50% auto auto 50%;
+  width: 110%;
+  height: 122%;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+}
+
+/* Distinct environmental materials, retained from each approved world. */
+.resultHero[data-star-type="empathy"] .typeFrameAsset {
+  filter: drop-shadow(0 14px 30px rgba(13, 2, 35, .55)) drop-shadow(0 0 12px rgba(231, 153, 224, .14));
+}
+
+.resultHero[data-star-type="adaptability"] .typeFrameAsset {
+  filter: drop-shadow(0 15px 32px rgba(0, 14, 11, .64)) drop-shadow(0 0 12px rgba(114, 228, 113, .12));
+}
+
+/*
+ * Pioneer and Visionary do not yet have approved transparent frame exports.
+ * Their review candidates therefore use restrained CSS material architecture
+ * derived from each master: angular blue horizon metal and precise blue-gold
+ * future architecture respectively. Explorer's later asset rules supersede
+ * the provisional shared declarations in this section.
+ */
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) {
+  padding-block-end: clamp(84px, 7vw, 108px) !important;
+}
+
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultLead {
+  margin-block-end: clamp(96px, 7.5vw, 116px) !important;
+}
+
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .juzaMessage {
+  margin-block-end: clamp(112px, 8.5vw, 136px) !important;
+}
+
+/* Explorer: the approved observatory PNG contains a deep transparent lower
+   bay. Pull the insight row into that bay while keeping visible brass edges
+   and card ornaments comfortably separated. */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="explorer"] .juzaMessage {
+    margin-block-end: clamp(24px, 2vw, 34px) !important;
+  }
+}
+
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) > .paidBox {
+  margin-block-start: clamp(112px, 8.5vw, 140px) !important;
+}
+
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .juzaMessage,
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .adviceBox,
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .premiumCtaPanel {
+  border-radius: 2px !important;
+  backdrop-filter: blur(3px) saturate(1.04) !important;
+  -webkit-backdrop-filter: blur(3px) saturate(1.04) !important;
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage,
+.resultHero[data-star-type="explorer"] .adviceBox,
+.resultHero[data-star-type="explorer"] .premiumCtaPanel {
+  border: 1px solid rgba(207, 164, 78, .58) !important;
+  background: linear-gradient(145deg, rgba(4, 22, 52, .82), rgba(2, 13, 34, .72)) !important;
+  box-shadow: inset 0 0 0 4px rgba(10, 42, 82, .45), inset 0 1px rgba(255, 226, 157, .26), 0 22px 56px rgba(0, 5, 18, .38) !important;
+}
+
+.resultHero[data-star-type="action"] .juzaMessage,
+.resultHero[data-star-type="action"] .adviceBox,
+.resultHero[data-star-type="action"] .premiumCtaPanel {
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+  border: 1px solid rgba(133, 192, 234, .58) !important;
+  background: linear-gradient(145deg, rgba(5, 28, 61, .88), rgba(2, 15, 37, .76)) !important;
+  box-shadow: inset 0 0 0 4px rgba(31, 101, 154, .28), inset 0 1px rgba(233, 246, 255, .2), 0 24px 58px rgba(0, 6, 19, .42) !important;
+}
+
+.resultHero[data-star-type="action"] .adviceBox,
+.resultHero[data-star-type="action"] .adviceBox strong,
+.resultHero[data-star-type="action"] .adviceBox p {
+  text-align: center;
+}
+
+.resultHero[data-star-type="action"] .adviceBox strong,
+.resultHero[data-star-type="action"] .adviceBox p {
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Pioneer full-bleed world and sacred outer frame.
+ * The approved frame is a page-level overlay: background below it, all UI
+ * above it.  The image bytes and scene composition remain untouched.
+ */
+.app:has(.resultHero[data-star-type="action"]) {
+  padding: 0;
+}
+
+.resultScene--designMaster[data-master-scene="pioneer"] {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100svh;
+  max-width: none !important;
+}
+
+.resultScene--designMaster[data-master-scene="pioneer"] .designMasterScene__background {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.resultScene--designMaster[data-master-scene="pioneer"] .designMasterScene__outerFrame {
+  position: fixed;
+  z-index: 8;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  object-fit: fill;
+  opacity: .96;
+  filter:
+    drop-shadow(0 0 12px rgba(73, 174, 255, .3))
+    drop-shadow(0 0 24px rgba(233, 189, 105, .18));
+  pointer-events: none;
+}
+
+@media (max-width: 599px) {
+  .resultScene--designMaster[data-master-scene="pioneer"] .designMasterScene__background {
+    background-position: 50% 50%;
+  }
+
+  .resultScene--designMaster[data-master-scene="pioneer"] .designMasterScene__outerFrame {
+    opacity: .9;
+  }
+}
+
+/* Pioneer hero copy readability
+ * Keep the horizon artwork untouched while shielding the white copy from the
+ * bright road light with a restrained, localized cinematic glass treatment.
+ */
+.resultHero[data-star-type="action"] .english,
+.resultHero[data-star-type="action"] .resultLead {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: min(92%, 780px);
+  margin-inline: auto;
+  border: 1px solid rgba(157, 212, 255, .18);
+  background:
+    linear-gradient(90deg, transparent, rgba(3, 14, 34, .66) 14%, rgba(3, 14, 34, .74) 50%, rgba(3, 14, 34, .66) 86%, transparent);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, .08),
+    0 12px 34px rgba(0, 7, 22, .24);
+  -webkit-backdrop-filter: blur(5px) saturate(108%);
+  backdrop-filter: blur(5px) saturate(108%);
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 16px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="action"] .english {
+  padding: 7px clamp(28px, 5vw, 64px);
+}
+
+.resultHero[data-star-type="action"] .resultLead {
+  padding: 9px clamp(24px, 5vw, 58px);
+}
+
+.resultHero[data-star-type="action"] .resultTitle::after,
+.resultHero[data-star-type="action"] .english::after,
+.resultHero[data-star-type="action"] .resultLead::before {
+  text-shadow:
+    0 2px 4px rgba(0, 5, 18, .98),
+    0 0 12px rgba(0, 8, 26, .92),
+    0 0 22px rgba(93, 200, 255, .28);
+}
+
+@media (max-width: 599px) {
+  .resultHero[data-star-type="action"] .english,
+  .resultHero[data-star-type="action"] .resultLead {
+    max-width: calc(100% - 24px);
+    -webkit-backdrop-filter: blur(4px) saturate(105%);
+    backdrop-filter: blur(4px) saturate(105%);
+  }
+
+  .resultHero[data-star-type="action"] .english {
+    padding-inline: 24px;
+  }
+
+  .resultHero[data-star-type="action"] .resultLead {
+    padding-inline: 20px;
+  }
+}
+
+.resultHero[data-star-type="leader"] .juzaMessage,
+.resultHero[data-star-type="leader"] .adviceBox,
+.resultHero[data-star-type="leader"] .premiumCtaPanel {
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+  border: 1px solid rgba(206, 166, 82, .6) !important;
+  background: linear-gradient(145deg, rgba(5, 28, 66, .86), rgba(2, 13, 39, .78)) !important;
+  box-shadow: inset 0 0 0 3px rgba(49, 108, 189, .25), inset 0 1px rgba(255, 225, 159, .22), 0 24px 60px rgba(0, 5, 20, .44) !important;
+}
+
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .panelFrameOrnaments__corner,
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .panelFrameOrnaments__crest,
+.resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .panelFrameOrnaments__sideJewel {
+  display: none !important;
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  .designMasterScene__outerFrame {
+    position: fixed;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultCard,
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox {
+    width: min(100% - 24px, 720px);
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultLead {
+    margin-block-end: clamp(72px, 10vw, 92px) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage {
+    min-height: 570px;
+    margin-block-end: clamp(80px, 11vw, 104px) !important;
+    padding: 104px 44px 72px clamp(210px, 30vw, 250px);
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultGrid {
+    grid-template-columns: 1fr;
+    gap: clamp(72px, 10vw, 88px) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox {
+    width: min(100%, 520px);
+    min-height: 350px;
+    margin-inline: auto;
+    padding: 110px 48px 66px;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox {
+    margin-block-start: clamp(80px, 11vw, 104px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) {
+    padding-block-end: clamp(80px, 10vw, 92px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultLead,
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .juzaMessage,
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) > .paidBox {
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultLead {
+    margin-block-end: clamp(76px, 10vw, 96px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .juzaMessage {
+    margin-block-end: clamp(84px, 11vw, 104px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultGrid {
+    gap: clamp(32px, 5vw, 40px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) > .paidBox {
+    margin-block-start: clamp(88px, 12vw, 112px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .designMasterScene__outerFrame {
+    position: fixed;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) {
+    padding-block-end: max(72px, env(safe-area-inset-bottom)) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultCard,
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox {
+    width: calc(100% - 16px);
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultLead {
+    margin-block-end: clamp(56px, 16vw, 68px) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage {
+    min-height: 780px;
+    margin-block-end: clamp(64px, 18vw, 76px) !important;
+    padding: 150px 24px 78px 90px;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--juza {
+    width: min(126%, calc(100vw - 12px));
+    height: calc(100% + 24px);
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .adviceBox {
+    min-height: 330px;
+    padding: 104px 34px 58px;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--insight {
+    width: min(116%, calc(100vw - 24px));
+    height: 116%;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) > .paidBox {
+    margin-block-start: clamp(72px, 20vw, 84px) !important;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .premiumCtaPanel {
+    min-height: 230px;
+    padding: 50px 28px;
+  }
+
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset--cta {
+    width: min(138%, calc(100vw - 20px));
+    height: 114%;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) {
+    padding-block-end: max(72px, env(safe-area-inset-bottom)) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultLead {
+    margin-block-end: clamp(56px, 16vw, 68px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .juzaMessage {
+    margin-block-end: clamp(64px, 18vw, 76px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) .resultGrid {
+    gap: clamp(32px, 9vw, 40px) !important;
+  }
+
+  .resultHero:is([data-star-type="explorer"], [data-star-type="action"], [data-star-type="leader"]) > .paidBox {
+    margin-block-start: clamp(72px, 20vw, 88px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .typeFrameAsset,
+  .designMasterScene__outerFrame {
+    animation: none !important;
+  }
+}
+
+/* Keep Explorer's approved image architecture authoritative over the earlier
+   provisional material declarations without changing the shared components. */
+#root .resultHero[data-star-type="explorer"] .juzaMessage,
+#root .resultHero[data-star-type="explorer"] .adviceBox,
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Explorer-specific AI JUZA portrait and safe text bay within the approved
+   observatory frame. The frame artwork itself remains unchanged. */
+#root .resultHero[data-star-type="explorer"] .juzaMessage {
+  padding: clamp(88px, 7vw, 100px) clamp(116px, 9vw, 132px) clamp(72px, 6vw, 88px) clamp(414px, 33vw, 438px) !important;
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage::after {
+  content: "" !important;
+  position: absolute;
+  z-index: 1;
+  left: 20.2% !important;
+  top: 50% !important;
+  width: 25.5% !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 50%;
+  background:
+    url("/images/result-scenes/explorer/characters/ai_juza_portrait.png") center 50% / 110% auto no-repeat,
+    radial-gradient(circle at 50% 40%, rgba(76, 166, 255, .24), rgba(8, 42, 92, .58) 58%, rgba(1, 12, 32, .94) 82%) !important;
+  box-shadow: inset 0 0 30px rgba(124, 201, 255, .2), 0 0 24px rgba(64, 151, 255, .18) !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="explorer"] .typeFrameAsset--juza {
+  z-index: 2 !important;
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage > :not(.typeFrameAsset) {
+  z-index: 3;
+}
+
+.resultHero[data-star-type="explorer"] .juzaMessage > p {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 10px 14px;
+  font-size: clamp(16px, 1.15vw, 17px);
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center !important;
+  text-shadow: 0 1px 3px rgba(0, 4, 18, .96), 0 0 14px rgba(0, 10, 36, .82);
+  background: linear-gradient(90deg, rgba(1, 15, 40, .48), rgba(2, 22, 55, .26) 78%, transparent);
+}
+
+@media (min-width: 521px) and (max-width: 899px) {
+  #root .resultHero[data-star-type="explorer"] .juzaMessage {
+    padding: 118px 58px 86px 252px !important;
+  }
+
+  .resultHero[data-star-type="explorer"] .juzaMessage::after {
+    left: 20.2% !important;
+    top: 50% !important;
+    width: 27% !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="explorer"] .juzaMessage {
+    min-height: 760px;
+    padding: 250px 52px 96px !important;
+  }
+
+  .resultHero[data-star-type="explorer"] .juzaMessage::after {
+    left: 50% !important;
+    top: 15.5% !important;
+    width: 42% !important;
+  }
+
+  .resultHero[data-star-type="explorer"] .juzaMessage > p {
+    padding: 12px 10px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}
+
+/* Evolver-specific official AI JUZA portrait inside the approved speaking socket. */
+.resultHero[data-star-type="adaptability"] .juzaMessage::after {
+  --evolver-juza-face-offset-x: clamp(8px, 1.2vw, 18px);
+  content: "" !important;
+  position: absolute;
+  z-index: 1;
+  left: 19.5% !important;
+  top: 50% !important;
+  width: 34% !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 50%;
+  background:
+    url("/images/result-scenes/evolver/characters/ai_juza_portrait.png") calc(50% - var(--evolver-juza-face-offset-x)) 4% / 103% auto no-repeat,
+    radial-gradient(circle at 50% 43%, rgba(132, 255, 160, .2), rgba(16, 83, 51, .42) 52%, rgba(1, 19, 12, .88) 79%) !important;
+  box-shadow:
+    inset 0 0 38px rgba(208, 255, 184, .2),
+    0 0 30px rgba(93, 228, 126, .24) !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center;
+  animation: evolverJuzaPresence 8.5s ease-in-out infinite !important;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="adaptability"] .typeFrameAsset--juza {
+  /*
+   * Keep the approved botanical metalwork above the reading glass. The frame
+   * has a transparent center, so the copy remains visible while every vine,
+   * crystal, and inner gold edge renders unobstructed.
+   */
+  z-index: 4 !important;
+}
+
+.resultHero[data-star-type="adaptability"] .juzaMessage {
+  padding-block-end: clamp(78px, 7vw, 96px);
+}
+
+/* The Evolver and Explorer constellation overlays carry pale raster
+   backgrounds that read as unrelated white orbs over the approved artwork. */
+.resultScene[data-master-scene="evolver"] .designMasterScene__constellation,
+.resultScene[data-master-scene="explorer"] .designMasterScene__constellation {
+  display: none !important;
+}
+
+.resultHero[data-star-type="adaptability"] .juzaMessage__particles::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 32%;
+  right: 4%;
+  top: 17%;
+  bottom: 15%;
+  border: 1px solid rgba(212, 244, 174, .12);
+  border-radius: clamp(22px, 3vw, 38px);
+  background:
+    linear-gradient(135deg, rgba(213, 255, 197, .045), transparent 34%),
+    linear-gradient(110deg, rgba(3, 34, 23, .68), rgba(7, 49, 31, .58) 58%, rgba(18, 31, 20, .64));
+  box-shadow:
+    inset 0 1px rgba(255, 244, 190, .1),
+    inset 0 0 34px rgba(60, 173, 94, .08);
+  backdrop-filter: blur(7px) saturate(108%);
+  -webkit-backdrop-filter: blur(7px) saturate(108%);
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="adaptability"] .juzaMessage > :not(.typeFrameAsset) {
+  z-index: 3;
+}
+
+.resultHero[data-star-type="adaptability"] .juzaMessage > p {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: clamp(12px, 1.4vw, 18px) clamp(18px, 2vw, 26px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  overflow-wrap: anywhere;
+}
+
+@keyframes evolverJuzaPresence {
+  0%, 100% {
+    filter: brightness(.98) saturate(.98);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    filter: brightness(1.06) saturate(1.04);
+    transform: translate(-50%, -50%) scale(1.016);
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="adaptability"] .juzaMessage::after {
+    left: 19.5% !important;
+    top: 18% !important;
+    width: 34% !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="adaptability"] .juzaMessage::after {
+    left: 19.9% !important;
+    top: 15% !important;
+    width: 36% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="adaptability"] .juzaMessage::after {
+    animation: none !important;
+  }
+}
+
+.devResultPreview--reducedMotion .resultHero[data-star-type="adaptability"] .juzaMessage::after,
+.devResultPreview--pauseMotion .resultHero[data-star-type="adaptability"] .juzaMessage::after {
+  animation: none !important;
+}
+
+/* Evolver premium-report offer: preserve the approved life-tree frame while
+   using its right-hand bay for a complete, readable ¥980 service explanation. */
+#root .resultHero[data-star-type="adaptability"] .premiumCtaPanel {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  box-sizing: border-box;
+  min-height: clamp(530px, 44vw, 570px);
+  padding: clamp(44px, 4vw, 52px) clamp(52px, 5vw, 68px) clamp(42px, 4vw, 50px) clamp(340px, 32vw, 370px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+  text-align: left;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumCtaPanel > p {
+  display: none;
+}
+
+#root .resultHero[data-star-type="adaptability"] .typeFrameAsset--cta {
+  z-index: 0 !important;
+  width: 112%;
+  height: 112%;
+  aspect-ratio: auto;
+  object-fit: fill;
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 7px;
+  padding: 18px 24px 16px;
+  border: 1px solid rgba(245, 214, 122, .42);
+  border-radius: 20px 10px 20px 10px;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(104, 232, 127, .16), transparent 34%),
+    linear-gradient(135deg, rgba(2, 31, 18, .88), rgba(5, 53, 29, .74) 58%, rgba(20, 38, 15, .9));
+  box-shadow:
+    inset 0 1px rgba(239, 255, 214, .18),
+    inset 0 0 34px rgba(84, 205, 101, .1),
+    0 16px 34px rgba(0, 10, 5, .36),
+    0 0 24px rgba(231, 190, 65, .1);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity::before,
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(255, 228, 137, .84);
+  background: #155d35;
+  box-shadow: 0 0 12px rgba(143, 255, 140, .48);
+  transform: rotate(45deg);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity::before { left: 28px; }
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity::after { right: 28px; }
+
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity > span {
+  color: #f7d67d;
+  font: 600 11px/1.2 Georgia, "Times New Roman", serif;
+  letter-spacing: .28em;
+  text-shadow: 0 0 14px rgba(245, 200, 91, .32);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaIdentity > strong {
+  color: #fff5d1;
+  font: 500 clamp(22px, 2vw, 28px)/1.32 Georgia, "Yu Mincho", serif;
+  letter-spacing: .05em;
+  text-shadow: 0 2px 12px rgba(0, 12, 6, .95), 0 0 20px rgba(245, 200, 91, .18);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaOfferLine {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-block: 2px 4px;
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaOfferLine b {
+  color: #ffe29a;
+  font: 600 clamp(42px, 4.4vw, 58px)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: .03em;
+  text-shadow: 0 0 18px rgba(245, 200, 91, .38), 0 3px 10px rgba(0, 0, 0, .7);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaOfferLine small,
+.resultHero[data-star-type="adaptability"] .evolverCtaStatus {
+  color: rgba(226, 255, 214, .86);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaSummary {
+  margin: 0;
+  color: rgba(250, 255, 244, .96);
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.64;
+  text-shadow: 0 2px 9px rgba(0, 12, 6, .94);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaBenefits {
+  display: grid;
+  margin: 4px 0 2px;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 9px;
+  list-style: none;
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaBenefits li {
+  display: flex;
+  min-height: 35px;
+  padding: 7px 9px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(222, 199, 111, .25);
+  border-radius: 9px;
+  background: rgba(1, 24, 13, .52);
+  color: rgba(250, 255, 240, .94);
+  font-size: clamp(12px, 1.05vw, 14px);
+  line-height: 1.45;
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaBenefits li > span {
+  flex: 0 0 auto;
+  color: #d9f685;
+  text-shadow: 0 0 10px rgba(151, 255, 132, .6);
+}
+
+.resultHero[data-star-type="adaptability"] .evolverCtaStatus {
+  justify-self: start;
+  padding: 5px 12px;
+  border: 1px solid rgba(204, 232, 126, .28);
+  border-radius: 999px;
+  background: rgba(2, 25, 14, .62);
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumButtonFrame {
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumButtonFrame:has(.premiumButton:disabled) {
+  opacity: .9;
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="adaptability"] .premiumCtaPanel {
+    min-height: 700px;
+    padding: 190px 44px 64px;
+    gap: 18px;
+  }
+
+  #root .resultHero[data-star-type="adaptability"] .typeFrameAsset--cta {
+    width: min(128%, calc(100vw - 18px));
+    height: 106%;
+    aspect-ratio: auto;
+    object-fit: fill;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="adaptability"] .premiumCtaPanel {
+    min-height: 800px;
+    padding: 184px 20px 52px;
+  }
+
+  .resultHero[data-star-type="adaptability"] .evolverCtaIdentity {
+    gap: 9px;
+    padding: 22px 18px 20px;
+  }
+
+  .resultHero[data-star-type="adaptability"] .evolverCtaIdentity > strong {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+
+  .resultHero[data-star-type="adaptability"] .evolverCtaBenefits {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .resultHero[data-star-type="adaptability"] .evolverCtaBenefits li {
+    min-height: 36px;
+    font-size: 13px;
+  }
+}
+
+/* Explorer premium-report offer: a complete ¥980 explanation inside the
+   approved observatory picture frame. Checkout behavior remains shared. */
+#root .resultHero[data-star-type="explorer"] > .paidBox {
+  width: min(1060px, calc(100% - 40px));
+  max-width: none;
+  aspect-ratio: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+#root .resultHero[data-star-type="explorer"] > .paidBox::before,
+#root .resultHero[data-star-type="explorer"] > .paidBox::after {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: grid;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  padding: clamp(92px, 8vw, 112px) clamp(78px, 7vw, 96px);
+  grid-template-columns: minmax(0, 1fr) 230px;
+  align-items: center;
+  gap: clamp(28px, 3vw, 40px);
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(72, 153, 255, .16), transparent 33%),
+    radial-gradient(circle at 84% 88%, rgba(217, 172, 70, .11), transparent 36%),
+    linear-gradient(145deg, rgba(4, 25, 61, .96), rgba(1, 12, 34, .94) 58%, rgba(3, 21, 53, .96)) !important;
+  box-shadow: inset 0 0 62px rgba(51, 126, 221, .13), 0 28px 70px rgba(0, 5, 20, .48) !important;
+  backdrop-filter: blur(8px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(112%) !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  background: url("/images/result-scenes/explorer/overlays/frame.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0 18px rgba(70, 155, 255, .2)) drop-shadow(0 10px 24px rgba(0, 4, 15, .48));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 54px 62px;
+  border: 1px solid rgba(219, 181, 92, .22);
+  border-radius: 24px;
+  box-shadow: inset 0 0 34px rgba(55, 142, 240, .1);
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="explorer"] .typeFrameAsset--cta,
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel > .panelFrameOrnaments,
+#root .resultHero[data-star-type="explorer"] .premiumCtaPanel > p {
+  display: none !important;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaIdentity {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+  padding: 20px 24px 18px;
+  border: 1px solid rgba(104, 174, 255, .2);
+  border-radius: 16px;
+  background: linear-gradient(110deg, rgba(1, 17, 45, .76), rgba(4, 35, 79, .42) 72%, transparent);
+  box-shadow: inset 0 0 34px rgba(62, 139, 231, .1);
+  text-align: left;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaIdentity > span {
+  color: #f3cf78;
+  font: 600 11px/1.2 Georgia, "Times New Roman", serif;
+  letter-spacing: .28em;
+  text-shadow: 0 0 14px rgba(245, 202, 102, .28);
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaIdentity > strong {
+  color: #fff3d2;
+  font: 500 clamp(22px, 2vw, 29px)/1.38 Georgia, "Yu Mincho", serif;
+  letter-spacing: .055em;
+  text-shadow: 0 2px 11px rgba(0, 7, 24, .98), 0 0 18px rgba(74, 160, 255, .2);
+  text-wrap: balance;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaOfferLine {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaOfferLine b {
+  color: #ffe19a;
+  font: 600 clamp(43px, 4.5vw, 60px)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: .03em;
+  text-shadow: 0 0 20px rgba(245, 198, 88, .38), 0 3px 10px rgba(0, 0, 0, .72);
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaOfferLine small,
+.resultHero[data-star-type="explorer"] .explorerCtaStatus {
+  color: rgba(221, 239, 255, .88);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaSummary {
+  margin: 0;
+  color: rgba(246, 251, 255, .96);
+  font-size: clamp(14px, 1.25vw, 16px);
+  font-weight: 600;
+  line-height: 1.68;
+  text-shadow: 0 2px 9px rgba(0, 7, 24, .98);
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaBenefits {
+  display: grid;
+  margin: 3px 0 1px;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+  list-style: none;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaBenefits li {
+  display: flex;
+  min-height: 37px;
+  padding: 7px 10px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(101, 169, 247, .25);
+  border-radius: 9px;
+  background: rgba(1, 16, 42, .68);
+  color: rgba(247, 251, 255, .95);
+  font-size: clamp(12px, 1.05vw, 14px);
+  line-height: 1.42;
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaBenefits li > span {
+  flex: 0 0 auto;
+  color: #f1cc72;
+  text-shadow: 0 0 10px rgba(100, 190, 255, .52);
+}
+
+.resultHero[data-star-type="explorer"] .explorerCtaStatus {
+  justify-self: start;
+  padding: 5px 12px;
+  border: 1px solid rgba(105, 169, 239, .28);
+  border-radius: 999px;
+  background: rgba(1, 14, 36, .72);
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumButtonFrame {
+  z-index: 2;
+  width: 230px;
+  margin: 0;
+  justify-self: end;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumButton {
+  min-height: 78px;
+  border-color: rgba(248, 211, 123, .72);
+  background: linear-gradient(105deg, #0a326d, #155eac 40%, #2c83c8 58%, #b68a35 100%);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .35), 0 0 30px rgba(68, 161, 255, .27), 0 12px 30px rgba(0, 6, 24, .4);
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="explorer"] .premiumCtaPanel {
+    min-height: 760px;
+    aspect-ratio: auto;
+    padding: 82px 54px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    border: 2px solid rgba(222, 183, 89, .72) !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .premiumCtaPanel::before {
+    background-image: none;
+    border: 1px solid rgba(75, 154, 238, .45);
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 8px rgba(2, 19, 48, .74), inset 0 0 42px rgba(63, 146, 235, .14);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .premiumCtaPanel::after {
+    inset: 20px;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .premiumButtonFrame {
+    width: min(260px, 100%);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="explorer"] > .paidBox {
+    width: calc(100% - 16px);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .premiumCtaPanel {
+    min-height: 850px;
+    padding: 66px 28px;
+    gap: 20px;
+  }
+
+  .resultHero[data-star-type="explorer"] .explorerCtaIdentity {
+    gap: 9px;
+    padding: 18px 16px;
+  }
+
+  .resultHero[data-star-type="explorer"] .explorerCtaIdentity > strong {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+
+  .resultHero[data-star-type="explorer"] .explorerCtaBenefits {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+
+/* Guardian premium-report picture frame. Keep the complete offer inside the
+   architectural safe area of the approved 1536x1024 Guardian frame. */
+#root .resultHero[data-star-type="persistence"] > .paidBox {
+  isolation: isolate;
+  overflow: visible;
+  padding:
+    clamp(210px, 17vw, 250px)
+    clamp(94px, 8vw, 122px)
+    clamp(132px, 11vw, 168px);
+  border: 0 !important;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(38, 102, 188, .2), transparent 48%),
+    linear-gradient(155deg, rgba(4, 18, 47, .78), rgba(3, 9, 27, .88)) !important;
+  box-shadow:
+    inset 0 0 82px rgba(71, 145, 241, .1),
+    0 34px 78px rgba(0, 6, 22, .58) !important;
+}
+
+#root .resultHero[data-star-type="persistence"] > .paidBox > .panelFrameOrnaments {
+  position: absolute !important;
+  z-index: 5 !important;
+  display: block !important;
+  inset: -30px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background: url("/images/result-scenes/guardian/overlays/frame.png") center / 100% 100% no-repeat !important;
+  filter:
+    drop-shadow(0 20px 34px rgba(0, 7, 27, .76))
+    drop-shadow(0 0 18px rgba(78, 161, 255, .2))
+    drop-shadow(0 0 10px rgba(245, 208, 116, .18));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="persistence"] > .paidBox > .panelFrameOrnaments > * {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="persistence"] > .paidBox > :not(.panelFrameOrnaments) {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="persistence"] > .paidBox {
+    padding: 180px 62px 126px;
+  }
+
+  #root .resultHero[data-star-type="persistence"] > .paidBox > .panelFrameOrnaments {
+    inset: -20px !important;
+    border-style: solid !important;
+    border-width: 82px 36px 96px !important;
+    border-image-source: url("/images/result-scenes/guardian/overlays/frame.png") !important;
+    border-image-slice: 190 158 218 !important;
+    border-image-repeat: stretch !important;
+    background: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="persistence"] > .paidBox {
+    width: calc(100% - 24px);
+    padding: 150px 28px 108px;
+  }
+
+  #root .resultHero[data-star-type="persistence"] > .paidBox > .panelFrameOrnaments {
+    inset: -12px !important;
+    border-width: 66px 22px 78px !important;
+  }
+}
+
+/* Keep the Guardian availability notice and button comfortably inside the
+   two bays of the approved CTA frame. */
+#root .resultHero[data-star-type="persistence"] .premiumCtaPanel {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(270px, 1.18fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 280px;
+  padding: 78px 94px;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumCtaPanel > p {
+  width: 100%;
+  max-width: 220px;
+  margin: 0;
+  padding: 0 4px;
+  color: rgba(247, 250, 255, .9);
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumButtonFrame {
+  width: 100%;
+  max-width: 330px;
+  min-width: 0;
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  #root .resultHero[data-star-type="persistence"] .premiumCtaPanel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    min-height: 390px;
+    padding: 92px 42px;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .premiumCtaPanel > p {
+    max-width: 100%;
+    padding: 0 8px;
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .premiumButtonFrame {
+    max-width: 320px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="persistence"] .premiumCtaPanel {
+    min-height: 410px;
+    padding: 94px 30px;
+  }
+}

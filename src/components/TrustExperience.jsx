@@ -1,4 +1,4 @@
-import { FAQ_ITEMS, LEGAL_PAGES, SUPPORT_EMAIL, TRUST_LINKS } from "../data/trustContent.js";
+import { FAQ_ITEMS, LEGAL_PAGES, SUPPORT_EMAIL } from "../data/trustContent.js";
 import TrustFooter from "./TrustFooter.jsx";
 
 function Frame({ children, className = "" }) {
@@ -23,7 +23,8 @@ function LegalPage({ page }) {
     <>
       <Header {...content} />
       <Frame className="trustDocument">
-        <p className="trustDocument__updated">最終更新日：2026年7月16日</p>
+        {content.incomplete ? <p className="trustContact__notice" role="status">公開禁止：事業者情報のプレースホルダーが残っています。</p> : null}
+        <p className="trustDocument__updated">最終更新日：2026年7月27日</p>
         {content.sections.map(([heading, paragraphs]) => (
           <section className="trustDocument__section" key={heading}>
             <h2>{heading}</h2>
@@ -74,7 +75,7 @@ function ContactPage() {
       <Frame className="trustContact">
         <div className="trustContact__icon" aria-hidden="true">✦</div>
         <h2>NEXTORY11 Support</h2>
-        {available ? <><p>下記のサポート窓口へご連絡ください。通常、内容を確認後に順次対応します。</p><a className="trustContact__button" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></> : <><p>現在、公開用サポート窓口を最終準備しています。正式な連絡先は公開前にこのページへ掲載します。</p><p className="trustContact__notice" role="status">運営者向け：VITE_SUPPORT_EMAIL の設定が必要です。</p></>}
+        {available ? <><p>下記のサポート窓口へご連絡ください。</p><a className="trustContact__button" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a><p>電話（自動受付）：+1 778-803-7077</p></> : <><p>現在、公開用サポート窓口を最終準備しています。正式な連絡先は公開前にこのページへ掲載します。</p><p className="trustContact__notice" role="status">運営者向け：公開用サポート窓口の設定が必要です。</p></>}
         <p className="trustContact__note">カード番号、APIキー、パスワードなどの秘密情報は送らないでください。決済のお問い合わせには、Stripeの領収書に記載された参照情報をご用意ください。</p>
       </Frame>
     </>
@@ -87,12 +88,8 @@ export default function TrustExperience({ page }) {
       <div className="trustPage__sky" aria-hidden="true"><span /><span /><span /></div>
       <div className="trustPage__content">
         {page === "faq" ? <FAQPage /> : page === "why" ? <WhyPage /> : page === "contact" ? <ContactPage /> : <LegalPage page={page} />}
-        <nav className="trustPage__related" aria-label="関連ページ">
-          {TRUST_LINKS.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
-        </nav>
         <TrustFooter compact />
       </div>
     </main>
   );
 }
-

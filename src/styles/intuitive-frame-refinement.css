@@ -1,0 +1,1526 @@
+/* Intuitive Result Scene — faithful Design Master architecture. */
+.resultScene[data-master-scene="intuitive"] {
+  background: #02040d;
+}
+
+.resultScene[data-master-scene="intuitive"] .designMasterScene__background {
+  inset: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  filter: none;
+  transform: none;
+}
+
+.resultScene[data-master-scene="intuitive"] .designMasterScene__outerFrame,
+.resultScene[data-master-scene="intuitive"] .intuitiveMasterScene__effects {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.resultScene[data-master-scene="intuitive"] .designMasterScene__outerFrame {
+  z-index: 8;
+  transform: scale(1.035);
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 12px rgba(216, 190, 120, .18));
+}
+
+.resultScene[data-master-scene="intuitive"] .intuitiveMasterScene__effects {
+  z-index: 2;
+  opacity: .42;
+  mix-blend-mode: screen;
+}
+
+.resultScene[data-master-scene="intuitive"] :is(
+  .designMasterScene__atmosphere,
+  .designMasterScene__bloom,
+  .designMasterScene__lensFlare,
+  .designMasterScene__stars,
+  .designMasterScene__dust,
+  .designMasterScene__signature,
+  .designMasterScene__constellation,
+  .designMasterScene__pointerLight
+) {
+  display: none;
+}
+
+#root .resultHero[data-star-type="intuition"] {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100svh;
+  padding: clamp(82px, 9vw, 126px) clamp(36px, 5vw, 80px) clamp(88px, 9vw, 124px) !important;
+  overflow-x: clip;
+  color: #f3eddf;
+}
+
+#root .resultHero[data-star-type="intuition"]::before,
+#root .resultHero[data-star-type="intuition"]::after {
+  opacity: 0;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultCard,
+#root .resultHero[data-star-type="intuition"] > .paidBox {
+  width: min(1240px, 100%);
+  max-width: none;
+  margin-inline: auto;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultCard {
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+#root .resultHero[data-star-type="intuition"] > .paidBox::before {
+  content: "";
+  position: absolute;
+  inset: 15% 7% 15% 40%;
+  z-index: 0;
+  border: 1px solid rgba(216, 190, 120, .3);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(110, 99, 200, .16), transparent 48%),
+    linear-gradient(145deg, rgba(5, 9, 28, .84), rgba(9, 15, 43, .74) 58%, rgba(25, 20, 57, .78));
+  box-shadow: inset 0 0 34px rgba(110, 99, 200, .15), inset 0 1px rgba(255, 239, 194, .14);
+  backdrop-filter: blur(8px) saturate(.9);
+  -webkit-backdrop-filter: blur(8px) saturate(.9);
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultCard::before,
+#root .resultHero[data-star-type="intuition"] .resultCard__aura,
+#root .resultHero[data-star-type="intuition"] :is(.panelFrameOrnaments, .juzaMessage__particles),
+#root .resultHero[data-star-type="intuition"] .adviceBox::before,
+#root .resultHero[data-star-type="intuition"] .adviceBox::after {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .intuitivePremiumOuterFrame {
+  display: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultBadge,
+#root .resultHero[data-star-type="intuition"] .resultRealm,
+#root .resultHero[data-star-type="intuition"] .resultKicker {
+  display: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultIcon {
+  width: clamp(148px, 14vw, 202px);
+  height: clamp(148px, 14vw, 202px);
+  margin: 0 auto 12px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  animation: intuitiveEmblemBreath 8s ease-in-out infinite;
+  position: relative;
+  left: auto;
+  right: auto;
+  float: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultIcon::before {
+  display: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultIcon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(110, 99, 200, .5));
+}
+
+#root .resultHero[data-star-type="intuition"] .resultTitle {
+  display: block;
+  position: relative;
+  left: auto;
+  right: auto;
+  clear: both;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto;
+  text-align: center;
+  min-height: clamp(48px, 6vw, 78px);
+  margin: 0;
+  color: #d8be78;
+  font: 400 clamp(48px, 6vw, 78px)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: .16em;
+  text-indent: .16em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .9), 0 0 28px rgba(110, 99, 200, .22);
+}
+
+#root .resultHero[data-star-type="intuition"] .resultTitle::after {
+  content: "INTUITIVE";
+  position: absolute !important;
+  inset: auto !important;
+  top: 0 !important;
+  left: 50% !important;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  transform: translateX(-50%) !important;
+  text-align: center;
+  text-indent: 0;
+  white-space: nowrap;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultTitle {
+  font-size: 0;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultTitle::after {
+  display: block;
+  font-size: clamp(48px, 6vw, 78px);
+}
+
+#root .resultHero[data-star-type="intuition"] .english {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  left: auto;
+  right: auto;
+  clear: both;
+  width: min(560px, 100%);
+  padding: 5px clamp(18px, 3vw, 34px);
+  margin-inline: auto;
+  text-align: center;
+  margin: 10px auto 0;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at center, rgba(4, 8, 27, .68) 0%, rgba(9, 15, 43, .5) 58%, rgba(9, 15, 43, 0) 100%);
+  backdrop-filter: blur(6px) saturate(.9);
+  -webkit-backdrop-filter: blur(6px) saturate(.9);
+  color: #f0dc9e;
+  font: 600 clamp(20px, 2.4vw, 29px)/1.4 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  letter-spacing: .22em;
+  text-indent: .22em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .9);
+}
+
+#root .resultHero[data-star-type="intuition"] .english {
+  font-size: 0;
+}
+
+#root .resultHero[data-star-type="intuition"] .english::after {
+  content: "直感力タイプ";
+  position: static;
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: clamp(20px, 2.4vw, 29px);
+}
+
+#root .resultHero[data-star-type="intuition"] .resultLead {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  left: auto;
+  right: auto;
+  clear: both;
+  width: min(820px, 100%);
+  padding: 8px clamp(20px, 4vw, 46px);
+  margin-inline: auto !important;
+  text-align: center;
+  max-width: 820px;
+  margin: 22px auto clamp(48px, 5vw, 68px) !important;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at center, rgba(3, 7, 24, .72) 0%, rgba(10, 16, 44, .54) 62%, rgba(10, 16, 44, 0) 100%);
+  backdrop-filter: blur(7px) saturate(.88);
+  -webkit-backdrop-filter: blur(7px) saturate(.88);
+  color: #f3eddf;
+  font: 600 clamp(14px, 1.45vw, 18px)/1.9 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 12px #000, 0 0 18px rgba(26, 35, 75, .9);
+  font-size: 0;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultLead::before {
+  content: "言葉になる前の気配を感じ、見えないつながりを読み取る人";
+  display: block;
+  font-size: clamp(14px, 1.45vw, 18px);
+}
+
+#root .resultHero[data-star-type="intuition"] .resultLead::after {
+  display: none !important;
+  content: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .juzaMessage {
+  box-sizing: border-box;
+  width: min(1100px, 100%);
+  max-width: none;
+  aspect-ratio: 1824 / 862;
+  margin: 0 auto clamp(54px, 5vw, 74px) !important;
+  padding: 11.5% 8% 10.5% 35%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .typeFrameAsset {
+  display: block;
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza,
+#root .resultHero[data-star-type="intuition"] .typeFrameAsset--insight,
+#root .resultHero[data-star-type="intuition"] .typeFrameAsset--cta {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+  mix-blend-mode: normal;
+}
+
+#root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #f5f0e6;
+  font: 600 clamp(13px, 1.17vw, 16px)/1.88 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  letter-spacing: .035em;
+  text-align: left;
+  text-shadow: 0 2px 5px #02040d, 0 0 12px rgba(26, 35, 75, .92);
+}
+
+#root .resultHero[data-star-type="intuition"] .juzaMessage::before {
+  content: none;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 7.8%;
+  left: 64%;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: translateX(-50%);
+  color: #d8be78;
+  font: 700 clamp(9px, .9vw, 13px)/1 Georgia, serif;
+  letter-spacing: .2em;
+  white-space: nowrap;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 26px) !important;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox {
+  box-sizing: border-box;
+  min-height: 0;
+  aspect-ratio: 1672 / 941;
+  padding: clamp(22px, 2.2vw, 30px) clamp(25px, 2.5vw, 36px);
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transform: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox__icon {
+  position: absolute !important;
+  top: 50%;
+  left: 11%;
+  width: clamp(34px, 3vw, 44px);
+  height: clamp(34px, 3vw, 44px);
+  margin: 0;
+  transform: translateY(-50%);
+  color: #d8be78;
+  filter: drop-shadow(0 0 8px rgba(110, 99, 200, .48));
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox strong {
+  position: absolute !important;
+  top: 31%;
+  left: 28%;
+  display: block;
+  width: 62%;
+  margin: 0;
+  color: #f0dc9e;
+  font: 700 clamp(14px, 1.35vw, 18px)/1.4 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 8px #02040d;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox p {
+  position: absolute !important;
+  top: 48%;
+  left: 28%;
+  width: 62%;
+  margin: 0;
+  color: #f3eddf;
+  font: 600 clamp(12px, 1.05vw, 14px)/1.7 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  text-shadow: 0 2px 8px #02040d;
+}
+
+#root .resultHero[data-star-type="intuition"] > .paidBox {
+  box-sizing: border-box;
+  position: relative;
+  aspect-ratio: 1774 / 887;
+  margin-top: clamp(58px, 6vw, 84px) !important;
+  padding: 10% 13% 8%;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+#root .resultHero[data-star-type="intuition"] > .paidBox > :not(.premiumCtaPanel) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumCtaPanel {
+  display: contents;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumCtaPanel > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumCtaPanel::before {
+  content: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumCtaPanel > p {
+  display: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .paidLabel {
+  margin: 0 auto 8px;
+  color: #d8be78;
+  font: 700 clamp(10px, .9vw, 13px)/1.4 Georgia, serif;
+  letter-spacing: .24em;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumTitle {
+  margin: 0 auto 10px;
+  color: #f0dc9e;
+  font: 600 clamp(20px, 2vw, 28px)/1.45 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 10px #02040d;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumTitle {
+  font-size: 0;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumTitle::after {
+  content: "あなたの内なる星の声を、\Aもっと深く読み解く";
+  display: block;
+  white-space: pre-line;
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumDescription {
+  max-width: 720px;
+  margin: 0 auto 10px;
+  color: #eee8dc;
+  font: 600 clamp(11px, .95vw, 13px)/1.7 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  text-shadow: 0 2px 8px #02040d;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumPrice {
+  margin: 0 auto 9px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumPrice strong {
+  color: #d8be78;
+  font-size: clamp(26px, 2.7vw, 38px);
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 28px;
+  max-width: 700px;
+  margin: 0 auto 14px;
+  color: #f3eddf;
+  font: 600 clamp(11px, .95vw, 13px)/1.55 "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+  width: min(520px, 90%);
+  margin: 0 auto;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumButton {
+  border-color: rgba(238, 210, 139, .78);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(255, 233, 169, .2), transparent 48%),
+    linear-gradient(100deg, rgba(12, 18, 49, .96), rgba(52, 41, 100, .94) 50%, rgba(97, 75, 139, .92));
+  box-shadow: inset 0 1px rgba(255, 245, 214, .28), inset 0 0 18px rgba(216, 190, 120, .1), 0 0 20px rgba(216, 190, 120, .24), 0 0 34px rgba(110, 99, 200, .22);
+}
+
+@keyframes intuitiveEmblemBreath {
+  0%, 100% { transform: scale(1); filter: brightness(.96); }
+  50% { transform: scale(1.025); filter: brightness(1.08); }
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="intuition"] {
+    padding: 72px clamp(28px, 6vw, 54px) 84px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultCard,
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    width: min(690px, 100%);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    grid-template-columns: 1fr;
+    width: min(590px, 100%);
+    gap: 24px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox {
+    aspect-ratio: 1672 / 941;
+    padding: 0;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    width: min(680px, 100%);
+    margin-bottom: 50px !important;
+    padding: 12% 8% 10% 35%;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    font-size: 12px;
+    line-height: 1.72;
+  }
+}
+
+/* Authoritative desktop composition: keep this after all legacy refinements. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] {
+    padding: 46px clamp(44px, 4vw, 64px) 64px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultCard {
+    width: min(1220px, 100%);
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultIcon {
+    width: 118px;
+    height: 118px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle {
+    min-height: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle::after {
+    font-size: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english {
+    margin-top: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english::after {
+    font-size: 23px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultLead {
+    margin: 12px auto 34px !important;
+    padding-block: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+    box-sizing: border-box;
+    width: min(1120px, 100%);
+    margin-inline: auto;
+    padding: 42px 60px 46px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 140px);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    box-sizing: border-box;
+    width: 820px;
+    height: 250px;
+    margin: 0 auto 20px !important;
+    padding: 62px 58px 32px 305px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+    top: -42px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1824 / 862;
+    object-fit: contain;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    padding: 7px 12px 9px;
+    font-size: 12px;
+    line-height: 1.58;
+    letter-spacing: .035em;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    width: min(920px, 100%) !important;
+    gap: 20px !important;
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox strong {
+    font-size: 15px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox p {
+    top: 47%;
+    font-size: 12px;
+    line-height: 1.48;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    width: min(700px, 100%);
+    margin: 34px auto 0 !important;
+    padding: 72px 52px 62px 294px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle {
+    width: 100%;
+    max-width: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+    width: min(320px, 100%);
+  }
+
+}
+
+@media (max-width: 520px) {
+  .resultScene[data-master-scene="intuitive"] .designMasterScene__background {
+    background-position: 50% 50%;
+  }
+
+  .resultScene[data-master-scene="intuitive"] .designMasterScene__outerFrame,
+  .resultScene[data-master-scene="intuitive"] .intuitiveMasterScene__effects {
+    object-fit: cover;
+  }
+
+  #root .resultHero[data-star-type="intuition"] {
+    padding: 58px 25px 72px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultIcon {
+    width: 132px;
+    height: 132px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle::after {
+    font-size: clamp(36px, 12.2vw, 48px);
+    letter-spacing: .11em;
+    text-indent: 0;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle {
+    min-height: clamp(36px, 12.2vw, 48px);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english::after {
+    font-size: 20px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultLead {
+    margin: 18px auto 40px !important;
+    line-height: 1.8;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+    position: relative !important;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1824 / 862;
+    object-fit: contain;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage::before {
+    top: calc((100vw - 50px) * .12);
+    left: 64%;
+    font-size: 9px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    margin: 12px auto 0;
+    padding: 30px 26px;
+    border: 1px solid rgba(216, 190, 120, .42);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(26, 35, 75, .84), rgba(8, 11, 35, .9) 62%, rgba(48, 31, 88, .82));
+    box-shadow: inset 0 0 0 1px rgba(110, 99, 200, .18), 0 14px 34px rgba(0, 0, 0, .3);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    gap: 18px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox {
+    aspect-ratio: 1672 / 941;
+    min-height: 0;
+    padding: 0;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumCtaPanel {
+    display: contents;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    aspect-ratio: auto;
+    padding: 46px 34px 42px;
+    overflow: visible;
+    border: 1px solid rgba(216, 190, 120, .42);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(26, 35, 75, .84), rgba(8, 11, 35, .92) 64%, rgba(48, 31, 88, .82));
+    box-shadow: inset 0 0 0 1px rgba(110, 99, 200, .18), 0 18px 42px rgba(0, 0, 0, .34);
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox::before {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle { order: 1; }
+  #root .resultHero[data-star-type="intuition"] .paidLabel { order: 2; }
+  #root .resultHero[data-star-type="intuition"] .premiumPrice { order: 3; }
+
+  #root .resultHero[data-star-type="intuition"] :is(.premiumDescription, .premiumList) {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--cta {
+    order: -1;
+    position: relative !important;
+    inset: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+    aspect-ratio: 1774 / 887;
+    object-fit: contain;
+    margin: 0 auto 18px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumList {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+    order: 4;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .resultHero[data-star-type="intuition"] .resultIcon {
+    animation: none;
+  }
+}
+
+/* Shared inner sanctuary: AI JUZA and the three insights read as one artifact. */
+#root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+  box-sizing: border-box;
+  position: relative;
+  isolation: auto;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: clamp(80px, 6.4vw, 98px) clamp(62px, 5.2vw, 76px) clamp(78px, 6vw, 94px);
+}
+
+#root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame::before {
+  content: "";
+  position: absolute;
+  inset: 5% 4%;
+  z-index: -2;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(5, 9, 28, .28), rgba(26, 35, 75, .15) 56%, rgba(48, 31, 88, .2));
+  box-shadow: inset 0 0 46px rgba(5, 8, 24, .28);
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+  position: absolute;
+  top: -30%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: calc(100% + clamp(96px, 9vw, 132px));
+  max-width: none;
+  height: 160%;
+  object-fit: fill;
+  transform: translateX(-50%);
+  pointer-events: none;
+  filter: drop-shadow(0 16px 34px rgba(1, 3, 12, .42));
+}
+
+#root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame > :not(.intuitiveGuidanceFrame__asset) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame .juzaMessage {
+  isolation: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: clamp(48px, 4.5vw, 68px) !important;
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+    width: min(700px, 100%);
+    padding: 42px clamp(18px, 4vw, 34px) 46px;
+    border: 1px solid rgba(216, 190, 120, .48);
+    border-radius: 26px;
+    background: linear-gradient(145deg, rgba(5, 9, 28, .34), rgba(26, 35, 75, .18) 58%, rgba(48, 31, 88, .24));
+    box-shadow: inset 0 0 0 1px rgba(110, 99, 200, .2), inset 0 0 34px rgba(5, 8, 24, .38), 0 20px 44px rgba(0, 0, 0, .28);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame::after {
+    content: "✦";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    transform: translateX(-50%);
+    border: 1px solid rgba(216, 190, 120, .72);
+    border-radius: 50%;
+    color: #d8be78;
+    background: #11183a;
+    box-shadow: 0 0 18px rgba(110, 99, 200, .48);
+    font: 12px/1 Georgia, serif;
+  }
+}
+
+/* Final Design Master layout correction: one centered axis and one spacious stage. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] {
+    padding: 46px clamp(44px, 4vw, 64px) 64px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultCard {
+    width: min(1220px, 100%);
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultIcon {
+    width: 118px;
+    height: 118px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle {
+    min-height: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle::after {
+    font-size: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english {
+    margin-top: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english::after {
+    font-size: 23px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultLead {
+    margin: 12px auto 34px !important;
+    padding-block: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+    box-sizing: border-box;
+    width: min(1120px, 100%);
+    margin-inline: auto;
+    padding: 42px 60px 46px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 140px);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    box-sizing: border-box;
+    width: 820px;
+    height: 250px;
+    margin: 0 auto 20px !important;
+    padding: 62px 58px 32px 305px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+    top: -42px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1824 / 862;
+    object-fit: contain;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    padding: 7px 12px 9px;
+    font-size: 12px;
+    line-height: 1.58;
+    letter-spacing: .035em;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    width: min(920px, 100%) !important;
+    gap: 20px !important;
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    width: min(700px, 100%);
+    margin: 34px auto 0 !important;
+  }
+}
+
+/* Design Master refinement — preserve the approved structure, sharpen its hierarchy. */
+#root .resultHero[data-star-type="intuition"] :is(.juzaMessage, .paidBox, .premiumCtaPanel) {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .resultGrid {
+  width: min(1100px, 100%) !important;
+  max-width: none !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(20px, 2.2vw, 30px) !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox {
+  min-width: 0;
+  filter: drop-shadow(0 14px 26px rgba(1, 3, 12, .28));
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox strong {
+  color: #f2d99a;
+  font-size: clamp(15px, 1.35vw, 18px);
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox p {
+  color: #f5f0e7;
+  font-size: clamp(12px, 1.03vw, 14px);
+  line-height: 1.72;
+}
+
+#root .resultHero[data-star-type="intuition"] > .paidBox {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumPrice {
+  display: inline-flex;
+  width: auto;
+  margin: 0 auto 10px;
+  padding: 0;
+  opacity: .78;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumPrice strong {
+  font-size: clamp(17px, 1.55vw, 22px);
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumList li {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 900px) {
+  .resultScene[data-master-scene="intuitive"] .designMasterScene__outerFrame {
+    transform: scale(1.065);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultLead {
+    margin-bottom: clamp(110px, 8vw, 132px) !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    width: min(1040px, 100%);
+    height: 380px;
+    aspect-ratio: auto;
+    padding: 100px 90px 58px 390px;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+    top: -55px;
+    bottom: auto;
+    height: auto;
+    aspect-ratio: 1824 / 862;
+    object-fit: contain;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage::before {
+    top: 70px;
+    left: 67%;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 16px 12px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(7, 11, 34, .66), rgba(26, 35, 75, .48));
+    font-size: clamp(12.5px, .96vw, 14px);
+    line-height: 1.72;
+    letter-spacing: .045em;
+    text-shadow: 0 2px 5px #02040d, 0 0 10px rgba(26, 35, 75, .88);
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(1000px, 100%);
+    height: auto;
+    aspect-ratio: 1774 / 887;
+    min-height: 0;
+    padding: 13.5% 7.5% 12.5% 42%;
+    overflow: hidden;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .paidLabel {
+    order: 2;
+    margin: 0 auto 10px;
+    font-size: 11px;
+    opacity: .88;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle {
+    order: 1;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle br {
+    display: block;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle::after {
+    font-size: clamp(22px, 1.85vw, 27px);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumDescription {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumPrice {
+    position: static;
+    order: 3;
+    margin: 0 auto 15px;
+    opacity: .7;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumPrice strong {
+    font-size: 15px;
+    letter-spacing: .12em;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumList {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+    order: 4;
+    width: min(380px, 88%);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButton {
+    min-height: 44px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    opacity: .94;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--cta {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    width: min(590px, 100%) !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(26px, 4vw, 36px) !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox {
+    width: 100%;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Authoritative desktop composition. Must remain last in this stylesheet. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] {
+    padding: 46px clamp(44px, 4vw, 64px) 64px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultCard {
+    width: min(1220px, 100%);
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultIcon {
+    width: 200px;
+    height: 200px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle {
+    min-height: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultTitle::after {
+    font-size: 58px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english {
+    margin-top: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .english::after {
+    font-size: 23px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultLead {
+    margin: 12px auto 34px !important;
+    padding-block: 6px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+    box-sizing: border-box;
+    width: min(1120px, 100%);
+    margin-inline: auto;
+    padding: 62px 60px 46px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+    top: 50%;
+    left: 50%;
+    /* Expand the visible inner rail, while preserving FRAME01's aspect ratio. */
+    width: calc(100% + 630px);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    box-sizing: border-box;
+    width: 860px;
+    height: 265px;
+    margin: 0 auto 20px !important;
+    padding: 68px 62px 38px 322px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza {
+    top: -44px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1824 / 862;
+    object-fit: contain;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage > p {
+    padding: 10px 14px 12px;
+    font-size: 13px;
+    line-height: 1.62;
+    letter-spacing: .035em;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    width: min(960px, 100%) !important;
+    gap: 20px !important;
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox strong {
+    top: 29%;
+    left: 28%;
+    width: 62%;
+    font-size: 15px;
+    line-height: 1.35;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .adviceBox p {
+    top: 48%;
+    left: 28%;
+    width: 62%;
+    height: 38%;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.48;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: min(1100px, 100%);
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
+    margin: 56px auto 0 !important;
+    padding: 122px 150px 88px 480px;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    isolation: isolate;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox::before {
+    inset: 17% 11% 14% 42%;
+    z-index: 3;
+    width: auto !important;
+    height: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    border: 1px solid rgba(229, 199, 125, .58);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 18% 15%, rgba(110, 99, 200, .3), transparent 38%),
+      linear-gradient(145deg, rgba(2, 5, 20, .985), rgba(7, 13, 39, .965) 56%, rgba(31, 22, 68, .95));
+    box-shadow:
+      inset 0 0 42px rgba(110, 99, 200, .2),
+      inset 0 1px rgba(255, 239, 194, .22),
+      0 20px 54px rgba(0, 0, 0, .36),
+      0 0 30px rgba(110, 99, 200, .14);
+    backdrop-filter: blur(7px) saturate(.92);
+    -webkit-backdrop-filter: blur(7px) saturate(.92);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .typeFrameAsset--cta {
+    position: absolute;
+    top: 94px;
+    right: auto;
+    bottom: auto;
+    left: 90px;
+    z-index: 2;
+    width: 920px;
+    height: auto;
+    aspect-ratio: 1774 / 887;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, .36)) drop-shadow(0 0 16px rgba(216, 190, 120, .14));
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .intuitivePremiumOuterFrame {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 5;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 20px 34px rgba(0, 0, 0, .44)) drop-shadow(0 0 18px rgba(110, 99, 200, .16));
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > :not(.premiumCtaPanel):not(.intuitivePremiumOuterFrame),
+  #root .resultHero[data-star-type="intuition"] .premiumCtaPanel > :not(.typeFrameAsset) {
+    z-index: 4;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .paidLabel {
+    order: 1;
+    width: 100%;
+    margin: 0 0 7px;
+    color: #e8cb82;
+    font-size: 11px;
+    letter-spacing: .26em;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle {
+    order: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 8px;
+    line-height: 1.28;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumTitle::after {
+    font-size: 29px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumPrice {
+    order: 3;
+    margin: 0 0 9px;
+    opacity: 1;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumPrice strong {
+    color: #f0d28b;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-shadow: 0 0 14px rgba(216, 190, 120, .28);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumDescription {
+    display: block;
+    order: 4;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 12px;
+    color: rgba(246, 241, 230, .94);
+    font-size: 12px;
+    line-height: 1.62;
+    letter-spacing: .03em;
+    text-align: left;
+    text-shadow: 0 2px 7px #02040d, 0 0 10px rgba(9, 16, 45, .86);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumList {
+    display: grid;
+    order: 5;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 9px;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 14px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumList li {
+    min-width: 0;
+    min-height: 0;
+    padding: 6px 9px;
+    border: 1px solid rgba(216, 190, 120, .24);
+    border-radius: 8px;
+    background: linear-gradient(100deg, rgba(3, 8, 26, .78), rgba(23, 24, 63, .68));
+    box-shadow: inset 0 1px rgba(255, 245, 214, .07);
+    font-size: 12px !important;
+    line-height: 1.35;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .88);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+    order: 6;
+    width: min(440px, 100%);
+    margin: 0;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButton {
+    min-height: 52px;
+    border-radius: 12px;
+    border-color: rgba(238, 210, 139, .72);
+    background:
+      radial-gradient(circle at 50% 0, rgba(255, 235, 176, .23), transparent 48%),
+      linear-gradient(105deg, rgba(19, 24, 63, .98), rgba(72, 54, 126, .96) 54%, rgba(32, 83, 130, .94));
+    box-shadow:
+      inset 0 1px rgba(255, 247, 222, .34),
+      inset 0 0 20px rgba(216, 190, 120, .12),
+      0 0 22px rgba(216, 190, 120, .2),
+      0 12px 30px rgba(2, 4, 16, .36);
+    font-size: 12px;
+    letter-spacing: .15em;
+  }
+}
+
+/* Owner spacing polish: preserve desktop width while opening the outer rail
+   vertically and tightening only the AI JUZA-to-insight transition. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame {
+    min-height: 680px;
+    padding-block: 76px 68px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset {
+    transform: translate(-50%, -50%) scaleY(1.16);
+  }
+
+  #root .resultHero[data-star-type="intuition"] .juzaMessage {
+    margin-block-end: 28px !important;
+    translate: 0 20px;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .resultGrid {
+    position: relative;
+    width: min(1040px, 100%) !important;
+    gap: 18px !important;
+    margin-block-end: 16px;
+    translate: 0 -16px;
+  }
+}
+
+/* Reuse the AI JUZA dark glass treatment inside each insight frame without
+   obscuring the approved observatory artwork. */
+#root .resultHero[data-star-type="intuition"] .adviceBox {
+  isolation: isolate;
+}
+
+#root .resultHero[data-star-type="intuition"] .adviceBox::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  inset: 18% 4.5% 8% 22%;
+  z-index: 0;
+  border: 1px solid rgba(216, 190, 120, .2);
+  border-radius: 12px;
+  background:
+    linear-gradient(125deg, rgba(240, 232, 255, .045), transparent 34%),
+    linear-gradient(92deg, rgba(5, 9, 29, .78), rgba(20, 28, 66, .62) 66%, rgba(35, 29, 75, .54));
+  box-shadow:
+    inset 0 1px rgba(255, 239, 194, .12),
+    inset 0 0 22px rgba(110, 99, 200, .14),
+    0 8px 18px rgba(1, 3, 12, .16);
+  backdrop-filter: blur(8px) saturate(.92);
+  -webkit-backdrop-filter: blur(8px) saturate(.92);
+  pointer-events: none;
+}
+
+/* FRAME03 follows the Premium Report's outer boundary and masks the former
+   guide-like edge with a dedicated transparent celestial picture frame. */
+#root .resultHero[data-star-type="intuition"] > .paidBox > .intuitivePremiumEdgeFrame {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(110, 99, 200, .2)) drop-shadow(0 14px 24px rgba(0, 0, 0, .32));
+}
+
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    border: 0 !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .intuitivePremiumEdgeFrame {
+    display: block;
+  }
+}
+
+/* Owner correction: the observatory globe in cta_frame.png is not used in
+   the Intuitive Premium Report. Recenter the remaining report architecture. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    align-items: center;
+    padding: 122px 260px 88px;
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox::before {
+    inset: 17% 21% 14%;
+  }
+
+  #root .resultHero[data-star-type="intuition"] :is(
+    .paidLabel,
+    .premiumTitle,
+    .premiumDescription
+  ) {
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumButtonFrame {
+    margin-inline: auto;
+  }
+}

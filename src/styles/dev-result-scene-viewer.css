@@ -1,0 +1,31 @@
+/* Development-only Result Scene Viewer. This stylesheet has no public navigation entry point. */
+.devResultPreview { min-height: 100vh; background: #02050d; }
+.devResultPreview .resultHero { min-height: 100vh; }
+.devResultPreview__loading { min-height: 100vh; background: #02050d; }
+.devResultPreview__controls { position: fixed; z-index: 1000; right: 16px; bottom: 16px; width: min(328px, calc(100vw - 32px)); max-height: min(78vh, 680px); overflow: auto; padding: 12px; color: #edf4ff; background: rgba(5, 11, 24, .89); border: 1px solid rgba(216, 188, 126, .42); border-radius: 12px; box-shadow: 0 18px 48px rgba(0, 0, 0, .48), inset 0 1px rgba(255,255,255,.12); backdrop-filter: blur(16px); font: 12px/1.35 Inter, system-ui, sans-serif; }
+.devResultPreview__controls header, .devResultPreview__nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.devResultPreview__controls header small { display: block; color: #d9b86e; letter-spacing: .14em; }
+.devResultPreview__controls header strong { display: block; font-size: 14px; }
+.devResultPreview__controls header span { color: #b9c6d9; }
+.devResultPreview__controls label { display: grid; gap: 4px; margin-top: 10px; color: #d8e2f1; }
+.devResultPreview__controls select, .devResultPreview__controls button, .devResultPreview__restore { min-height: 32px; padding: 6px 8px; color: #f7f0de; background: rgba(255,255,255,.07); border: 1px solid rgba(216,188,126,.34); border-radius: 7px; font: inherit; }
+.devResultPreview__controls button:hover, .devResultPreview__restore:hover { background: rgba(216,188,126,.14); }
+.devResultPreview__hint { margin: 8px 0; color: #9cafc6; }
+.devResultPreview__toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
+.devResultPreview__toggles label { display: flex; align-items: center; gap: 5px; margin: 0; font-size: 11px; }
+.devResultPreview__toggles input { accent-color: #d9b86e; }
+.devResultPreview__restore { display: none; }
+.devResultPreview--section-header .juzaMessage, .devResultPreview--section-header .resultGrid, .devResultPreview--section-header .paidBox, .devResultPreview--section-header .buttonGroup,
+.devResultPreview--section-juza .resultBadge, .devResultPreview--section-juza .resultRealm, .devResultPreview--section-juza .resultIcon, .devResultPreview--section-juza .resultKicker, .devResultPreview--section-juza .resultTitle, .devResultPreview--section-juza .english, .devResultPreview--section-juza .resultLead, .devResultPreview--section-juza .resultGrid, .devResultPreview--section-juza .paidBox, .devResultPreview--section-insights .resultBadge, .devResultPreview--section-insights .resultRealm, .devResultPreview--section-insights .resultIcon, .devResultPreview--section-insights .resultKicker, .devResultPreview--section-insights .resultTitle, .devResultPreview--section-insights .english, .devResultPreview--section-insights .resultLead, .devResultPreview--section-insights .juzaMessage, .devResultPreview--section-insights .paidBox, .devResultPreview--section-premium .resultCard, .devResultPreview--section-background .resultCard, .devResultPreview--section-background .paidBox { display: none !important; }
+.devResultPreview--hideBackground .designMasterScene__background, .devResultPreview--hideBackground .designMasterScene__atmosphere, .devResultPreview--hideBackground .designMasterScene__bloom, .devResultPreview--hideBackground .designMasterScene__lensFlare { opacity: 0 !important; }
+.devResultPreview--hideOrnaments .panelFrameOrnaments { display: none !important; }
+.devResultPreview--hideJuza .juzaMessage { display: none !important; }
+.devResultPreview--hideInsights .resultGrid { display: none !important; }
+.devResultPreview--hidePremium .paidBox { display: none !important; }
+.devResultPreview--pauseMotion *, .devResultPreview--reducedMotion * { animation-play-state: paused !important; transition-duration: 0ms !important; }
+.devResultPreview--showFrames .resultCard, .devResultPreview--showFrames .juzaMessage, .devResultPreview--showFrames .adviceBox, .devResultPreview--showFrames .paidBox, .devResultPreview--showFrames .premiumCtaPanel { outline: 1px dashed rgba(94, 225, 255, .9) !important; outline-offset: -1px; }
+.devResultPreview--showSafeArea .resultHero::after { content: ""; position: fixed; z-index: 900; inset: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); pointer-events: none; border: 1px dashed rgba(255, 196, 98, .72); }
+.devResultPreview--showNames .juzaMessage::before, .devResultPreview--showNames .resultGrid::before, .devResultPreview--showNames .paidBox::before { position: absolute; z-index: 20; top: 4px; left: 8px; padding: 2px 5px; color: #07101d; background: #89e4ff; border-radius: 3px; font: 10px/1 monospace; }
+.devResultPreview--showNames .juzaMessage::before { content: "AI JUZA"; }.devResultPreview--showNames .resultGrid::before { content: "INSIGHT CARDS"; }.devResultPreview--showNames .paidBox::before { content: "PREMIUM CTA"; }
+.devResultPreview--error { display: grid; place-content: center; min-height: 100vh; padding: 24px; color: #f7f0de; background: #050914; font-family: Inter, system-ui, sans-serif; }
+@media (max-width: 520px) { .devResultPreview__controls { right: 8px; bottom: 8px; width: min(310px, calc(100vw - 16px)); } .devResultPreview__toggles { grid-template-columns: 1fr; } }

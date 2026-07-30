@@ -11,11 +11,11 @@ export const narrativeSectionSchema = z.object({
   reflectionQuestion: z.string().trim().min(10).max(300),
 }).strict();
 
-const growthWeekSchema = z.object({
-  dayRange: z.string().trim().min(1).max(40),
+const concreteActionSchema = z.object({
+  timing: z.string().trim().min(1).max(40),
   title: titleSchema,
-  actions: z.array(z.string().trim().min(10).max(400)).min(2).max(4),
-  reflection: z.string().trim().min(10).max(300),
+  action: z.string().trim().min(10).max(400),
+  purpose: z.string().trim().min(10).max(300),
 }).strict();
 
 export const reportGeneratedContentSchema = z.object({
@@ -31,7 +31,7 @@ export const reportGeneratedContentSchema = z.object({
   growthPlan30Days: z.object({
     title: titleSchema,
     summary: z.string().trim().min(20).max(400),
-    weeks: z.array(growthWeekSchema).length(4),
+    actions: z.array(concreteActionSchema).length(3),
   }).strict(),
   personalRecommendations: narrativeSectionSchema,
   aiJuzaClosingMessage: paragraphSchema,
@@ -86,15 +86,14 @@ export const reportGeneratedContentJsonSchema = {
     blindSpots: narrativeJsonSchema, personalRecommendations: narrativeJsonSchema,
     aiJuzaClosingMessage: { type: "string" },
     growthPlan30Days: {
-      type: "object", additionalProperties: false, required: ["title", "summary", "weeks"],
+      type: "object", additionalProperties: false, required: ["title", "summary", "actions"],
       properties: {
         title: { type: "string" }, summary: { type: "string" },
-        weeks: { type: "array", minItems: 4, maxItems: 4, items: {
-          type: "object", additionalProperties: false, required: ["dayRange", "title", "actions", "reflection"],
+        actions: { type: "array", minItems: 3, maxItems: 3, items: {
+          type: "object", additionalProperties: false, required: ["timing", "title", "action", "purpose"],
           properties: {
-            dayRange: { type: "string" }, title: { type: "string" },
-            actions: { type: "array", minItems: 2, maxItems: 4, items: { type: "string" } },
-            reflection: { type: "string" },
+            timing: { type: "string" }, title: { type: "string" },
+            action: { type: "string" }, purpose: { type: "string" },
           },
         } },
       },

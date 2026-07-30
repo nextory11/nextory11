@@ -2,3 +2,13 @@
 @media(max-width:720px){.trustPage__content{width:min(100% - 24px,1120px);padding-top:18px}.trustHero{padding:72px 10px 40px}.trustHero__back{left:4px}.trustHero h1{letter-spacing:.05em}.trustDocument{padding:28px 22px}.trustDocument__updated{text-align:left}.trustDocument__section+.trustDocument__section{margin-top:30px;padding-top:28px}.trustDocument p,.trustStory p,.trustContact p{font-size:14px;line-height:1.9}.trustFaq__item summary{min-height:72px;padding:0 16px;gap:12px;font-size:14px}.trustFaq__answer p{padding:0 44px 24px}.trustStory{grid-template-columns:1fr}.trustStory .trustFrame,.trustStory .trustFrame:first-child{grid-column:auto;padding:29px 23px;min-height:auto;text-align:left}.trustStory__quote{grid-column:auto;padding:44px 12px}.trustPage__related{margin-top:42px}.trustFooter__nav{max-width:330px}}
 @media(prefers-reduced-motion:reduce){.trustFaq__answer,.trustFaq__mark{transition:none!important}.trustPage *{scroll-behavior:auto!important}}
 
+/* Responsive QA: preserve the visual treatment while providing full-size touch targets. */
+.trustHero__back,
+.trustPage__related a,
+.trustFooter a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 4px;
+}

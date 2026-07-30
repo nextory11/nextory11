@@ -1,7 +1,25 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./styles/premium-design-system.css";
 import "./styles/trust-pages.css";
+import "./styles/question.css";
+import "./styles/cinematic-refinement.css";
+import "./styles/creator-frame-refinement.css";
+import "./styles/challenge-design-master.css";
+import "./styles/result-master-architecture.css";
+import "./styles/empath-frame-refinement.css";
+import "./styles/result-responsive-polish.css";
+import "./styles/intuitive-frame-refinement.css";
+import "./styles/luminary-frame-refinement.css";
+import "./styles/harmonizer-juza-refinement.css";
+import "./styles/pioneer-juza-refinement.css";
+import "./styles/visionary-frame-refinement.css";
+import "./styles/result-emblem-size-alignment.css";
+import "./styles/premium-mobile-shared.css";
+import "./styles/premium-report-universal.css";
+import "./styles/premium-cta-frame-system.css";
+import "./styles/dev-result-scene-viewer.css";
+import "./styles/hero/hero-design-master.css";
 
 import { questions } from "./data/questions";
 import { resultTypes } from "./data/resultTypes";
@@ -14,25 +32,40 @@ import ResultCard from "./components/ResultCard.jsx";
 import ResultScene from "./components/ResultScene.jsx";
 import PremiumCard from "./components/PremiumCard.jsx";
 import PaymentStatus from "./components/PaymentStatus.jsx";
+import TrustFooter from "./components/TrustFooter.jsx";
 import {
-  clearCheckoutSnapshot,
   getPaidCtaEnabled,
   readCheckoutSnapshot,
   redirectToStripeCheckout,
 } from "./lib/stripeCheckout.js";
 import { scoreQuestionnaire } from "./lib/questionBank/scoring.js";
 import { createQuestionBankContext } from "./lib/questionBank/context.js";
-import { OFFICIAL_TO_LEGACY_TYPE } from "./lib/questionBank/officialPack.js";
+import { OFFICIAL_PERSONALITY_SLUGS, OFFICIAL_TO_LEGACY_TYPE } from "./lib/questionBank/officialPack.js";
 import {
   createOfficialQuestionSession,
   QUESTION_BANK_SELECTION_COUNT,
   saveQuestionHistory,
 } from "./lib/questionBank/session.js";
+import {
+  clearActiveDiagnosisPointer,
+  createDiagnosisSession,
+  readActiveDiagnosisSession,
+  updateDiagnosisSession,
+} from "./lib/questionBank/diagnosisSession.js";
 import { TRUST_ROUTES } from "./data/trustContent.js";
+import { parseDevResultPreview } from "./lib/devResultPreview.js";
 
 const TrustExperience = lazy(() => import("./components/TrustExperience.jsx"));
+const DevResultSceneViewer = lazy(() => import("./components/DevResultSceneViewer.jsx"));
 
-const questionBankEnabled = String(import.meta.env.VITE_ENABLE_QUESTION_BANK_V1 ?? "false") === "true";
+const configuredQuestionBankFlag = import.meta.env.VITE_ENABLE_QUESTION_BANK_V1;
+const questionBankEnabled = configuredQuestionBankFlag === undefined || configuredQuestionBankFlag === ""
+  ? import.meta.env.DEV
+  : String(configuredQuestionBankFlag) === "true";
+
+if (import.meta.env.DEV && (configuredQuestionBankFlag === undefined || configuredQuestionBankFlag === "")) {
+  console.warn("[NEXTORY11] VITE_ENABLE_QUESTION_BANK_V1 is unset; the official 220-question bank is enabled in development.");
+}
 
 function getPaymentRoute() {
   const hashRoute = window.location.hash.replace(/^#/, "");
@@ -54,18 +87,42 @@ function getTrustRoute() {
   return TRUST_ROUTES[route] ?? null;
 }
 
+function getDevPreviewRequest() {
+  // Preview query parameters are deliberately ignored by every production build.
+  return parseDevResultPreview({ isDev: import.meta.env.DEV, search: window.location.search });
+}
+
 function App() {
+  const devPreview = getDevPreviewRequest();
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [checkoutError, setCheckoutError] = useState("");
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const checkoutInFlightRef = useRef(false);
   const [paidCtaEnabled, setPaidCtaEnabled] = useState(false);
   const [questionSession, setQuestionSession] = useState(null);
   const [activeQuestions, setActiveQuestions] = useState(questions);
   const [trustRoute, setTrustRoute] = useState(getTrustRoute);
 
   useEffect(() => {
+    if (devPreview || !questionBankEnabled) return;
+    const restored = readActiveDiagnosisSession();
+    if (!restored) return;
+    setQuestionSession({
+      bank: createOfficialQuestionSession({ count: QUESTION_BANK_SELECTION_COUNT }).bank,
+      questions: restored.questions,
+      questionSetVersion: restored.record.questionPackVersion,
+      diagnosisSessionId: restored.record.diagnosisSessionId,
+    });
+    setActiveQuestions(restored.questions);
+    setAnswers(restored.record.submittedAnswers);
+    setStep(restored.record.currentIndex);
+    setStarted(true);
+  }, []);
+
+  useEffect(() => {
+    if (devPreview) return undefined;
     let active = true;
 
     getPaidCtaEnabled().then((enabled) => {
@@ -77,7 +134,7 @@ function App() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [devPreview]);
 
   useEffect(() => {
     const handleHashChange = () => setTrustRoute(getTrustRoute());
@@ -85,14 +142,35 @@ function App() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
+  useEffect(() => {
+    if (!started) return;
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, left: 0, behavior: reducedMotion ? "auto" : "smooth" });
+  }, [started, step]);
+
   const finished = step >= activeQuestions.length;
   const paymentRoute = getPaymentRoute();
+
+  if (devPreview) {
+    return (
+      <Suspense fallback={<main className="devResultPreview__loading" aria-busy="true" />}>
+        <DevResultSceneViewer
+          initialPreviewType={devPreview.previewType}
+          initialSection={devPreview.section}
+          initialControls={devPreview.controls}
+          officialSlugs={OFFICIAL_PERSONALITY_SLUGS}
+          officialToLegacyType={OFFICIAL_TO_LEGACY_TYPE}
+        />
+      </Suspense>
+    );
+  }
 
   function handleStart() {
     if (questionBankEnabled) {
       const session = createOfficialQuestionSession({ count: QUESTION_BANK_SELECTION_COUNT });
-      setQuestionSession(session);
-      setActiveQuestions(session.questions);
+      const persisted = createDiagnosisSession(session);
+      setQuestionSession({ ...session, diagnosisSessionId: persisted.record.diagnosisSessionId });
+      setActiveQuestions(persisted.questions);
     } else {
       setQuestionSession(null);
       setActiveQuestions(questions);
@@ -106,7 +184,7 @@ function App() {
     const question = activeQuestions[step];
     const answerIndex = question.answers.indexOf(answer);
     const isQuestionBankAnswer = Boolean(answer.personalityWeights);
-    setAnswers((prev) => [...prev, isQuestionBankAnswer ? {
+    const normalizedAnswer = isQuestionBankAnswer ? {
       text: answer.text,
       type: OFFICIAL_TO_LEGACY_TYPE[answer.metadata.primaryTrait],
       score: 1,
@@ -126,16 +204,46 @@ function App() {
       questionId: question.id,
       question: question.question,
       answerLabel: String.fromCharCode(65 + answerIndex),
-    }]);
+    };
+
+    const nextAnswers = [...answers];
+    nextAnswers[step] = normalizedAnswer;
+    setAnswers(() => {
+      return nextAnswers;
+    });
+    if (questionSession?.diagnosisSessionId) {
+      updateDiagnosisSession(questionSession.diagnosisSessionId, {
+        currentIndex: step + 1,
+        submittedAnswers: nextAnswers,
+        completionStatus: step + 1 === activeQuestions.length ? "completed" : "in_progress",
+      });
+    }
     if (isQuestionBankAnswer && step + 1 === activeQuestions.length) saveQuestionHistory(activeQuestions);
     setStep((prev) => prev + 1);
   }
 
+  function handlePreviousQuestion() {
+    const previousStep = Math.max(0, step - 1);
+    setStep(previousStep);
+    if (questionSession?.diagnosisSessionId) {
+      updateDiagnosisSession(questionSession.diagnosisSessionId, {
+        currentIndex: previousStep,
+        submittedAnswers: answers,
+        completionStatus: "in_progress",
+      });
+    }
+  }
+
   function handleRestart() {
-    clearCheckoutSnapshot();
+    clearActiveDiagnosisPointer();
     setStarted(false);
     setStep(0);
     setAnswers([]);
+  }
+
+  function handlePaymentRestart() {
+    window.history.replaceState({}, "", "/");
+    handleStart();
   }
 
   function handleReturnToResult() {
@@ -157,6 +265,14 @@ function App() {
     }
   }
 
+  function handleCheckoutIncomplete() {
+    window.history.replaceState({}, "", "/");
+    checkoutInFlightRef.current = false;
+    setCheckoutLoading(false);
+    setCheckoutError("決済は完了していません。料金は請求されていません。");
+    handleReturnToResult();
+  }
+
   function getResultSelection() {
     if (questionBankEnabled && answers.length && answers.every((answer) => answer.questionBankQuestion)) {
       const responses = answers.map((answer) => ({ question: answer.questionBankQuestion, answerId: answer.answerId }));
@@ -164,7 +280,12 @@ function App() {
       const officialType = scoring.primaryPersonality?.personality ?? "pioneer";
       const resultType = OFFICIAL_TO_LEGACY_TYPE[officialType] ?? "action";
       const bank = questionSession?.bank;
-      const questionBankContext = bank ? createQuestionBankContext({ bank, responses, scoringResult: scoring }) : null;
+      const questionBankContext = bank ? createQuestionBankContext({
+        bank,
+        responses,
+        scoringResult: scoring,
+        diagnosisSessionId: questionSession?.diagnosisSessionId ?? null,
+      }) : null;
       return { resultType, result: resultTypes[resultType], scoring, questionBankContext };
     }
     const counts = {};
@@ -181,21 +302,32 @@ function App() {
   }
 
   async function handlePremiumCheckout(result, resultType, questionBankContext) {
+    if (checkoutInFlightRef.current) return;
+    checkoutInFlightRef.current = true;
     setCheckoutError("");
     setCheckoutLoading(true);
 
     try {
-      await redirectToStripeCheckout({ answers, result, resultType, questionBankContext });
+      await redirectToStripeCheckout({
+        answers,
+        result,
+        resultType,
+        questionBankContext,
+        diagnosisSessionId: questionSession?.diagnosisSessionId ?? null,
+      });
     } catch {
       setCheckoutError(
         "開発用の安全な決済セッションを開始できませんでした。",
       );
+    } finally {
+      checkoutInFlightRef.current = false;
       setCheckoutLoading(false);
     }
   }
 
   if (paymentRoute) {
-    const snapshot = readCheckoutSnapshot();
+    const checkoutSessionId = new URL(window.location.href).searchParams.get("session_id");
+    const snapshot = readCheckoutSnapshot(checkoutSessionId);
 
     return (
       <PaymentStatus
@@ -203,7 +335,8 @@ function App() {
         result={snapshot?.result}
         status={paymentRoute}
         onReturnToResult={handleReturnToResult}
-        onRestart={handleRestart}
+        onCheckoutIncomplete={handleCheckoutIncomplete}
+        onRestart={handlePaymentRestart}
       />
     );
   }
@@ -235,6 +368,7 @@ function App() {
             isEnabled={paidCtaEnabled}
             isLoading={checkoutLoading}
             onClick={() => handlePremiumCheckout(result, resultType, questionBankContext)}
+            resultType={resultType}
           />
 
           <div className="buttonGroup">
@@ -242,6 +376,7 @@ function App() {
               もう一度、星を見つける
             </button>
           </div>
+          <TrustFooter compact />
         </section>
       </main>
     );
@@ -252,9 +387,23 @@ function App() {
   return (
     <main className="app">
       <section className="questionHero">
+        <div className="questionCosmos" aria-hidden="true">
+          <span className="questionCosmos__nebula questionCosmos__nebula--one" />
+          <span className="questionCosmos__nebula questionCosmos__nebula--two" />
+          <span className="questionCosmos__stars" />
+          <span className="questionCosmos__constellation questionCosmos__constellation--left" />
+          <span className="questionCosmos__constellation questionCosmos__constellation--right" />
+          <span className="questionCosmos__light" />
+        </div>
         <ProgressBar current={step + 1} total={activeQuestions.length} />
 
-        <QuestionCard question={currentQuestion} onAnswer={handleAnswer} />
+        <QuestionCard
+          question={currentQuestion}
+          selectedAnswerId={answers[step]?.answerId ?? answers[step]?.text ?? null}
+          canGoPrevious={step > 0}
+          onAnswer={handleAnswer}
+          onPrevious={handlePreviousQuestion}
+        />
       </section>
     </main>
   );

@@ -1,0 +1,418 @@
+/*
+ * Shared NEXTORY11 Premium Report mobile composition.
+ *
+ * This file is intentionally loaded after the type-specific Design Master
+ * refinements. It standardizes only responsive hierarchy and containment;
+ * colors, frame images, ornaments and type identities remain type-owned.
+ */
+
+@media (max-width: 520px) {
+  #root .resultHero > .paidBox {
+    box-sizing: border-box;
+    display: flex !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #root .resultHero > .paidBox > .paidLabel {
+    order: 1 !important;
+    flex: 0 0 auto;
+    max-width: calc(100% - 12px);
+    margin: 0 auto 14px !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumTitle {
+    order: 2 !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 304px !important;
+    margin: 0 auto !important;
+    padding-block: 0 !important;
+    font-size: clamp(24px, 6.8vw, 28px) !important;
+    line-height: 1.34 !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+
+  #root .resultHero > .paidBox > .premiumTitle::after {
+    font-size: clamp(24px, 6.8vw, 28px) !important;
+    line-height: 1.34 !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumDescription {
+    order: 3 !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 286px !important;
+    margin: 12px auto 0 !important;
+    padding: 0 !important;
+    font-size: 12.5px !important;
+    line-height: 1.72 !important;
+    text-align: center !important;
+    overflow-wrap: anywhere;
+  }
+
+  #root .resultHero > .paidBox > .premiumPrice {
+    order: 4 !important;
+    box-sizing: border-box;
+    width: min(168px, 100%) !important;
+    min-height: 56px !important;
+    height: auto !important;
+    margin: 16px auto 0 !important;
+    padding: 8px 16px !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumPrice strong {
+    font-size: clamp(29px, 8vw, 34px) !important;
+    line-height: 1.1 !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumList {
+    order: 5 !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 286px !important;
+    margin: 16px auto 0 !important;
+    gap: 8px !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumList li {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px !important;
+    padding: 8px 11px !important;
+    gap: 9px !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumList li span {
+    flex-basis: 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  #root .resultHero > .paidBox > .premiumCtaPanel {
+    order: 6 !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 286px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 16px auto 0 !important;
+    padding: 14px !important;
+    gap: 12px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  #root .resultHero:not(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) > .paidBox > .premiumCtaPanel > p {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 258px !important;
+    margin: 0 auto !important;
+    padding: 0 3px !important;
+    overflow: visible !important;
+    font-size: 11.5px !important;
+    line-height: 1.58 !important;
+    text-align: center !important;
+  }
+
+  #root .resultHero > .paidBox .premiumButtonFrame {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 258px !important;
+    min-height: 52px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  #root .resultHero > .paidBox .premiumButton {
+    width: 100% !important;
+    min-height: 50px !important;
+    padding: 10px 14px !important;
+    color: #fff8e6 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  #root .resultHero > .paidBox .premiumButton:disabled {
+    opacity: .78;
+  }
+
+  #root .resultHero > .paidBox > .premiumError {
+    order: 7 !important;
+  }
+
+  /* Creator previously moved the action above the narrative on mobile. */
+  #root .resultHero[data-star-type="creator"] > .paidBox > .premiumCtaPanel {
+    order: 6 !important;
+    aspect-ratio: auto !important;
+    min-height: 150px !important;
+  }
+
+  /* Intuitive and Luminary use generated title copy; keep that copy within the
+     same shared title slot and restore the reserved notice/action area. */
+  #root .resultHero:is(
+    [data-star-type="intuition"],
+    [data-star-type="expression"]
+  ) > .paidBox > .premiumTitle {
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="intuition"],
+    [data-star-type="expression"]
+  ) > .paidBox > .premiumTitle::after {
+    font-size: clamp(21px, 5.8vw, 24px) !important;
+    line-height: 1.38 !important;
+  }
+
+  /*
+   * Intuitive's desktop composition places its glass in the right-hand bay of
+   * a wide observatory asset. On a narrow portrait viewport that bay falls
+   * outside the readable column, so restore the same dark cosmic material as
+   * one contained mobile surface without altering or stretching the artwork.
+   */
+  #root .resultHero[data-star-type="intuition"] > .paidBox {
+    width: calc(100% - 32px) !important;
+    max-width: 358px !important;
+    margin-inline: auto !important;
+    padding: 48px 32px 54px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(229, 199, 125, .48) !important;
+    border-radius: 24px !important;
+    background:
+      radial-gradient(circle at 22% 12%, rgba(110, 99, 200, .22), transparent 36%),
+      linear-gradient(145deg, rgba(2, 5, 20, .9), rgba(7, 13, 39, .86) 58%, rgba(31, 22, 68, .84)) !important;
+    box-shadow:
+      inset 0 0 42px rgba(110, 99, 200, .16),
+      inset 0 1px rgba(255, 239, 194, .2),
+      0 20px 54px rgba(0, 0, 0, .38),
+      0 0 28px rgba(110, 99, 200, .14) !important;
+    backdrop-filter: blur(8px) saturate(.92) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(.92) !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox::before {
+    content: "";
+    position: absolute !important;
+    inset: 10px !important;
+    z-index: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    border: 1px solid rgba(229, 199, 125, .2) !important;
+    border-radius: 17px !important;
+    background: transparent !important;
+    box-shadow: inset 0 0 24px rgba(110, 99, 200, .09) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > :not(
+    .panelFrameOrnaments,
+    .typeFrameAsset,
+    .intuitivePremiumEdgeFrame
+  ) {
+    position: relative;
+    z-index: 4 !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .premiumDescription,
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .premiumList,
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .premiumCtaPanel {
+    max-width: 278px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .premiumDescription {
+    display: block !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] > .paidBox > .premiumList {
+    display: grid !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="intuition"],
+    [data-star-type="expression"]
+  ) > .paidBox > .premiumCtaPanel {
+    display: flex !important;
+  }
+
+  /*
+   * Empath, Evolver and Explorer keep their approved integrated CTA artwork.
+   * Their internal content follows the same bilingual hierarchy and compact
+   * rhythm without replacing the type-specific frame.
+   */
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) .premiumIdentityLabel {
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) .premiumIdentityLabel .paidLabel__primary {
+    font-size: 15px !important;
+    line-height: 1.38 !important;
+    letter-spacing: .06em !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) .premiumIdentityLabel .paidLabel__secondary {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .17em !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaIdentity,
+    .evolverCtaIdentity,
+    .explorerCtaIdentity
+  ) {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 286px !important;
+    margin-inline: auto !important;
+    padding: 12px !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaIdentity,
+    .evolverCtaIdentity,
+    .explorerCtaIdentity
+  ) > strong {
+    font-size: clamp(21px, 6.2vw, 25px) !important;
+    line-height: 1.38 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaOfferLine,
+    .evolverCtaOfferLine,
+    .explorerCtaOfferLine
+  ) {
+    justify-content: center !important;
+    gap: 9px !important;
+    padding-block: 0 !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaOfferLine,
+    .evolverCtaOfferLine,
+    .explorerCtaOfferLine
+  ) b {
+    font-size: 32px !important;
+    line-height: 1.08 !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaSummary,
+    .evolverCtaSummary,
+    .explorerCtaSummary
+  ) {
+    margin: 0 !important;
+    font-size: 12.5px !important;
+    line-height: 1.62 !important;
+    text-align: center !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaBenefits,
+    .evolverCtaBenefits,
+    .explorerCtaBenefits
+  ) {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    margin: 2px 0 0 !important;
+    gap: 7px !important;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaBenefits,
+    .evolverCtaBenefits,
+    .explorerCtaBenefits
+  ) li {
+    box-sizing: border-box;
+    min-height: 44px !important;
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+    line-height: 1.42 !important;
+    text-align: left;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="empathy"],
+    [data-star-type="adaptability"],
+    [data-star-type="explorer"]
+  ) :is(
+    .empathCtaStatus,
+    .evolverCtaStatus,
+    .explorerCtaStatus
+  ) {
+    display: block !important;
+    justify-self: center !important;
+    margin: 2px auto 0 !important;
+    padding: 4px 10px !important;
+    font-size: 9.5px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+}

@@ -39,7 +39,8 @@ export async function generatePremiumReport(requestId: string, dependencies: Dep
   const env = dependencies.provider ? null : parseAiReportEnv();
   const provider = dependencies.provider ?? new OpenAiReportProvider({ apiKey: env!.OPENAI_API_KEY, model: env!.AI_REPORT_MODEL });
   try {
-    const answers = normalizeDiagnosisAnswers(claimed.answersJson as RecognizedAnswer[]);
+    const stored = claimed.answersJson as RecognizedAnswer[] | { answers?: RecognizedAnswer[] };
+    const answers = normalizeDiagnosisAnswers(Array.isArray(stored) ? stored : (stored.answers ?? []));
     const profile = buildPremiumReportProfile(answers, claimed.resultType);
     const receipt = await provider.generateReport({
       requestId, result: { resultType: claimed.resultType, resultNameJa: claimed.resultNameJa, resultNameEn: claimed.resultNameEn },
