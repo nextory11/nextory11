@@ -682,7 +682,7 @@
   .paymentVerification small { max-width: 100%; padding-left: 41px; text-align: left; }
 
   .paymentActions { margin-top: 15px; gap: 9px; }
-  .paymentSecondaryButton { flex: 1 1 150px; min-height: 43px; padding: 0 14px; font-size: 11px; }
+  .paymentSecondaryButton { flex: 1 1 150px; min-height: 45px; padding: 0 14px; font-size: 11px; }
   .paymentFootnote { margin-top: 14px; font-size: 6px; letter-spacing: 0.15em; }
 }
 

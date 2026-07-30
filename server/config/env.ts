@@ -1,8 +1,14 @@
 import { z } from "zod";
 
+const postgresConnectionStringSchema = z.string().min(1).refine(
+  (value) => value.startsWith("postgresql://") || value.startsWith("postgres://"),
+  "Expected a PostgreSQL connection string.",
+);
+
 const serverEnvSchema = z.object({
-  DATABASE_URL: z.string().url().startsWith("postgresql://"),
-  DATABASE_URL_UNPOOLED: z.string().url().startsWith("postgresql://").optional(),
+  DATABASE_URL: postgresConnectionStringSchema,
+  DATABASE_URL_UNPOOLED: postgresConnectionStringSchema.optional(),
+  STRIPE_MODE: z.enum(["test", "live"]).optional(),
   STRIPE_SECRET_KEY: z.string().min(1).optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
   STRIPE_EXPECTED_PRODUCT_ID: z.string().min(1).optional(),
@@ -27,13 +33,23 @@ const serverEnvSchema = z.object({
 });
 
 const stripeEnvSchema = serverEnvSchema.extend({
-  STRIPE_SECRET_KEY: z.string().startsWith("sk_test_"),
+  STRIPE_MODE: z.enum(["test", "live"]).default("test"),
+  STRIPE_SECRET_KEY: z.string().min(1),
   STRIPE_WEBHOOK_SECRET: z.string().startsWith("whsec_"),
   STRIPE_EXPECTED_PRODUCT_ID: z.string().startsWith("prod_"),
   STRIPE_EXPECTED_PRICE_ID: z.string().startsWith("price_"),
   STRIPE_EXPECTED_AMOUNT_JPY: z.coerce.number().int().refine((value) => value === 980).default(980),
   STRIPE_API_VERSION: z.string().min(1),
   REPORT_BASE_URL: z.string().url(),
+}).superRefine((value, context) => {
+  const expectedPrefix = value.STRIPE_MODE === "live" ? "sk_live_" : "sk_test_";
+  if (!value.STRIPE_SECRET_KEY.startsWith(expectedPrefix)) {
+    context.addIssue({
+      code: "custom",
+      path: ["STRIPE_SECRET_KEY"],
+      message: `Stripe key must match STRIPE_MODE=${value.STRIPE_MODE}.`,
+    });
+  }
 });
 
 const aiReportEnvSchema = serverEnvSchema.extend({
@@ -83,9 +99,6 @@ export function getServerEnv(): ServerEnv {
 export type StripeServerEnv = z.infer<typeof stripeEnvSchema>;
 
 export function parseStripeServerEnv(source: NodeJS.ProcessEnv = process.env): StripeServerEnv {
-  if (source.VERCEL_ENV && source.VERCEL_ENV !== "development") {
-    throw new ServerConfigurationError(["VERCEL_ENV"]);
-  }
   const parsed = stripeEnvSchema.safeParse(source);
   if (!parsed.success) {
     throw new ServerConfigurationError(

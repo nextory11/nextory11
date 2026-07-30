@@ -35,6 +35,8 @@ export class ReportRequestsRepository {
     const [record] = await this.db
       .select({
         id: reportRequests.id,
+        resultType: reportRequests.resultType,
+        answersJson: reportRequests.answersJson,
         paymentStatus: reportRequests.paymentStatus,
         generationStatus: reportRequests.generationStatus,
         expiresAt: reportRequests.expiresAt,

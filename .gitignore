@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+tmp/
 *.local
 
 # Local environment and credentials
@@ -34,6 +35,7 @@ artwork-masters/
 *.pdf
 
 # Local visual QA artifacts
+Design/
 /*.png
 /*.jpg
 /*.webp

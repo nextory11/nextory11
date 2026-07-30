@@ -2,16 +2,16 @@ export const PERSONAL_STAR_REPORT_TEMPLATE_VERSION = "personal-star-report.v1";
 export const PERSONAL_STAR_REPORT_VERSION = "premium-report.v1";
 
 export const PREMIUM_SECTION_TITLES = Object.freeze({
-  executiveSummary: "星の輪郭 — エグゼクティブサマリー",
-  corePersonality: "あなたの核となる個性",
-  hiddenStrengths: "まだ言葉になっていない強み",
-  traitInteraction: "第2・第3特性が生む組み合わせ",
-  decisionMakingStyle: "意思決定のスタイル",
-  relationships: "人とのつながり方",
-  careerAndTalent: "仕事と才能の活かし方",
-  currentGrowthStage: "現在の成長ステージ",
-  blindSpots: "見落としやすい盲点",
-  growthPlan30Days: "30日間の成長プラン",
-  personalRecommendations: "あなたへの個別提案",
-  aiJuzaClosingMessage: "AI JUZAからの結びの言葉",
+  executiveSummary: "あなたの本質",
+  corePersonality: "核となる強み",
+  hiddenStrengths: "無意識の才能",
+  traitInteraction: "周囲から見たあなた",
+  decisionMakingStyle: "人間関係で輝くとき",
+  relationships: "恋愛・親しい関係",
+  careerAndTalent: "仕事・役割",
+  currentGrowthStage: "つまずきやすい点",
+  blindSpots: "手放したい思考・習慣",
+  personalRecommendations: "伸ばす可能性",
+  growthPlan30Days: "今日からの具体的な3行動",
+  aiJuzaClosingMessage: "AI JUZAからの個別メッセージ",
 });

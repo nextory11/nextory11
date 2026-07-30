@@ -1,0 +1,1132 @@
+/* NEXTORY11 Premium CTA Frame System v2
+   One shared structure; personality is expressed only through material,
+   symbolic crest and restrained type-specific light. */
+
+#root .resultHero[data-star-type] {
+  --cta-v2-primary: 77, 141, 255;
+  --cta-v2-secondary: 157, 100, 255;
+  --cta-v2-metal: 239, 190, 91;
+  --cta-v2-dark: 8, 18, 54;
+  --cta-v2-glyph: "✦";
+  --cta-v2-radius: 999px;
+  --cta-v2-cut: polygon(28px 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 28px 100%, 0 50%);
+}
+
+#root .resultHero[data-star-type="challenger"] {
+  --cta-v2-primary: 210, 34, 13;
+  --cta-v2-secondary: 255, 116, 19;
+  --cta-v2-metal: 255, 190, 62;
+  --cta-v2-dark: 67, 7, 4;
+  --cta-v2-glyph: "☀";
+  --cta-v2-cut: polygon(22px 0, calc(50% - 12px) 0, 50% 7px, calc(50% + 12px) 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, calc(50% + 12px) 100%, 50% calc(100% - 7px), calc(50% - 12px) 100%, 22px 100%, 0 50%);
+}
+
+#root .resultHero[data-star-type="explorer"] {
+  --cta-v2-primary: 0, 154, 185;
+  --cta-v2-secondary: 14, 92, 130;
+  --cta-v2-metal: 236, 181, 70;
+  --cta-v2-dark: 0, 38, 52;
+  --cta-v2-glyph: "✥";
+}
+
+#root .resultHero[data-star-type="thinker"] {
+  --cta-v2-primary: 43, 147, 83;
+  --cta-v2-secondary: 8, 87, 61;
+  --cta-v2-metal: 224, 199, 92;
+  --cta-v2-dark: 3, 45, 33;
+  --cta-v2-glyph: "❀";
+  --cta-v2-radius: 24px;
+}
+
+#root .resultHero[data-star-type="leader"] {
+  --cta-v2-primary: 87, 47, 192;
+  --cta-v2-secondary: 156, 53, 223;
+  --cta-v2-metal: 234, 193, 89;
+  --cta-v2-dark: 28, 8, 70;
+  --cta-v2-glyph: "✧";
+}
+
+#root .resultHero[data-star-type="persistence"] {
+  --cta-v2-primary: 19, 72, 166;
+  --cta-v2-secondary: 8, 43, 119;
+  --cta-v2-metal: 239, 193, 84;
+  --cta-v2-dark: 4, 21, 65;
+  --cta-v2-glyph: "♜";
+  --cta-v2-radius: 16px;
+}
+
+#root .resultHero[data-star-type="expression"] {
+  --cta-v2-primary: 244, 242, 234;
+  --cta-v2-secondary: 206, 221, 236;
+  --cta-v2-metal: 224, 177, 86;
+  --cta-v2-dark: 84, 73, 58;
+  --cta-v2-glyph: "✺";
+}
+
+#root .resultHero[data-star-type="creator"] {
+  --cta-v2-primary: 202, 43, 138;
+  --cta-v2-secondary: 136, 31, 146;
+  --cta-v2-metal: 242, 174, 83;
+  --cta-v2-dark: 76, 5, 56;
+  --cta-v2-glyph: "✿";
+  --cta-v2-radius: 26px;
+}
+
+#root .resultHero[data-star-type="action"] {
+  --cta-v2-primary: 198, 89, 8;
+  --cta-v2-secondary: 119, 43, 2;
+  --cta-v2-metal: 255, 195, 71;
+  --cta-v2-dark: 63, 19, 1;
+  --cta-v2-glyph: "➶";
+}
+
+#root .resultHero[data-star-type="adaptability"] {
+  --cta-v2-primary: 0, 133, 127;
+  --cta-v2-secondary: 0, 84, 91;
+  --cta-v2-metal: 224, 190, 74;
+  --cta-v2-dark: 0, 39, 42;
+  --cta-v2-glyph: "↻";
+}
+
+#root .resultHero[data-star-type="intuition"] {
+  --cta-v2-primary: 34, 48, 132;
+  --cta-v2-secondary: 57, 36, 139;
+  --cta-v2-metal: 220, 183, 80;
+  --cta-v2-dark: 6, 13, 58;
+  --cta-v2-glyph: "◉";
+}
+
+#root .resultHero[data-star-type="empathy"] {
+  --cta-v2-primary: 100, 145, 218;
+  --cta-v2-secondary: 186, 118, 202;
+  --cta-v2-metal: 238, 202, 183;
+  --cta-v2-dark: 38, 31, 78;
+  --cta-v2-glyph: "♡";
+  --cta-v2-radius: 22px;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame {
+  isolation: isolate !important;
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 92px !important;
+  padding: 11px !important;
+  border-radius: var(--cta-v2-radius) !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .24))
+    drop-shadow(0 0 23px rgba(var(--cta-v2-primary), .24)) !important;
+  animation: premiumCtaV2Breath 7.2s ease-in-out infinite !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame::before {
+  z-index: 0 !important;
+  inset: 0 !important;
+  clip-path: var(--cta-v2-cut) !important;
+  border: 0 !important;
+  border-radius: var(--cta-v2-radius) !important;
+  background:
+    linear-gradient(90deg,
+      rgba(var(--cta-v2-metal), .95),
+      rgba(255, 247, 210, .86) 9%,
+      rgba(var(--cta-v2-primary), .95) 26%,
+      rgba(var(--cta-v2-metal), .88) 50%,
+      rgba(var(--cta-v2-primary), .95) 74%,
+      rgba(255, 247, 210, .86) 91%,
+      rgba(var(--cta-v2-metal), .95)) border-box !important;
+  padding: 2px !important;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  box-shadow: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame::after {
+  z-index: 0 !important;
+  inset: 7px !important;
+  clip-path: var(--cta-v2-cut) !important;
+  border: 1px solid rgba(var(--cta-v2-metal), .5) !important;
+  border-radius: var(--cta-v2-radius) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.18), transparent 38%),
+    linear-gradient(105deg,
+      rgba(var(--cta-v2-dark), .93),
+      rgba(var(--cta-v2-primary), .76) 43%,
+      rgba(var(--cta-v2-secondary), .82)) !important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.32),
+    inset 0 -12px 26px rgba(var(--cta-v2-dark), .22),
+    0 0 20px rgba(var(--cta-v2-primary), .2) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame::after {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.72), transparent 44%),
+    linear-gradient(105deg, rgba(242,242,238,.98), rgba(210,226,238,.96) 52%, rgba(244,237,218,.98)) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__sigil {
+  position: absolute !important;
+  left: 15px !important;
+  top: 50% !important;
+  z-index: 4 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  border: 1px solid rgba(var(--cta-v2-metal), .78) !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.25), transparent 18%),
+    radial-gradient(circle, rgba(var(--cta-v2-primary), .78), rgba(var(--cta-v2-dark), .94) 68%) !important;
+  color: rgb(var(--cta-v2-metal)) !important;
+  box-shadow:
+    inset 0 0 12px rgba(var(--cta-v2-primary), .42),
+    0 0 14px rgba(var(--cta-v2-primary), .34),
+    0 0 0 4px rgba(var(--cta-v2-dark), .38) !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__sigil::before {
+  content: var(--cta-v2-glyph) !important;
+  font: 600 25px/1 Georgia, "Yu Mincho", serif !important;
+  text-shadow: 0 0 8px rgba(var(--cta-v2-metal), .72) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__perimeter {
+  z-index: 3 !important;
+  display: block !important;
+  inset: 3px !important;
+  border-radius: var(--cta-v2-radius) !important;
+  background:
+    conic-gradient(from 0deg,
+      transparent 0 75%,
+      rgba(255,255,255,.95) 81%,
+      rgba(var(--cta-v2-metal), 1) 85%,
+      rgba(var(--cta-v2-primary), .92) 89%,
+      transparent 95%) !important;
+  opacity: .58 !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner {
+  z-index: 4 !important;
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-color: rgba(var(--cta-v2-metal), .95) !important;
+  filter:
+    drop-shadow(0 0 4px rgba(var(--cta-v2-metal), .72))
+    drop-shadow(0 0 8px rgba(var(--cta-v2-primary), .5)) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--tl { top: 2px !important; left: 25px !important; }
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--tr { top: 2px !important; right: 25px !important; }
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--bl { bottom: 2px !important; left: 25px !important; }
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--br { right: 25px !important; bottom: 2px !important; }
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__ornament {
+  z-index: 4 !important;
+  display: block !important;
+  width: 13px !important;
+  height: 13px !important;
+  border-color: rgba(var(--cta-v2-metal), .96) !important;
+  background:
+    radial-gradient(circle,
+      #fff 0 8%,
+      rgb(var(--cta-v2-metal)) 13% 29%,
+      rgb(var(--cta-v2-primary)) 33% 58%,
+      rgba(var(--cta-v2-dark), .92) 62% 72%,
+      transparent 74%) !important;
+  box-shadow:
+    -24px 0 0 -5px rgba(var(--cta-v2-metal), .72),
+    24px 0 0 -5px rgba(var(--cta-v2-metal), .72),
+    0 0 12px rgba(var(--cta-v2-primary), .64) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__ornament--top { top: -4px !important; }
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__ornament--bottom { bottom: -4px !important; }
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  min-height: 66px !important;
+  padding: 14px 64px !important;
+  border: 0 !important;
+  border-radius: var(--cta-v2-radius) !important;
+  background: transparent !important;
+  color: rgba(255, 250, 232, .96) !important;
+  box-shadow: none !important;
+  text-shadow:
+    0 1px 2px rgba(var(--cta-v2-dark), .92),
+    0 0 10px rgba(var(--cta-v2-metal), .32) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame .premiumButton {
+  color: rgba(73, 50, 28, .94) !important;
+  text-shadow: 0 1px rgba(255,255,255,.7), 0 0 10px rgba(var(--cta-v2-metal), .25) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton__arrow {
+  z-index: 5 !important;
+  right: 28px !important;
+  color: rgba(255, 245, 211, .94) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButton__arrow {
+  color: rgba(91, 59, 27, .88) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame:has(.premiumButton:not(:disabled)):hover {
+  transform: translateY(-2px) !important;
+  filter:
+    drop-shadow(0 0 13px rgba(var(--cta-v2-metal), .38))
+    drop-shadow(0 0 31px rgba(var(--cta-v2-primary), .36)) !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame:has(.premiumButton:focus-visible) {
+  outline: 2px solid rgba(255, 244, 207, .92) !important;
+  outline-offset: 5px !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButton:disabled {
+  opacity: .92 !important;
+}
+
+@keyframes premiumCtaV2Breath {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .2)) drop-shadow(0 0 20px rgba(var(--cta-v2-primary), .2)); }
+  50% { filter: drop-shadow(0 0 13px rgba(var(--cta-v2-metal), .3)) drop-shadow(0 0 28px rgba(var(--cta-v2-primary), .3)); }
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame {
+    min-height: 82px !important;
+    padding: 9px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__sigil {
+    left: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__sigil::before {
+    font-size: 20px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 62px !important;
+    padding: 12px 38px 12px 50px !important;
+    font-size: clamp(12px, 3.4vw, 14px) !important;
+    letter-spacing: .035em !important;
+    white-space: nowrap !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButton__arrow {
+    right: 16px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--tl,
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--bl { left: 17px !important; }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--tr,
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner--br { right: 17px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame,
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/*
+ * Challenge Premium CTA
+ * Mount the approved FRAME02 as the outer ornament while preserving the
+ * shared button content and interaction underneath it.
+ */
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 780px) !important;
+  min-height: 98px !important;
+  margin-inline: auto !important;
+  padding: 18px 38px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--challenge-light-gold), .34))
+    drop-shadow(0 0 22px rgba(var(--challenge-fire), .2)) !important;
+}
+
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/challenge/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 62px !important;
+  padding-inline: 52px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 13px 22px !important;
+  }
+
+  #root .resultHero[data-star-type="challenger"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 34px !important;
+  }
+}
+
+/*
+ * Creator Premium CTA
+ * Use the approved Creator FRAME02 as the complete outer ornament.
+ */
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 780px) !important;
+  min-height: 98px !important;
+  margin-inline: auto !important;
+  padding: 18px 38px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .34))
+    drop-shadow(0 0 24px rgba(var(--cta-v2-primary), .26)) !important;
+}
+
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/creator/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 62px !important;
+  padding-inline: 52px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 13px 22px !important;
+  }
+
+  #root .resultHero[data-star-type="creator"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 34px !important;
+  }
+}
+
+/*
+ * Evolver Premium CTA
+ * Use the approved Evolver FRAME02 as the complete outer ornament.
+ */
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 780px) !important;
+  min-height: 98px !important;
+  margin-inline: auto !important;
+  padding: 18px 38px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .3))
+    drop-shadow(0 0 24px rgba(var(--cta-v2-primary), .24)) !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/evolver/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 62px !important;
+  padding-inline: 52px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 13px 22px !important;
+  }
+
+  #root .resultHero[data-star-type="adaptability"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 34px !important;
+  }
+}
+
+/*
+ * Explorer Premium CTA
+ * Use the approved Explorer FRAME02 as the complete outer ornament.
+ */
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 780px) !important;
+  min-height: 98px !important;
+  margin-inline: auto !important;
+  padding: 18px 38px 18px 64px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .3))
+    drop-shadow(0 0 24px rgba(var(--cta-v2-primary), .24)) !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/explorer/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 62px !important;
+  padding-inline: 52px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 13px 22px 13px 46px !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 34px !important;
+  }
+}
+
+/*
+ * Guardian Premium CTA
+ * The approved CTA asset includes its own blue face and arrow, so it sits
+ * below the live button label while the duplicate generic arrow is hidden.
+ */
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 112px !important;
+  margin-inline: auto !important;
+  padding: 24px 88px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .28))
+    drop-shadow(0 0 24px rgba(var(--cta-v2-primary), .24)) !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/guardian/overlays/cta_frame.png")
+    center 25% / 100% 270% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 64px !important;
+  padding-inline: 52px !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .premiumReport .premiumButton__arrow {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 88px !important;
+    padding: 18px 48px !important;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 52px !important;
+    padding-inline: 26px !important;
+  }
+}
+
+/*
+ * Harmonizer Premium CTA
+ * Keep the approved lotus, teal crystal, and garden filigree intact around
+ * the live CTA label. The artwork replaces only the shared CTA ornaments.
+ */
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 118px !important;
+  margin-inline: auto !important;
+  padding: 22px 68px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .25))
+    drop-shadow(0 0 25px rgba(var(--cta-v2-primary), .25)) !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/harmonizer/overlays/cta_frame.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 5 !important;
+  min-height: 74px !important;
+  padding-inline: 56px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 94px !important;
+    padding: 18px 38px !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 58px !important;
+    padding-inline: 34px !important;
+  }
+}
+
+/*
+ * Intuitive Premium CTA
+ * Use the approved quiet-observatory FRAME02 as the complete outer ornament.
+ * The live label remains above the asset so the CTA behavior stays unchanged.
+ */
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 104px !important;
+  margin-inline: auto !important;
+  padding: 18px 62px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .24))
+    drop-shadow(0 0 24px rgba(var(--cta-v2-primary), .23)) !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/intuitive/overlays/frame02.png")
+    center / 100% 174% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 5 !important;
+  min-height: 68px !important;
+  padding-inline: 54px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 82px !important;
+    padding: 14px 34px !important;
+  }
+
+  #root .resultHero[data-star-type="intuition"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 30px !important;
+  }
+}
+
+/*
+ * Luminary Premium CTA
+ * Preserve the approved white-gold crystal portal as the full CTA ornament.
+ * The live button content is reserved for the open right-hand bay.
+ */
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 120px !important;
+  margin-inline: auto !important;
+  padding: 24px 62px 24px 230px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 12px rgba(255, 244, 205, .34))
+    drop-shadow(0 0 28px rgba(117, 207, 255, .24)) !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/light-bringer/overlays/cta_frame.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 5 !important;
+  min-height: 72px !important;
+  padding-inline: 42px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 88px !important;
+    padding: 17px 28px 17px 112px !important;
+  }
+
+  #root .resultHero[data-star-type="expression"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 20px !important;
+  }
+}
+
+/*
+ * Pioneer Premium CTA
+ * Use the approved blue-crystal expedition frame as the complete perimeter.
+ */
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 110px !important;
+  margin-inline: auto !important;
+  padding: 21px 70px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 10px rgba(var(--cta-v2-metal), .27))
+    drop-shadow(0 0 26px rgba(76, 166, 255, .25)) !important;
+}
+
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/pioneer/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 5 !important;
+  min-height: 68px !important;
+  padding-inline: 48px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 84px !important;
+    padding: 16px 38px !important;
+  }
+
+  #root .resultHero[data-star-type="action"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 52px !important;
+    padding-inline: 28px !important;
+  }
+}
+
+/*
+ * Visionary Premium CTA
+ * Use the approved celestial-orbit FRAME02 as the complete CTA perimeter.
+ * The live label and arrow remain inside the open central bay.
+ */
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame {
+  position: relative !important;
+  width: min(100%, 820px) !important;
+  min-height: 112px !important;
+  margin-inline: auto !important;
+  padding: 21px 86px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter:
+    drop-shadow(0 0 11px rgba(var(--cta-v2-metal), .28))
+    drop-shadow(0 0 27px rgba(75, 137, 255, .26)) !important;
+}
+
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame::before,
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame::after,
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame__corner,
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame__ornament,
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame__sigil {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame__perimeter {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  background:
+    url("/images/result-scenes/visionary/overlays/frame02.png")
+    center / 100% 100% no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+#root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame .premiumButton {
+  position: relative !important;
+  z-index: 5 !important;
+  min-height: 70px !important;
+  padding-inline: 52px !important;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame {
+    width: 100% !important;
+    min-height: 86px !important;
+    padding: 16px 42px !important;
+  }
+
+  #root .resultHero[data-star-type="leader"] .premiumReport .premiumButtonFrame .premiumButton {
+    min-height: 54px !important;
+    padding-inline: 28px !important;
+  }
+}
+
+/*
+ * Responsive QA safety net: the approved ornamental frames keep their type
+ * identity, while the shared Japanese CTA label may wrap on narrow phones.
+ */
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame .premiumButton {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    line-break: strict;
+    line-height: 1.35 !important;
+    text-wrap: balance;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame .premiumButton__label {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/*
+ * Premium Preview raster frames.
+ *
+ * The approved sources use different native aspect ratios and generous
+ * transparent canvases. Treat them as frame artwork (corners + rails) instead
+ * of flattening every PNG into the button rectangle. Border-image keeps the
+ * ornamental corners crisp, scales the rails on one axis only, and preserves
+ * the same 760 x 92 visual footprint as the approved Empathy CTA.
+ * Empathy intentionally keeps its already-approved CSS frame treatment.
+ */
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset {
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: min(100%, 760px) !important;
+  height: 92px !important;
+  min-height: 92px !important;
+  margin-inline: auto !important;
+  padding: 1px !important;
+  overflow: visible !important;
+  border: 12px solid transparent !important;
+  border-image-source: var(--premium-preview-frame) !important;
+  border-image-slice: var(--premium-preview-slice, 18% 8%) !important;
+  border-image-width: var(--premium-preview-width, 18px 28px) !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+  border-radius: 0 !important;
+  background: none !important;
+  opacity: 1 !important;
+  filter:
+    drop-shadow(0 0 7px rgba(var(--cta-v2-metal), .28))
+    drop-shadow(0 0 14px rgba(var(--cta-v2-primary), .18)) !important;
+  animation: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset::before,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset::after,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButtonFrame__sigil,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButtonFrame__perimeter,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButtonFrame__corner,
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButtonFrame__ornament {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButton {
+  z-index: 5 !important;
+  width: 100% !important;
+  min-height: 66px !important;
+  margin: 0 !important;
+  padding: 14px 64px !important;
+}
+
+#root .resultHero[data-star-type="challenger"] {
+  --premium-preview-slice: 14% 7%;
+  --premium-preview-width: 20px 28px;
+}
+
+#root .resultHero[data-star-type="creator"] {
+  --premium-preview-slice: 18% 7%;
+}
+
+#root .resultHero[data-star-type="adaptability"] {
+  --premium-preview-slice: 18% 8%;
+  --premium-preview-width: 20px 30px;
+}
+
+#root .resultHero[data-star-type="explorer"] {
+  --premium-preview-slice: 22% 8%;
+  --premium-preview-width: 20px 30px;
+}
+
+#root .resultHero[data-star-type="persistence"] {
+  --premium-preview-slice: 25% 7%;
+  --premium-preview-width: 20px 30px;
+}
+
+#root .resultHero[data-star-type="thinker"] {
+  --premium-preview-slice: 18% 8%;
+  --premium-preview-width: 21px 30px;
+}
+
+#root .resultHero[data-star-type="intuition"] {
+  --premium-preview-slice: 20% 8%;
+  --premium-preview-width: 19px 28px;
+}
+
+#root .resultHero[data-star-type="expression"] {
+  --premium-preview-slice: 20% 10%;
+  --premium-preview-width: 22px 34px;
+}
+
+#root .resultHero[data-star-type="action"] {
+  --premium-preview-slice: 18% 8%;
+  --premium-preview-width: 20px 30px;
+}
+
+#root .resultHero[data-star-type="leader"] {
+  --premium-preview-slice: 17% 8%;
+  --premium-preview-width: 20px 30px;
+}
+
+@media (max-width: 520px) {
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset {
+    width: 100% !important;
+    height: 82px !important;
+    min-height: 82px !important;
+    padding: 1px !important;
+    border-width: 10px !important;
+    border-image-width: 15px 22px !important;
+  }
+
+  #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame--asset .premiumButton {
+    min-height: 54px !important;
+    padding: 10px 32px !important;
+  }
+}

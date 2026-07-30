@@ -10,7 +10,7 @@ function allProse(report: ReportOutputV1): string[] {
     const section = report[key];
     return [section.title, section.summary, ...section.body, ...section.keyPoints, section.reflectionQuestion];
   });
-  report.growthPlan30Days.weeks.forEach((week) => prose.push(week.title, ...week.actions, week.reflection));
+  report.growthPlan30Days.actions.forEach((action) => prose.push(action.title, action.action, action.purpose));
   return [...prose, report.growthPlan30Days.title, report.growthPlan30Days.summary, report.aiJuzaClosingMessage, report.emailSummary];
 }
 

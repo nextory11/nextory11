@@ -5,6 +5,7 @@ export interface ExpectedPayment {
   productId: string;
   priceId: string;
   amountJpy: number;
+  livemode: boolean;
 }
 
 export interface ValidatedPayment {
@@ -15,6 +16,7 @@ export interface ValidatedPayment {
   priceId: string;
   amount: number;
   currency: "jpy";
+  livemode: boolean;
   paidAt: Date;
 }
 
@@ -33,7 +35,9 @@ export function validatePaidCheckoutSession(
   session: Stripe.Checkout.Session,
   expected: ExpectedPayment,
 ): ValidatedPayment {
-  if (session.livemode) throw new PaymentValidationError("livemode_mismatch");
+  if (session.livemode !== expected.livemode) {
+    throw new PaymentValidationError("livemode_mismatch");
+  }
   if (session.mode !== "payment") throw new PaymentValidationError("invalid_checkout_mode");
   if (session.payment_status !== "paid") throw new PaymentValidationError("session_unpaid");
   if (session.status !== "complete") throw new PaymentValidationError("session_incomplete");
@@ -76,6 +80,7 @@ export function validatePaidCheckoutSession(
     priceId: expected.priceId,
     amount: expected.amountJpy,
     currency: "jpy",
+    livemode: session.livemode,
     paidAt: new Date((session.created || Math.floor(Date.now() / 1000)) * 1000),
   };
 }

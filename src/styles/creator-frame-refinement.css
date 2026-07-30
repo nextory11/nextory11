@@ -1,0 +1,994 @@
+/*
+  CREATOR Result Scene
+  The approved PNG assets define every visible frame. This file only positions
+  those assets and preserves the existing result, AI JUZA and payment contracts.
+*/
+
+.resultHero[data-star-type="creator"] {
+  --creator-gold: #f7d58a;
+  --creator-ink: rgba(8, 3, 24, .84);
+  min-height: 100svh;
+  padding: clamp(18px, 2.2vh, 28px) clamp(18px, 3vw, 46px) 54px;
+  overflow: clip;
+  color: #fff7df;
+  background: #07021b;
+}
+
+.resultHero[data-star-type="creator"]::before,
+.resultHero[data-star-type="creator"]::after {
+  content: none;
+}
+
+.resultScene--creatorMaster {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #07021b;
+  pointer-events: none;
+}
+
+.creatorMasterScene__background,
+.creatorMasterScene__outerFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.creatorMasterScene__background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.creatorMasterScene__outerFrame {
+  z-index: 2;
+  object-fit: fill;
+  object-position: center;
+  filter: drop-shadow(0 0 7px rgba(242, 192, 89, .16));
+}
+
+.resultHero[data-star-type="creator"] .resultCard {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  translate: none !important;
+  animation: creatorCompositionReveal 900ms ease-out both !important;
+}
+
+.resultHero[data-star-type="creator"] .resultCard::before,
+.resultHero[data-star-type="creator"] .resultCard::after,
+.resultHero[data-star-type="creator"] .resultCard__aura,
+.resultHero[data-star-type="creator"] .panelFrameOrnaments,
+.resultHero[data-star-type="creator"] .juzaMessage__particles {
+  display: none !important;
+}
+
+.resultHero[data-star-type="creator"] .resultBadge,
+.resultHero[data-star-type="creator"] .resultRealm,
+.resultHero[data-star-type="creator"] .resultKicker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.resultHero[data-star-type="creator"] .resultIcon {
+  width: clamp(158px, 17vw, 224px);
+  height: auto;
+  aspect-ratio: 1;
+  margin: -8px auto -15px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  animation: creatorEmblemBreath 10s ease-in-out infinite !important;
+}
+
+.resultHero[data-star-type="creator"] .resultIcon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.resultHero[data-star-type="creator"] .resultTitle {
+  margin: 0 auto;
+  color: var(--creator-gold);
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(40px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: .12em;
+  text-shadow: 0 2px 2px #321504, 0 0 10px rgba(255, 214, 128, .28), 0 3px 12px rgba(4, 1, 15, .92);
+}
+
+.resultHero[data-star-type="creator"] .english {
+  margin: 6px auto 0;
+  padding: 0 clamp(40px, 7vw, 96px);
+  color: var(--creator-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 500;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px #321504, 0 0 8px rgba(255, 214, 128, .22), 0 2px 8px rgba(4, 1, 15, .96);
+}
+
+.resultHero[data-star-type="creator"] .english::before,
+.resultHero[data-star-type="creator"] .english::after {
+  width: clamp(38px, 7vw, 90px);
+  background: linear-gradient(90deg, transparent, rgba(247, 213, 138, .86));
+}
+
+.resultHero[data-star-type="creator"] .english::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  background: linear-gradient(90deg, rgba(247, 213, 138, .86), transparent);
+}
+
+.resultHero[data-star-type="creator"] .resultLead {
+  max-width: 760px;
+  margin: 7px auto 14px;
+  color: #f8dda0;
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(13px, 1.35vw, 17px);
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: .05em;
+  padding: 3px 18px 4px;
+  text-shadow: 0 1px 2px #12051e, 0 2px 7px rgba(0, 0, 0, .96);
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.creatorFrameAsset {
+  position: absolute !important;
+  z-index: 3 !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage {
+  isolation: isolate;
+  width: min(1120px, calc(100vw - 24px));
+  max-width: none;
+  min-height: 0;
+  aspect-ratio: 1812 / 595;
+  margin: 0 auto 8px;
+  padding: 6.6% 7% 5.3% 36.5%;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: left;
+  animation: creatorPanelReveal 850ms 120ms ease-out both !important;
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage::before {
+  content: "" !important;
+  --creator-juza-anchor: translateY(-50%);
+  z-index: 1;
+  left: 8.2%;
+  top: 50%;
+  width: 17.3%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(247, 213, 138, .6);
+  border-radius: 50%;
+  background:
+    url("/images/result-scenes/creator/characters/ai_juza_portrait.png") center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 45%, rgba(255, 97, 219, .46), rgba(74, 41, 166, .72) 48%, #080522 71%);
+  box-shadow: inset 0 0 20px rgba(255, 139, 226, .25), 0 0 20px rgba(127, 54, 191, .28);
+  transform: var(--creator-juza-anchor);
+  transform-origin: center;
+  animation: creatorJuzaPresence 7.5s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage::after {
+  content: "" !important;
+  position: absolute;
+  z-index: 2;
+  left: 34.5%;
+  right: 3.1%;
+  top: 18%;
+  bottom: 18.5%;
+  width: auto;
+  height: auto;
+  border: 0 !important;
+  border-radius: 8px 18px 18px 8px;
+  background: linear-gradient(100deg, rgba(7, 2, 23, .72), rgba(8, 3, 27, .6) 62%, rgba(8, 3, 24, .48));
+  box-shadow: inset 0 1px rgba(255, 239, 198, .045), inset 0 -1px rgba(0, 0, 0, .22);
+  transform: none !important;
+  animation: none !important;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage > :not(.creatorFrameAsset) {
+  position: relative;
+  z-index: 4;
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage > span {
+  margin: 0 0 7px;
+  color: #f5d58f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-shadow: 0 1px 2px #19091f, 0 2px 7px rgba(0, 0, 0, .96);
+}
+
+.resultHero[data-star-type="creator"] .juzaMessage p {
+  min-height: 0;
+  color: #fff7e6;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.48;
+  text-shadow: 0 1px 2px #100318, 0 2px 6px rgba(0, 0, 0, .98);
+}
+
+.resultHero[data-star-type="creator"] .resultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.25vw, 18px);
+  width: min(1360px, 100%);
+  max-width: none;
+  margin: 0 auto;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.resultHero[data-star-type="creator"] .resultGrid::before,
+.resultHero[data-star-type="creator"] .resultGrid::after {
+  content: none !important;
+}
+
+.resultHero[data-star-type="creator"] .adviceBox {
+  isolation: isolate;
+  min-height: 0;
+  aspect-ratio: 1904 / 826;
+  padding: 52px 34px 28px 132px;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: creatorPanelReveal 800ms ease-out both !important;
+}
+
+.resultHero[data-star-type="creator"] .adviceBox::before,
+.resultHero[data-star-type="creator"] .adviceBox::after {
+  content: none !important;
+}
+
+.resultHero[data-star-type="creator"] .adviceBox::before {
+  content: "" !important;
+  position: absolute;
+  z-index: 1;
+  inset: 18% 3.8% 16% 6%;
+  background: linear-gradient(105deg, rgba(8, 3, 25, .72), rgba(8, 3, 25, .62) 62%, rgba(8, 3, 25, .68));
+  box-shadow: inset 0 1px rgba(255, 238, 194, .035);
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="creator"] .adviceBox > :not(.creatorFrameAsset) {
+  position: relative;
+  z-index: 4;
+}
+
+.resultHero[data-star-type="creator"] .adviceBox__icon {
+  position: absolute !important;
+  z-index: 4;
+  left: 54px;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  border-color: rgba(247, 213, 138, .65);
+  color: #f8d88e;
+  background: radial-gradient(circle, rgba(111, 39, 144, .8), rgba(14, 5, 36, .88));
+  box-shadow: 0 0 12px rgba(157, 69, 205, .25);
+  transform: translateY(-50%);
+}
+
+.resultHero[data-star-type="creator"] .adviceBox strong {
+  margin: 0 0 8px;
+  color: #f5d58f;
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(18px, 1.34vw, 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  text-shadow: 0 1px 2px #16051e, 0 2px 6px rgba(0, 0, 0, .98);
+}
+
+.resultHero[data-star-type="creator"] .adviceBox p {
+  color: #fff7e6;
+  font-size: clamp(15px, 1.05vw, 16px);
+  font-weight: 600;
+  line-height: 1.62;
+  text-shadow: 0 1px 2px #100318, 0 2px 5px rgba(0, 0, 0, .98);
+}
+
+/*
+ * The three-column desktop layout needs a slightly taller architectural bay
+ * than frame02's source ratio provides at narrower desktop widths. Stretching
+ * only the transparent overlay vertically keeps the approved artwork and card
+ * positions intact while expanding the readable safe area.
+ */
+@media (min-width: 1280px) {
+  .resultHero[data-star-type="creator"] .adviceBox {
+    min-height: clamp(204px, 15.2vw, 224px);
+    aspect-ratio: auto;
+    padding: 58px 38px 40px 132px;
+    overflow: hidden !important;
+  }
+
+  .resultHero[data-star-type="creator"] .creatorFrameAsset--insight {
+    object-fit: fill;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox::before {
+    inset: 19% 3.8% 18% 6.5%;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1279px) {
+  .resultHero[data-star-type="creator"] .resultGrid {
+    grid-template-columns: 1fr;
+    width: min(640px, calc(100% - 80px));
+    gap: 28px;
+  }
+}
+
+/*
+ * The paid content remains intact. Its CTA is presented first, as in the Master.
+ * The two inset rules form the Creator-only Premium Report boundary. They use
+ * CSS linework so the approved CTA artwork keeps its native 2172:724 role and
+ * no new or repurposed bitmap ornament is introduced.
+ */
+.resultHero[data-star-type="creator"] .paidBox {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  width: min(1040px, 100%);
+  margin: 2px auto 0;
+  padding: 54px 40px 58px;
+  overflow: visible !important;
+  border: 1px solid rgba(225, 183, 95, .72) !important;
+  border-radius: 2px !important;
+  background: linear-gradient(180deg, rgba(9, 3, 26, .18), rgba(9, 3, 26, .34) 50%, rgba(9, 3, 26, .2)) !important;
+  box-shadow:
+    0 0 0 1px rgba(74, 31, 93, .72),
+    0 0 30px rgba(123, 52, 160, .18),
+    inset 0 0 36px rgba(5, 1, 18, .32) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="creator"] .paidBox::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  z-index: 0;
+  border: 1px solid rgba(180, 105, 222, .46);
+  background:
+    linear-gradient(90deg, rgba(239, 205, 118, .78), transparent 18%) top left / 32% 1px no-repeat,
+    linear-gradient(270deg, rgba(239, 205, 118, .78), transparent 18%) top right / 32% 1px no-repeat,
+    linear-gradient(90deg, rgba(239, 205, 118, .66), transparent 18%) bottom left / 32% 1px no-repeat,
+    linear-gradient(270deg, rgba(239, 205, 118, .66), transparent 18%) bottom right / 32% 1px no-repeat;
+  box-shadow: inset 0 0 22px rgba(110, 43, 144, .16);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="creator"] .paidBox > * {
+  position: relative;
+  z-index: 2;
+}
+
+.resultHero[data-star-type="creator"] .premiumCtaPanel {
+  order: -1;
+  isolation: isolate;
+  width: min(620px, 100%);
+  max-width: none;
+  min-height: 205px;
+  margin: -28px auto 30px;
+  padding: 64px 72px 54px 225px;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("/images/result-scenes/creator/overlays/cta_frame.png") center / contain no-repeat !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: creatorCtaBreath 9s ease-in-out infinite !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumCtaPanel > .panelFrameOrnaments {
+  display: none !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumCtaPanel p {
+  display: none;
+}
+
+.resultHero[data-star-type="creator"] .premiumButtonFrame {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  filter: none !important;
+  animation: none !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumButtonFrame::before,
+.resultHero[data-star-type="creator"] .premiumButtonFrame::after,
+.resultHero[data-star-type="creator"] .premiumButtonFrame__perimeter,
+.resultHero[data-star-type="creator"] .premiumButtonFrame__corner,
+.resultHero[data-star-type="creator"] .premiumButtonFrame__ornament {
+  display: none !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumButton {
+  width: 100%;
+  min-height: 60px;
+  padding: 0 8px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #fff5da;
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 700;
+  letter-spacing: .08em;
+  background: linear-gradient(90deg, transparent, rgba(8, 3, 24, .28) 16%, rgba(8, 3, 24, .52) 50%, rgba(8, 3, 24, .28) 84%, transparent) !important;
+  box-shadow: none !important;
+  animation: none !important;
+  text-shadow: 0 1px 2px #16051e, 0 2px 7px rgba(0, 0, 0, .98);
+}
+
+.resultHero[data-star-type="creator"] .premiumButton:disabled,
+.resultHero[data-star-type="creator"] .premiumButtonFrame:has(.premiumButton:disabled) {
+  opacity: .92 !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumButton:focus-visible {
+  outline: 2px solid #fff0bd;
+  outline-offset: 5px;
+  box-shadow: 0 0 0 6px rgba(178, 75, 230, .28) !important;
+}
+
+.resultHero[data-star-type="creator"] .paidLabel,
+.resultHero[data-star-type="creator"] .premiumTitle,
+.resultHero[data-star-type="creator"] .premiumDescription,
+.resultHero[data-star-type="creator"] .premiumPrice,
+.resultHero[data-star-type="creator"] .premiumList {
+  width: min(760px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resultHero[data-star-type="creator"] .paidLabel {
+  align-self: center;
+  width: auto;
+}
+
+.resultHero[data-star-type="creator"] .premiumTitle,
+.resultHero[data-star-type="creator"] .premiumDescription,
+.resultHero[data-star-type="creator"] .premiumPrice,
+.resultHero[data-star-type="creator"] .premiumList {
+  background-color: rgba(8, 3, 24, .58);
+}
+
+/* Creator premium observatory: restrained celestial depth without new assets. */
+.resultHero[data-star-type="creator"] .paidBox::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 12%, rgba(255, 222, 145, .15), transparent 34%),
+    radial-gradient(ellipse at 18% 68%, rgba(164, 72, 224, .12), transparent 38%),
+    radial-gradient(ellipse at 82% 70%, rgba(62, 128, 255, .1), transparent 36%);
+  opacity: .72;
+  animation: creatorPremiumAtmosphere 12s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="creator"] .paidLabel {
+  color: #fff0bd;
+  background:
+    linear-gradient(90deg, rgba(120, 47, 155, .08), rgba(255, 221, 139, .14), rgba(120, 47, 155, .08));
+  border-color: rgba(255, 222, 145, .5);
+  box-shadow:
+    0 0 24px rgba(185, 84, 230, .2),
+    inset 0 0 16px rgba(255, 226, 157, .06);
+  text-shadow: 0 1px 2px #13031d, 0 0 12px rgba(255, 220, 133, .48);
+}
+
+.resultHero[data-star-type="creator"] .paidLabel::before,
+.resultHero[data-star-type="creator"] .paidLabel::after {
+  content: "✦";
+  margin: 0 8px;
+  color: #e8b6ff;
+  font-size: 8px;
+  text-shadow: 0 0 8px rgba(214, 139, 255, .8);
+}
+
+.resultHero[data-star-type="creator"] .premiumTitle {
+  padding: 18px 24px 12px;
+  color: #fff8e8;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(72, 25, 94, .68), rgba(8, 3, 24, .48) 58%, transparent 82%) !important;
+  text-shadow:
+    0 2px 3px rgba(5, 1, 16, .96),
+    0 0 22px rgba(255, 230, 177, .2),
+    0 0 44px rgba(176, 77, 227, .2);
+}
+
+.resultHero[data-star-type="creator"] .premiumDescription {
+  padding: 10px 22px 14px;
+  color: rgba(255, 248, 232, .9);
+  background:
+    linear-gradient(90deg, transparent, rgba(8, 3, 24, .66) 10%, rgba(15, 5, 35, .72) 50%, rgba(8, 3, 24, .66) 90%, transparent) !important;
+  box-shadow:
+    inset 0 1px rgba(236, 196, 112, .18),
+    inset 0 -1px rgba(176, 86, 220, .16);
+  text-shadow: 0 1px 2px #0b0214, 0 2px 6px rgba(0, 0, 0, .88);
+}
+
+.resultHero[data-star-type="creator"] .premiumPrice {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-color: rgba(244, 205, 119, .48);
+  background:
+    radial-gradient(circle at 50% 46%, rgba(143, 64, 190, .3), transparent 58%),
+    linear-gradient(105deg, rgba(16, 5, 34, .78), rgba(37, 13, 54, .72), rgba(10, 3, 27, .8)) !important;
+  box-shadow:
+    0 0 0 1px rgba(117, 43, 145, .42),
+    0 0 30px rgba(219, 151, 255, .16),
+    0 12px 34px rgba(2, 0, 12, .38),
+    inset 0 0 24px rgba(255, 213, 126, .08);
+}
+
+.resultHero[data-star-type="creator"] .premiumPrice::before {
+  content: "";
+  position: absolute;
+  inset: -80% -45%;
+  z-index: -1;
+  background: linear-gradient(108deg, transparent 42%, rgba(255, 238, 189, .18) 49%, transparent 56%);
+  transform: translateX(-38%);
+  animation: creatorPremiumPriceGleam 8s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="creator"] .premiumPrice strong {
+  color: #ffe4a5;
+  text-shadow:
+    0 2px 3px rgba(12, 2, 18, .9),
+    0 0 16px rgba(255, 235, 176, .48),
+    0 0 34px rgba(181, 83, 225, .34);
+}
+
+.resultHero[data-star-type="creator"] .premiumList {
+  background: transparent !important;
+}
+
+.resultHero[data-star-type="creator"] .premiumList li {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(239, 201, 120, .24);
+  border-radius: 14px;
+  color: rgba(255, 249, 236, .94);
+  background:
+    linear-gradient(110deg, rgba(20, 7, 39, .82), rgba(43, 15, 60, .55) 46%, rgba(10, 4, 28, .78)) !important;
+  box-shadow:
+    inset 0 1px rgba(255, 231, 175, .1),
+    inset 3px 0 rgba(180, 93, 222, .2),
+    0 10px 28px rgba(2, 0, 12, .28);
+  text-shadow: 0 1px 2px #0a0110, 0 2px 5px rgba(0, 0, 0, .82);
+}
+
+.resultHero[data-star-type="creator"] .premiumList li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 12%, rgba(255, 224, 158, .07) 34%, transparent 56%);
+  transform: translateX(-100%);
+  animation: creatorPremiumPlateGleam 11s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="creator"] .premiumList li:nth-child(2)::after { animation-delay: 1.4s; }
+.resultHero[data-star-type="creator"] .premiumList li:nth-child(3)::after { animation-delay: 2.8s; }
+.resultHero[data-star-type="creator"] .premiumList li:nth-child(4)::after { animation-delay: 4.2s; }
+
+.resultHero[data-star-type="creator"] .premiumList li span {
+  color: #ffdfa0;
+  border-color: rgba(255, 220, 143, .42);
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, .42), transparent 24%),
+    radial-gradient(circle, rgba(170, 77, 216, .36), rgba(17, 5, 35, .78) 70%);
+  box-shadow:
+    0 0 18px rgba(208, 127, 245, .26),
+    inset 0 0 10px rgba(255, 223, 151, .12);
+  animation: creatorPremiumSigilBreath 7s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="creator"] .premiumCtaPanel {
+  filter:
+    drop-shadow(0 0 10px rgba(255, 213, 122, .2))
+    drop-shadow(0 8px 18px rgba(43, 8, 60, .38));
+}
+
+.resultHero[data-star-type="creator"] .buttonGroup {
+  margin-top: 0;
+}
+
+@keyframes creatorCompositionReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes creatorPanelReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes creatorEmblemBreath {
+  0%, 100% { filter: brightness(.96); transform: translateY(0); }
+  50% { filter: brightness(1.05); transform: translateY(-2px); }
+}
+
+@keyframes creatorJuzaPresence {
+  0%, 100% {
+    filter: brightness(.98) saturate(.98);
+    transform: var(--creator-juza-anchor) translateY(0) scale(1);
+  }
+  50% {
+    filter: brightness(1.045) saturate(1.04);
+    transform: var(--creator-juza-anchor) translateY(-1.2%) scale(1.012);
+  }
+}
+
+@keyframes creatorCtaBreath {
+  0%, 100% { filter: brightness(.96) drop-shadow(0 0 8px rgba(255, 213, 122, .16)); }
+  50% { filter: brightness(1.045) drop-shadow(0 0 15px rgba(211, 127, 247, .28)); }
+}
+
+@keyframes creatorPremiumAtmosphere {
+  0%, 100% { opacity: .62; transform: scale(1); }
+  50% { opacity: .82; transform: scale(1.012); }
+}
+
+@keyframes creatorPremiumPriceGleam {
+  0%, 70%, 100% { transform: translateX(-38%); opacity: 0; }
+  78% { opacity: .9; }
+  92% { transform: translateX(38%); opacity: 0; }
+}
+
+@keyframes creatorPremiumPlateGleam {
+  0%, 72%, 100% { transform: translateX(-100%); opacity: 0; }
+  78% { opacity: 1; }
+  91% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes creatorPremiumSigilBreath {
+  0%, 100% { filter: brightness(.95); transform: scale(1); }
+  50% { filter: brightness(1.1); transform: scale(1.035); }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="creator"] {
+    padding: 22px 14px 48px;
+    overflow: hidden;
+  }
+
+  .resultScene--creatorMaster { height: 100vh; }
+
+  .creatorMasterScene__background {
+    background-position: center top;
+    background-size: auto 100vh;
+  }
+
+  .creatorMasterScene__outerFrame {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .resultHero[data-star-type="creator"] .resultGrid {
+    grid-template-columns: 1fr;
+    width: min(560px, 100%);
+    gap: 2px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox {
+    min-height: 220px;
+    aspect-ratio: auto;
+    padding: 70px 48px 38px 162px;
+    overflow: hidden !important;
+  }
+
+  .resultHero[data-star-type="creator"] .creatorFrameAsset--insight {
+    object-fit: fill;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox::before {
+    inset: 18% 3.8% 16% 6%;
+    border-radius: 8px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox__icon {
+    left: 68px;
+    width: 78px;
+    height: 78px;
+  }
+
+  .resultHero[data-star-type="creator"] .juzaMessage p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .resultHero[data-star-type="creator"] .premiumCtaPanel {
+    margin-top: 8px;
+  }
+
+  .resultHero[data-star-type="creator"] .paidBox {
+    width: min(680px, calc(100% - 8px));
+    padding: 42px 26px 46px;
+  }
+}
+
+/*
+ * Below 700px the complete Japanese message cannot remain readable inside the
+ * frame's horizontal text bay. Preserve the approved asset as the architectural
+ * header, then continue its brass/violet boundary vertically around the text.
+ */
+@media (max-width: 700px) {
+  .resultHero[data-star-type="creator"] .juzaMessage {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    margin-bottom: 10px;
+    padding: calc((100vw - 28px) * .3284 - 1px) clamp(20px, 6vw, 34px) 32px;
+    background: transparent !important;
+  }
+
+  .resultHero[data-star-type="creator"] .juzaMessage::after {
+    content: none !important;
+  }
+
+  .resultHero[data-star-type="creator"] .creatorFrameAsset--juza {
+    top: 0;
+    height: auto;
+    aspect-ratio: 1812 / 595;
+    object-position: top center;
+  }
+
+  .resultHero[data-star-type="creator"] .juzaMessage::before {
+    --creator-juza-anchor: translate(-50%, -50%);
+    left: 17%;
+    top: calc((100vw - 28px) * .1642);
+    width: clamp(70px, 17.3%, 110px);
+    height: auto;
+    transform: var(--creator-juza-anchor);
+  }
+
+  .resultHero[data-star-type="creator"] .juzaMessage p {
+    margin: 0;
+    padding: 26px clamp(18px, 5vw, 30px) 30px;
+    border: 1px solid rgba(247, 213, 138, .72);
+    border-radius: 0 0 18px 18px;
+    background:
+      radial-gradient(circle at 4% 7%, rgba(188, 93, 236, .16), transparent 18%),
+      radial-gradient(circle at 96% 93%, rgba(247, 213, 138, .12), transparent 19%),
+      linear-gradient(180deg, rgba(8, 3, 24, .72), rgba(8, 3, 24, .58));
+    box-shadow:
+      inset 0 0 0 1px rgba(151, 77, 197, .34),
+      inset 0 1px rgba(255, 240, 198, .16),
+      0 8px 22px rgba(3, 1, 15, .22);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 560px) {
+  .resultHero[data-star-type="creator"] {
+    padding-inline: 10px;
+  }
+
+  .resultHero[data-star-type="creator"] .resultIcon {
+    width: 154px;
+    margin-top: 4px;
+  }
+
+  .resultHero[data-star-type="creator"] .resultTitle {
+    font-size: clamp(35px, 11vw, 48px);
+    letter-spacing: .08em;
+  }
+
+  .resultHero[data-star-type="creator"] .english {
+    padding-inline: 28px;
+    font-size: 17px;
+    letter-spacing: .2em;
+  }
+
+  .resultHero[data-star-type="creator"] .resultLead {
+    max-width: 340px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox {
+    min-height: 200px;
+    padding: 50px 30px 36px 124px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox__icon {
+    left: 50px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox strong {
+    font-size: 15px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox p {
+    font-size: 12px;
+  }
+
+  .resultHero[data-star-type="creator"] .premiumCtaPanel {
+    min-height: 0;
+    aspect-ratio: 2172 / 724;
+    margin: 12px auto 24px;
+    padding: 10% 9% 8% 32%;
+  }
+
+  .resultHero[data-star-type="creator"] .premiumButton {
+    min-height: 48px;
+    font-size: 12px;
+    letter-spacing: .02em;
+  }
+
+  .resultHero[data-star-type="creator"] .paidBox {
+    width: calc(100% - 2px);
+    padding: 34px 18px 38px;
+  }
+
+  .resultHero[data-star-type="creator"] .paidBox::before {
+    inset: 8px;
+  }
+
+  .resultHero[data-star-type="creator"] .paidLabel,
+  .resultHero[data-star-type="creator"] .premiumTitle,
+  .resultHero[data-star-type="creator"] .premiumDescription,
+  .resultHero[data-star-type="creator"] .premiumPrice,
+  .resultHero[data-star-type="creator"] .premiumList {
+    width: min(100%, calc(100% - 8px));
+  }
+}
+
+@media (max-width: 390px) {
+  .resultHero[data-star-type="creator"] .adviceBox {
+    min-height: 200px;
+    padding: 52px 26px 36px 104px;
+  }
+
+  .resultHero[data-star-type="creator"] .adviceBox__icon {
+    left: 33px;
+    width: 58px;
+    height: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="creator"] .resultCard,
+  .resultHero[data-star-type="creator"] .resultIcon,
+  .resultHero[data-star-type="creator"] .juzaMessage,
+  .resultHero[data-star-type="creator"] .juzaMessage::before,
+  .resultHero[data-star-type="creator"] .adviceBox,
+  .resultHero[data-star-type="creator"] .premiumCtaPanel,
+  .resultHero[data-star-type="creator"] .paidBox::after,
+  .resultHero[data-star-type="creator"] .premiumPrice::before,
+  .resultHero[data-star-type="creator"] .premiumList li::after,
+  .resultHero[data-star-type="creator"] .premiumList li span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .resultCard,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .resultIcon,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .juzaMessage,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .adviceBox,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .premiumCtaPanel,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .paidBox::after,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .premiumPrice::before,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .premiumList li::after,
+.devResultPreview--reducedMotion .resultHero[data-star-type="creator"] .premiumList li span {
+  animation: none !important;
+  transition: none !important;
+}
+
+/*
+ * Owner-requested frame03 picture frame for the complete Creator Premium Report.
+ * Nine-slice rendering keeps the crystal corners intact as the report becomes
+ * taller on portrait viewports.
+ */
+.resultHero[data-star-type="creator"] .paidBox > .creatorPremiumOuterFrame {
+  position: absolute;
+  z-index: 4;
+  inset: -42px -30px;
+  display: block;
+  box-sizing: border-box;
+  border: 72px solid transparent;
+  border-image-source: url("/images/result-scenes/creator/overlays/frame03.png");
+  border-image-slice: 14% 12% 14% 12%;
+  border-image-width: 72px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  filter:
+    drop-shadow(0 0 12px rgba(255, 209, 104, .24))
+    drop-shadow(0 12px 22px rgba(6, 0, 22, .48));
+  pointer-events: none;
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="creator"] .paidBox > .creatorPremiumOuterFrame {
+    inset: -34px -22px;
+    border-width: 58px;
+    border-image-width: 58px;
+  }
+}
+
+@media (max-width: 430px) {
+  .resultHero[data-star-type="creator"] .paidBox > .creatorPremiumOuterFrame {
+    inset: -28px -16px;
+    border-width: 48px;
+    border-image-width: 48px;
+  }
+}
+
+/* The isolated premium review crop needs room for the outward-facing crest. */
+.devResultPreview--section-premium .resultHero[data-star-type="creator"] > .paidBox {
+  margin-block: 42px !important;
+}
+
+@media (max-width: 899px) {
+  .devResultPreview--section-premium .resultHero[data-star-type="creator"] > .paidBox {
+    margin-block: 34px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .devResultPreview--section-premium .resultHero[data-star-type="creator"] > .paidBox {
+    margin-block: 28px !important;
+  }
+}

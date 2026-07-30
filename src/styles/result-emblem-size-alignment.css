@@ -1,0 +1,6 @@
+/* Keep every Result Scene emblem on the approved Harmonizer scale while
+   preserving each type's artwork, glow, and motion treatment. */
+#root .resultHero .resultIcon {
+  width: clamp(130px, 15vw, 170px) !important;
+  height: clamp(130px, 15vw, 170px) !important;
+}

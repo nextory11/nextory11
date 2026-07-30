@@ -47,7 +47,7 @@ export class DatabasePaymentEventStore implements PaymentEventStore {
           eventId: input.eventId,
           eventType: input.eventType,
           objectId: input.objectId,
-          livemode: false,
+          livemode: input.payment.livemode,
         })
         .onConflictDoNothing({ target: stripeEvents.eventId })
         .returning();
@@ -96,7 +96,7 @@ export class DatabasePaymentEventStore implements PaymentEventStore {
           priceId: input.payment.priceId,
           amount: input.payment.amount,
           currency: input.payment.currency,
-          livemode: false,
+          livemode: input.payment.livemode,
           status: "paid",
           paidAt: input.payment.paidAt,
         })
@@ -128,13 +128,16 @@ export async function processStripeEvent(
     expected?: ExpectedPayment;
   } = {},
 ) {
-  if (event.livemode) throw new EventProcessingError("livemode_mismatch");
+  const env = options.env ?? parseStripeServerEnv();
+  const expectedLivemode = env.STRIPE_MODE === "live";
+  if (event.livemode !== expectedLivemode) {
+    throw new EventProcessingError("livemode_mismatch");
+  }
   if (!SUPPORTED_EVENTS.has(event.type)) return { status: "ignored" as const };
   if (event.data.object.object !== "checkout.session") {
     throw new EventProcessingError("invalid_event_object");
   }
 
-  const env = options.env ?? parseStripeServerEnv();
   const stripe = options.stripe ?? getStripeClient(env);
   const session = await stripe.checkout.sessions.retrieve(event.data.object.id, {
     expand: ["line_items.data.price.product"],
@@ -145,6 +148,7 @@ export async function processStripeEvent(
       productId: env.STRIPE_EXPECTED_PRODUCT_ID,
       priceId: env.STRIPE_EXPECTED_PRICE_ID,
       amountJpy: env.STRIPE_EXPECTED_AMOUNT_JPY,
+      livemode: expectedLivemode,
     },
   );
   const payment = { ...validatedPayment, paidAt: new Date(event.created * 1000) };

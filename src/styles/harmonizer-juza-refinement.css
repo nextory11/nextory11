@@ -1,0 +1,481 @@
+/* Harmonizer outer world frame — approved floral, crystal and lantern overlay. */
+
+.resultScene[data-master-scene="harmonizer"] .designMasterScene__outerFrame {
+  --harmonizer-page-frame-inset: clamp(6px, 1vw, 14px);
+  display: block;
+  position: fixed !important;
+  z-index: 8;
+  inset: var(--harmonizer-page-frame-inset);
+  width: calc(100% - (var(--harmonizer-page-frame-inset) * 2));
+  height: calc(100% - (var(--harmonizer-page-frame-inset) * 2));
+  object-fit: contain;
+  object-position: 50% 0;
+  filter: drop-shadow(0 0 12px rgba(72, 216, 204, .15)) drop-shadow(0 0 18px rgba(229, 190, 112, .1));
+  pointer-events: none;
+}
+
+.resultScene[data-master-scene="harmonizer"] .designMasterScene__pointerLight {
+  display: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .resultBadge {
+  display: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .resultCard {
+  border: 0 solid transparent !important;
+  border-color: transparent !important;
+  outline: 0 solid transparent !important;
+  outline-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Keep the generated outer ornament unobstructed. Readability glass remains
+   scoped to the JUZA, insight and premium-report panels below. */
+#root .resultHero[data-star-type="thinker"] .resultCard__aura {
+  display: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .resultCard::before,
+#root .resultHero[data-star-type="thinker"] .resultCard::after {
+  content: none !important;
+  display: none !important;
+  border: 0 solid transparent !important;
+  outline: 0 solid transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .typeFrameAsset--cta {
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 34px);
+  height: calc(100% + 36px);
+  max-width: none;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 10px 24px rgba(0, 22, 29, .46)) drop-shadow(0 0 13px rgba(66, 220, 207, .15));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .premiumCtaPanel > :not(.typeFrameAsset) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="thinker"] .paidBox {
+  overflow: visible;
+  border-color: transparent !important;
+  isolation: isolate;
+}
+
+#root .resultHero[data-star-type="thinker"] .paidLabel {
+  margin-top: clamp(38px, 5vw, 72px) !important;
+  margin-bottom: 14px !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame {
+  position: absolute;
+  z-index: 4;
+  inset: -18px;
+  border: 0;
+  background: url("/images/result-scenes/harmonizer/overlays/premium_outer_frame.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0 9px rgba(117, 240, 230, .2)) drop-shadow(0 0 22px rgba(72, 205, 212, .13));
+  box-shadow: inset 0 0 34px rgba(71, 220, 210, .09), 0 0 30px rgba(171, 120, 230, .08);
+  pointer-events: none;
+  animation: harmonizerPremiumFrameGlow 7.5s ease-in-out infinite;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame::before,
+#root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame::before {
+  top: -16px;
+  left: 50%;
+  width: 120px;
+  height: 70px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(229, 255, 250, .74) 0 2px, rgba(74, 237, 223, .32) 4px, transparent 66%);
+  opacity: .68;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame::after {
+  inset: -12px;
+  background:
+    radial-gradient(circle at 0 100%, rgba(133, 255, 232, .18), transparent 18%),
+    radial-gradient(circle at 100% 100%, rgba(183, 126, 242, .16), transparent 18%);
+  opacity: .58;
+}
+
+@keyframes harmonizerPremiumFrameGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(117, 240, 230, .18)) drop-shadow(0 0 19px rgba(72, 205, 212, .1)); }
+  50% { filter: drop-shadow(0 0 14px rgba(151, 255, 239, .3)) drop-shadow(0 0 30px rgba(155, 104, 229, .17)); }
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox > strong {
+  width: 100%;
+  text-align: center;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox > p {
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* The approved inner-glass frame traces each Harmonizer insight card.
+   Keep it on the perimeter so the readable glass remains comfortably open. */
+#root .resultHero[data-star-type="thinker"] .adviceBox {
+  isolation: isolate;
+  overflow: visible !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding-bottom: clamp(42px, 3.5vw, 54px) !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox:hover {
+  box-shadow: none !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox::after {
+  content: "" !important;
+  position: absolute;
+  z-index: 0;
+  inset: 18px 16px 20px;
+  display: block;
+  border: 0 !important;
+  border-radius: 46% 46% 22px 22px / 24% 24% 18px 18px;
+  background:
+    linear-gradient(135deg, rgba(185, 255, 244, .055), transparent 35%),
+    linear-gradient(180deg, rgba(4, 46, 58, .48), rgba(6, 31, 49, .62) 70%, rgba(20, 18, 53, .58)) !important;
+  box-shadow:
+    inset 0 1px rgba(231, 255, 250, .12),
+    inset 0 0 28px rgba(73, 224, 208, .08);
+  backdrop-filter: blur(7px) saturate(112%);
+  -webkit-backdrop-filter: blur(7px) saturate(112%);
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox > .panelFrameOrnaments {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox > .typeFrameAsset--insight {
+  display: block !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 50% auto auto 50% !important;
+  width: calc(100% + 18px) !important;
+  height: calc(100% + 18px) !important;
+  max-width: none !important;
+  object-fit: fill !important;
+  transform: translate(-50%, -50%) !important;
+  filter:
+    drop-shadow(0 10px 20px rgba(0, 18, 28, .34))
+    drop-shadow(0 0 12px rgba(75, 221, 207, .12));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .adviceBox > :not(.typeFrameAsset):not(.panelFrameOrnaments) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Harmonizer AI JUZA — approved garden frame and official character portrait. */
+
+#root .resultHero[data-star-type="thinker"] .resultKicker {
+  display: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .resultLead {
+  margin-bottom: clamp(58px, 7vh, 82px) !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .juzaMessage {
+  box-sizing: border-box;
+  width: min(1040px, calc(100% + 80px));
+  max-width: none;
+  aspect-ratio: 1832 / 858;
+  min-height: 0;
+  margin: clamp(24px, 2vw, 34px) -40px clamp(42px, 4vw, 64px);
+  padding: 12% 11.7% 12% 50.2%;
+  overflow: visible;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: center;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  isolation: isolate;
+}
+
+#root .resultHero[data-star-type="thinker"] .juzaMessage::before,
+#root .resultHero[data-star-type="thinker"] .juzaMessage::after,
+#root .resultHero[data-star-type="thinker"] .juzaMessage > .panelFrameOrnaments,
+#root .resultHero[data-star-type="thinker"] .juzaMessage__particles {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerJuzaFrame {
+  position: absolute;
+  z-index: 4;
+  inset: 50% auto auto 50%;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 18px 34px rgba(0, 16, 28, .42)) drop-shadow(0 0 18px rgba(76, 226, 210, .14));
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerJuzaGlass {
+  position: absolute;
+  z-index: 1;
+  inset: 19% 4.5% 19% 42.6%;
+  display: block;
+  margin: 0;
+  border: 1px solid rgba(154, 239, 226, .15);
+  border-radius: 38px;
+  background:
+    linear-gradient(125deg, rgba(219, 255, 248, .055), transparent 34%),
+    linear-gradient(105deg, rgba(1, 26, 35, .78), rgba(4, 38, 49, .68) 58%, rgba(16, 20, 47, .76));
+  box-shadow: inset 0 1px rgba(255, 246, 218, .1), inset 0 0 34px rgba(62, 218, 202, .08);
+  backdrop-filter: blur(7px) saturate(112%);
+  -webkit-backdrop-filter: blur(7px) saturate(112%);
+  pointer-events: none;
+}
+
+@media (min-width: 900px) {
+  #root .resultHero[data-star-type="thinker"] .juzaMessage::before {
+    content: "" !important;
+    position: absolute;
+    z-index: 1;
+    top: 13.8%;
+    left: 8.4%;
+    width: 31.8%;
+    height: 64.4%;
+    display: block !important;
+    border: 0 !important;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(92, 220, 210, .13), rgba(3, 44, 54, .42) 61%, rgba(5, 24, 43, .68) 100%) !important;
+    box-shadow:
+      inset 0 0 36px rgba(91, 225, 212, .11),
+      inset 0 -22px 34px rgba(17, 11, 46, .22);
+    backdrop-filter: blur(7px) saturate(112%);
+    -webkit-backdrop-filter: blur(7px) saturate(112%);
+    clip-path: ellipse(48% 49% at 50% 50%);
+    pointer-events: none;
+  }
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+  position: absolute;
+  z-index: 5;
+  left: 10.8%;
+  top: 16.2%;
+  width: 27.6%;
+  height: 57.5%;
+  object-fit: cover;
+  object-position: 50% 16%;
+  border-radius: 50%;
+  clip-path: ellipse(47% 49% at 50% 50%);
+  filter: saturate(.96) brightness(.96) drop-shadow(0 0 20px rgba(98, 232, 217, .28));
+  animation: harmonizerJuzaPresence 8.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  margin: 0;
+  color: rgba(248, 255, 253, .96);
+  font-size: clamp(13px, 1.25vw, 16px);
+  font-weight: 600;
+  line-height: 1.68;
+  letter-spacing: .035em;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .98), 0 0 12px rgba(0, 14, 24, .82);
+}
+
+@keyframes harmonizerJuzaPresence {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: saturate(.96) brightness(.96) drop-shadow(0 0 18px rgba(98, 232, 217, .24));
+  }
+  50% {
+    transform: translateY(-2px) scale(1.008);
+    filter: saturate(1.02) brightness(1.04) drop-shadow(0 0 26px rgba(151, 119, 230, .3));
+  }
+}
+
+@media (max-width: 899px) {
+  #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    width: min(100%, 680px);
+    aspect-ratio: auto;
+    min-height: 0;
+    margin: 32px auto 48px;
+    padding: clamp(210px, 54vw, 270px) clamp(26px, 7vw, 48px) 42px;
+    border: 1px solid rgba(255, 226, 158, .2);
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(2, 30, 40, .78), rgba(9, 31, 51, .7) 58%, rgba(24, 18, 54, .76));
+    box-shadow: inset 0 1px rgba(255, 255, 255, .1), 0 22px 52px rgba(0, 12, 26, .32);
+    backdrop-filter: blur(7px) saturate(112%);
+    -webkit-backdrop-filter: blur(7px) saturate(112%);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaFrame {
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaGlass {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    left: 10.8%;
+    top: clamp(22px, 5.7vw, 38px);
+    width: 27.6%;
+    height: clamp(132px, 34vw, 178px);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.85;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultScene[data-master-scene="harmonizer"] .designMasterScene__outerFrame {
+    --harmonizer-page-frame-inset: 4px;
+    display: block;
+    opacity: .9;
+  }
+
+  #root .resultHero[data-star-type="thinker"] > .paidBox > .paidLabel {
+    margin-top: 38px !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .typeFrameAsset--cta {
+    width: calc(100% + 20px);
+    height: calc(100% + 26px);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame {
+    inset: -4px;
+    border: clamp(24px, 8vw, 34px) solid transparent;
+    border-image-source: url("/images/result-scenes/harmonizer/overlays/premium_outer_frame.png");
+    border-image-slice: 220 150 250;
+    border-image-width: 1;
+    border-image-repeat: stretch;
+    background: none;
+  }
+
+  /* Keep the report copy and its glass rows inside the mobile frame's
+     ornamental side rails. The frame remains full-size and undistorted. */
+  #root .resultHero[data-star-type="thinker"] :is(
+    .premiumDescription,
+    .premiumList,
+    .premiumCtaPanel
+  ) {
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    margin-inline: auto;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .premiumDescription {
+    overflow-wrap: anywhere;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .premiumList li {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .resultTitle::after {
+    font-size: clamp(36px, 10.4vw, 42px);
+    letter-spacing: .025em;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    width: calc(100% - 10px);
+    margin-top: 26px;
+    padding: clamp(192px, 52vw, 222px) 24px 36px;
+    border-radius: 22px;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    top: 20px;
+    height: clamp(116px, 34vw, 148px);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .adviceBox > .typeFrameAsset--insight {
+    width: calc(100% + 10px) !important;
+    height: calc(100% + 12px) !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .adviceBox {
+    padding-bottom: 76px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .resultHero[data-star-type="thinker"] .harmonizerPremiumFrame,
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    animation: none !important;
+  }
+}
+
+/* Owner spacing polish: bring the three insight frames closer to AI JUZA
+   while retaining a clear ornamental safe gap. */
+@media (min-width: 900px) {
+  #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    margin-block-end: clamp(24px, 2.2vw, 32px) !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    width: calc(100% - 20px);
+    margin-inline-start: 20px;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .resultGrid {
+    position: relative;
+    left: 50%;
+    width: min(1120px, calc(100vw - 72px)) !important;
+    max-width: none !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(24px, 2.2vw, 32px) !important;
+    margin-inline: auto !important;
+    transform: translateX(-50%);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .adviceBox {
+    min-height: clamp(306px, 25vw, 330px);
+    padding: clamp(88px, 7.2vw, 98px) clamp(32px, 3vw, 42px) clamp(56px, 4.8vw, 66px) !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .adviceBox > .typeFrameAsset--insight {
+    width: calc(100% + 12px) !important;
+    height: calc(100% + 12px) !important;
+  }
+}

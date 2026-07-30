@@ -1,0 +1,1945 @@
+/*
+ * EMPATH — Aurora Sanctuary Design Master refinement.
+ *
+ * The approved transparent PNGs are the architecture. This stylesheet only
+ * restores the complete_master_v1 hierarchy and reserves safe text bays.
+ */
+
+.resultHero[data-star-type="empathy"] {
+  --empath-gold: #f8d7a0;
+  --empath-ivory: #fff4e4;
+  --empath-ink: rgba(8, 4, 24, .82);
+  height: max(100vh, 900px);
+  min-height: max(100vh, 900px);
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.resultHero[data-star-type="empathy"] .resultScene--designMaster {
+  position: absolute;
+  inset: 0;
+}
+
+.resultHero[data-star-type="empathy"] .designMasterScene__background {
+  inset: 0 !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+.resultHero[data-star-type="empathy"] .designMasterScene__outerFrame {
+  position: absolute;
+  inset: 0;
+}
+
+.resultHero[data-star-type="empathy"] .designMasterScene__atmosphere,
+.resultHero[data-star-type="empathy"] .designMasterScene__bloom,
+.resultHero[data-star-type="empathy"] .designMasterScene__lensFlare,
+.resultHero[data-star-type="empathy"] .designMasterScene__stars,
+.resultHero[data-star-type="empathy"] .designMasterScene__dust,
+.resultHero[data-star-type="empathy"] .designMasterScene__signature,
+.resultHero[data-star-type="empathy"] .designMasterScene__constellation,
+.resultHero[data-star-type="empathy"] .designMasterScene__pointerLight {
+  opacity: 0 !important;
+}
+
+.resultHero[data-star-type="empathy"] .resultCard {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: 84%;
+  margin: 0;
+  padding: 0;
+  translate: none !important;
+  animation: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .resultCard::before,
+.resultHero[data-star-type="empathy"] .resultCard__aura,
+.resultHero[data-star-type="empathy"] .resultBadge,
+.resultHero[data-star-type="empathy"] .resultRealm,
+.resultHero[data-star-type="empathy"] .resultLead,
+.resultHero[data-star-type="empathy"] .juzaMessage__particles,
+.resultHero[data-star-type="empathy"] .english::before {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .resultIcon {
+  position: absolute;
+  top: .7%;
+  left: 50%;
+  width: clamp(150px, 11.7vw, 180px);
+  height: clamp(150px, 11.7vw, 180px);
+  margin: 0;
+  transform: translateX(-50%) !important;
+  animation: none !important;
+  filter: drop-shadow(0 0 16px rgba(242, 155, 255, .36));
+}
+
+.resultHero[data-star-type="empathy"] .resultIcon img {
+  filter: none;
+}
+
+.resultHero[data-star-type="empathy"] .english {
+  position: absolute;
+  top: 21.5%;
+  left: 50%;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%) !important;
+  animation: none !important;
+  line-height: 1;
+}
+
+.resultHero[data-star-type="empathy"] .english::after {
+  position: static;
+  display: block;
+  color: #f6c990;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(54px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .085em;
+  text-shadow:
+    0 1px 0 #fff3d5,
+    0 0 10px rgba(255, 190, 146, .56),
+    0 4px 18px rgba(17, 2, 35, .9);
+}
+
+.resultHero[data-star-type="empathy"] .resultTitle {
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  width: min(720px, calc(100% - 220px));
+  margin: 0;
+  transform: translateX(-50%) !important;
+  animation: none !important;
+  color: var(--empath-ivory);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: clamp(28px, 2.45vw, 38px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .16em;
+  text-shadow: 0 2px 8px rgba(8, 2, 25, .95), 0 0 14px rgba(255, 183, 219, .3);
+}
+
+.resultHero[data-star-type="empathy"] .resultKicker {
+  position: absolute;
+  top: 36.8%;
+  left: 50%;
+  width: min(780px, calc(100% - 220px));
+  margin: 0;
+  transform: translateX(-50%);
+  line-height: 1.45;
+}
+
+.resultHero[data-star-type="empathy"] .resultKicker::after {
+  content: "心の声を受け取り、やさしい光で人と世界をつなぐ人";
+  color: rgba(255, 244, 231, .96);
+  font-size: clamp(15px, 1.35vw, 21px);
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-shadow: 0 2px 8px rgba(9, 2, 29, .98), 0 0 10px rgba(255, 206, 230, .22);
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage {
+  position: absolute !important;
+  isolation: isolate;
+  top: 44%;
+  left: 50%;
+  width: min(1120px, calc(100% - 100px));
+  min-height: 0;
+  height: 27%;
+  margin: 0 !important;
+  padding: clamp(42px, 4.3vh, 52px) clamp(72px, 6vw, 92px) 28px clamp(405px, 29vw, 440px);
+  transform: translateX(-50%);
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: empathMasterReveal .75s .18s both !important;
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 18% 4.2% 16% 33%;
+  border-radius: 34px;
+  background: linear-gradient(90deg, rgba(5, 2, 20, .76), rgba(8, 3, 26, .58));
+  box-shadow: inset 0 0 28px rgba(89, 42, 114, .18);
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage::after {
+  left: 13.7%;
+  top: 52%;
+  width: clamp(88px, 8vw, 118px);
+  height: clamp(88px, 8vw, 118px);
+  border-color: rgba(255, 211, 174, .55);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 247, 227, .96) 0 4%, rgba(226, 125, 255, .85) 5% 13%, transparent 14%),
+    radial-gradient(circle, rgba(153, 71, 217, .72), rgba(20, 4, 52, .88) 62%, transparent 64%);
+  box-shadow: 0 0 18px rgba(255, 166, 236, .34), inset 0 0 22px rgba(255, 222, 185, .2);
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--juza {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage > span {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage p {
+  margin: 0;
+  color: rgba(255, 250, 241, .97);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(15px, 1vw, 17px);
+  font-weight: 600;
+  line-height: 1.48;
+  letter-spacing: .035em;
+  text-align: left;
+  text-shadow: 0 2px 7px rgba(2, 0, 13, .98);
+}
+
+.resultHero[data-star-type="empathy"] .resultGrid {
+  position: absolute;
+  top: 72.3%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(1200px, calc(100% - 130px));
+  height: 24%;
+  max-width: none;
+  margin: 0;
+  gap: clamp(24px, 2.4vw, 38px);
+  transform: translateX(-50%);
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  padding: clamp(38px, 4vh, 46px) clamp(24px, 2vw, 32px) 24px;
+  display: grid;
+  grid-template-columns: minmax(64px, 28%) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: center;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: empathMasterReveal .72s var(--empath-delay, .28s) both !important;
+  translate: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox:nth-child(2) { --empath-delay: .36s; }
+.resultHero[data-star-type="empathy"] .adviceBox:nth-child(3) { --empath-delay: .44s; }
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--insight {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox__icon {
+  grid-column: 1;
+  grid-row: 2;
+  width: clamp(54px, 5vw, 72px);
+  height: clamp(54px, 5vw, 72px);
+  margin: 0 auto;
+  color: #efb3e8;
+  filter: drop-shadow(0 0 8px rgba(227, 121, 238, .32));
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox strong {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0 0 6px;
+  color: #ffe5bf;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(14px, 1.12vw, 17px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 7px rgba(3, 0, 17, .98);
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox p {
+  grid-column: 2;
+  grid-row: 2;
+  color: rgba(255, 247, 236, .95);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(11.5px, .84vw, 13px);
+  font-weight: 600;
+  line-height: 1.52;
+  text-align: left;
+  letter-spacing: .025em;
+  text-shadow: 0 2px 7px rgba(2, 0, 15, .98);
+}
+
+.resultHero[data-star-type="empathy"] > .paidBox {
+  position: absolute !important;
+  isolation: isolate;
+  z-index: 4;
+  top: 84.2%;
+  left: 50%;
+  width: min(700px, calc(100% - 180px));
+  height: 13.5%;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 0;
+  transform: translateX(-50%);
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.resultHero[data-star-type="empathy"] > .paidBox > :not(.premiumCtaPanel) {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  position: relative !important;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0 62px 0 178px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 136px;
+  align-items: center;
+  gap: 12px;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: empathMasterReveal .75s .54s both !important;
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--cta {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  text-align: center;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity span {
+  color: var(--empath-gold);
+  font-family: Georgia, serif;
+  font-size: clamp(9px, .78vw, 12px);
+  letter-spacing: .25em;
+  text-shadow: 0 2px 6px rgba(2, 0, 14, .96);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+  color: #fff1dc;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(14px, 1.3vw, 20px);
+  font-weight: 600;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  text-shadow: 0 2px 7px rgba(3, 0, 16, .98);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity small {
+  color: rgba(255, 220, 206, .74);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > p {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButtonFrame {
+  position: relative;
+  z-index: 1;
+  width: 136px;
+  margin: 0;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButtonFrame__perimeter,
+.resultHero[data-star-type="empathy"] .premiumButtonFrame__corner,
+.resultHero[data-star-type="empathy"] .premiumButtonFrame__ornament {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 0 !important;
+  border-radius: 999px;
+  background: rgba(41, 10, 61, .62) !important;
+  color: #ffe7c4;
+  box-shadow: inset 0 0 18px rgba(239, 157, 244, .14), 0 0 12px rgba(255, 188, 221, .12) !important;
+  animation: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton::before,
+.resultHero[data-star-type="empathy"] .premiumButton::after {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton__arrow {
+  font-size: 22px;
+}
+
+.resultHero[data-star-type="empathy"] .buttonGroup {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 8px);
+  left: 50%;
+  width: auto;
+  margin: 0;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 900px) and (max-height: 899px) {
+  .resultHero[data-star-type="empathy"] {
+    height: 900px;
+    min-height: 900px;
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] {
+    height: auto;
+    min-height: 100vh;
+    padding: 72px 12px 88px !important;
+    overflow: hidden;
+  }
+
+  .resultHero[data-star-type="empathy"] .designMasterScene__outerFrame {
+    position: fixed;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultCard {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 720px);
+    height: auto;
+    margin: 0 auto;
+    padding: 0 clamp(10px, 3vw, 24px);
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon,
+  .resultHero[data-star-type="empathy"] .english,
+  .resultHero[data-star-type="empathy"] .resultTitle,
+  .resultHero[data-star-type="empathy"] .resultKicker,
+  .resultHero[data-star-type="empathy"] .juzaMessage,
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    position: relative !important;
+    inset: auto;
+    left: auto;
+    top: auto;
+    transform: none !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon {
+    order: 1;
+    width: clamp(138px, 30vw, 174px);
+    height: clamp(138px, 30vw, 174px);
+    margin: 0 auto 12px;
+  }
+
+  .resultHero[data-star-type="empathy"] .english {
+    order: 2;
+    margin: 0 auto 10px;
+  }
+
+  .resultHero[data-star-type="empathy"] .english::after {
+    font-size: clamp(46px, 11vw, 68px);
+  }
+
+  .resultHero[data-star-type="empathy"] .resultTitle {
+    order: 3;
+    width: 100%;
+    font-size: clamp(27px, 6vw, 36px);
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    order: 4;
+    width: 100%;
+    margin: 10px auto 64px;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultKicker::after {
+    content: "心の声を受け取り、\Aやさしい光で人と世界をつなぐ人";
+    display: block;
+    font-size: 13px;
+    letter-spacing: .04em;
+    white-space: pre-line !important;
+    overflow-wrap: anywhere;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage {
+    order: 5;
+    width: min(100%, 680px);
+    height: auto;
+    min-height: 500px;
+    margin: 0 auto 72px !important;
+    padding: clamp(208px, 39vw, 264px) clamp(28px, 8vw, 64px) 52px;
+    animation: empathMasterRevealStatic .75s .18s both !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .typeFrameAsset--juza {
+    top: 18%;
+    width: 100%;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage::before {
+    inset: clamp(178px, 34vw, 230px) 7% 7%;
+    border: 1px solid rgba(229, 165, 193, .26);
+    border-top: 0;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(180deg, rgba(12, 4, 30, .58), rgba(7, 2, 22, .82));
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    top: clamp(82px, 17vw, 112px);
+    left: 24%;
+    width: clamp(66px, 13vw, 92px);
+    height: clamp(66px, 13vw, 92px);
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage > span {
+    margin-bottom: 14px;
+    font-size: clamp(11px, 2vw, 13px);
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage p {
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.78;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    order: 6;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 540px);
+    height: auto;
+    margin: 0 auto;
+    gap: 50px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox {
+    min-height: 250px;
+    height: auto;
+    padding: 60px clamp(42px, 10vw, 68px) 42px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox strong {
+    font-size: 17px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox p {
+    font-size: 14px;
+  }
+
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    position: relative !important;
+    inset: auto;
+    left: auto;
+    top: auto;
+    width: min(calc(100% - 24px), 620px);
+    height: 190px;
+    margin: 76px auto 0 !important;
+    transform: none;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 0 clamp(34px, 8vw, 62px) 0 clamp(148px, 25vw, 190px);
+    grid-template-columns: 1fr;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+    font-size: clamp(14px, 2.9vw, 18px);
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButtonFrame {
+    width: min(180px, 100%);
+    margin: -4px auto 0;
+  }
+
+  .resultHero[data-star-type="empathy"] .buttonGroup {
+    position: relative;
+    inset: auto;
+    left: auto;
+    margin: 54px auto 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="empathy"] {
+    padding: 54px 6px 76px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultCard {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .resultHero[data-star-type="empathy"] .english::after {
+    font-size: clamp(42px, 13vw, 54px);
+  }
+
+  .resultHero[data-star-type="empathy"] .resultTitle {
+    font-size: clamp(25px, 8vw, 32px);
+  }
+
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    margin-bottom: 52px;
+    padding: 0 18px;
+    white-space: normal !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage {
+    width: calc(100% - 8px);
+    min-height: 540px;
+    margin-bottom: 62px !important;
+    padding: clamp(174px, 48vw, 204px) 34px 42px;
+  }
+
+  .resultHero[data-star-type="empathy"] .typeFrameAsset--juza {
+    top: 15%;
+    width: 112%;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage::before {
+    inset: clamp(154px, 42vw, 182px) 4% 4%;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    top: clamp(58px, 16vw, 72px);
+    left: 23%;
+    width: 58px;
+    height: 58px;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage > span {
+    font-size: 10px;
+    letter-spacing: .18em;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    width: calc(100% - 16px);
+    gap: 40px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox {
+    min-height: 230px;
+    padding: 50px 38px 34px;
+  }
+
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    width: calc(100% - 10px);
+    height: 176px;
+    margin-top: 62px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .typeFrameAsset--cta {
+    width: 112%;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 0 26px 0 clamp(108px, 31vw, 132px);
+    gap: 4px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity {
+    gap: 4px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity span {
+    font-size: 8px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+    font-size: 13px;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButtonFrame {
+    width: 128px;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButton {
+    min-height: 34px;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButton__label {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="empathy"] .resultIcon,
+  .resultHero[data-star-type="empathy"] .juzaMessage,
+  .resultHero[data-star-type="empathy"] .adviceBox,
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes empathMasterReveal {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.resultHero[data-star-type="empathy"] .adviceBox,
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  animation-name: empathMasterRevealStatic !important;
+}
+
+@keyframes empathMasterRevealStatic {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/*
+ * Desktop luxury scroll composition.
+ * The Aurora Sanctuary remains fixed while each approved architectural asset
+ * receives its own vertical room instead of competing inside one viewport.
+ */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="empathy"] {
+    height: auto;
+    min-height: 100vh;
+    padding: clamp(78px, 7vw, 116px) 0 clamp(150px, 12vw, 210px) !important;
+    overflow: hidden;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultScene--designMaster,
+  .resultHero[data-star-type="empathy"] .designMasterScene__outerFrame {
+    position: fixed !important;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultCard {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon,
+  .resultHero[data-star-type="empathy"] .english,
+  .resultHero[data-star-type="empathy"] .resultTitle,
+  .resultHero[data-star-type="empathy"] .resultKicker,
+  .resultHero[data-star-type="empathy"] .juzaMessage,
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    position: relative !important;
+    inset: auto;
+    left: auto;
+    top: auto;
+    transform: none !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon {
+    order: 1;
+    width: clamp(170px, 12vw, 196px);
+    height: clamp(170px, 12vw, 196px);
+    margin: 0 auto 24px;
+  }
+
+  .resultHero[data-star-type="empathy"] .english {
+    order: 2;
+    margin: 0 auto 16px;
+  }
+
+  .resultHero[data-star-type="empathy"] .english::after {
+    font-size: clamp(60px, 5.4vw, 82px);
+  }
+
+  .resultHero[data-star-type="empathy"] .resultTitle {
+    order: 3;
+    width: min(760px, calc(100% - 120px));
+    margin: 0 auto 14px;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    order: 4;
+    width: min(840px, calc(100% - 120px));
+    margin: 0 auto;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage {
+    order: 5;
+    display: flex;
+    align-items: center;
+    width: min(1120px, calc(100% - 100px));
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1774 / 887;
+    margin: clamp(58px, 4.2vw, 72px) auto clamp(66px, 4.7vw, 82px) !important;
+    padding: 10% clamp(72px, 6vw, 92px) 10% clamp(405px, 29vw, 440px);
+  }
+
+  .resultHero[data-star-type="empathy"] .typeFrameAsset--juza {
+    top: 50%;
+    width: 100%;
+  }
+
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    left: 19%;
+    top: 50%;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    order: 6;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(1200px, calc(100% - 160px));
+    height: auto;
+    margin: 0 auto clamp(150px, 12vw, 210px);
+    gap: clamp(34px, 3vw, 48px);
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
+    padding: clamp(42px, 3.5vw, 54px) clamp(26px, 2.2vw, 36px) 30px;
+  }
+
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    position: relative !important;
+    inset: auto;
+    left: auto;
+    top: auto;
+    width: min(820px, calc(100% - 160px));
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 2032 / 774;
+    margin: 0 auto clamp(140px, 10vw, 190px) !important;
+    transform: none;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    width: 100%;
+    height: 100%;
+    padding: 0 clamp(62px, 6vw, 84px) 0 clamp(194px, 18vw, 234px);
+    grid-template-columns: minmax(0, 1fr) 148px;
+    gap: 20px;
+  }
+
+  .resultHero[data-star-type="empathy"] .buttonGroup {
+    position: relative;
+    inset: auto;
+    left: auto;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1179px) {
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    grid-template-columns: 1fr;
+    width: min(620px, calc(100% - 120px));
+    gap: 76px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox {
+    aspect-ratio: 1672 / 941;
+  }
+}
+
+/*
+ * Empath hero alignment and cut-glass readability.
+ * Keep the background visible while placing the white Japanese copy on a
+ * faceted, translucent sanctuary-glass surface.
+ */
+.resultHero[data-star-type="empathy"] .resultIcon,
+.resultHero[data-star-type="empathy"] .english,
+.resultHero[data-star-type="empathy"] .resultTitle,
+.resultHero[data-star-type="empathy"] .resultKicker {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.resultHero[data-star-type="empathy"] .resultTitle,
+.resultHero[data-star-type="empathy"] .resultKicker {
+  isolation: isolate;
+  border: 1px solid rgba(255, 221, 248, .34);
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, .12) 0 1px, transparent 1px 34%, rgba(224, 176, 255, .1) 34% 35%, transparent 35%),
+    linear-gradient(242deg, transparent 0 56%, rgba(255, 228, 248, .08) 56% 57%, transparent 57%),
+    radial-gradient(circle at 50% 0%, rgba(255, 218, 241, .14), transparent 58%),
+    linear-gradient(90deg, rgba(15, 6, 42, .26), rgba(19, 7, 47, .62) 18%, rgba(19, 7, 47, .68) 50%, rgba(19, 7, 47, .62) 82%, rgba(15, 6, 42, .26));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 247, 251, .3),
+    inset 0 -1px 0 rgba(152, 95, 194, .28),
+    0 8px 26px rgba(8, 1, 28, .2),
+    0 0 22px rgba(233, 167, 255, .08);
+  -webkit-backdrop-filter: blur(10px) saturate(118%);
+  backdrop-filter: blur(10px) saturate(118%);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 18px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="empathy"] .resultTitle {
+  padding: 8px 38px 7px;
+  border-bottom-color: rgba(255, 218, 244, .18);
+}
+
+.resultHero[data-star-type="empathy"] .resultKicker {
+  padding: 9px 38px 10px;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="empathy"] .resultCard {
+    align-items: center;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon,
+  .resultHero[data-star-type="empathy"] .english,
+  .resultHero[data-star-type="empathy"] .resultTitle,
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultTitle {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .resultTitle,
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    padding-left: 22px;
+    padding-right: 22px;
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+    -webkit-backdrop-filter: blur(7px) saturate(114%);
+    backdrop-filter: blur(7px) saturate(114%);
+  }
+}
+
+/* Desktop insight scale: preserve the approved frame ratio, but let the three
+ * readings occupy more of the sanctuary width and use comfortable body type. */
+@media (min-width: 1180px) {
+  .resultHero[data-star-type="empathy"] .resultGrid {
+    width: min(1320px, calc(100% - 80px));
+    gap: clamp(24px, 2.2vw, 34px);
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox {
+    grid-template-columns: minmax(72px, 25%) minmax(0, 1fr);
+    column-gap: clamp(12px, 1.1vw, 18px);
+    padding: clamp(46px, 3.5vw, 58px) clamp(30px, 2.35vw, 38px) 32px;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 17% 7% 12%;
+    display: block !important;
+    pointer-events: none;
+    background:
+      linear-gradient(125deg, rgba(255, 237, 251, .07), transparent 34%),
+      linear-gradient(90deg, rgba(10, 4, 31, .2), rgba(12, 5, 35, .48) 24%, rgba(12, 5, 35, .52) 76%, rgba(10, 4, 31, .2));
+    box-shadow: inset 0 1px 0 rgba(255, 230, 249, .12);
+    -webkit-backdrop-filter: blur(5px) saturate(112%);
+    backdrop-filter: blur(5px) saturate(112%);
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+  }
+
+  .resultHero[data-star-type="empathy"] .typeFrameAsset--insight {
+    z-index: 2;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox__icon {
+    position: relative;
+    z-index: 3;
+    width: clamp(68px, 4.8vw, 78px) !important;
+    height: clamp(68px, 4.8vw, 78px) !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox strong {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 9px;
+    font-size: clamp(18px, 1.34vw, 20px);
+    line-height: 1.35;
+  }
+
+  .resultHero[data-star-type="empathy"] .adviceBox p {
+    position: relative;
+    z-index: 3;
+    font-size: clamp(15px, 1.05vw, 16px);
+    line-height: 1.62;
+    letter-spacing: .02em;
+  }
+}
+
+/*
+ * Optical-axis lock for the approved 1536x1024 sanctuary background.
+ * Its measured celestial light focus is x=784, y=268. These formulas map
+ * that source point through background-size: cover at each desktop ratio.
+ */
+@media (min-width: 900px) {
+  .resultHero[data-star-type="empathy"] {
+    --empath-focus-x: calc(50cqw + 1.5625vh);
+    --empath-focus-y: 26.171875vh;
+    --empath-axis-nudge-x: 4px;
+    container-type: inline-size;
+    padding-top: 0 !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .resultCard {
+    padding-top: max(30px, calc(var(--empath-focus-y) - clamp(85px, 6vw, 98px)));
+  }
+
+  .resultHero[data-star-type="empathy"] .resultIcon,
+  .resultHero[data-star-type="empathy"] .english,
+  .resultHero[data-star-type="empathy"] .resultTitle,
+  .resultHero[data-star-type="empathy"] .resultKicker {
+    left: calc(var(--empath-focus-x) - 50cqw + var(--empath-axis-nudge-x)) !important;
+  }
+}
+
+@container (min-aspect-ratio: 3 / 2) {
+  .resultHero[data-star-type="empathy"] .resultCard {
+    --empath-focus-x: 51.041667cqw;
+    --empath-focus-y: calc(50vh - 15.885417cqw);
+  }
+}
+
+/* Localized dark sanctuary glass for copy that crosses the sunrise. */
+.resultHero[data-star-type="empathy"] .juzaMessage::before {
+  z-index: 1;
+  inset: 16% 4.4% 14% 33.2%;
+  border: 1px solid rgba(255, 218, 244, .18);
+  border-radius: 26px;
+  background:
+    linear-gradient(128deg, rgba(255, 235, 250, .07), transparent 28%),
+    radial-gradient(circle at 54% 18%, rgba(111, 57, 133, .14), transparent 48%),
+    linear-gradient(90deg, rgba(7, 2, 24, .76), rgba(10, 3, 31, .7) 55%, rgba(8, 2, 26, .76));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 250, .12),
+    inset 0 0 30px rgba(75, 35, 103, .18),
+    0 8px 24px rgba(4, 0, 18, .16);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  backdrop-filter: blur(8px) saturate(110%);
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 16px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--juza {
+  z-index: 4;
+}
+
+.resultHero[data-star-type="empathy"] .juzaMessage p {
+  position: relative;
+  z-index: 3;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 1),
+    0 2px 8px rgba(2, 0, 13, 1),
+    0 0 12px rgba(5, 1, 22, .9);
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 23% 7% 21% 21%;
+  display: block;
+  pointer-events: none;
+  border: 1px solid rgba(255, 220, 245, .14);
+  background:
+    linear-gradient(120deg, rgba(255, 237, 250, .08), transparent 34%),
+    linear-gradient(90deg, rgba(9, 3, 28, .68), rgba(13, 4, 36, .76) 52%, rgba(9, 3, 28, .68));
+  box-shadow: inset 0 1px 0 rgba(255, 241, 250, .12), 0 6px 20px rgba(4, 0, 18, .16);
+  -webkit-backdrop-filter: blur(7px) saturate(110%);
+  backdrop-filter: blur(7px) saturate(110%);
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--cta {
+  z-index: 4;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity,
+.resultHero[data-star-type="empathy"] .premiumButtonFrame {
+  z-index: 3;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity span,
+.resultHero[data-star-type="empathy"] .empathCtaIdentity strong,
+.resultHero[data-star-type="empathy"] .empathCtaIdentity small {
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 1),
+    0 2px 7px rgba(2, 0, 13, 1),
+    0 0 11px rgba(5, 1, 22, .88);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity small {
+  color: rgba(255, 233, 222, .94);
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .juzaMessage::before {
+    z-index: 1;
+    inset: clamp(154px, 42vw, 182px) 4% 4%;
+    border-radius: 0 0 24px 24px;
+    clip-path: none;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel::before {
+    inset: 22% 6% 20% 29%;
+  }
+}
+
+/* The architectural PNGs remain above the artwork; put the readable glass
+ * directly behind the copy so their transparent interiors cannot cancel it. */
+.resultHero[data-star-type="empathy"] .juzaMessage p {
+  z-index: 5 !important;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 17px 22px !important;
+  border: 1px solid rgba(255, 224, 245, .18) !important;
+  border-radius: 18px;
+  background:
+    linear-gradient(128deg, rgba(255, 240, 251, .07), transparent 30%),
+    linear-gradient(90deg, rgba(7, 2, 24, .74), rgba(11, 3, 32, .82) 52%, rgba(7, 2, 24, .76)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 245, 252, .12), 0 6px 20px rgba(3, 0, 16, .2) !important;
+  -webkit-backdrop-filter: blur(9px) saturate(108%) !important;
+  backdrop-filter: blur(9px) saturate(108%) !important;
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity {
+  z-index: 5;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 224, 245, .18);
+  background:
+    linear-gradient(125deg, rgba(255, 239, 250, .08), transparent 34%),
+    linear-gradient(90deg, rgba(8, 2, 26, .7), rgba(13, 4, 37, .84) 52%, rgba(8, 2, 26, .7));
+  box-shadow: inset 0 1px 0 rgba(255, 245, 252, .12), 0 5px 18px rgba(3, 0, 16, .18);
+  -webkit-backdrop-filter: blur(8px) saturate(108%);
+  backdrop-filter: blur(8px) saturate(108%);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+}
+
+.resultHero[data-star-type="empathy"] .premiumButtonFrame {
+  z-index: 5;
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .juzaMessage p {
+    padding: 15px 18px !important;
+    border-radius: 14px;
+    clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity {
+    padding: 9px 12px;
+  }
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity {
+  isolation: isolate;
+  z-index: 5 !important;
+  padding: 8px 0;
+  overflow: visible;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  clip-path: none;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -4px -110px -4px -38px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 224, 245, .18);
+  background:
+    linear-gradient(125deg, rgba(255, 239, 250, .08), transparent 34%),
+    linear-gradient(90deg, rgba(8, 2, 26, .72), rgba(13, 4, 37, .86) 52%, rgba(8, 2, 26, .72));
+  box-shadow: inset 0 1px 0 rgba(255, 245, 252, .12), 0 5px 18px rgba(3, 0, 16, .18);
+  -webkit-backdrop-filter: blur(8px) saturate(108%);
+  backdrop-filter: blur(8px) saturate(108%);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%);
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity {
+    padding: 7px 0;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity::before {
+    inset-inline: -16px;
+  }
+}
+
+/* Empath premium offer: price, value and action remain inside the approved CTA. */
+.resultHero[data-star-type="empathy"] .empathCtaOfferLine {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaOfferLine b {
+  color: #ffe2a6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 2.4vw, 38px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .035em;
+  text-shadow: 0 1px 0 #fff1cf, 0 0 14px rgba(255, 188, 110, .34), 0 3px 9px rgba(3, 0, 18, 1);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaOfferLine small {
+  color: rgba(255, 236, 220, .9);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaSummary {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  color: rgba(255, 246, 236, .96);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(11.5px, .82vw, 13px);
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: .025em;
+  white-space: normal !important;
+  text-shadow: 0 1px 2px #000, 0 2px 7px rgba(2, 0, 13, 1);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaStatus {
+  justify-self: center;
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 218, 171, .24);
+  border-radius: 999px;
+  background: rgba(26, 7, 43, .54);
+  color: rgba(255, 228, 208, .94);
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    width: min(960px, calc(100% - 120px));
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 0 70px 0 280px;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 24px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity {
+    gap: 7px;
+    padding: 16px 0;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity::before {
+    inset: -6px -20px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity span {
+    font-size: 11px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+    font-size: clamp(17px, 1.3vw, 20px);
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButtonFrame {
+    width: 190px;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButton {
+    min-height: 62px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 230, 174, .76) !important;
+    background: linear-gradient(112deg, rgba(50, 14, 75, .96), rgba(121, 44, 132, .94) 48%, rgba(168, 91, 112, .94)) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 247, 224, .34), 0 0 22px rgba(222, 119, 235, .26), 0 8px 24px rgba(4, 0, 20, .28) !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButton__label {
+    font-size: 11px;
+    line-height: 1.35;
+    letter-spacing: .035em;
+    white-space: normal;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumButton:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 1px 0 rgba(255, 250, 229, .46), 0 0 34px rgba(231, 133, 244, .4), 0 10px 28px rgba(4, 0, 20, .34) !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity {
+    gap: 3px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity > span,
+  .resultHero[data-star-type="empathy"] .empathCtaStatus {
+    display: none;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaOfferLine b {
+    font-size: 24px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaSummary {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .typeFrameAsset--cta {
+  width: 100% !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButtonFrame {
+  z-index: 5 !important;
+  opacity: 1 !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton:disabled {
+  opacity: .82 !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton__label {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton__arrow {
+  position: static !important;
+  flex: 0 0 auto;
+}
+
+/*
+ * Empath premium report frame.
+ * The approved horizontal CTA bitmap cannot safely contain the complete
+ * report explanation, price and action. Keep that asset out of this panel and
+ * use a spacious sanctuary-glass frame without repurposing another role-bound
+ * bitmap.
+ */
+.resultHero[data-star-type="empathy"] .typeFrameAsset--cta {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] > .paidBox {
+  aspect-ratio: auto !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  min-height: 440px;
+  padding: 48px 72px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 220px) !important;
+  gap: 38px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 218, 149, .82) !important;
+  border-radius: 28px !important;
+  background:
+    linear-gradient(132deg, rgba(255, 239, 251, .1), transparent 24%),
+    radial-gradient(circle at 50% 0%, rgba(244, 174, 255, .16), transparent 48%),
+    linear-gradient(115deg, rgba(15, 5, 39, .9), rgba(34, 9, 55, .82) 48%, rgba(14, 5, 36, .9)) !important;
+  box-shadow:
+    inset 0 0 0 7px rgba(63, 20, 83, .54),
+    inset 0 0 0 8px rgba(255, 222, 157, .28),
+    inset 0 0 42px rgba(176, 89, 205, .18),
+    0 0 26px rgba(255, 191, 226, .16),
+    0 24px 54px rgba(4, 0, 20, .32) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(118%) !important;
+  backdrop-filter: blur(12px) saturate(118%) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments {
+  z-index: 2;
+  inset: 10px;
+  display: block !important;
+  border-radius: 20px;
+  opacity: .9;
+  pointer-events: none;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity {
+  gap: 9px !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity::before {
+  content: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity span {
+  font-size: 12px !important;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+  font-size: clamp(22px, 2vw, 29px) !important;
+  line-height: 1.45 !important;
+  letter-spacing: .075em;
+  text-wrap: balance;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaOfferLine {
+  justify-content: flex-start;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaOfferLine b {
+  font-size: clamp(38px, 3.5vw, 50px);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaSummary {
+  max-width: 560px;
+  font-size: clamp(13px, 1vw, 15px) !important;
+  line-height: 1.75 !important;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaBenefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 10px;
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaBenefits li {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 220, 178, .24);
+  border-radius: 12px;
+  background: linear-gradient(110deg, rgba(77, 25, 91, .48), rgba(25, 8, 53, .64));
+  color: rgba(255, 244, 231, .98);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(11px, .85vw, 13px);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: .025em;
+  text-shadow: 0 1px 2px #000, 0 2px 6px rgba(2, 0, 13, .96);
+  box-shadow: inset 0 1px 0 rgba(255, 242, 229, .1);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaBenefits li span {
+  flex: 0 0 auto;
+  margin-right: 8px;
+  color: #ffe0a3;
+  font-size: 17px;
+  text-shadow: 0 0 10px rgba(244, 169, 255, .44);
+}
+
+.resultHero[data-star-type="empathy"] .empathCtaStatus {
+  justify-self: start;
+  margin-top: 2px;
+  padding: 5px 12px;
+  font-size: 10px;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButtonFrame {
+  width: 100% !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton {
+  min-height: 76px !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumButton__label {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+@media (min-width: 900px) {
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    width: min(980px, calc(100% - 120px)) !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] > .paidBox {
+    width: min(620px, calc(100% - 24px));
+    height: auto !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    min-height: 0;
+    padding: 38px 30px !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity > span,
+  .resultHero[data-star-type="empathy"] .empathCtaStatus {
+    display: block;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+    font-size: clamp(20px, 5vw, 27px) !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaOfferLine b {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaSummary {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 58px 30px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaIdentity strong {
+    font-size: 20px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaSummary {
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaBenefits {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .resultHero[data-star-type="empathy"] .empathCtaBenefits li {
+    min-height: 44px;
+    font-size: 12px;
+  }
+}
+
+/* Keep the outward-facing frame fully visible in the isolated review crop. */
+.devResultPreview--section-premium .resultHero[data-star-type="empathy"] > .paidBox {
+  padding-block: 52px !important;
+}
+
+@media (max-width: 899px) {
+  .devResultPreview--section-premium .resultHero[data-star-type="empathy"] > .paidBox {
+    padding-block: 40px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .devResultPreview--section-premium .resultHero[data-star-type="empathy"] > .paidBox {
+    padding-block: 34px !important;
+  }
+}
+
+/* Empath-specific AI JUZA portrait inside the approved left speaking socket. */
+.resultHero[data-star-type="empathy"] .juzaMessage::after {
+  content: "" !important;
+  position: absolute;
+  z-index: 3;
+  left: 22.2% !important;
+  top: 50% !important;
+  width: 34% !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 50%;
+  background:
+    url("/images/result-scenes/empath/characters/ai_juza_portrait.png") center 7% / 106% auto no-repeat,
+    radial-gradient(circle at 50% 45%, rgba(255, 202, 240, .24), rgba(96, 47, 151, .38) 52%, rgba(12, 4, 38, .82) 78%) !important;
+  box-shadow:
+    inset 0 0 34px rgba(255, 222, 244, .24),
+    0 0 28px rgba(224, 148, 255, .26) !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center;
+  animation: empathJuzaPresence 8.5s ease-in-out infinite !important;
+  pointer-events: none;
+}
+
+@keyframes empathJuzaPresence {
+  0%, 100% {
+    filter: brightness(.98) saturate(.98);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    filter: brightness(1.06) saturate(1.04);
+    transform: translate(-50%, -50%) scale(1.018);
+  }
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    left: 22.2% !important;
+    top: 18% !important;
+    width: 34% !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    left: 23% !important;
+    top: 15% !important;
+    width: 36% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="empathy"] .juzaMessage::after {
+    animation: none !important;
+  }
+}
+
+.devResultPreview--reducedMotion .resultHero[data-star-type="empathy"] .juzaMessage::after,
+.devResultPreview--pauseMotion .resultHero[data-star-type="empathy"] .juzaMessage::after {
+  animation: none !important;
+}
+
+/* Ornate Aurora Sanctuary hardware for the premium-report frame only. */
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  border-color: rgba(255, 224, 159, .94) !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(53, 16, 77, .82),
+    inset 0 0 0 5px rgba(255, 226, 165, .38),
+    inset 0 0 0 12px rgba(94, 35, 111, .28),
+    inset 0 0 52px rgba(211, 126, 230, .2),
+    0 0 0 1px rgba(143, 71, 163, .62),
+    0 0 34px rgba(255, 191, 232, .24),
+    0 28px 64px rgba(4, 0, 20, .4) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments {
+  inset: 8px !important;
+  overflow: hidden !important;
+  border-radius: 21px !important;
+  opacity: 1 !important;
+  animation: empathPremiumFrameBreath 8s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments::before {
+  inset: 0 !important;
+  padding: 2px !important;
+  border-radius: 21px !important;
+  background: linear-gradient(115deg,
+    #fff4ce 0%,
+    #b76f73 13%,
+    #f6d792 27%,
+    #8d4b9e 43%,
+    #ffe9b4 55%,
+    #b5638f 72%,
+    #f7d98f 88%,
+    #fff4d2 100%) !important;
+  opacity: .92 !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments::after {
+  inset: 7px !important;
+  border: 1px solid rgba(255, 224, 168, .42) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    inset 0 0 0 3px rgba(68, 21, 87, .5),
+    inset 0 0 0 4px rgba(225, 161, 218, .2),
+    inset 0 0 28px rgba(183, 100, 209, .12) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__inner {
+  inset: 15px !important;
+  display: block !important;
+  border: 1px solid rgba(255, 220, 151, .3) !important;
+  border-radius: 12px !important;
+  background:
+    linear-gradient(90deg, rgba(255, 221, 156, .34), transparent 18%, transparent 82%, rgba(255, 221, 156, .34)) top / 100% 1px no-repeat,
+    linear-gradient(90deg, rgba(255, 221, 156, .26), transparent 24%, transparent 76%, rgba(255, 221, 156, .26)) bottom / 100% 1px no-repeat !important;
+  box-shadow: inset 0 0 24px rgba(203, 119, 224, .1) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner {
+  display: block !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-color: rgba(255, 224, 157, .94) !important;
+  border-width: 2px !important;
+  filter: drop-shadow(0 0 5px rgba(255, 208, 155, .55)) drop-shadow(0 0 12px rgba(211, 112, 244, .35)) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(255, 235, 191, .92);
+  background: radial-gradient(circle at 35% 28%, #fff 0 7%, #f7b9ff 18%, #9b4bc0 48%, #3d145d 72%);
+  box-shadow: inset 0 0 5px rgba(255,255,255,.34), 0 0 10px rgba(220, 119, 249, .58);
+  transform: rotate(45deg);
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner--tl::before { top: 5px; left: 5px; }
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner--tr::before { top: 5px; right: 5px; }
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner--bl::before { bottom: 5px; left: 5px; }
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner--br::before { right: 5px; bottom: 5px; }
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__crest {
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  border: 2px solid rgba(255, 232, 178, .94) !important;
+  background: radial-gradient(circle, #fff 0 7%, #ffd8f7 15%, #b562d4 42%, #50206f 68%, #2a0a43 72%) !important;
+  box-shadow:
+    -36px 0 0 -7px rgba(247, 212, 145, .62),
+    36px 0 0 -7px rgba(247, 212, 145, .62),
+    0 0 10px rgba(255, 220, 165, .72),
+    0 0 20px rgba(215, 120, 244, .42) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__crest--top {
+  top: -8px !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__crest--bottom {
+  bottom: -8px !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__rail {
+  left: 50%;
+  display: block !important;
+  width: min(46%, 390px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(247, 211, 146, .58) 20%, rgba(255, 238, 198, .9) 50%, rgba(247, 211, 146, .58) 80%, transparent) !important;
+  transform: translateX(-50%);
+  box-shadow: 0 0 7px rgba(220, 139, 239, .24);
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__rail--top { top: 15px; }
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__rail--bottom { bottom: 15px; }
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__sideJewel {
+  top: 50%;
+  display: block !important;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(255, 232, 180, .92);
+  background: radial-gradient(circle at 35% 30%, #fff 0 8%, #d98ee7 24%, #713095 58%, #26093d 75%) !important;
+  box-shadow: 0 0 11px rgba(215, 120, 241, .52);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__sideJewel--left { left: 9px; }
+.resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__sideJewel--right { right: 9px; }
+
+@keyframes empathPremiumFrameBreath {
+  0%, 100% { filter: brightness(.98); }
+  50% { filter: brightness(1.08) drop-shadow(0 0 7px rgba(222, 139, 245, .18)); }
+}
+
+@media (max-width: 520px) {
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__corner::before {
+    width: 11px;
+    height: 11px;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__rail {
+    width: 38%;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel .panelFrameOrnaments__sideJewel {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments {
+    animation: none !important;
+  }
+}
+
+.devResultPreview--reducedMotion .resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments,
+.devResultPreview--pauseMotion .resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments {
+  animation: none !important;
+}
+
+/*
+ * Owner-selected frame03 architecture for the Empath premium report.
+ * The frame sits outside the glass panel like a picture frame. A nine-slice
+ * border preserves the crystal corners on both landscape and portrait panels.
+ */
+.resultHero[data-star-type="empathy"] .premiumCtaPanel {
+  padding: 72px 88px 68px !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  overflow: visible !important;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 229, 187, .16),
+    inset 0 0 46px rgba(207, 124, 223, .2),
+    0 0 36px rgba(255, 190, 226, .2),
+    0 28px 64px rgba(4, 0, 20, .4) !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel > .panelFrameOrnaments {
+  display: none !important;
+}
+
+.resultHero[data-star-type="empathy"] .premiumCtaPanel::after {
+  content: "";
+  position: absolute;
+  z-index: 8;
+  inset: -52px -28px;
+  display: block;
+  box-sizing: border-box;
+  border: 72px solid transparent;
+  border-image-source: url("/images/result-scenes/empath/overlays/frame03.png");
+  border-image-slice: 14% 9% 14% 9%;
+  border-image-width: 72px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  filter: drop-shadow(0 10px 18px rgba(8, 0, 27, .48));
+  pointer-events: none;
+}
+
+@media (max-width: 899px) {
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 64px 48px 62px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel::after {
+    inset: -40px -22px;
+    border-width: 58px;
+    border-image-width: 58px;
+  }
+}
+
+@media (max-width: 430px) {
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel {
+    padding: 62px 36px 64px !important;
+  }
+
+  .resultHero[data-star-type="empathy"] .premiumCtaPanel::after {
+    inset: -32px -16px;
+    border-width: 48px;
+    border-image-width: 48px;
+  }
+}

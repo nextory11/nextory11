@@ -21,6 +21,7 @@ function ResultScene({ scene }) {
   useEffect(() => {
     const element = sceneRef.current;
     if (!element) return undefined;
+    if (["challenge", "creator", "intuitive"].includes(element.dataset.masterScene)) return undefined;
     const resultHero = element.closest(".resultHero");
 
     const updatePointerLight = ({ clientX, clientY }) => {
@@ -42,9 +43,38 @@ function ResultScene({ scene }) {
 
   const base = `/images/result-scenes/${master.folder}`;
 
+  if (master.folder === "challenge") {
+    return (
+      <div ref={sceneRef} className="resultScene resultScene--challengeMaster" data-master-scene="challenge" aria-hidden="true">
+        <div
+          className="challengeMasterScene__background"
+          style={{ backgroundImage: `url(${base}/backgrounds/design_master.png)` }}
+        />
+        <img className="challengeMasterScene__frame" src={`${base}/overlays/frame.png`} alt="" />
+      </div>
+    );
+  }
+
+  if (master.folder === "creator") {
+    return (
+      <div ref={sceneRef} className="resultScene resultScene--creatorMaster" data-master-scene="creator" aria-hidden="true">
+        <div
+          className="creatorMasterScene__background"
+          style={{ backgroundImage: `url(${base}/backgrounds/design_master.png)` }}
+        />
+        <img className="creatorMasterScene__outerFrame" src={`${base}/overlays/frame.png`} alt="" />
+      </div>
+    );
+  }
+
   return (
     <div ref={sceneRef} className="resultScene resultScene--designMaster" data-master-scene={master.folder} aria-hidden="true">
       <div className="designMasterScene__background" style={{ backgroundImage: `url(${base}/backgrounds/design_master.png)` }} />
+      {['pioneer', 'empath', 'evolver', 'explorer', 'guardian', 'harmonizer', 'light-bringer'].includes(master.folder) ? (
+        <img className="designMasterScene__outerFrame" src={`${base}/overlays/frame.png`} alt="" />
+      ) : null}
+      {master.folder === "light-bringer" ? <img className="luminaryMasterScene__effects" src={`${base}/effects/effects.png`} alt="" /> : null}
+      {master.folder === "intuitive" ? <img className="intuitiveMasterScene__effects" src={`${base}/effects.png`} alt="" /> : null}
       <div className="designMasterScene__atmosphere" />
       <div className="designMasterScene__bloom" />
       <div className="designMasterScene__lensFlare" />

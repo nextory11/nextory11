@@ -1,11 +1,13 @@
 import { normalizeQuestionId } from "./contracts.js";
 
-export function createQuestionBankContext({ bank, responses, scoringResult }) {
+export function createQuestionBankContext({ bank, responses, scoringResult, diagnosisSessionId = null }) {
   return {
     contextVersion: bank.descriptor.contextVersion,
+    diagnosisSessionId,
     questionBank: bank.descriptor,
     selectedQuestions: responses.map(({ question }) => ({
       id: normalizeQuestionId(question.id),
+      text: question.text,
       revision: question.revision,
       category: question.category,
       difficulty: question.difficulty,
@@ -19,6 +21,8 @@ export function createQuestionBankContext({ bank, responses, scoringResult }) {
       questionId: normalizeQuestionId(question.id),
       questionRevision: question.revision,
       answerId,
+      answerText: question.answers.find((answer) => answer.id === answerId)?.text ?? "",
+      displayOrder: question.answers.map((answer) => answer.id),
     })),
     scoreDistribution: structuredClone(scoringResult.scoreDistribution),
     normalizedScoreDistribution: structuredClone(scoringResult.normalizedScoreDistribution ?? {}),

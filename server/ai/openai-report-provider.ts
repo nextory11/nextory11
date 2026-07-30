@@ -59,7 +59,7 @@ export class OpenAiReportProvider implements ReportGeneratorProvider {
           { role: "user", content: JSON.stringify({
             profile: authorizedProfile(input),
             sectionTitles: PREMIUM_SECTION_TITLES,
-            instruction: "12セクションをすべて作成し、内部数値は本文へ書かないでください。",
+            instruction: "指定された役割どおり12セクションをすべて作成し、内部数値は本文へ書かないでください。growthPlan30Daysには、今日から無理なく始められる互いに異なる具体的行動を必ず3件だけ作成してください。",
           }) },
         ],
         text: { format: { type: "json_schema", name: "nextory11_premium_report", strict: true, schema: reportGeneratedContentJsonSchema } },
