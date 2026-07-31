@@ -1,7 +1,7 @@
 import { questions } from "../../src/data/questions.js";
 import { resultTypes } from "../../src/data/resultTypes.js";
 import type { AnswerId, QuestionId } from "../validation/identifiers.js";
-import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json";
+import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json" with { type: "json" };
 
 type PublicAnswer = { text: string; type: string; score: number };
 type PublicQuestion = { id: number; question: string; answers: PublicAnswer[] };
