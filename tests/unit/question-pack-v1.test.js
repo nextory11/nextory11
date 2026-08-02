@@ -37,6 +37,12 @@ describe("official Question Pack v1", () => {
     for (const slug of OFFICIAL_PERSONALITY_SLUGS) {
       expect(officialQuestionPack.questions.filter((question) => question.metadata.targetTrait === slug)).toHaveLength(20);
     }
+    const categoryCounts = new Map();
+    for (const question of officialQuestionPack.questions) {
+      categoryCounts.set(question.category, (categoryCounts.get(question.category) ?? 0) + 1);
+    }
+    expect(categoryCounts.size).toBe(20);
+    expect([...categoryCounts.values()]).toEqual(Array.from({ length: 20 }, () => 11));
     expect(new Set(officialQuestionPack.questions.map(({ id }) => id)).size).toBe(220);
     expect(officialQuestionPack.questions.every((question) => question.answers.length === 4)).toBe(true);
   });
@@ -46,6 +52,7 @@ describe("official Question Pack v1", () => {
     const again = createOfficialQuestionSession({ rng: seeded(42), storage: memoryStorage() });
     expect(first.questions.map(({ id }) => id)).toEqual(again.questions.map(({ id }) => id));
     expect(new Set(first.questions.map(({ id }) => id)).size).toBe(11);
+    expect(new Set(first.questions.map(({ rotationGroup }) => rotationGroup)).size).toBe(11);
     expect(new Set(first.questions.map((question) => question.metadata.targetTrait))).toEqual(new Set(OFFICIAL_PERSONALITY_SLUGS));
     expect(new Set(first.questions.map((question) => question.category)).size).toBe(11);
     expect(first.questions.every((question) => new Set(question.answers.map(({ id }) => id)).size === 4)).toBe(true);

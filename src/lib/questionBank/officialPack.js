@@ -84,16 +84,22 @@ export function validateOfficialQuestionPack(pack) {
   if (pack.questions.length !== 220) throw new Error(`Expected 220 questions; received ${pack.questions.length}`);
   const ids = new Set();
   const counts = Object.fromEntries(OFFICIAL_PERSONALITY_SLUGS.map((slug) => [slug, 0]));
+  const categoryCounts = new Map();
   for (const question of pack.questions) {
     if (ids.has(String(question.id))) throw new Error(`Duplicate Question ID: ${question.id}`);
     ids.add(String(question.id));
     const target = question.metadata.targetTrait;
     if (!officialSlugSet.has(target)) throw new Error(`Invalid target trait: ${target}`);
     counts[target] += 1;
+    categoryCounts.set(question.category, (categoryCounts.get(question.category) ?? 0) + 1);
     if (new Set(question.answers.map((answer) => answer.id)).size !== 4) throw new Error(`Duplicate answer ID: ${question.id}`);
   }
   for (const [slug, count] of Object.entries(counts)) {
     if (count !== 20) throw new Error(`Expected 20 ${slug} questions; received ${count}`);
+  }
+  if (categoryCounts.size !== 20) throw new Error(`Expected 20 categories; received ${categoryCounts.size}`);
+  for (const [category, count] of categoryCounts) {
+    if (count !== 11) throw new Error(`Expected 11 ${category} questions; received ${count}`);
   }
   return true;
 }

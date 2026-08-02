@@ -75,6 +75,6 @@ export function createOfficialQuestionSession({ count = QUESTION_BANK_SELECTION_
   };
 }
 
-if (import.meta.env.DEV && typeof window !== "undefined") {
+if (import.meta.env?.DEV && typeof window !== "undefined") {
   window.__NEXTORY11_RESET_QUESTION_HISTORY__ = resetQuestionBankHistory;
 }
