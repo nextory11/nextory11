@@ -3,6 +3,8 @@ import type { VercelRequestLike, VercelResponseLike } from "../../server/http/ve
 import { logger } from "../../server/logging/logger.js";
 import { EventProcessingError, processStripeEvent } from "../../server/stripe/process-event.js";
 import { PaymentValidationError } from "../../server/stripe/validate-payment.js";
+import { processDurableGenerationJob } from "../../server/reports/process-generation-job.js";
+import { PremiumReportGenerationError } from "../../server/reports/generate-premium-report.js";
 import {
   verifyStripeWebhook,
   WebhookVerificationError,
@@ -47,6 +49,19 @@ export default async function handler(request: VercelRequestLike, response: Verc
   try {
     const event = verifyStripeWebhook(await readRawBody(request), signature);
     const result = await processStripeEvent(event);
+    const reportRequestId = "reportRequestId" in result ? result.reportRequestId : undefined;
+    if (reportRequestId) {
+      try {
+        await processDurableGenerationJob(reportRequestId);
+      } catch (error) {
+        // Payment and entitlement are already durable. Stripe retry delivery or an
+        // authorized recovery request can safely retry the single queued job.
+        logger.warn("premium_generation_deferred", { requestId: reportRequestId });
+        if (error instanceof PremiumReportGenerationError && [409, 503].includes(error.statusCode)) {
+          throw error;
+        }
+      }
+    }
     return response.status(200).json({ received: true, status: result.status });
   } catch (error) {
     if (error instanceof WebhookBodyError) {

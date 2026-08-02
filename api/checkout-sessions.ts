@@ -4,8 +4,8 @@ import type { VercelRequestLike, VercelResponseLike } from "../server/http/verce
 import { logger } from "../server/logging/logger.js";
 import {
   CheckoutRequestError,
-  createCheckoutSession,
 } from "../server/stripe/create-checkout-session.js";
+import { continueAuthorizedCheckout } from "../server/stripe/continue-checkout.js";
 
 export const checkoutRequestBodySchema = z.object({ reportRequestId: z.string().uuid() }).strict();
 
@@ -19,7 +19,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
   if (!body.success) return response.status(400).json({ error: "invalid_checkout_request" });
 
   try {
-    const result = await createCheckoutSession(body.data.reportRequestId);
+    const result = await continueAuthorizedCheckout(request, body.data.reportRequestId);
     return response.status(201).json(result);
   } catch (error) {
     if (error instanceof CheckoutRequestError) {

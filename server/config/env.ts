@@ -33,7 +33,7 @@ const serverEnvSchema = z.object({
 });
 
 const stripeEnvSchema = serverEnvSchema.extend({
-  STRIPE_MODE: z.enum(["test", "live"]).default("test"),
+  STRIPE_MODE: z.enum(["test", "live"]),
   STRIPE_SECRET_KEY: z.string().min(1),
   STRIPE_WEBHOOK_SECRET: z.string().startsWith("whsec_"),
   STRIPE_EXPECTED_PRODUCT_ID: z.string().startsWith("prod_"),

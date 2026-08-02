@@ -3,33 +3,12 @@ const CHECKOUT_SNAPSHOT_PREFIX = "nextory11.checkoutSnapshot.v2.";
 const CHECKOUT_SESSION_PREFIX = "nextory11.checkoutSnapshot.session.v2.";
 const ACTIVE_CHECKOUT_POINTER_KEY = "nextory11.checkoutSnapshot.active.v2";
 const CHECKOUT_SNAPSHOT_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
-const RUNTIME_CONFIG_PATH = "/stripe-config.json";
-
-function parsePublicBoolean(value) {
-  return value === true || value === "true" || value === "1";
-}
-
-function isLocalDevelopmentCheckout() {
-  if (!import.meta.env.DEV) return false;
-  return ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
-}
-
-async function readRuntimeConfig() {
-  try {
-    const response = await fetch(RUNTIME_CONFIG_PATH, { cache: "no-store" });
-    return response.ok ? response.json() : {};
-  } catch {
-    return {};
-  }
+export function isPaidCtaEnabledFlag(value) {
+  return value === "true";
 }
 
 export async function getPaidCtaEnabled() {
-  if (!isLocalDevelopmentCheckout()) return false;
-  const windowFlag = window.__NEXTORY11_PAID_CTA_ENABLED__;
-  if (windowFlag !== undefined) return parsePublicBoolean(windowFlag);
-  const envFlag = import.meta.env.VITE_PAID_CTA_ENABLED;
-  if (envFlag !== undefined) return parsePublicBoolean(envFlag);
-  return parsePublicBoolean((await readRuntimeConfig()).paidCtaEnabled);
+  return isPaidCtaEnabledFlag(import.meta.env.VITE_PAID_CTA_ENABLED);
 }
 
 function snapshotKey(requestId) {
@@ -128,15 +107,25 @@ export async function recoverCheckoutSnapshot(checkoutSessionId) {
   return snapshot;
 }
 
-async function postJson(path, body) {
+async function postJson(path, body, accessToken = null) {
+  const headers = { "Content-Type": "application/json" };
+  if (accessToken) headers.Authorization = `Bearer ${accessToken}`;
   const response = await fetch(path, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify(body),
   });
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(payload.error || "payment_backend_unavailable");
   return payload;
+}
+
+export async function createCheckoutForExistingRequest({ requestId, accessToken }) {
+  if (!requestId || !accessToken) throw new Error("report_access_required");
+  const checkout = await postJson("/api/checkout-sessions", { reportRequestId: requestId }, accessToken);
+  const checkoutUrl = normalizeCheckoutUrl(checkout.checkoutUrl);
+  if (!checkoutUrl) throw new Error("invalid_checkout_url");
+  return { ...checkout, checkoutUrl: checkoutUrl.toString() };
 }
 
 function normalizeCheckoutUrl(rawUrl) {
@@ -164,11 +153,11 @@ export async function redirectToStripeCheckout({
     questionBankContext,
     diagnosisSessionId,
   });
-  const checkout = await postJson("/api/checkout-sessions", {
-    reportRequestId: reportRequest.requestId,
+  const checkout = await createCheckoutForExistingRequest({
+    requestId: reportRequest.requestId,
+    accessToken: reportRequest.accessToken,
   });
-  const checkoutUrl = normalizeCheckoutUrl(checkout.checkoutUrl);
-  if (!checkoutUrl) throw new Error("invalid_checkout_url");
+  const checkoutUrl = new URL(checkout.checkoutUrl);
 
   saveCheckoutSnapshot({
     requestId: reportRequest.requestId,

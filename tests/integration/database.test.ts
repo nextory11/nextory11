@@ -19,6 +19,7 @@ import {
 } from "../../server/reports/result-calculator.js";
 import { generateAccessToken, generateRequestId, hashAccessToken } from "../../server/security/tokens.js";
 import { parseReportRequest } from "../../server/validation/report-request.js";
+import { DatabasePaymentEventStore } from "../../server/stripe/process-event.js";
 
 const runId = randomUUID();
 const syntheticRequestIds: string[] = [];
@@ -218,6 +219,38 @@ describe("Neon Development database integration", () => {
       const job = { reportRequestId: record.id, attempt: 0, status: "queued" as const };
       expect(await repository.enqueueOnce(job)).not.toBeNull();
       expect(await repository.enqueueOnce(job)).toBeNull();
+    });
+  });
+
+  it("atomically records verified payment, entitlement, queued state, and one generation job", async () => {
+    await withRollback(async (db) => {
+      const { record } = await createSyntheticRequest(db);
+      const transitionTime = new Date();
+      const store = new DatabasePaymentEventStore(db, () => transitionTime);
+      const input = {
+        eventId: `evt_nextory11_phase_a_${runId}_durable_job`,
+        eventType: "checkout.session.completed",
+        objectId: `cs_nextory11_phase_a_${runId}_durable_job`,
+        payment: {
+          reportRequestId: record.id,
+          checkoutSessionId: `cs_nextory11_phase_a_${runId}_durable_job`,
+          paymentIntentId: `pi_nextory11_phase_a_${runId}_durable_job`,
+          productId: "prod_synthetic",
+          priceId: "price_synthetic",
+          amount: 980,
+          currency: "jpy" as const,
+          livemode: false,
+          paidAt: transitionTime,
+        },
+      };
+      expect(await store.applyPaidEventInTransaction(db, input)).toBe("processed");
+      expect(await store.applyPaidEventInTransaction(db, input)).toBe("duplicate");
+      expect(await new ReportRequestsRepository(db).findStatusById(record.id)).toMatchObject({
+        paymentStatus: "paid",
+        generationStatus: "queued",
+      });
+      expect(await new EntitlementsRepository(db).findActiveByRequestId(record.id)).not.toBeNull();
+      expect(await new JobsRepository(db).listByRequestId(record.id)).toHaveLength(1);
     });
   });
 

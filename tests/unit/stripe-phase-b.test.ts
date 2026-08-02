@@ -10,6 +10,7 @@ import {
 import {
   createCheckoutSession,
 } from "../../server/stripe/create-checkout-session.js";
+import { continueAuthorizedCheckout } from "../../server/stripe/continue-checkout.js";
 import {
   EventProcessingError,
   processStripeEvent,
@@ -56,8 +57,18 @@ const stripeEnvInput = {
 };
 
 describe("Stripe environment safety", () => {
-  it("defaults an unspecified mode to test", () => {
-    expect(parseStripeServerEnv(stripeEnvInput).STRIPE_MODE).toBe("test");
+  it("fails closed when mode is absent or unsupported", () => {
+    expect(() => parseStripeServerEnv(stripeEnvInput)).toThrow();
+    expect(() => parseStripeServerEnv({ ...stripeEnvInput, STRIPE_MODE: "preview" })).toThrow();
+  });
+
+  it("accepts valid Test and Live configuration", () => {
+    expect(parseStripeServerEnv({ ...stripeEnvInput, STRIPE_MODE: "test" }).STRIPE_MODE).toBe("test");
+    expect(parseStripeServerEnv({
+      ...stripeEnvInput,
+      STRIPE_MODE: "live",
+      STRIPE_SECRET_KEY: "sk_live_synthetic",
+    }).STRIPE_MODE).toBe("live");
   });
 
   it("rejects a test key in live mode", () => {
@@ -227,6 +238,78 @@ describe("Phase B Checkout Session creation", () => {
   });
 });
 
+describe("authorized existing-request Checkout continuation", () => {
+  const request = { method: "POST", headers: {}, body: {}, query: {} };
+
+  it("creates only an authorized Test Mode Session", async () => {
+    const create = vi.fn().mockResolvedValue({
+      id: "cs_test_existing",
+      url: "https://checkout.stripe.com/c/pay/cs_test_existing",
+      livemode: false,
+    });
+    const result = await continueAuthorizedCheckout(request, requestId, {
+      env,
+      authorize: vi.fn().mockResolvedValue(true),
+      repository: { findByIdForCheckout: vi.fn().mockResolvedValue(checkoutRecord()) },
+      stripe: { checkout: { sessions: { create } } } as unknown as Pick<Stripe, "checkout">,
+    });
+    expect(result.checkoutSessionId).toBe("cs_test_existing");
+    expect(create.mock.calls[0][0]).toMatchObject({
+      line_items: [{ price: "price_expected", quantity: 1 }],
+      client_reference_id: requestId,
+      metadata: { report_request_id: requestId },
+    });
+  });
+
+  it("conceals invalid authorization and supports Live Mode", async () => {
+    await expect(continueAuthorizedCheckout(request, requestId, {
+      env,
+      authorize: vi.fn().mockResolvedValue(false),
+    })).rejects.toMatchObject({ code: "report_request_not_found", statusCode: 404 });
+    const create = vi.fn().mockResolvedValue({
+      id: "cs_live_existing",
+      url: "https://checkout.stripe.com/c/pay/cs_live_existing",
+      livemode: true,
+    });
+    await expect(continueAuthorizedCheckout(request, requestId, {
+      env: { ...env, STRIPE_MODE: "live", STRIPE_SECRET_KEY: "sk_live_synthetic" },
+      authorize: vi.fn().mockResolvedValue(true),
+      repository: { findByIdForCheckout: vi.fn().mockResolvedValue(checkoutRecord()) },
+      stripe: { checkout: { sessions: { create } } } as unknown as Pick<Stripe, "checkout">,
+    })).resolves.toMatchObject({ checkoutSessionId: "cs_live_existing" });
+  });
+
+  it("rejects missing and paid authorized requests", async () => {
+    await expect(continueAuthorizedCheckout(request, requestId, {
+      env,
+      authorize: vi.fn().mockResolvedValue(true),
+      repository: { findByIdForCheckout: vi.fn().mockResolvedValue(null) },
+    })).rejects.toMatchObject({ code: "report_request_not_found" });
+    await expect(continueAuthorizedCheckout(request, requestId, {
+      env,
+      authorize: vi.fn().mockResolvedValue(true),
+      repository: { findByIdForCheckout: vi.fn().mockResolvedValue(checkoutRecord({ paymentStatus: "paid" })) },
+    })).rejects.toMatchObject({ code: "report_request_already_paid" });
+  });
+
+  it("uses the same deterministic idempotency key on repeated invocation", async () => {
+    const create = vi.fn().mockResolvedValue({
+      id: "cs_test_reused",
+      url: "https://checkout.stripe.com/c/pay/cs_test_reused",
+      livemode: false,
+    });
+    const options = {
+      env,
+      authorize: vi.fn().mockResolvedValue(true),
+      repository: { findByIdForCheckout: vi.fn().mockResolvedValue(checkoutRecord()) },
+      stripe: { checkout: { sessions: { create } } } as unknown as Pick<Stripe, "checkout">,
+    };
+    await continueAuthorizedCheckout(request, requestId, options);
+    await continueAuthorizedCheckout(request, requestId, options);
+    expect(create.mock.calls[0][1].idempotencyKey).toBe(create.mock.calls[1][1].idempotencyKey);
+  });
+});
+
 describe("Phase B signed webhook verification", () => {
   const stripe = new Stripe("sk_test_synthetic");
   const payload = JSON.stringify(event());
@@ -284,8 +367,8 @@ describe("Phase B event idempotency and entitlement", () => {
   it("processes once and safely acknowledges the duplicate event", async () => {
     const store = new SyntheticStore();
     const options = { env, expected, stripe: stripeWithSession(session()), store };
-    await expect(processStripeEvent(event(), options)).resolves.toEqual({ status: "processed" });
-    await expect(processStripeEvent(event(), options)).resolves.toEqual({ status: "duplicate" });
+    await expect(processStripeEvent(event(), options)).resolves.toEqual({ status: "processed", reportRequestId: requestId });
+    await expect(processStripeEvent(event(), options)).resolves.toEqual({ status: "duplicate", reportRequestId: requestId });
     expect(store.entitlements.size).toBe(1);
   });
 
@@ -309,6 +392,20 @@ describe("Phase B event idempotency and entitlement", () => {
       env, expected, stripe: stripeWithSession(secondSession), store,
     })).rejects.toMatchObject({ code: "duplicate_payment_intent" });
     expect(store.entitlements.size).toBe(1);
+  });
+
+  it("does not reach durable storage for unpaid or invalid-metadata Sessions", async () => {
+    const applyPaidEvent = vi.fn();
+    const store = { applyPaidEvent };
+    const unpaid = session({ payment_status: "unpaid" });
+    await expect(processStripeEvent(event(unpaid), {
+      env, expected, stripe: stripeWithSession(unpaid), store,
+    })).rejects.toMatchObject({ code: "session_unpaid" });
+    const invalidMetadata = session({ metadata: { report_request_id: "not-a-request-id" } });
+    await expect(processStripeEvent(event(invalidMetadata), {
+      env, expected, stripe: stripeWithSession(invalidMetadata), store,
+    })).rejects.toMatchObject({ code: "invalid_report_request_id" });
+    expect(applyPaidEvent).not.toHaveBeenCalled();
   });
 });
 

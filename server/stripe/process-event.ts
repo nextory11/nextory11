@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import type Stripe from "stripe";
 import { parseStripeServerEnv, type StripeServerEnv } from "../config/env.js";
 import { getDatabase, type Database } from "../db/client.js";
-import { entitlements, payments, reportRequests, stripeEvents } from "../db/schema.js";
+import { entitlements, generationJobs, payments, reportRequests, stripeEvents } from "../db/schema.js";
 import { getStripeClient } from "./client.js";
 import {
   validatePaidCheckoutSession,
@@ -40,7 +40,18 @@ export class DatabasePaymentEventStore implements PaymentEventStore {
     objectId: string;
     payment: ValidatedPayment;
   }): Promise<"processed" | "duplicate"> {
-    return this.db.transaction(async (tx) => {
+    return this.db.transaction((tx) => this.applyPaidEventInTransaction(tx, input));
+  }
+
+  async applyPaidEventInTransaction(
+    tx: Database | Parameters<Parameters<Database["transaction"]>[0]>[0],
+    input: {
+      eventId: string;
+      eventType: string;
+      objectId: string;
+      payment: ValidatedPayment;
+    },
+  ): Promise<"processed" | "duplicate"> {
       const [event] = await tx
         .insert(stripeEvents)
         .values({
@@ -111,11 +122,21 @@ export class DatabasePaymentEventStore implements PaymentEventStore {
         .set({ paymentStatus: "paid", generationStatus: "queued", updatedAt: now })
         .where(eq(reportRequests.id, input.payment.reportRequestId));
       await tx
+        .insert(generationJobs)
+        .values({
+          reportRequestId: input.payment.reportRequestId,
+          status: "queued",
+          attempt: 0,
+          availableAt: now,
+        })
+        .onConflictDoNothing({
+          target: [generationJobs.reportRequestId, generationJobs.attempt],
+        });
+      await tx
         .update(stripeEvents)
         .set({ status: "processed", processedAt: now })
         .where(eq(stripeEvents.eventId, input.eventId));
       return "processed";
-    });
   }
 }
 
@@ -158,5 +179,5 @@ export async function processStripeEvent(
     objectId: session.id,
     payment,
   });
-  return { status: result };
+  return { status: result, reportRequestId: payment.reportRequestId };
 }

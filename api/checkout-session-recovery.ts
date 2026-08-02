@@ -9,9 +9,12 @@ import { getStripeClient } from "../server/stripe/client.js";
 import { validatePaidCheckoutSession } from "../server/stripe/validate-payment.js";
 import { generateAccessToken, hashAccessToken } from "../server/security/tokens.js";
 
-const recoverySchema = z.object({
-  checkoutSessionId: z.string().regex(/^cs_test_[A-Za-z0-9]+$/u),
-});
+const recoverySchema = z.object({ checkoutSessionId: z.string().regex(/^cs_(?:test|live)_[A-Za-z0-9]+$/u) });
+
+export function validateCheckoutSessionIdForMode(checkoutSessionId: string, mode: "test" | "live") {
+  const expectedPrefix = mode === "live" ? "cs_live_" : "cs_test_";
+  return z.string().startsWith(expectedPrefix).parse(checkoutSessionId);
+}
 
 export function isIncompleteCheckoutSession(session: {
   payment_status: string;
@@ -30,9 +33,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
   try {
     const { checkoutSessionId } = recoverySchema.parse(request.body);
     const stripeEnv = parseStripeServerEnv();
-    if (stripeEnv.STRIPE_MODE !== "test") {
-      return response.status(403).json({ error: "recovery_unavailable" });
-    }
+    validateCheckoutSessionIdForMode(checkoutSessionId, stripeEnv.STRIPE_MODE);
 
     const session = await getStripeClient(stripeEnv).checkout.sessions.retrieve(checkoutSessionId, {
       expand: ["line_items.data.price.product"],
@@ -44,7 +45,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
       productId: stripeEnv.STRIPE_EXPECTED_PRODUCT_ID,
       priceId: stripeEnv.STRIPE_EXPECTED_PRICE_ID,
       amountJpy: stripeEnv.STRIPE_EXPECTED_AMOUNT_JPY,
-      livemode: false,
+      livemode: stripeEnv.STRIPE_MODE === "live",
     });
     const payment = await new PaymentsRepository().findByCheckoutSessionId(checkoutSessionId);
     const reportRequest = await new ReportRequestsRepository().findStatusById(validated.reportRequestId);

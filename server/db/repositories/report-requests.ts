@@ -1,4 +1,4 @@
-import { and, eq, inArray, sql } from "drizzle-orm";
+import { and, eq, inArray, lt, or, sql } from "drizzle-orm";
 import { getDatabase, type Database } from "../client.js";
 import { reportRequests, type NewReportRequestRecord } from "../schema.js";
 
@@ -54,8 +54,16 @@ export class ReportRequestsRepository {
   }
 
   async claimGeneration(id: string) {
+    const staleLeaseBoundary = new Date(Date.now() - 5 * 60 * 1000);
     const [record] = await this.db.update(reportRequests).set({ generationStatus: "generating", updatedAt: new Date() })
-      .where(and(eq(reportRequests.id, id), eq(reportRequests.paymentStatus, "paid"), inArray(reportRequests.generationStatus, ["blocked", "queued", "retryable_failed"])))
+      .where(and(
+        eq(reportRequests.id, id),
+        eq(reportRequests.paymentStatus, "paid"),
+        or(
+          inArray(reportRequests.generationStatus, ["blocked", "queued", "retryable_failed"]),
+          and(eq(reportRequests.generationStatus, "generating"), lt(reportRequests.updatedAt, staleLeaseBoundary)),
+        ),
+      ))
       .returning();
     return record ?? null;
   }
