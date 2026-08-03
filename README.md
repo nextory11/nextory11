@@ -1,25 +1,25 @@
 # NEXTORY11
 
-## Question Bank v1 rollout
+NEXTORY11 is a Japanese, cinematic 11-question self-discovery experience with an official 220-question Question Bank V2, 11 result experiences, and a paid Personal Star Report generated after verified Stripe payment.
 
-The official 220-question pack lives at `src/data/questionBank/nextory11-question-pack-v1.json`.
-Set `VITE_ENABLE_QUESTION_BANK_V1=true` to use dynamic 11-question sessions. The default is `false`, which preserves the legacy diagnosis for one-setting rollback.
+## Current delivery status
 
-In local development, reset anonymous question history from the browser console with:
+- The public diagnosis, results, legal navigation, Premium preview, and purchase disclosures are implemented.
+- The durable Stripe Premium runtime is implemented and validated: server-created Checkout, signed webhook processing, strict payment validation, durable entitlement and generation jobs, Premium report generation, retry handling, recovery, and idempotency.
+- Database integration tests verify atomic payment, entitlement, job, report, and access-token behavior and remove all synthetic rows.
+- Stripe Test mode completed an authorized ¥980 Checkout, webhook delivery, Premium generation, reload/browser recovery, retry, and duplicate-processing verification.
+- Stripe Test and Live modes are supported only through explicit fail-closed server configuration. Missing, malformed, mismatched, or unsupported modes are rejected.
+- Production Stripe Live configuration, paid CTA activation, deployment, and one controlled Live ¥980 payment remain pending.
+
+## Question Bank V2
+
+The approved 220-question pack lives at `src/data/questionBank/nextory11-question-pack-v1.json` and identifies itself as `question-pack-v2`. It preserves stable IDs, categories, targeting, weights, scoring metadata, and 11-question session behavior.
+
+Set `VITE_ENABLE_QUESTION_BANK_V1=true` to use official dynamic sessions. In local development, anonymous question history can be reset from the browser console:
 
 ```js
 window.__NEXTORY11_RESET_QUESTION_HISTORY__()
 ```
-
-NEXTORY11 is a Japanese, cinematic 11-question self-discovery experience. It includes the public diagnosis, result experience, and a Development/Test-only server-created Stripe Checkout foundation for the future Personal Star Report.
-
-## Current delivery status
-
-- The diagnosis and result experience are functional.
-- Stripe Checkout Sessions are created server-side from an approved test Price ID.
-- Checkout preserves a local development report request with a unique request ID.
-- `/payment-success` polls only the safe server payment status and cannot grant entitlement.
-- Public paid production remains blocked until the server-side webhook and report pipeline are implemented.
 
 ## Local development
 
@@ -28,79 +28,59 @@ npm install
 npm run dev
 ```
 
-`npm run dev` serves both the Vite application and the existing `/api` handlers on the same local origin. Stripe CLI webhook forwarding should target the same port.
+`npm run dev` serves the Vite application and local `/api` handlers on the same origin.
 
 Quality checks:
 
 ```bash
-npm run lint
-npm run build
 npm run typecheck
+npm run lint
 npm test
-npm audit
+npm run test:stripe
+npm run build
+node scripts/validate-question-bank-v2.mjs
+node scripts/audit-question-bank-semantics.mjs
 ```
 
-The Phase A APIs require a Neon-compatible `DATABASE_URL`. If it is absent or
-invalid, backend requests fail closed with `503 backend_unavailable`; the SPA
-and disabled private-preview CTA remain unchanged.
+Database integration tests require a Neon-compatible Development `DATABASE_URL_UNPOOLED`. Missing or invalid server configuration fails closed.
+
+## Environment configuration
+
+Copy `.env.example` to `.env.local` for local development. Never commit environment files, API keys, webhook secrets, database credentials, report-token secrets, customer data, or generated reports.
+
+Only `VITE_` variables are browser-visible. They must never contain secrets. The paid CTA is disabled unless `VITE_PAID_CTA_ENABLED` is exactly `true`; it remains disabled in the release candidate configuration.
+
+Server configuration is validated in `server/config/env.ts`. Stripe mode must be exactly `test` or `live`, and the configured Stripe key and Checkout Session mode must match it. Product, Price, ¥980 JPY amount, currency, quantity, payment status, and redirect origins remain server-controlled.
+
+## Payment and report security
+
+Browser state cannot prove payment or grant entitlement. A signed Stripe webhook retrieves and validates the completed Checkout Session before atomically recording payment, granting entitlement, and queueing Premium generation. Existing-request checkout requires a valid report access token. Duplicate events, Checkout Sessions, Payment Intents, jobs, and report versions are constrained by idempotency and database uniqueness.
+
+See `docs/paid-report-architecture.md` for the production architecture.
 
 ## Directory structure
 
 ```text
-docs/                    Production architecture and operational notes
+docs/                    Architecture, release, and governance records
 api/                     Vercel Node API entry points
-public/images/hero/      Web-ready Hero layers used by the application
-public/images/logo/      Web-ready NEXTORY11 logo
-server/                  Server-only validation, data, security, and AI contracts
-server/db/migrations/    Drizzle SQL migrations for Neon Postgres
-src/components/          Hero, quiz, result, payment, and report screens
-src/data/                Questions and public diagnosis result content
-src/lib/                 Checkout snapshot and development mock generator
+public/images/           Web-ready application assets
+server/                  Server-only validation, payment, database, and AI runtime
+server/db/migrations/    Drizzle migrations for Neon Postgres
+src/components/          Diagnosis, result, payment, and report screens
+src/data/                Question Bank and public result content
+src/lib/                 Session, checkout, and recovery clients
 src/styles/              Application and responsive styles
-vercel.json              SPA routes and production security headers
-tests/unit/              Phase A backend unit and schema-constraint tests
+tests/                   Unit and database integration verification
 ```
 
-## Environment configuration
+## Release status
 
-Copy `.env.example` to `.env.local` for local server configuration. Never commit `.env`, secret keys, webhook secrets, OpenAI keys, customer report data, or private prompts.
+NEXTORY11 Version 1.0 is reconciled locally and awaiting human review and push authorization. No Production deployment, Stripe Live configuration change, paid CTA activation, Live webhook operation, or Live payment has occurred.
 
-Only values prefixed with `VITE_` are available to the browser. Therefore, `VITE_` variables must never contain secrets.
+## Repository safety
 
-Server configuration is validated by `server/config/env.ts`. `.env.example`
-contains names and nonfunctional placeholders only. Phase A requires only the
-database connection; Stripe, OpenAI, email, storage, and rate-limit variables
-remain reserved for later approved phases.
+Do not commit local screenshots, customer answers, generated reports, PDFs, `.env` files, credentials, private prompts, original artwork masters, or QA archives. Only web-ready derivatives referenced by the application belong under `public/images/`.
 
-The paid CTA is enabled only for the approved Development/Test Checkout exercise. `getPaidCtaEnabled` and the checkout redirect remain fail-closed outside Vite Development mode.
+The repository should remain private. Browser-delivered JavaScript and assets are downloadable by visitors, so secrets and business-sensitive generation material must remain server-side.
 
-## Payment and report security
-
-The browser-side checkout snapshot is for development continuity only. It is user-controlled and cannot prove payment. Entitlement is created only after a signed Stripe test webhook passes server-side payment validation.
-
-See [docs/paid-report-architecture.md](docs/paid-report-architecture.md) for the required production architecture.
-
-## Phase A backend status
-
-- `POST /api/report-requests` accepts exactly one recognized answer for each of
-  the 11 questions, normalizes the payload, recalculates the result server-side,
-  and creates an `awaiting_payment` / `blocked` record.
-- `GET /api/reports/:requestId/status` returns sanitized lifecycle status only.
-- The initial Neon/Drizzle migration defines payment, entitlement, job, report,
-  delivery, and token tables. It has not been applied to an owner database.
-- AI Juza prompt and paid-template files are structural placeholders only.
-- No Phase A endpoint grants payment entitlement or generates a report.
-
-## Deployment
-
-`vercel.json` provides SPA rewrites for `/payment-success` and `/payment-cancel` plus baseline security headers. Production, Preview, and Development secrets must be configured separately in Vercel.
-
-Do not commit local screenshots, customer answers, generated reports, PDFs, `.env` files, API keys, Stripe secrets, webhook secrets, private prompts, or original master artwork.
-
-Original artwork masters and local QA archives belong outside the deployment repository. Only the web-ready derivatives referenced by the application should be placed under `public/images/`.
-
-## Intellectual property
-
-The repository should remain private. Browser-delivered JavaScript and assets remain downloadable by visitors, so private AI prompts, report templates, master artwork, and business-sensitive generation rules must stay outside the public frontend.
-
-© 2026 NEXTORY11 / Super Hiros. All rights reserved.
+© 2026 NEXTORY11. All rights reserved.
