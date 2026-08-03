@@ -15,16 +15,7 @@ const MAX_WEBHOOK_BYTES = 256 * 1024;
 
 class WebhookBodyError extends Error {}
 
-async function readRawBody(request: VercelRequestLike): Promise<Buffer> {
-  const supplied = (request as VercelRequestLike & { rawBody?: Buffer }).rawBody;
-  if (Buffer.isBuffer(supplied)) {
-    if (supplied.byteLength > MAX_WEBHOOK_BYTES) throw new WebhookBodyError();
-    return supplied;
-  }
-  if (Buffer.isBuffer(request.body)) {
-    if (request.body.byteLength > MAX_WEBHOOK_BYTES) throw new WebhookBodyError();
-    return request.body;
-  }
+export async function readRawBody(request: VercelRequestLike): Promise<Buffer> {
   const stream = request as unknown as AsyncIterable<Uint8Array>;
   const chunks: Buffer[] = [];
   let total = 0;

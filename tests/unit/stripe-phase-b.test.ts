@@ -1,8 +1,10 @@
 import { readFile } from "node:fs/promises";
+import { Readable } from "node:stream";
 import Stripe from "stripe";
 import { describe, expect, it, vi } from "vitest";
 import { checkoutRequestBodySchema } from "../../api/checkout-sessions.js";
 import { toSafeReportStatus } from "../../api/reports/[requestId]/status.js";
+import { readRawBody } from "../../api/stripe/webhook.js";
 import {
   parseStripeServerEnv,
   type StripeServerEnv,
@@ -314,6 +316,21 @@ describe("Phase B signed webhook verification", () => {
   const stripe = new Stripe("sk_test_synthetic");
   const payload = JSON.stringify(event());
 
+  it("reads the untouched request stream without accessing the parsed body helper", async () => {
+    const rawPayload = Buffer.from(`${payload}\n`, "utf8");
+    const request = Readable.from([rawPayload.subarray(0, 17), rawPayload.subarray(17)]) as
+      typeof Readable.prototype & { headers: {}; query: {} };
+    request.headers = {};
+    request.query = {};
+    Object.defineProperty(request, "body", {
+      get: () => {
+        throw new Error("parsed_body_must_not_be_accessed");
+      },
+    });
+
+    await expect(readRawBody(request)).resolves.toEqual(rawPayload);
+  });
+
   it("accepts a valid synthetic signature", () => {
     const signature = stripe.webhooks.generateTestHeaderString({ payload, secret: "whsec_synthetic" });
     expect(verifyStripeWebhook(Buffer.from(payload), signature, {
@@ -336,6 +353,14 @@ describe("Phase B signed webhook verification", () => {
       stripe,
       webhookSecret: "whsec_synthetic",
       toleranceSeconds: 300,
+    })).toThrow(WebhookVerificationError);
+  });
+
+  it("rejects a body changed after signing", () => {
+    const signature = stripe.webhooks.generateTestHeaderString({ payload, secret: "whsec_synthetic" });
+    expect(() => verifyStripeWebhook(Buffer.from(`${payload}\n`), signature, {
+      stripe,
+      webhookSecret: "whsec_synthetic",
     })).toThrow(WebhookVerificationError);
   });
 });
