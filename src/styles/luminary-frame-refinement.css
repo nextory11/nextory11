@@ -217,10 +217,10 @@
   position: absolute !important;
   z-index: 7 !important;
   display: block !important;
-  top: 43.5% !important;
-  left: 21.3% !important;
-  width: 29% !important;
-  height: 58% !important;
+  top: 46.5% !important;
+  left: 22% !important;
+  width: 26% !important;
+  height: 52% !important;
   object-fit: cover;
   object-position: 50% 36%;
   border-radius: 50%;
@@ -668,10 +668,10 @@
   }
 
   .resultHero[data-star-type="expression"] .luminaryJuzaPortrait {
-    top: 49px !important;
-    left: 21.3% !important;
-    width: 116px !important;
-    height: 116px !important;
+    top: 55px !important;
+    left: 22% !important;
+    width: 106px !important;
+    height: 106px !important;
     object-position: 50% 33%;
     translate: -50% 0;
   }
