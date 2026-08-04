@@ -10,7 +10,7 @@ describe("server diagnosis calculation", () => {
 
     expect(calculateDiagnosisResult(answers)).toMatchObject({
       resultType: "challenger",
-      resultNameEn: "Challenger",
+      resultNameEn: "Challenge",
     });
   });
 

@@ -1,4 +1,5 @@
 import PanelFrameOrnaments from "./PanelFrameOrnaments";
+import { resolveResultTypeDisplay } from "../data/resultTypes";
 
 const SECTION_KEYS = [
   "executiveSummary", "corePersonality", "hiddenStrengths", "traitInteraction",
@@ -32,7 +33,7 @@ function PurchaseRecord({ record, resultName }) {
         <div><dt>提供状況</dt><dd>提供済み</dd></div>
         {record?.purchaseDate ? <div><dt>購入日時</dt><dd>{new Date(record.purchaseDate).toLocaleString("ja-JP")}</dd></div> : null}
         {record?.requestId ? <div><dt>参照番号</dt><dd>{record.requestId}</dd></div> : null}
-        {(record?.resultName ?? resultName) ? <div><dt>診断タイプ</dt><dd>{record?.resultName ?? resultName}</dd></div> : null}
+        {(resultName ?? record?.resultName) ? <div><dt>診断タイプ</dt><dd>{resultName ?? record?.resultName}</dd></div> : null}
       </dl>
       <p><a href="/#/commercial-disclosure">販売条件</a> · <a href="/#/refund-policy">返金方針</a> · <a href="/#/contact">お問い合わせ</a></p>
       <button type="button" className="paymentSecondaryButton noPrint" onClick={() => window.print()}>購入記録を印刷・PDF保存</button>
@@ -41,6 +42,7 @@ function PurchaseRecord({ record, resultName }) {
 }
 
 function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart }) {
+  const resultDisplay = resolveResultTypeDisplay(report.result.type, report.result);
   return (
     <main className="app reportApp">
       <section className="reportDelivery" aria-label="NEXTORY11 Premium Report">
@@ -49,8 +51,8 @@ function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart }) 
           <PanelFrameOrnaments />
           <div className="reportPreviewLabel">PREMIUM · PERSONAL STAR READING</div>
           <p className="reportEyebrow">NEXTORY11 PERSONAL STAR REPORT</p>
-          <h1>{report.result.nameJa}</h1>
-          <p className="reportEnglish">{report.result.nameEn}</p>
+          <h1>{resultDisplay.ja}</h1>
+          <p className="reportEnglish">{resultDisplay.en}</p>
           <p className="reportOpening">{report.executiveSummary.summary}</p>
         </header>
 
@@ -83,7 +85,7 @@ function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart }) 
         </div>
 
         <p className="reportDisclosure">このレポートは自己理解と可能性の探索を支えるものであり、医療・心理・法律・金融上の診断や、将来の結果を保証するものではありません。</p>
-        <PurchaseRecord record={purchaseRecord} resultName={report.result.nameJa} />
+        <PurchaseRecord record={purchaseRecord} resultName={resultDisplay.ja} />
         <div className="reportActions noPrint"><PanelFrameOrnaments /><button type="button" className="reportPrimaryButton" onClick={() => window.print()}>印刷・PDFとして保存</button><button type="button" className="reportSecondaryButton" onClick={onReturnToResult}>結果画面に戻る</button><button type="button" className="reportSecondaryButton" onClick={onRestart}>もう一度診断する</button></div>
       </section>
     </main>

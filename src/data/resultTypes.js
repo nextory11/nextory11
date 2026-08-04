@@ -1,7 +1,7 @@
 export const resultTypes = {
   action: {
-    title: "行動力タイプ",
-    en: "Action",
+    title: "開拓力タイプ",
+    en: "Pioneer",
     icon: "🚀",
     essence: "あなたは考えるだけで終わらず、一歩踏み出すことで道を切り開く人です。",
     strength: "経験から学び、動きながら可能性を広げていく力があります。",
@@ -17,15 +17,15 @@ export const resultTypes = {
   },
   intuition: {
     title: "直感力タイプ",
-    en: "Intuition",
+    en: "Intuitive",
     icon: "🌙",
     essence: "あなたは言葉になる前の違和感や可能性を感じ取れる人です。",
     strength: "流れやタイミングを読む力があり、本質的な選択ができます。",
     mission: "心が軽くなる選択を1つ選んでみましょう。"
   },
   thinker: {
-    title: "思考力タイプ",
-    en: "Thinker",
+    title: "調和力タイプ",
+    en: "Harmonizer",
     icon: "🧠",
     essence: "あなたは物事を深く考え、本質を理解しようとする人です。",
     strength: "複雑なことを整理し、冷静に判断する力があります。",
@@ -33,15 +33,15 @@ export const resultTypes = {
   },
   empathy: {
     title: "共感力タイプ",
-    en: "Empathy",
+    en: "Empath",
     icon: "🤝",
     essence: "あなたは人の気持ちを自然に感じ取り、安心感を与えられる人です。",
     strength: "人に寄り添い、信頼される関係を作る力があります。",
     mission: "自分自身にも優しい言葉をかけてみましょう。"
   },
   expression: {
-    title: "表現力タイプ",
-    en: "Expression",
+    title: "光導力タイプ",
+    en: "Luminary",
     icon: "🎤",
     essence: "あなたは言葉や行動で、自分の想いを人に届けられる人です。",
     strength: "あなたの表現は、人の心を動かすきっかけになります。",
@@ -57,34 +57,42 @@ export const resultTypes = {
   },
   challenger: {
     title: "挑戦力タイプ",
-    en: "Challenger",
+    en: "Challenge",
     icon: "🔥",
     essence: "あなたは困難の中に成長のチャンスを見つけられる人です。",
     strength: "怖さがあっても前に進める勇気があります。",
     mission: "少し怖いけれど気になることに、小さく挑戦しましょう。"
   },
   leader: {
-    title: "統率力タイプ",
-    en: "Leader",
+    title: "未来創造タイプ",
+    en: "Visionary",
     icon: "🧭",
     essence: "あなたは周りを見ながら、人や場を前に進める力を持つ人です。",
     strength: "信頼を集め、大きな流れを作る力があります。",
     mission: "誰か一人の良いところを見つけて伝えましょう。"
   },
   persistence: {
-    title: "継続力タイプ",
-    en: "Persistence",
+    title: "守護力タイプ",
+    en: "Guardian",
     icon: "🌱",
     essence: "あなたは一時の勢いではなく、積み重ねによって未来を作る人です。",
     strength: "小さな努力を続ける力があり、時間を味方にできます。",
     mission: "続けたいことを1つ、今日も小さく積み重ねましょう。"
   },
   adaptability: {
-    title: "適応力タイプ",
-    en: "Adaptability",
+    title: "進化力タイプ",
+    en: "Evolver",
     icon: "🌊",
     essence: "あなたは変化を受け入れ、その場に合わせて自分を活かせる人です。",
     strength: "環境が変わっても柔軟に対応し、新しい居場所を作れます。",
     mission: "今の環境で活かせる自分の強みを1つ見つけましょう。"
   }
 };
+
+export function resolveResultTypeDisplay(resultType, fallback = {}) {
+  const canonical = resultTypes[resultType];
+  return {
+    ja: canonical?.title ?? fallback.ja ?? fallback.nameJa ?? fallback.title ?? "",
+    en: canonical?.en ?? fallback.en ?? fallback.nameEn ?? "",
+  };
+}

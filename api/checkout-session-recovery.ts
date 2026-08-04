@@ -7,6 +7,7 @@ import { ReportRequestsRepository } from "../server/db/repositories/report-reque
 import type { VercelRequestLike, VercelResponseLike } from "../server/http/vercel.js";
 import { getStripeClient } from "../server/stripe/client.js";
 import { validatePaidCheckoutSession } from "../server/stripe/validate-payment.js";
+import { resolveResultTypeDisplay } from "../src/data/resultTypes.js";
 import { generateAccessToken, hashAccessToken } from "../server/security/tokens.js";
 
 const recoverySchema = z.object({ checkoutSessionId: z.string().regex(/^cs_(?:test|live)_[A-Za-z0-9]+$/u) });
@@ -21,6 +22,18 @@ export function isIncompleteCheckoutSession(session: {
   status: string | null;
 }) {
   return session.payment_status !== "paid" || session.status !== "complete";
+}
+
+export function toRecoveryDisplayResult(reportRequest: {
+  resultType: string;
+  resultNameJa: string;
+  resultNameEn: string;
+}) {
+  const display = resolveResultTypeDisplay(reportRequest.resultType, {
+    nameJa: reportRequest.resultNameJa,
+    nameEn: reportRequest.resultNameEn,
+  });
+  return { type: reportRequest.resultType, ja: display.ja, en: display.en };
 }
 
 export default async function handler(request: VercelRequestLike, response: VercelResponseLike) {
@@ -73,11 +86,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
       requestId: reportRequest.id,
       accessToken,
       createdAt: reportRequest.createdAt.toISOString(),
-      result: {
-        type: reportRequest.resultType,
-        ja: reportRequest.resultNameJa,
-        en: reportRequest.resultNameEn,
-      },
+      result: toRecoveryDisplayResult(reportRequest),
     });
   } catch (error) {
     if (error instanceof ZodError) return response.status(400).json({ error: "invalid_recovery_request" });

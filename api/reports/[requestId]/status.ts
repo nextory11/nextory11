@@ -7,6 +7,7 @@ import type {
   VercelRequestLike,
   VercelResponseLike,
 } from "../../../server/http/vercel.js";
+import { resolveResultTypeDisplay } from "../../../src/data/resultTypes.js";
 import { logger } from "../../../server/logging/logger.js";
 import { requestIdSchema } from "../../../server/validation/identifiers.js";
 
@@ -16,7 +17,17 @@ export function toSafeReportStatus(
   storedReport?: Awaited<ReturnType<ReportsRepository["findLatestByRequestId"]>>,
 ) {
   const rawReport = storedReport?.reportJson as Record<string, unknown> | undefined;
-  const publicReport = rawReport ? Object.fromEntries(Object.entries(rawReport).filter(([key]) => key !== "metadata")) : null;
+  const storedResult = rawReport?.result as Record<string, unknown> | undefined;
+  const resultType = typeof storedResult?.type === "string" ? storedResult.type : "";
+  const resultDisplay = resolveResultTypeDisplay(resultType, {
+    nameJa: storedResult?.nameJa,
+    nameEn: storedResult?.nameEn,
+  });
+  const canonicalReport = rawReport && storedResult ? {
+    ...rawReport,
+    result: { ...storedResult, nameJa: resultDisplay.ja, nameEn: resultDisplay.en },
+  } : rawReport;
+  const publicReport = canonicalReport ? Object.fromEntries(Object.entries(canonicalReport).filter(([key]) => key !== "metadata")) : null;
   return {
     requestId: status.id,
     createdAt: status.createdAt.toISOString(),
