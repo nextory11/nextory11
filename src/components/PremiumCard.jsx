@@ -36,6 +36,12 @@ const PREMIUM_BENEFITS = [
   },
 ];
 
+const PURCHASE_REASSURANCE = "決済は完了していません。料金は請求されていません。";
+
+const normalizeDisplayMessage = (message) => (
+  typeof message === "string" ? message.replace(/\s+/g, "") : ""
+);
+
 function PremiumReportLabel() {
   return (
     <span className="paidLabel">
@@ -54,6 +60,8 @@ function PremiumCard({ checkoutError, isEnabled, isLoading, onClick, resultType 
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
   const [showConfirmationHighlight, setShowConfirmationHighlight] = useState(false);
   const previewFrame = PREMIUM_PREVIEW_FRAMES[resultType];
+  const showCheckoutError = checkoutError
+    && normalizeDisplayMessage(checkoutError) !== normalizeDisplayMessage(PURCHASE_REASSURANCE);
   const buttonLabel = isLoading
     ? "Stripe Checkoutへ移動中"
     : isEnabled
@@ -223,10 +231,16 @@ function PremiumCard({ checkoutError, isEnabled, isLoading, onClick, resultType 
             <span className="premiumButton__label">{buttonLabel}</span>
             <span className="premiumButton__arrow" aria-hidden="true">→</span>
           </button>
+          {isEnabled ? (
+            <div className="premiumPurchaseReassurance" role="note">
+              <span>決済は完了していません。</span>
+              <span>料金は請求されていません。</span>
+            </div>
+          ) : null}
         </div>
       </div>
 
-      {checkoutError ? (
+      {showCheckoutError ? (
         <p className="premiumError" role="alert">
           {checkoutError}
         </p>

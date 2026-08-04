@@ -279,6 +279,46 @@
   transform: none;
 }
 
+.premiumPurchaseReassurance {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: calc(100% - 12px);
+  margin: 7px auto 0;
+  padding: 7px 12px;
+  border: 1px solid rgba(232, 207, 151, 0.24);
+  border-radius: 10px;
+  color: rgba(255, 248, 228, 0.9);
+  background:
+    linear-gradient(135deg, rgba(236, 207, 145, 0.08), rgba(120, 105, 190, 0.1)),
+    rgba(14, 17, 45, 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 12px rgba(5, 7, 25, 0.14);
+  backdrop-filter: blur(6px) saturate(108%);
+  -webkit-backdrop-filter: blur(6px) saturate(108%);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(4, 5, 18, 0.68);
+}
+
+.premiumPurchaseReassurance span {
+  display: block;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame:has(> .premiumPurchaseReassurance) {
+  height: auto !important;
+  min-height: 0 !important;
+  grid-template-rows: auto auto !important;
+  row-gap: 7px !important;
+}
+
+#root .resultHero[data-star-type] .premiumReport .premiumButtonFrame > .premiumPurchaseReassurance {
+  margin-top: 0;
+}
+
 .premiumError {
   max-width: 680px;
   margin: 16px auto 0;
