@@ -225,8 +225,8 @@
   object-position: 50% 36%;
   border-radius: 50%;
   clip-path: circle(47.5% at 50% 50%);
-  translate: -50% -50%;
   transform: scale(.94);
+  translate: -50% -50%;
   transform-origin: 50% 50%;
   opacity: 1 !important;
   filter:
