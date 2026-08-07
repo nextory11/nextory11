@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nextory11:question-design:3.5:approved-json",
+  "title": "NEXTORY11 Question Design Version 3.5 Approved JSON",
+  "description": "Structural schema for preserved Approved JSON implementation data. This schema does not confer approval authority.",
+  "type": "object",
+  "required": [
+    "type",
+    "questionDesignVersion",
+    "approvalAuthority",
+    "contentAuthority",
+    "questions"
+  ],
+  "properties": {
+    "type": {
+      "enum": [
+        "challenge",
+        "pioneer",
+        "luminary",
+        "intuitive",
+        "harmonizer",
+        "guardian",
+        "explorer",
+        "evolver",
+        "empath",
+        "creator",
+        "visionary"
+      ]
+    },
+    "questionDesignVersion": {
+      "const": "3.5"
+    },
+    "approvalAuthority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contentAuthority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
+  },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "required": [
+        "questionId",
+        "questionNumber",
+        "finalApprovedQuestion",
+        "answers",
+        "hiroApprovalStatus",
+        "juzaFinalStatus",
+        "questionDesignVersion",
+        "evidenceReference"
+      ],
+      "properties": {
+        "questionId": {
+          "type": "string",
+          "pattern": "^n11-[a-z-]+-(0[1-9]|1[0-9]|20)$"
+        },
+        "questionNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "finalApprovedQuestion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "object",
+          "required": ["A", "B", "C", "D"],
+          "properties": {
+            "A": { "type": "string", "minLength": 1 },
+            "B": { "type": "string", "minLength": 1 },
+            "C": { "type": "string", "minLength": 1 },
+            "D": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        "hiroApprovalStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "juzaFinalStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "questionDesignVersion": {
+          "const": "3.5"
+        },
+        "evidenceReference": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,129 @@
+{
+  "type": "empath",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "status": "Reference Implementation Version 1.0 — Approved",
+  "questions": [
+    {
+      "questionId": "n11-empath-01", "questionNumber": 1,
+      "finalApprovedQuestion": "友人と待ち合わせをしていると、いつも明るい人が少し元気のない表情でやって来ました。\nその瞬間、あなたが自然と気になるのはどれですか？",
+      "answers": {"A": "何か話したそうにしていないかな、と様子を見る", "B": "今日は何があったのか、理由を知りたくなる", "C": "少しでも気分が変わるように、楽しい話題を探す", "D": "今はそっとしておく方がいいか考える"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q01"
+    },
+    {
+      "questionId": "n11-empath-02", "questionNumber": 2,
+      "finalApprovedQuestion": "誰かが失敗して場の空気が少し重くなりました。\nそんなとき、あなたが最初に動くとしたら、どれに近いですか？",
+      "answers": {"A": "その人が気まずくならないように声をかける", "B": "場の流れを変えられる話題を考える", "C": "どうしてそうなったのか落ち着いて整理する", "D": "次に同じことが起きない方法を考える"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q02"
+    },
+    {
+      "questionId": "n11-empath-03", "questionNumber": 3,
+      "finalApprovedQuestion": "久しぶりに会った友人から「最近ちょっと疲れてるんだ」と言われました。\nあなたなら、そのあと自然にどうしますか？",
+      "answers": {"A": "「何かあった？」と相手の話をゆっくり聞く", "B": "気分転換になりそうなことを提案する", "C": "まずは本人が話したい気持ちになるまで待つ", "D": "自分の経験も交えながら、一緒に考える"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q03"
+    },
+    {
+      "questionId": "n11-empath-04", "questionNumber": 4,
+      "finalApprovedQuestion": "みんなで話し合っているとき、ふと「そういえば、まだ一度も話していない人がいるな」と気づきました。\n\nそんな場面で、あなたが自然と気に留めることは何ですか？",
+      "answers": {"A": "何か言いたいことを我慢していないかな", "B": "話しやすい雰囲気を作れないかな", "C": "全員が納得できる進め方になっているかな", "D": "その人にも役割がある方が動きやすいかな"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q04", "revisionRecord": "HIRO完全認証済みQ04修正版質問文。旧質問文は不採用。"
+    },
+    {
+      "questionId": "n11-empath-05", "questionNumber": 5,
+      "finalApprovedQuestion": "ある人から相談を受けました。\n話を聞いているうちに、「すぐに答えは出せないな」と感じました。\nそんなとき、あなたはどうすることが多いですか？",
+      "answers": {"A": "まずは最後まで安心して話してもらう", "B": "一緒に解決できそうな方法を考える", "C": "相手が本当に困っていることを整理する", "D": "少し時間を置いてから、改めて話す"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q05"
+    },
+    {
+      "questionId": "n11-empath-06", "questionNumber": 6,
+      "finalApprovedQuestion": "プレゼントを選びに来たものの、どれも素敵でなかなか決められません。\nそんなとき、あなたが自然と基準にするのは何ですか？",
+      "answers": {"A": "相手が喜ぶ顔を思い浮かべながら選ぶ", "B": "自分だったら欲しいと思えるものを選ぶ", "C": "長く使ってもらえそうなものを選ぶ", "D": "理由を説明できる納得感のあるものを選ぶ"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q06"
+    },
+    {
+      "questionId": "n11-empath-07", "questionNumber": 7,
+      "finalApprovedQuestion": "お気に入りのお店へ行くと、いつもより店員さんの様子が少し元気がないように感じました。\nそんなとき、あなたが自然とすることは何ですか？",
+      "answers": {"A": "いつもより少し優しく声をかける", "B": "特に気にせず、普段どおり過ごす", "C": "何か理由があったのかなと考える", "D": "そっと見守り、必要そうなら話しかける"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q07"
+    },
+    {
+      "questionId": "n11-empath-08", "questionNumber": 8,
+      "finalApprovedQuestion": "映画を観終わったあと、一緒に行った人が「どうだった？」と聞いてきました。\n意見が少し違いそうだと感じたとき、あなたはどう答えることが多いですか？",
+      "answers": {"A": "まず相手の感想を聞いてから話し始める", "B": "自分が感じたことをそのまま伝える", "C": "お互いの感じ方の違いを楽しみながら話す", "D": "作品全体を振り返りながら感想をまとめる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q08"
+    },
+    {
+      "questionId": "n11-empath-09", "questionNumber": 9,
+      "finalApprovedQuestion": "やることが一気に重なり、「何から始めよう」と少し焦ってしまいました。\nそんなとき、あなたが自然と行動に移すことは何ですか？",
+      "answers": {"A": "信頼できる人に話を聞いてもらう", "B": "まずは思いついたことから動き始める", "C": "やることを整理して、優先順位を決める", "D": "一番負担の小さいことから片付ける"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q09"
+    },
+    {
+      "questionId": "n11-empath-10", "questionNumber": 10,
+      "finalApprovedQuestion": "帰り道、ふと今日一日を思い返していると、ある人の表情が頭に浮かびました。\n\nそんなとき、あなたは何を思いますか？",
+      "answers": {"A": "「あの人、無理をしていなかったかな」と気になる", "B": "「明日また会ったら、少し話しかけてみよう」と思う", "C": "「どうしてあんな表情をしていたんだろう」と理由を考える", "D": "「自分なら、あの場面でどうしていただろう」と振り返る"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q10"
+    },
+    {
+      "questionId": "n11-empath-11", "questionNumber": 11,
+      "finalApprovedQuestion": "帰ろうとしていたとき、誰かが一人で困っている様子が目に入りました。\n\nそんな場面で、あなたがとる行動は何ですか？",
+      "answers": {"A": "「大丈夫ですか？」と声をかけてみる", "B": "何に困っているのか、少し様子を見てみる", "C": "自分にできることがあるか考えてみる", "D": "周りに助けられる人がいないか探してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q11"
+    },
+    {
+      "questionId": "n11-empath-12", "questionNumber": 12,
+      "finalApprovedQuestion": "久しぶりに昔の写真を見返していると、その頃よく一緒にいた人のことを思い出しました。\n\nそんなとき、あなたは何を思いますか？",
+      "answers": {"A": "「あの人は今、元気にしているかな」と気になる", "B": "「あの頃があったから、今の自分があるな」と思う", "C": "「また会えたら、いろいろ話してみたいな」と思う", "D": "「今なら、あの頃とは違う関わり方ができそうだな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q12"
+    },
+    {
+      "questionId": "n11-empath-13", "questionNumber": 13,
+      "finalApprovedQuestion": "本を読んでいると、ある一文が心に残りました。\n\nその言葉が気になって、しばらく考えてしまったとき、あなたは何を思いますか？",
+      "answers": {"A": "「この言葉に救われる人がいるかもしれないな」と思う", "B": "「自分なら、どう受け止めるだろう」と考える", "C": "「この言葉を書いた人は、どんな思いだったんだろう」と想像する", "D": "「今の自分に必要な意味があるのかもしれない」と感じる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q13"
+    },
+    {
+      "questionId": "n11-empath-14", "questionNumber": 14,
+      "finalApprovedQuestion": "雨の日、駅へ向かう途中で、傘を持たずに困っている人を見かけました。\n\nそんな場面で、あなたは何を思いますか？",
+      "answers": {"A": "「何か力になれることはないかな」と思う", "B": "「どうして傘を忘れたんだろう」と気になる", "C": "「自分だったら、どうするかな」と考える", "D": "「誰かが気づいて助けてくれるといいな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q14"
+    },
+    {
+      "questionId": "n11-empath-15", "questionNumber": 15,
+      "finalApprovedQuestion": "電車に乗っていると、向かいに座っている人が、何度もスマートフォンを見てはため息をついていました。\n\nそんな場面で、あなたは何を思いますか？",
+      "answers": {"A": "「今、その人にはどんな時間が流れているんだろう」と考える", "B": "「見えているものだけでは分からないこともあるよな」と思う", "C": "「自分にも、あんな表情をしていた日があったかもしれない」と振り返る", "D": "「明日は少しでも穏やかな一日になるといいな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q15"
+    },
+    {
+      "questionId": "n11-empath-16", "questionNumber": 16,
+      "finalApprovedQuestion": "カフェで過ごしていると、近くの席から「本当は、もう少し頑張りたかったんだけどね」という言葉が聞こえてきました。\n\nその言葉が耳に入ったとき、あなたは何を思いますか？",
+      "answers": {"A": "「その人なりに、精一杯頑張ってきたんだろうな」と思う", "B": "「どんな出来事があったんだろう」と気になる", "C": "「自分にも、そんな気持ちになったことがあったな」と思い返す", "D": "「いつか『頑張ってよかった』と思える日が来るといいな」と願う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q16"
+    },
+    {
+      "questionId": "n11-empath-17", "questionNumber": 17,
+      "finalApprovedQuestion": "休日、公園を散歩していると、小さな子どもが転んでしまいました。\n周りの大人がすぐに駆け寄り、子どもは笑顔で立ち上がりました。\n\nその様子を見たとき、あなたは何を思いますか？",
+      "answers": {"A": "「すぐに助けてくれる人がいて、本当に良かった」と思う", "B": "「子どもも安心できたんだろうな」と思う", "C": "「人って、こういうとき自然に助け合えるものなんだな」と感じる", "D": "「自分も困っている人がいたら、自然に助ける人でいたい」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q17"
+    },
+    {
+      "questionId": "n11-empath-18", "questionNumber": 18,
+      "finalApprovedQuestion": "一日の予定を終えて外へ出ると、空一面がきれいな夕焼けに染まっていました。\n\nその景色を見たとき、あなたは何を思いますか？",
+      "answers": {"A": "「今日もいろいろあったけど、いい一日だったな」と思う", "B": "「この景色を、誰かにも見せてあげたいな」と思う", "C": "「こんな時間を大切にできる余裕を持ち続けたいな」と思う", "D": "「明日はどんな一日になるんだろう」と思いを巡らせる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q18"
+    },
+    {
+      "questionId": "n11-empath-19", "questionNumber": 19,
+      "finalApprovedQuestion": "季節が変わり始めたある日、いつも歩いている道の景色が少し変わっていることに気づきました。\n\nその景色を見たとき、あなたは何を思いますか？",
+      "answers": {"A": "「同じ毎日でも、少しずつ変わっているんだな」と感じる", "B": "「この景色を見たら、喜びそうな人が思い浮かぶ」と思う", "C": "「自分も少しずつ前に進めているのかな」と振り返る", "D": "「また新しい季節が始まるんだな」と少し楽しみになる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q19"
+    },
+    {
+      "questionId": "n11-empath-20", "questionNumber": 20,
+      "finalApprovedQuestion": "一日の終わり、部屋の明かりを消そうとしたとき、今日交わした何気ない会話をふと思い出しました。\n\nその瞬間、あなたは何を思いますか？",
+      "answers": {"A": "「あの一言で、少しでも誰かの力になれていたらいいな」と思う", "B": "「何気ない時間ほど、大切な思い出になるのかもしれない」と感じる", "C": "「もし、もう一度あの場面に戻れたら、違う言葉を選んでいたかな」と振り返る", "D": "「また明日、笑顔で話せたらいいな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Empath_Final_Approved_Source.md#q20"
+    }
+  ]
+}

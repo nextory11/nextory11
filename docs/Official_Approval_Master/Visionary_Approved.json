@@ -1,0 +1,309 @@
+{
+  "type": "visionary",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "questions": [
+    {
+      "questionId": "n11-visionary-01",
+      "questionNumber": 1,
+      "finalApprovedQuestion": "あなたはファッションデザイナーです。\n\n次の新作を作ることになりました。\n\n今ある流行を取り入れるか、まだ誰も見たことのないデザインに挑戦するか迷っています。\n\nあなたの心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "今の人たちが求めているものを、もっと良い形で届けたい。",
+        "B": "自分にしか作れない、新しい表現を生み出したい。",
+        "C": "まだ誰も見ていない未来のスタイルを作ってみたい。",
+        "D": "これまでの常識を超えるものを、この手で証明したい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q01"
+    },
+    {
+      "questionId": "n11-visionary-02",
+      "questionNumber": 2,
+      "finalApprovedQuestion": "あなたは新しいサービスを考えています。\n\n周りからは「本当に必要なの？」と言われました。\n\nでも、自分には未来の可能性が見えています。\n\nその時、心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "今は分からなくても、必要になる未来があるかもしれない。",
+        "B": "みんなが納得できる形に変える方法を考えたい。",
+        "C": "本当に価値があるものか、もう一度深く考えたい。",
+        "D": "まだ見えていない未来を、自分の目で確かめたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q02"
+    },
+    {
+      "questionId": "n11-visionary-03",
+      "questionNumber": 3,
+      "finalApprovedQuestion": "一生懸命準備した計画が、思った通りに進みませんでした。\n\n原因も一つではありません。\n\nそんな時、あなたが最初に考えることは何ですか？",
+      "answers": {
+        "A": "目指していた未来を、もう一度描き直したい。",
+        "B": "今まで見えていなかった可能性を探したい。",
+        "C": "周りの意見を集めて、新しい方向を考えたい。",
+        "D": "別の方法なら実現できる道があるかもしれない。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q03"
+    },
+    {
+      "questionId": "n11-visionary-04",
+      "questionNumber": 4,
+      "finalApprovedQuestion": "あなたには、こうなったらいいと思う未来があります。\n\nでも、周りの人とは考え方が少し違います。\n\nその時、あなたが大切にすることは何ですか？",
+      "answers": {
+        "A": "みんなが納得できる未来の姿を一緒に探したい。",
+        "B": "自分が見えている可能性を、分かりやすく伝えたい。",
+        "C": "今までにない方法で、理想へ近づく道を作りたい。",
+        "D": "まず現実にできる小さな一歩を見つけたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q04"
+    },
+    {
+      "questionId": "n11-visionary-05",
+      "questionNumber": 5,
+      "finalApprovedQuestion": "今は役に立つか分からないことに、強く興味を持ちました。\n\n周りには「何のためになるの？」と言われます。\n\nその時、あなたはどうしますか？",
+      "answers": {
+        "A": "いつか必要になる未来があるかもしれない。深く学んでみたい。",
+        "B": "今の自分にどう活かせるか、可能性を探してみたい。",
+        "C": "まだ誰も気づいていない価値を見つけたい。",
+        "D": "興味を持った理由を大切にして、進んでみたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q05"
+    },
+    {
+      "questionId": "n11-visionary-06",
+      "questionNumber": 6,
+      "finalApprovedQuestion": "突然、大きな変化が起こりました。\n\n今までの予定とは違う道へ進むことになりました。\n\nその時、あなたが最初に考えることは何ですか？",
+      "answers": {
+        "A": "まず、この変化が未来に何をもたらすのか考えたい。",
+        "B": "今までの経験を活かせる方法を探したい。",
+        "C": "周りの人と協力して、良い方向へ進みたい。",
+        "D": "できることから始めて、現実を変えていきたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q06"
+    },
+    {
+      "questionId": "n11-visionary-07",
+      "questionNumber": 7,
+      "finalApprovedQuestion": "大切な人との関係が、少し変わってきました。\n\nこのままでは続かないかもしれません。\n\nその時、あなたが考えることは何ですか？",
+      "answers": {
+        "A": "これからどんな関係になりたいか、一緒に考えたい。",
+        "B": "今までとは違う関わり方を試してみたい。",
+        "C": "相手が本当に望んでいることを理解したい。",
+        "D": "この関係が成長できる可能性を探したい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q07"
+    },
+    {
+      "questionId": "n11-visionary-08",
+      "questionNumber": 8,
+      "finalApprovedQuestion": "ある人との出会いで、今まで考えたことのない未来が浮かびました。\n\nまだ何も決まっていません。\n\nその時、あなたが大切にすることは何ですか？",
+      "answers": {
+        "A": "この出会いが、どんな未来につながるのか考えたい。",
+        "B": "お互いが成長できる関係になれるか大切にしたい。",
+        "C": "今までにない可能性を、一緒に探してみたい。",
+        "D": "理由は説明できなくても、この感覚を信じてみたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q08"
+    },
+    {
+      "questionId": "n11-visionary-09",
+      "questionNumber": 9,
+      "finalApprovedQuestion": "家族のために、毎日頑張ってくれている人がいます。\n\nその姿を見た時、あなたの心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "こんなに大切にしてくれる人へ、いつか恩返ししたい。",
+        "B": "自分も誰かを支えられる人になりたい。",
+        "C": "この人が守ってきたものを、未来へつないでいきたい。",
+        "D": "いつか、自分も大切な人と幸せな未来を作りたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q09"
+    },
+    {
+      "questionId": "n11-visionary-10",
+      "questionNumber": 10,
+      "finalApprovedQuestion": "毎日の食事を前にしています。\n\nこの一食には、たくさんの人の想いと働きが込められています。\n\nその時、あなたが感じることは何ですか？",
+      "answers": {
+        "A": "この当たり前を、未来の人たちにも残していきたい。",
+        "B": "食べ物を届けてくれる人たちへの感謝を忘れたくない。",
+        "C": "このつながりが続く未来を、自分も作っていきたい。",
+        "D": "見えないところで支えている人たちの存在を、もっと知りたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q10"
+    },
+    {
+      "questionId": "n11-visionary-11",
+      "questionNumber": 11,
+      "finalApprovedQuestion": "先が見えない大きな困難が訪れました。\n\n周りの人も不安を感じています。\n\nそんな時、あなたが心の中で大切にすることは何ですか？",
+      "answers": {
+        "A": "どんな状況でも、その先には新しい未来があると信じたい。",
+        "B": "まず自分が希望を持ち続け、周りにも伝えたい。",
+        "C": "今できることを見つけて、未来へつながる一歩を作りたい。",
+        "D": "まだ誰も見えていない可能性を描き続けたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q11"
+    },
+    {
+      "questionId": "n11-visionary-12",
+      "questionNumber": 12,
+      "finalApprovedQuestion": "目の前に、いくつもの道があります。\n\nどの道を選んでも、不安はあります。\n\nでも、その先には違う未来が待っています。\n\nあなたは何を大切に進みますか？",
+      "answers": {
+        "A": "自分が心から楽しめる未来を選びたい。",
+        "B": "困難があっても、その先の景色を思い描いて進みたい。",
+        "C": "選んだ道を、自分の力で幸せな道にしていきたい。",
+        "D": "まだ知らない可能性に出会える道を進みたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q12"
+    },
+    {
+      "questionId": "n11-visionary-13",
+      "questionNumber": 13,
+      "finalApprovedQuestion": "長い間、努力を続けています。\n\nでも、いつ結果が出るのか分かりません。\n\nそんな時、あなたが心の中で大切にすることは何ですか？",
+      "answers": {
+        "A": "いつか実現したい未来の姿を忘れない。",
+        "B": "今できている小さな変化を信じる。",
+        "C": "なぜ始めたのか、その想いを思い出す。",
+        "D": "まだ見えていない可能性を描き続ける。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q13"
+    },
+    {
+      "questionId": "n11-visionary-14",
+      "questionNumber": 14,
+      "finalApprovedQuestion": "人生を一緒に歩むパートナーを選ぶ時。\n\nあなたが大切にすることは何ですか？",
+      "answers": {
+        "A": "どんな時も同じ方向を見られる価値観がある人がいい。",
+        "B": "一緒にいるだけで、自然体でいられる人がいい。",
+        "C": "苦しい時も、笑いながら未来へ進める人がいい。",
+        "D": "知らない世界へ連れて行ってくれる、行動力のある人がいい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q14"
+    },
+    {
+      "questionId": "n11-visionary-15",
+      "questionNumber": 15,
+      "finalApprovedQuestion": "人生の大きな選択を迫られています。\n\n周りには、それぞれ違う意見があります。\n\n最後にあなたが信じるものは何ですか？",
+      "answers": {
+        "A": "これを選んだ先で、どんな自分になれるか想像してみる。",
+        "B": "誰かに決めてもらうのではなく、自分の中の答えを探す。",
+        "C": "今までの経験が、この先の力になるか考える。",
+        "D": "一緒に歩く人たちと、どんな景色を見られるか考える。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q15"
+    },
+    {
+      "questionId": "n11-visionary-16",
+      "questionNumber": 16,
+      "finalApprovedQuestion": "あなたには、叶えたい夢があります。\n\nその未来へ近づくために、今のあなたが大切にしていることは何ですか？",
+      "answers": {
+        "A": "必要なことを勉強して、できることを増やしていく。",
+        "B": "夢を叶えた自分を想像して、毎日の行動を変えていく。",
+        "C": "失敗してもいいから、小さな挑戦を続けていく。",
+        "D": "新しい人や経験に出会って、自分の可能性を広げていく。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q16"
+    },
+    {
+      "questionId": "n11-visionary-17",
+      "questionNumber": 17,
+      "finalApprovedQuestion": "自分では良いと思っていたものに、改善点を伝えられました。\n\n最初は少し悔しい気持ちもあります。\n\nその時、あなたはどう考えますか？",
+      "answers": {
+        "A": "自分では見えなかった成長のきっかけかもしれない。",
+        "B": "その人には、どんな景色が見えているのか聞いてみたい。",
+        "C": "変えるべき部分と、守るべき想いを分けて考えたい。",
+        "D": "もしかしたら、この指摘が次の可能性を開くかもしれない。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q17"
+    },
+    {
+      "questionId": "n11-visionary-18",
+      "questionNumber": 18,
+      "finalApprovedQuestion": "今までとは違う人生を選ぶこともできます。\n\n新しい道へ進むことも、今の道を深めることもできます。\n\nあなたが心から望む未来は、どんなものですか？",
+      "answers": {
+        "A": "自分にしかできないことを見つけ、形にしている未来。",
+        "B": "大切な人たちと、温かい時間を過ごしている未来。",
+        "C": "知らない世界へ挑戦し、自分の可能性を広げている未来。",
+        "D": "自分が信じたものが、誰かの人生にも届いている未来。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q18"
+    },
+    {
+      "questionId": "n11-visionary-19",
+      "questionNumber": 19,
+      "finalApprovedQuestion": "大切なものを全部守ることはできません。\n\n何か一つを選ばなければならない時、\n\nあなたが大切にすることは何ですか？",
+      "answers": {
+        "A": "これから先、多くの人に価値を届けられるものを選ぶ。",
+        "B": "今まで大切にしてきた想いを守れるものを選ぶ。",
+        "C": "まだ成長する可能性があるものを選ぶ。",
+        "D": "未来の自分が納得できる選択をする。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q19"
+    },
+    {
+      "questionId": "n11-visionary-20",
+      "questionNumber": 20,
+      "finalApprovedQuestion": "あなたは、まだ見つかっていない宝物を探す旅に出ました。\n\nその宝物が何なのか、まだ誰にも分かりません。\n\n旅を続ける中で、あなたが大切にすることは何ですか？",
+      "answers": {
+        "A": "知らない世界へ進み、自分だけの宝物を見つけたい。",
+        "B": "出会った人や経験の中から、新しい意味を見つけたい。",
+        "C": "探していたものは、最初から自分の中にあったのかもしれない。",
+        "D": "まだ見えていない未来の可能性を信じて進みたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Visionary_Official_Approved.md#q20"
+    }
+  ]
+}
+

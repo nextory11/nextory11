@@ -1,0 +1,310 @@
+{
+  "type": "guardian",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "status": "Reference Implementation Version 1.0 — Approved",
+  "questions": [
+    {
+      "questionId": "n11-guardian-01",
+      "questionNumber": 1,
+      "finalApprovedQuestion": "家族で旅行へ行くことになりました。\n\nみんな楽しみにしていますが、当日になって困らないように、一つだけ準備しておこうと思いました。\n\nあなたなら、最初に何を用意しますか？",
+      "answers": {
+        "A": "みんなが安心して過ごせるように、必要な持ち物を確認する",
+        "B": "旅がもっと楽しくなるような、小さな工夫を考える",
+        "C": "行った先で新しい発見ができそうな情報を調べておく",
+        "D": "その日一番思い出に残りそうな時間を想像して準備する"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q01"
+    },
+    {
+      "questionId": "n11-guardian-02",
+      "questionNumber": 2,
+      "finalApprovedQuestion": "家族みんなでバーベキューをすることになりました。\n\n準備を始めようとしたとき、\n\n「何から始めようかな。」\n\nと考えました。\n\nあなたなら、最初に何をしますか？",
+      "answers": {
+        "A": "みんなが困らないように、必要なものが揃っているか確認する",
+        "B": "みんなが楽しめるように、役割を分けて声をかける",
+        "C": "当日の流れをイメージして、準備の順番を考える",
+        "D": "「もっと楽しくなる工夫はないかな」とアイデアを考える"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q02"
+    },
+    {
+      "questionId": "n11-guardian-03",
+      "questionNumber": 3,
+      "finalApprovedQuestion": "友人たちと出かけることになりました。\n\n集合時間も近づいてきましたが、まだ行き先や予定がはっきり決まっていません。\n\nそんなとき、あなたが自然と口にしそうな一言はどれですか？",
+      "answers": {
+        "A": "「とりあえず、今日の流れだけ決めておこうか。」",
+        "B": "「みんなが楽しめそうな場所を一緒に考えよう。」",
+        "C": "「困ったときのために、別の案も考えておこう。」",
+        "D": "「まずはみんなの行きたい場所を聞いてみよう。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q03"
+    },
+    {
+      "questionId": "n11-guardian-04",
+      "questionNumber": 4,
+      "finalApprovedQuestion": "休日、友人たちが家へ遊びに来ることになりました。\n\n準備をしていると、\n\n「これもやっておいた方が安心かな。」\n\nと思うことがいくつか浮かびました。\n\nあなたなら、最初に何をしますか？",
+      "answers": {
+        "A": "みんなが気持ちよく過ごせるように部屋を整える",
+        "B": "飲み物や食べ物が足りるか確認する",
+        "C": "みんなが楽しめそうな過ごし方を考える",
+        "D": "急に人数が増えても大丈夫なように準備しておく"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q04"
+    },
+    {
+      "questionId": "n11-guardian-05",
+      "questionNumber": 5,
+      "finalApprovedQuestion": "友人と待ち合わせをしています。\n\n約束の時間になっても、相手がまだ来ません。\n\n連絡もありません。\n\nそんなとき、あなたが最初に思うことは何ですか？",
+      "answers": {
+        "A": "「何かあったのかな。大丈夫だといいけど。」",
+        "B": "「もう少し待ってみよう。そのうち連絡が来るかもしれない。」",
+        "C": "「場所を間違えていないか、一度確認してみよう。」",
+        "D": "「きっと何か理由があるんだろう。」と考える"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q05"
+    },
+    {
+      "questionId": "n11-guardian-06",
+      "questionNumber": 6,
+      "finalApprovedQuestion": "朝、家を出ようとしたとき、\n\n家族が「鍵が見つからない！」と慌てています。\n\n出発まで、あと数分しかありません。\n\nそんなとき、あなたが最初に口にしそうな一言はどれですか？",
+      "answers": {
+        "A": "「大丈夫。一つずつ探してみよう。」",
+        "B": "「最後に使った場所を思い出してみようか。」",
+        "C": "「まず落ち着こう。きっと見つかるよ。」",
+        "D": "「もし見つからなかったときの方法も考えておこう。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q06"
+    },
+    {
+      "questionId": "n11-guardian-07",
+      "questionNumber": 7,
+      "finalApprovedQuestion": "朝のラッシュアワー。\n\n地下鉄のホームで順番に並んでいると、あなたの前へ一人が横入りしてきました。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「何か急ぐ理由があるのかもしれない。」と思う",
+        "B": "「みんなが並んでいるのだから、順番は守ってほしいな。」と思う",
+        "C": "「こういうことが続くと、周りも嫌な気持ちになるだろうな。」と感じる",
+        "D": "「一人ひとりが気持ちよく過ごせるといいのにな。」と思う"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q07"
+    },
+    {
+      "questionId": "n11-guardian-08",
+      "questionNumber": 8,
+      "finalApprovedQuestion": "スーパーで買い物をして、レジで支払いを済ませました。\n\n店を出ようとしたとき、お釣りが多いことに気づきました。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「このままだと、お店の人が困るかもしれない。」と思う",
+        "B": "「早いうちに伝えた方が、お互い安心できるな。」と思う",
+        "C": "「誰でも間違えることはあるよね。」と思う",
+        "D": "「ちゃんと返して、気持ちよく帰ろう。」と思う"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q08"
+    },
+    {
+      "questionId": "n11-guardian-09",
+      "questionNumber": 9,
+      "finalApprovedQuestion": "組み立て式の机を買いました。\n\n説明書を見ながら組み立てていると、最後に必要な部品が一つ足りないことに気づきました。\n\n完成まであと少しです。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「どこかで見落としていないか、もう一度落ち着いて確認してみよう。」",
+        "B": "「こういうこともあるよね。まずはできることから考えよう。」",
+        "C": "「販売店へ連絡すれば、きっと解決できるはず。」と思う",
+        "D": "「せっかくここまで頑張ったのに、少し残念だな。」と感じる"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q09"
+    },
+    {
+      "questionId": "n11-guardian-10",
+      "questionNumber": 10,
+      "finalApprovedQuestion": "仲の良い友人と食事に来ました。\n\nそれぞれ違う料理を注文しましたが、運ばれてきた料理を見ると、相手の料理もとても美味しそうです。\n\nそのとき、あなたが自然に口にしそうな一言はどれですか？",
+      "answers": {
+        "A": "「それ、すごく美味しそう！少し味見させてもらってもいい？」",
+        "B": "「今度来たら、その料理も食べてみたいな。」",
+        "C": "「お互い少しずつ交換して食べてみない？」",
+        "D": "「どんな味か、あとで感想を聞かせてね。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q10"
+    },
+    {
+      "questionId": "n11-guardian-11",
+      "questionNumber": 11,
+      "finalApprovedQuestion": "上司と二人で食事に来ました。\n\nそれぞれ違う料理を注文しましたが、運ばれてきた料理を見ると、上司の料理もとても美味しそうです。\n\nそのとき、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「どんな味だったか、あとで聞いてみよう。」",
+        "B": "「次に来る機会があれば、その料理を頼んでみよう。」",
+        "C": "「美味しそうだけど、今日は自分が選んだ料理を楽しもう。」",
+        "D": "「上司はどうしてその料理を選んだんだろう。」と少し気になる"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q11"
+    },
+    {
+      "questionId": "n11-guardian-12",
+      "questionNumber": 12,
+      "finalApprovedQuestion": "上司と二人で食事に来ました。\n\nそれぞれ違う料理を注文しましたが、運ばれてきた料理を見ると、上司が選んだ料理もとても美味しそうです。\n\nそのとき、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「その料理を選んだ理由を、ちょっと聞いてみたいな。」",
+        "B": "「次に来たときは、自分もその料理を頼んでみようかな。」",
+        "C": "「美味しそうだけど、今日は自分が選んだ料理を楽しもう。」",
+        "D": "「同じ料理でも、選ぶ理由って人それぞれなんだな。」と感じる"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q12"
+    },
+    {
+      "questionId": "n11-guardian-13",
+      "questionNumber": 13,
+      "finalApprovedQuestion": "部下と二人で食事に来ました。\n\nそれぞれ違う料理を注文しましたが、運ばれてきた料理を見ると、部下が選んだ料理もとても美味しそうです。\n\nそのとき、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「美味しそうだね。選んだ理由も聞いてみたいな。」と思う",
+        "B": "「その料理、もし良かったら一口交換してみる？」と思う",
+        "C": "「美味しそうに食べてくれていると、それだけで嬉しい。」と感じる",
+        "D": "「次に来たときは、自分もその料理を頼んでみようかな。」と思う"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q13"
+    },
+    {
+      "questionId": "n11-guardian-14",
+      "questionNumber": 14,
+      "finalApprovedQuestion": "レストランで注文した料理を待っていました。\n\nしばらくして運ばれてきましたが、注文したものとは違う料理でした。\n\n待ち時間も長かったので、お腹はかなり空いています。\n\nそんなとき、あなたが自然に店員さんへ伝えそうな言葉はどれですか？",
+      "answers": {
+        "A": "「すみません。注文した料理と違うようなので、確認していただけますか？」",
+        "B": "「こちらでも確認したいのですが、私が注文したのは○○で合っていますか？」",
+        "C": "「急がなくて大丈夫なので、注文した料理をお願いできますか？」",
+        "D": "「かなり待っていたので少し残念ですが、注文した料理へ替えていただけますか？」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q14",
+      "revisionRecord": "HIRO明示承認済み回答改訂版。旧JUZA Draft 1回答は不採用。"
+    },
+    {
+      "questionId": "n11-guardian-15",
+      "questionNumber": 15,
+      "finalApprovedQuestion": "食事をしていると、料理の中に異物が入っていることに気づきました。\n\n店員さんを呼ぶことにしました。\n\nそのとき、あなたが自然に伝えそうな言葉はどれですか？",
+      "answers": {
+        "A": "「すみません。この中に気になるものが入っていたので、一度見ていただけますか？」",
+        "B": "「申し訳ないのですが、こちらを確認していただいてもよろしいでしょうか。」",
+        "C": "「もしかすると気づかれていないかもしれないので、お伝えしておきますね。」",
+        "D": "「他のお客さんにも同じことがないといいなと思って、お知らせしました。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q15"
+    },
+    {
+      "questionId": "n11-guardian-16",
+      "questionNumber": 16,
+      "finalApprovedQuestion": "雨の日、車で友人を迎えに行くことになりました。\n\n約束の時間より少し早く着けそうです。\n\nそんなとき、あなたが自然に思うことは何ですか？",
+      "answers": {
+        "A": "「待たせないで済みそうで良かった。」",
+        "B": "「慌てなくていいように、着いたら連絡しておこう。」",
+        "C": "「雨だから、安全第一で行こう。」",
+        "D": "「友人が濡れずに乗れる場所で待とう。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q16"
+    },
+    {
+      "questionId": "n11-guardian-17",
+      "questionNumber": 17,
+      "finalApprovedQuestion": "旅行の帰り道、友人が「財布がないかもしれない。」と慌てています。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {
+        "A": "「まず落ち着いて、一緒に思い出してみよう。」",
+        "B": "「最後に使った場所から順番に確認してみよう。」",
+        "C": "「きっと見つかる。焦らなくても大丈夫。」",
+        "D": "「自分にも手伝えることがあるはず。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q17"
+    },
+    {
+      "questionId": "n11-guardian-18",
+      "questionNumber": 18,
+      "finalApprovedQuestion": "家族で映画を観ることになりました。\n\n観たい作品がそれぞれ違います。\n\nそんなとき、あなたが一番大切にしたいことは何ですか？",
+      "answers": {
+        "A": "みんなが納得できる作品を選ぶこと",
+        "B": "今日は誰かの観たい作品を優先すること",
+        "C": "みんなが楽しい時間を過ごせること",
+        "D": "次は別の人の希望も叶えられるようにすること"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q18"
+    },
+    {
+      "questionId": "n11-guardian-19",
+      "questionNumber": 19,
+      "finalApprovedQuestion": "休日、家でゆっくりしていると、友人から\n\n「急なんだけど、少し相談してもいい？」\n\nと連絡が来ました。\n\nそのメッセージを見たとき、あなたが最初に思うことは何ですか？",
+      "answers": {
+        "A": "「何かあったのかな。」",
+        "B": "「まず話を聞いてみよう。」",
+        "C": "「少しでも力になれたらいいな。」",
+        "D": "「落ち着いて話せる時間を作ろう。」"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q19"
+    },
+    {
+      "questionId": "n11-guardian-20",
+      "questionNumber": 20,
+      "finalApprovedQuestion": "一日が終わり、\n\n「今日は慌ただしかったな。」\n\nと振り返っています。\n\nどんな一日だったら、「今日は良い一日だった。」と思えますか？",
+      "answers": {
+        "A": "周りのみんなが安心して過ごせたと感じられた日",
+        "B": "約束したことをきちんと守れた日",
+        "C": "困っている人の力になれた日",
+        "D": "「ありがとう」と笑顔で言ってもらえた日"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "docs/Guardian_Final_Approved_Source.md#q20"
+    }
+  ]
+}

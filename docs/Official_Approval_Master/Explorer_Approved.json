@@ -1,0 +1,129 @@
+{
+  "type": "explorer",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "status": "Reference Implementation Version 1.0 — Approved",
+  "questions": [
+    {
+      "questionId": "n11-explorer-01", "questionNumber": 1,
+      "finalApprovedQuestion": "旅先を歩いていると、地図には載っていない細い路地を見つけました。\n\n「この先には何があるんだろう。」\n\nそう思ったとき、あなたの心が最初に動くのはどれですか？",
+      "answers": {"A": "「せっかくだから、少しだけ歩いてみよう」と思う", "B": "「どんな人たちが暮らしている場所なんだろう」と想像する", "C": "「あとで後悔しないように、まず安全そうか確かめよう」と考える", "D": "「予定にはなかった景色に出会えるかもしれない」とワクワクする"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q01"
+    },
+    {
+      "questionId": "n11-explorer-02", "questionNumber": 2,
+      "finalApprovedQuestion": "旅行先で偶然見つけた小さな博物館に入ると、入口にこんな言葉が書かれていました。\n\n「知っていると思っていた世界は、まだほんの入口かもしれません。」\n\nその言葉が目に入ったとき、あなたは何を思い浮かべましたか？",
+      "answers": {"A": "「まだ知らない世界が、きっとたくさんあるんだろうな」と思う", "B": "「今日は何か一つ、新しい発見ができたらいいな」と思う", "C": "「当たり前だと思っていたことも、違う見方があるのかもしれない」と感じる", "D": "「この先には、どんな世界が待っているんだろう」と想像する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q02"
+    },
+    {
+      "questionId": "n11-explorer-03", "questionNumber": 3,
+      "finalApprovedQuestion": "休日に古本屋へ立ち寄ると、一冊の本が目に留まりました。\n\n表紙には、\n\n「この本は、あなたの見方を少し変えるかもしれません。」\n\nと書かれています。\n\nその言葉が目に入ったとき、あなたは何を思い浮かべましたか？",
+      "answers": {"A": "「本当に見方が変わるなら、読んでみたい」と思う", "B": "「どんな考え方に出会えるんだろう」と興味が湧く", "C": "「今の自分だからこそ、理解できることがあるかもしれない」と感じる", "D": "「自分が知らない世界を見せてくれる本なのかもしれない」と想像する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q03"
+    },
+    {
+      "questionId": "n11-explorer-04", "questionNumber": 4,
+      "finalApprovedQuestion": "休日に知らない街を歩いていると、小さなパン屋さんから焼きたてのパンの香りが漂ってきました。\n\n予定には入っていませんでしたが、思わず足を止めてしまいました。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {"A": "「せっかくだし、この出会いを楽しんでみよう」と思う", "B": "「どんなパンが人気なんだろう」と興味が湧く", "C": "「地元の人に愛されている理由があるのかもしれない」と想像する", "D": "「予定が変わるのも、旅の面白さなんだろうな」と感じる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q04"
+    },
+    {
+      "questionId": "n11-explorer-05", "questionNumber": 5,
+      "finalApprovedQuestion": "久しぶりに会った友人が、最近始めた趣味について楽しそうに話してくれました。\n\n自分にはまったく馴染みのない世界でしたが、聞いているうちに少し興味が湧いてきました。\n\nそんなとき、あなたが最初に知りたくなることは何ですか？",
+      "answers": {"A": "始めてみて、友人の毎日がどう変わったのか", "B": "その趣味のどこに、一番面白さを感じるのか", "C": "初心者でも楽しめる入り口があるのか", "D": "自分が体験したら、どんな発見がありそうか"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q05"
+    },
+    {
+      "questionId": "n11-explorer-06", "questionNumber": 6,
+      "finalApprovedQuestion": "休日、散歩をしていると、小さなギャラリーで「ご自由にお入りください」という看板が目に入りました。\n\n中では、見たことのない作品がたくさん展示されています。\n\nその瞬間、あなたの心が最初に動くのはどれですか？",
+      "answers": {"A": "「作者は、どんな思いでこの作品を作ったんだろう」と考える", "B": "「この作品を見て、自分は何を感じるんだろう」と楽しみになる", "C": "「今まで知らなかった世界に出会えるかもしれない」とワクワクする", "D": "「この体験が、自分の考え方を変えるきっかけになるかもしれない」と期待する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q06"
+    },
+    {
+      "questionId": "n11-explorer-07", "questionNumber": 7,
+      "finalApprovedQuestion": "休日、知らない街を歩いていると、小さなイベントが開かれていました。\n\n「よかったら、一緒に体験してみませんか？」\n\nと声をかけられました。\n\nその言葉を聞いたとき、あなたの心に一番近いものはどれですか？",
+      "answers": {"A": "「せっかくだし、新しい体験をしてみよう」と思う", "B": "「どんなことが学べるのか気になる」と思う", "C": "「まずはどんな雰囲気なのか、少し見てみたい」と思う", "D": "「こんな偶然も旅の思い出になるかもしれない」と感じる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q07"
+    },
+    {
+      "questionId": "n11-explorer-08", "questionNumber": 8,
+      "finalApprovedQuestion": "前から気になっていたことを調べ始めたものの、思っていた以上に奥が深く、知らないことばかりでした。\n\nそれでも調べ続けているうちに、新しい発見が一つありました。\n\nその瞬間、あなたは何を思いますか？",
+      "answers": {"A": "「まだ知らないことがあると思うと、もっと知りたくなる」", "B": "「一つ分かると、その先も見えてくる気がする」", "C": "「違う考え方も調べたら、もっと面白くなりそうだ」", "D": "「こういう発見があるから、学ぶことはやめられない」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q08"
+    },
+    {
+      "questionId": "n11-explorer-09", "questionNumber": 9,
+      "finalApprovedQuestion": "レストランへ行き、メニューを開きました。\n\nいつも注文する料理もありますが、今日は見たことのない料理も並んでいます。\n\nそんなとき、あなたの心に一番近いものはどれですか？",
+      "answers": {"A": "「せっかくだし、一度食べたことのない料理を試してみたい。」", "B": "「どんな味なんだろう。想像するだけで楽しくなる。」", "C": "「店員さんに、おすすめの食べ方を聞いてみたい。」", "D": "「今日はいつもの料理と比べて、新しい発見があるかもしれない。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q09", "evidenceIdentityRecord": "HIRO指定により追加提供画像の2番目をQ09として登録"
+    },
+    {
+      "questionId": "n11-explorer-10", "questionNumber": 10,
+      "finalApprovedQuestion": "初めての海外旅行。\n\nレストランで隣の席になった外国人の方が、笑顔で話しかけてくれました。\n\n言葉はあまり通じません。\n\nそれでも、その人は楽しそうに身振り手振りで話しかけてくれています。\n\nその瞬間、あなたの心に一番近いものはどれですか？",
+      "answers": {"A": "「うまく話せなくても、この人のことをもっと知ってみたい。」", "B": "「言葉が通じなくても、伝わるものってあるんだな。」", "C": "「こんな出会いがあるから、知らない場所へ来るのは面白い。」", "D": "「少し勇気を出せば、新しい世界が広がるのかもしれない。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q10"
+    },
+    {
+      "questionId": "n11-explorer-11", "questionNumber": 11,
+      "finalApprovedQuestion": "友人と山へキャンプに行くことになりました。\n\n荷物はできるだけ少なくしたいので、あと一つだけしか持って行けません。\n\nあなたなら、何を選びますか？",
+      "answers": {"A": "まだ見たことのない景色を記録するためのカメラ", "B": "知らない植物や星を調べられる図鑑", "C": "思いついたことをすぐ書き留められるノート", "D": "困ったときにも役立つ、多機能ナイフ"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q11"
+    },
+    {
+      "questionId": "n11-explorer-12", "questionNumber": 12,
+      "finalApprovedQuestion": "今日は、自分のために夕食を作ることにしました。\n\n冷蔵庫を開けると、いろいろな食材があります。\n\nさて、今日は何を作ろうかな。\n\nそんなとき、あなたが一番作りたくなるものはどれですか？",
+      "answers": {"A": "まだ一度も作ったことのない料理", "B": "好きな料理を少し工夫して、自分なりにアレンジした一皿", "C": "その日の気分で、冷蔵庫にある食材を見ながら考える料理", "D": "作る過程そのものを楽しめそうな料理"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q12"
+    },
+    {
+      "questionId": "n11-explorer-13", "questionNumber": 13,
+      "finalApprovedQuestion": "今日は大切な人を家へ招待することになりました。\n\n「せっかくだから、喜んでもらえる料理を作りたい。」\n\nそう思いながら献立を考えています。\n\nあなたなら、どんな料理を作りたいと思いますか？",
+      "answers": {"A": "「食べたことのない料理を、一緒に楽しんでみたい。」", "B": "「相手の好きな料理を、自分なりに工夫して作りたい。」", "C": "「料理を囲みながら、自然と会話が弾むような献立にしたい。」", "D": "「見た目も驚いてもらえるような、新しい一皿を作ってみたい。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q13"
+    },
+    {
+      "questionId": "n11-explorer-14", "questionNumber": 14,
+      "finalApprovedQuestion": "もうすぐ両親の誕生日です。\n\n「今年は、今までとは少し違うプレゼントを贈ってみようかな。」\n\nそう考えたとき、あなたなら何を選びますか？",
+      "answers": {"A": "一緒に新しい景色を楽しめる旅行や体験をプレゼントする", "B": "今まで話したことのない思い出を聞ける時間をプレゼントする", "C": "二人が新しく夢中になれそうな趣味や体験をプレゼントする", "D": "これから先も長く使ってもらえる特別な贈り物をプレゼントする"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q14"
+    },
+    {
+      "questionId": "n11-explorer-15", "questionNumber": 15,
+      "finalApprovedQuestion": "両親へ感謝を込めて、何か一つ贈ろうと思いました。\n\nプレゼントも素敵ですが、\n\n「今だからこそ、こんな時間を贈りたい。」\n\nそう思ったとき、あなたが一番選びたいものはどれですか？",
+      "answers": {"A": "一緒に新しい場所を訪れて、思い出を増やす時間", "B": "普段は話せないことを、ゆっくり語り合う時間", "C": "二人が「やってみたかったこと」を一緒に体験する時間", "D": "何気ない一日を、いつもより丁寧に一緒に過ごす時間"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q15"
+    },
+    {
+      "questionId": "n11-explorer-16", "questionNumber": 16,
+      "finalApprovedQuestion": "両親へ「ありがとう」を伝えようと思いました。\n\nいろいろな思いがある中で、\n\nあなたが一番伝えたい言葉はどれですか？",
+      "answers": {"A": "「いろいろな世界を見せてくれて、本当にありがとう。」", "B": "「いつも信じて見守ってくれて、本当にありがとう。」", "C": "「今の自分になれたのは、あなたたちのおかげです。」", "D": "「これからは、一緒に新しい思い出を増やしていこうね。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q16"
+    },
+    {
+      "questionId": "n11-explorer-17", "questionNumber": 17,
+      "finalApprovedQuestion": "ホームセンターへ買い物に行きました。\n\n今日は一つだけ、自分のために道具を買うことができます。\n\nあなたなら、どれを選びますか？",
+      "answers": {"A": "「まだ作ったことのないもの」に挑戦できそうな道具", "B": "毎日の暮らしが、もっと便利になりそうな道具", "C": "長く使えて、少しずつ自分に馴染んでいきそうな道具", "D": "「これ、何に使うんだろう」と思わず手に取りたくなる道具"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q17"
+    },
+    {
+      "questionId": "n11-explorer-18", "questionNumber": 18,
+      "finalApprovedQuestion": "本屋さんへ行きました。\n\n今日は一冊だけ、本を持って帰ることにしました。\n\nあなたなら、どんな本を選びますか？",
+      "answers": {"A": "今まで知らなかった世界を教えてくれそうな本", "B": "「こんな考え方もあるんだ」と視野が広がりそうな本", "C": "読み終わったあと、自分が少し変わっていそうな本", "D": "表紙を見た瞬間、「なぜか気になる」と感じた本"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q18"
+    },
+    {
+      "questionId": "n11-explorer-19", "questionNumber": 19,
+      "finalApprovedQuestion": "知らない町を散歩していると、目の前で道が二つに分かれていました。\n\nどちらへ行っても目的地には着けそうです。\n\nあなたなら、どちらへ足が向きそうですか？",
+      "answers": {"A": "人があまり歩いていない道", "B": "楽しそうな声が聞こえてくる道", "C": "地図にはないものが見つかりそうな道", "D": "「なぜか気になる」と直感で感じた道"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q19"
+    },
+    {
+      "questionId": "n11-explorer-20", "questionNumber": 20,
+      "finalApprovedQuestion": "休日にショッピングモールへ行きました。\n\n特に買う予定はありません。\n\nでも、「今日は自分に一つだけプレゼントを買っていいよ。」\n\nと言われたら、あなたは何を選びますか？",
+      "answers": {"A": "「今までやったことのないこと」を始められそうなもの", "B": "毎日が少し楽しくなりそうなもの", "C": "知らなかった世界を教えてくれそうなもの", "D": "見た瞬間に「これ面白そう！」と思ったもの"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Explorer_Final_Approved_Source.md#q20", "evidenceIdentityRecord": "HIRO指定により最初に提供された画像をQ20として登録"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "type": "creator",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "status": "Reference Implementation Version 1.0 — Approved",
+  "questions": [
+    {
+      "questionId": "n11-creator-01", "questionNumber": 1,
+      "finalApprovedQuestion": "初めて任されたことを前に、「ちゃんとできるかな」と少し不安になっています。そんなとき、あなたなら何から始めますか？",
+      "answers": {"A": "まずは、一緒に進める人の話を聞いてみる", "B": "まずは、任された理由や目的を確認してみる", "C": "自分なりにできそうな方法を考えてみる", "D": "小さくてもいいから、まず動いてみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q01"
+    },
+    {
+      "questionId": "n11-creator-02", "questionNumber": 2,
+      "finalApprovedQuestion": "自分の選択が周りにも影響しそうで、なかなか決めきれません。最後に「これでいこう」と思えるのは、どんなときですか？",
+      "answers": {"A": "限られた中でも、新しい方法が見えてきたとき", "B": "大切なものを無理なく守れると思えたとき", "C": "心の中で「これがいい」と納得できたとき", "D": "まず一歩、試してみようと思えたとき"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q02"
+    },
+    {
+      "questionId": "n11-creator-03", "questionNumber": 3,
+      "finalApprovedQuestion": "自分で決めたことが思うようにいかず、周りにも申し訳ない気持ちが残っています。そんなとき、あなたならどう気持ちを切り替えますか？",
+      "answers": {"A": "何が足りなかったか、一つだけ見つけてみる", "B": "今ある条件で、別のやり方を考えてみる", "C": "できていたことにも目を向けてみる", "D": "もう一度、本当に目指したいものを思い出してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q03"
+    },
+    {
+      "questionId": "n11-creator-04", "questionNumber": 4,
+      "finalApprovedQuestion": "仲の良い人たちの意見が分かれて、場の空気が少し重くなっています。あなたなら、どうやって話を進めますか？",
+      "answers": {"A": "まずは、一人ずつ話を聞いてみる", "B": "お互いの考えを整理してみる", "C": "両方を活かせる新しい案を考えてみる", "D": "まずは動ける一歩を、一緒に決めてみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q04"
+    },
+    {
+      "questionId": "n11-creator-05", "questionNumber": 5,
+      "finalApprovedQuestion": "周りより遅れている気がして、少し焦っています。それでも自分らしく学ぶなら、何から始めますか？",
+      "answers": {"A": "自分の経験と結びつけながら覚えていく", "B": "基本から順番に、一つずつ学んでいく", "C": "気になったところから、楽しみながら触れてみる", "D": "覚えたことを、小さく形にしてみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q05"
+    },
+    {
+      "questionId": "n11-creator-06", "questionNumber": 6,
+      "finalApprovedQuestion": "生活のリズムが変わって、なんとなく落ち着きません。あなたなら、まず何から整えますか？",
+      "answers": {"A": "今の生活に合う、新しい過ごし方を考えてみる", "B": "周りの人と協力しやすい流れを整えてみる", "C": "今できていることを見つけて、自信を取り戻す", "D": "これから大切にしたいことを、もう一度整理してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q06"
+    },
+    {
+      "questionId": "n11-creator-07", "questionNumber": 7,
+      "finalApprovedQuestion": "大切な人と言い合いになり、しばらく会話ができなくなりました。関係を修復するために、あなたならまず何をしますか？",
+      "answers": {"A": "まずは相手の気持ちを、最後まで聞いてみる", "B": "お互いが納得できる、新しい答えを一緒に探してみる", "C": "いつもとは違う伝え方で、もう一度話してみる", "D": "言えずにいた本音を、素直に伝えてみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q07"
+    },
+    {
+      "questionId": "n11-creator-08", "questionNumber": 8,
+      "finalApprovedQuestion": "ずっとやってみたかった話が、思いがけず舞い込みました。でも、まだ準備ができていません。あなたなら、この機会を前にまず何を考えますか？",
+      "answers": {"A": "まずは、自分にできることから整理してみる", "B": "本当にやってみたいと思えるか、自分の気持ちを確かめる", "C": "自分らしい形で挑戦できる方法を考えてみる", "D": "この経験で、どんな自分になれるか想像してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q08"
+    },
+    {
+      "questionId": "n11-creator-09", "questionNumber": 9,
+      "finalApprovedQuestion": "周りから期待されていて、「失敗したくない」と少し肩に力が入っています。そんなとき、落ち着いて進むために、あなたなら何を頼りにしますか？",
+      "answers": {"A": "今わかっていることを、一つずつ整理してみる", "B": "一緒に進める人と、まず話してみる", "C": "ここまで積み重ねてきた自分を信じてみる", "D": "自分らしいやり方を、もう一度思い出してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q09", "evidenceIdentityRecord": "承認記録に基づき質問Evidenceと回答Evidenceをn11-creator-09へ対応"
+    },
+    {
+      "questionId": "n11-creator-10", "questionNumber": 10,
+      "finalApprovedQuestion": "みんなで続けてきたことが行き詰まり、少しずつみんなの元気もなくなってきました。そんなとき、あなたなら仲間にどんな言葉をかけますか？",
+      "answers": {"A": "「一度立ち止まって、新しいやり方を一緒に考えてみよう。」", "B": "「ここまで積み重ねてきたことは、ちゃんと力になっているよ。」", "C": "「小さな一歩でもいいから、また動き始めてみよう。」", "D": "「今だからこそ、自分たちらしいやり方を見つけよう。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q10"
+    },
+    {
+      "questionId": "n11-creator-11", "questionNumber": 11,
+      "finalApprovedQuestion": "思いついたアイデアを話したら、「それは難しそう」と言われました。それでも自分の思いを形にしたいなら、あなたは次にどんな行動をとりますか？",
+      "answers": {"A": "まずは、もっと伝わる伝え方を考えてみる", "B": "相手の意見も取り入れて、より良い形へ工夫してみる", "C": "小さく形にして、実際に見てもらう", "D": "自分が本当に届けたい思いを、もう一度整理してみる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q11"
+    },
+    {
+      "questionId": "n11-creator-12", "questionNumber": 12,
+      "finalApprovedQuestion": "身近な人が失敗した自分を責めて、落ち込んでいます。少しでも力になりたいとき、あなたならどんな言葉をかけますか？",
+      "answers": {"A": "「何があったのか、よかったらゆっくり聞かせて。」", "B": "「一人で抱え込まなくていいよ。一緒に考えよう。」", "C": "「違う見方をしたら、新しい道が見つかるかもしれないよ。」", "D": "「今は無理に話さなくても大丈夫。ここにいるからね。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q12"
+    },
+    {
+      "questionId": "n11-creator-13", "questionNumber": 13,
+      "finalApprovedQuestion": "大切な結果を待っている間、つい悪い方ばかり考えてしまいます。そんなとき、あなたならどうやって気持ちを切り替えますか？",
+      "answers": {"A": "いつもどおりの生活を続けて、気持ちを整える", "B": "一人でゆっくり考える時間をつくる", "C": "結果が出たあとのことを考えて、次の準備を始める", "D": "頭に浮かぶことを全部書き出して、気持ちを整理する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q13"
+    },
+    {
+      "questionId": "n11-creator-14", "questionNumber": 14,
+      "finalApprovedQuestion": "長い時間をかけて作ってきたものを、初めて誰かに見せる日が来ました。反応を待つ間、あなたならどんなことを考えますか？",
+      "answers": {"A": "どこが一番伝わったのか、相手の反応をよく見てみたい", "B": "もっと良くできるところがないか、次の工夫を考えてみたい", "C": "自分が込めた思いが、きちんと届いているか確かめたい", "D": "これをきっかけに、次はどんなものを作れるか想像してみたい"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q14"
+    },
+    {
+      "questionId": "n11-creator-15", "questionNumber": 15,
+      "finalApprovedQuestion": "周りから「その方が安心だよ」と勧められた道と、自分が本当に進みたい道が違うことに気づきました。迷った末に決めるとき、あなたならどんな思いを大切にしますか？",
+      "answers": {"A": "「自分で確かめて、納得できる方を選びたい。」", "B": "「自分らしい工夫を、形にできる方へ進みたい。」", "C": "「難しくても、心が動く方へ一歩踏み出したい。」", "D": "「自分の気持ちも、周りの思いも大切にできる道を探したい。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q15"
+    },
+    {
+      "questionId": "n11-creator-16", "questionNumber": 16,
+      "finalApprovedQuestion": "時間をかけて準備してきた作品や企画を、初めて人前で発表する日が来ました。始まる直前、あなたなら何を一番気にしますか？",
+      "answers": {"A": "伝えたい内容に、抜けや分かりにくいところがないか", "B": "見てくれる人に、自分の思いがきちんと届くか", "C": "緊張しても、自分らしく最後まで伝えられるか", "D": "相手の反応から、次に活かせることを見つけられるか"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q16"
+    },
+    {
+      "questionId": "n11-creator-17", "questionNumber": 17,
+      "finalApprovedQuestion": "自分が信頼している人から、「もっと良くなると思うよ」と思いがけないアドバイスをもらいました。あなたなら、その言葉をどう受け取りますか？",
+      "answers": {"A": "まずは、相手がそう思った理由を知りたい", "B": "自分らしさを残しながら、取り入れられるところを探したい", "C": "これからもっと成長できるチャンスだと受け止めたい", "D": "今まで思いつかなかった新しい考えとして受け止めたい"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q17"
+    },
+    {
+      "questionId": "n11-creator-18", "questionNumber": 18,
+      "finalApprovedQuestion": "ふと立ち止まったとき、「この先、自分はどんな人生を歩んでいきたいんだろう。」そんなことを考えていました。あなたが一番思い描く未来はどれですか？",
+      "answers": {"A": "まだ誰も見たことがない、新しいものを形にしている自分", "B": "自分で選んだ道を、一歩ずつ切り拓いている自分", "C": "昨日の自分より成長したと、胸を張って言える自分", "D": "大切な人たちと笑顔で過ごせる毎日を築いている自分"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q18"
+    },
+    {
+      "questionId": "n11-creator-19", "questionNumber": 19,
+      "finalApprovedQuestion": "やりたいことはたくさんあるのに、時間も体力も足りません。どれか一つを選ばなければいけないとしたら、あなたなら何を選びますか？",
+      "answers": {"A": "一番「やってみたい」と心が動くこと", "B": "今あるものを工夫して、一番良い形にできそうなこと", "C": "これからの自分が成長できそうなこと", "D": "無理なく続けていけそうなこと"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q19"
+    },
+    {
+      "questionId": "n11-creator-20", "questionNumber": 20,
+      "finalApprovedQuestion": "ふと周りを見渡したとき、「あの時、思い切って始めてよかった。」と思えることが実現していました。その瞬間、あなたは何を感じますか？",
+      "answers": {"A": "「また新しい挑戦を始めてみたい。」", "B": "「ここまで続けてきて、本当に良かった。」", "C": "「もっと成長した自分を目指していきたい。」", "D": "「支えてくれた人たちに、ありがとうを伝えたい。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Creator_Final_Approved_Source.md#q20"
+    }
+  ]
+}

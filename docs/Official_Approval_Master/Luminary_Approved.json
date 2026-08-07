@@ -1,0 +1,308 @@
+{
+    "type":  "luminary",
+    "questionDesignVersion":  "3.5",
+    "approvalAuthority":  "HIRO",
+    "contentAuthority":  "JUZA Final",
+    "questions":  [
+                      {
+                          "questionId":  "n11-luminary-01",
+                          "questionNumber":  1,
+                          "finalApprovedQuestion":  "新しい場所での生活が始まりました。\n\nあなたが最初に思うことは何ですか？",
+                          "answers":  {
+                                          "A":  "自分にできることが、きっとある。",
+                                          "B":  "どんな出会いがあるんだろう。",
+                                          "C":  "まずは、一歩踏み出してみよう。",
+                                          "D":  "誰かの力になれたらいいな。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-c03ae25b-beff-4733-a21e-3783f5302b5f.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-02",
+                          "questionNumber":  2,
+                          "finalApprovedQuestion":  "どっちを選んでも正解が分かりません。\n\n最後の決め手になるのは何ですか？",
+                          "answers":  {
+                                          "A":  "安心して続けられる方。",
+                                          "B":  "誰かが笑顔になりそうな方。",
+                                          "C":  "「やってみたい」と思える方。",
+                                          "D":  "今までにない可能性を感じる方。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-56ea2aec-0de0-472e-8ccf-726807c1647e.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-03",
+                          "questionNumber":  3,
+                          "finalApprovedQuestion":  "思い通りにいかなくて、少し落ち込みました。\n\nあなたなら、最初に何をしますか？",
+                          "answers":  {
+                                          "A":  "誰かに話を聞いてもらう。",
+                                          "B":  "何が原因だったのか整理してみる。",
+                                          "C":  "もう一度、違うやり方を考えてみる。",
+                                          "D":  "「できたこと」を思い出してみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-a74b1b2f-d516-4b13-8e42-a8b221771d90.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-04",
+                          "questionNumber":  4,
+                          "finalApprovedQuestion":  "一度すれ違った相手と、また一緒に取り組むことになりました。\n\nあなたが最初に大切にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "まず、お互いの気持ちを聞いてみる。",
+                                          "B":  "これから良くなる方法を探してみる。",
+                                          "C":  "それぞれの良いところを見つける。",
+                                          "D":  "前より良い関係になれる気がする。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-025eb36b-0987-4505-a0fc-4c7801b422e1.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-05",
+                          "questionNumber":  5,
+                          "finalApprovedQuestion":  "頑張っているのに、なかなか結果が出ません。\n\nそんなとき、あなたが大切にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "少しでも前に進めたことを見つける。",
+                                          "B":  "目指している未来をもう一度思い出す。",
+                                          "C":  "できることを試しながら形にしていく。",
+                                          "D":  "自分に合うやり方を探してみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-0423b2c8-bfae-4498-a746-da63e1bf6243.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-06",
+                          "questionNumber":  6,
+                          "finalApprovedQuestion":  "予定していなかった変化が起こりました。\n\nあなたが最初に考えることは何ですか？",
+                          "answers":  {
+                                          "A":  "これから良くなる方法を探してみよう。",
+                                          "B":  "今できることから始めてみよう。",
+                                          "C":  "周りの人はどう感じているかな。",
+                                          "D":  "この経験にも意味があるかもしれない。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-d804e40c-9ff7-4904-9aa9-08fbb9a6b347.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-07",
+                          "questionNumber":  7,
+                          "finalApprovedQuestion":  "仲の良かった人たちの間に、少し空気の重さを感じました。\n\nあなたなら、最初に何をしますか？",
+                          "answers":  {
+                                          "A":  "それぞれの気持ちを聞いてみる。",
+                                          "B":  "みんなが前向きになれる方法を探す。",
+                                          "C":  "良かったところを見つけて伝える。",
+                                          "D":  "安心して話せる時間を作ってみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-aede201d-30df-454d-8d49-b3ff1bdae029.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-08",
+                          "questionNumber":  8,
+                          "finalApprovedQuestion":  "新しいチャンスが目の前にあります。\n\n最初に確かめたいことは何ですか？",
+                          "answers":  {
+                                          "A":  "これから目指したい場所につながるかな。",
+                                          "B":  "自分らしく成長できそうかな。",
+                                          "C":  "誰かの役に立てそうかな。",
+                                          "D":  "まだ知らない可能性が広がりそうかな。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-2711658c-f680-4f49-94b4-00f51f436bf5.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-09",
+                          "questionNumber":  9,
+                          "finalApprovedQuestion":  "大切な約束の日が近づいています。\n\n少し余裕がなくなってきたとき、何を頼りにしますか？",
+                          "answers":  {
+                                          "A":  "ここまで頑張ってきた自分を信じる。",
+                                          "B":  "今できることを一つずつ進める。",
+                                          "C":  "支えてくれる人の言葉を思い出す。",
+                                          "D":  "本当に大切にしたいことを見失わない。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-6f7a7418-f755-413e-b32a-981892e5ef06.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-10",
+                          "questionNumber":  10,
+                          "finalApprovedQuestion":  "初めて一緒に取り組む人がいます。\n\nあなたが最初に渡したいものは何ですか？",
+                          "answers":  {
+                                          "A":  "安心して進めるための道しるべ。",
+                                          "B":  "「できる」と思える小さな自信。",
+                                          "C":  "これから広がる可能性への期待。",
+                                          "D":  "今までの経験を活かすヒント。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f2590009-94c2-47a5-8680-16f1e4bb7fc1.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-11",
+                          "questionNumber":  11,
+                          "finalApprovedQuestion":  "大切な人のために料理を作る日です。\n\nでも、必要な材料が足りません。\n\nあなたなら、どうしますか？",
+                          "answers":  {
+                                          "A":  "足りない材料を買いに行って、思い描いた料理を作る。",
+                                          "B":  "今ある材料で、喜んでもらえる料理を考える。",
+                                          "C":  "完璧じゃなくても、気持ちが伝わればいいと思う。",
+                                          "D":  "相手が何を喜ぶかを考えて、作り方を変える。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-15e47ea6-2bd9-4bee-81f2-0375f1a09a7e.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-12",
+                          "questionNumber":  12,
+                          "finalApprovedQuestion":  "周りの人から「リーダーになってほしい」と頼まれました。\n\n自信はないけれど、引き受けることにしました。\n\n最初に考えることは何ですか？",
+                          "answers":  {
+                                          "A":  "自分にできることを探して、少しずつ成長していこう。",
+                                          "B":  "みんなが安心できる場所を作れる人になろう。",
+                                          "C":  "まだ知らない自分の可能性に挑戦してみよう。",
+                                          "D":  "何があっても、最後まで諦めず方法を探そう。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-1c02135a-ebfa-4131-a738-71ca27b4bad3.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-13",
+                          "questionNumber":  13,
+                          "finalApprovedQuestion":  "帰り道、困っている様子の人を見かけました。\n\nあなたは食べ物や飲み物を持っています。\n\nその時、最初に考えることは何ですか？",
+                          "answers":  {
+                                          "A":  "すぐ渡せるものがあれば、今できることをしてあげたい。",
+                                          "B":  "相手が本当に必要としているものを考えてみたい。",
+                                          "C":  "何か力になれる方法を探してみたい。",
+                                          "D":  "まず声をかけて、相手の気持ちを聞いてみたい。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-df56bfa2-1b36-4a0f-999c-f97aab65a4a2.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-14",
+                          "questionNumber":  14,
+                          "finalApprovedQuestion":  "誰かから「助かったよ」と言われました。\n\nそのあと、あなたが思うことは何ですか？",
+                          "answers":  {
+                                          "A":  "次も誰かの役に立てたらいいな。",
+                                          "B":  "もっと良い方法があったかもしれない。",
+                                          "C":  "一緒に頑張った人にも伝えたい。",
+                                          "D":  "この経験を次につなげていきたい。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-a83c8079-4031-4b2f-9503-c8364d78a1e9.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-15",
+                          "questionNumber":  15,
+                          "finalApprovedQuestion":  "大きな決断をする時が来ました。\n\n最後に背中を押すものは何ですか？",
+                          "answers":  {
+                                          "A":  "まだ見えていない可能性を信じたい。",
+                                          "B":  "誰かを笑顔にできる未来を想像する。",
+                                          "C":  "難しくても、やってみたい気持ちを大切にする。",
+                                          "D":  "心の中で「これでいい」と思えること。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-4078feb5-c795-4b4a-bffc-829cd0d8e3b0.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-16",
+                          "questionNumber":  16,
+                          "finalApprovedQuestion":  "みんなで何かを始めることになりました。\n\n自分の役割を探すとき、最初に意識することは何ですか？",
+                          "answers":  {
+                                          "A":  "みんなが向かいたい方向を考える。",
+                                          "B":  "誰かが困っていないか気にする。",
+                                          "C":  "それぞれの良さを見つける。",
+                                          "D":  "楽しく進められる雰囲気を作る。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f218d542-3402-4eca-9fda-870e16ac487b.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-17",
+                          "questionNumber":  17,
+                          "finalApprovedQuestion":  "「あなたって、こういうところがあるよね。」\n\n思いがけない一面を伝えられました。\n\nあなたなら、どう受け取りますか？",
+                          "answers":  {
+                                          "A":  "自分の良さを、もっと伸ばしてみたい。",
+                                          "B":  "相手にはどう見えていたのか聞いてみたい。",
+                                          "C":  "これから誰かの役に立てるか考えてみたい。",
+                                          "D":  "新しい自分の可能性かもしれないと思う。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-db96abea-4ae4-459f-bffd-7239f0c01d65.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-18",
+                          "questionNumber":  18,
+                          "finalApprovedQuestion":  "今の生活に大きな不満はありません。\n\nでも、ずっと心の中にあった「やってみたいこと」があります。\n\n今、始める時期かもしれないと思った時、あなたは何を大切にしますか？",
+                          "answers":  {
+                                          "A":  "自分の心が本当に望んでいることを信じてみる。",
+                                          "B":  "今の生活を変えすぎない方法で、少しずつ始めてみる。",
+                                          "C":  "周りの人と相談しながら、一緒に進める道を探す。",
+                                          "D":  "まだ見えない可能性を信じて、一歩踏み出してみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-038b7de2-7f8b-4f76-aa62-9da5082b60d9.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-19",
+                          "questionNumber":  19,
+                          "finalApprovedQuestion":  "友達と買い物に来ました。\n\nずっと欲しかったものが見つかりました。\n\nでも、それは友達も欲しかった最後の一つでした。\n\nその時、あなたの心に浮かぶことは何ですか？",
+                          "answers":  {
+                                          "A":  "自分も欲しかったけど、友達が喜ぶなら譲りたいな。",
+                                          "B":  "お互い欲しいなら、納得できる方法で決めたいな。",
+                                          "C":  "せっかく見つけたんだから、自分が大切に使いたいな。",
+                                          "D":  "どちらが持っても、二人で喜べる方法がないかな。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-6f779148-dcc6-4324-9fa3-f2ab042d1a3a.png"
+                      },
+                      {
+                          "questionId":  "n11-luminary-20",
+                          "questionNumber":  20,
+                          "finalApprovedQuestion":  "生まれ育った国を離れて、別の国で2〜3年暮らすことになりました。\n\n楽しみな気持ちと不安な気持ち、両方があります。\n\nその時、あなたが心の中で思うことは何ですか？",
+                          "answers":  {
+                                          "A":  "言葉や文化が違っても、少しずつ分かり合える人を見つけたい。",
+                                          "B":  "離れていても、大切な人とのつながりを大事にしたい。",
+                                          "C":  "今までの経験を活かして、新しい場所でも役に立ちたい。",
+                                          "D":  "知らない世界で、新しい自分を見つけてみたい。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-837ecaea-cbb8-49a9-8249-1875a2302e54.png"
+                      }
+                  ]
+}

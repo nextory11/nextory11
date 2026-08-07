@@ -1,0 +1,308 @@
+{
+    "type":  "intuitive",
+    "questionDesignVersion":  "3.5",
+    "approvalAuthority":  "HIRO",
+    "contentAuthority":  "JUZA Final",
+    "questions":  [
+                      {
+                          "questionId":  "n11-intuitive-01",
+                          "questionNumber":  1,
+                          "finalApprovedQuestion":  "「これ、お願いね。」と任された帰り道。\n\n気づくと、どんなことを考えていますか？",
+                          "answers":  {
+                                          "A":  "どう進めたらうまく形になるかな。",
+                                          "B":  "最初に感じた違和感、気のせいじゃないかも。",
+                                          "C":  "自分らしくできるやり方がありそう。",
+                                          "D":  "この経験が、この先につながる気がする。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f9cb63ec-e6dd-42df-874e-7bd648deecff.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-02",
+                          "questionNumber":  2,
+                          "finalApprovedQuestion":  "初めてのことに、お金や時間を使うか迷っています。\n\n最後の決め手になるのは何ですか？",
+                          "answers":  {
+                                          "A":  "「誰と一緒にやるか」がしっくりきた。",
+                                          "B":  "納得できる情報がちゃんとそろった。",
+                                          "C":  "うまく説明できないけど、「これだ」と感じた。",
+                                          "D":  "少し大変でも、やってみたい気持ちが残った。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-7e995f3b-546d-4baf-bf67-8fd138584f0f.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-03",
+                          "questionNumber":  3,
+                          "finalApprovedQuestion":  "「もう無理かも。」と思う出来事がありました。\n\n気持ちを切り替えるために、最初にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "何を変えたらよくなるか、一つだけ考える。",
+                                          "B":  "一人で抱えず、頼れる人を思い浮かべる。",
+                                          "C":  "違うやり方がないか、もう一度考えてみる。",
+                                          "D":  "あの引っかかった感覚は何だったんだろう、と振り返る。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-12018b93-451e-4a7c-9671-9e3c112dd528.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-04",
+                          "questionNumber":  4,
+                          "finalApprovedQuestion":  "初めて会う人たちとの集まりです。\n\n話が始まる前、自然と気になるのは何ですか？",
+                          "answers":  {
+                                          "A":  "まだ誰も口にしていない空気が気になる。",
+                                          "B":  "みんなが話しやすくなるきっかけを探す。",
+                                          "C":  "一人ひとりの良さが見えてくる。",
+                                          "D":  "この集まりは、どこへ向かうんだろう。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-e3f6b4bc-2364-4f73-ad66-1871a2336297.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-05",
+                          "questionNumber":  5,
+                          "finalApprovedQuestion":  "気になっていたことを始めようと思っています。\n\n最初の一歩は、どこから踏み出しますか？",
+                          "answers":  {
+                                          "A":  "経験のある人の話を聞いてみる。",
+                                          "B":  "「なんとなく気になる」と感じた方から始める。",
+                                          "C":  "まだ知らない世界に飛び込んでみる。",
+                                          "D":  "とりあえずやってみて、あとから覚える。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-634f159f-4113-47f4-8e57-45b01670ec3d.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-06",
+                          "questionNumber":  6,
+                          "finalApprovedQuestion":  "新しい環境が始まりました。\n\n「自分も変わりたいな」と思ったとき、最初にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "今の自分に合わなくなった習慣を見直す。",
+                                          "B":  "無理なく続けられる生活リズムを整える。",
+                                          "C":  "まずは、その場所の空気を感じてみる。",
+                                          "D":  "新しい自分に合うやり方を考えてみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-06973435-0ccb-4231-aca5-198169fa1433.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-07",
+                          "questionNumber":  7,
+                          "finalApprovedQuestion":  "相手と意見が合いません。\n\nそれでも、いい関係のままでいたいと思ったとき、最初にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "お互いの思い違いがないか確かめる。",
+                                          "B":  "同じ方向を見られるところを探す。",
+                                          "C":  "相手のいいところを思い出してみる。",
+                                          "D":  "言葉になっていない気持ちがある気がする。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f9326f58-7a37-42b2-b869-a7744f62a962.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-08",
+                          "questionNumber":  8,
+                          "finalApprovedQuestion":  "「一緒にやってみない？」と誘われました。\n\n最初に気になるのは何ですか？",
+                          "answers":  {
+                                          "A":  "自分の心は、本当にやってみたいと思ってるかな。",
+                                          "B":  "ここから、新しい何かが始まりそう。",
+                                          "C":  "大変でも、あとで後悔しないかな。",
+                                          "D":  "一緒にやる人と、気持ちよく進められそう。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-a7eadfc5-612c-4cb2-bce9-b3285cc61e1d.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-09",
+                          "questionNumber":  9,
+                          "finalApprovedQuestion":  "周りが慌ただしくなってきました。\n\nそんなとき、自分が一番頼りにするのは何ですか？",
+                          "answers":  {
+                                          "A":  "前にも似たことがあった気がする。",
+                                          "B":  "この違和感、見過ごさない方がいいかも。",
+                                          "C":  "最後に目指したいところを思い出そう。",
+                                          "D":  "今だからこそ、違うやり方があるかもしれない。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-0a3df576-dc85-49f8-8d0d-7818d1270b60.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-10",
+                          "questionNumber":  10,
+                          "finalApprovedQuestion":  "新しいことを始める日です。\n\n一緒に頑張る人へ、自然とかけたくなる言葉は何ですか？",
+                          "answers":  {
+                                          "A":  "「まずは落ち着いて、一つずついこう。」",
+                                          "B":  "「みんなで力を合わせたら、きっと大丈夫。」",
+                                          "C":  "「なんだか、いい方向へ進みそうな気がする。」",
+                                          "D":  "「困ったら、いつでも話してね。」"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-e5cc63b6-6159-40ac-97ce-23447ffbd018.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-11",
+                          "questionNumber":  11,
+                          "finalApprovedQuestion":  "「これ、どう思う？」と誰かに見せる前です。\n\n最後に気になるのは何ですか？",
+                          "answers":  {
+                                          "A":  "無理なく続けられる形になってるかな。",
+                                          "B":  "今までにない良さが伝わるかな。",
+                                          "C":  "一度使ってもらったら、何かわかるかも。",
+                                          "D":  "最初に感じた「これだ」を忘れてないかな。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-2fbda16b-55ff-4517-b6a3-29ea38c3fa16.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-12",
+                          "questionNumber":  12,
+                          "finalApprovedQuestion":  "大切な人が、いつもより元気がないように見えます。\n\nあなたが最初にすることは何ですか？",
+                          "answers":  {
+                                          "A":  "今は、そっとしておいた方がいいかもしれない。",
+                                          "B":  "まずは、安心できる言葉をかけよう。",
+                                          "C":  "この先、大丈夫だと思える話をしてみよう。",
+                                          "D":  "違う見方もあることを、さりげなく伝えよう。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-71996da5-303c-4144-85f2-d75399ffb125.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-13",
+                          "questionNumber":  13,
+                          "finalApprovedQuestion":  "なんとなく嫌な予感がして、足が止まりました。\n\nあなたなら、そのあとどうしますか？",
+                          "answers":  {
+                                          "A":  "一度立ち止まって、周りをよく見てみる。",
+                                          "B":  "気にしすぎかもしれないから、そのまま進む。",
+                                          "C":  "誰かに話して、意見を聞いてみる。",
+                                          "D":  "「今はやめておこう」と素直な感覚を信じる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-4441da37-2847-4298-9255-1dfd59ad200f.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-14",
+                          "questionNumber":  14,
+                          "finalApprovedQuestion":  "「ありがとう。」と言われた帰り道です。\n\nあなたの心に、一番残っているのは何ですか？",
+                          "answers":  {
+                                          "A":  "このまま続けていけばいいんだ。",
+                                          "B":  "次は、もっと面白いことができそう。",
+                                          "C":  "あの人も、少し笑顔になれたかな。",
+                                          "D":  "あの出来事には、何か意味があった気がする。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-da3c7f20-028a-4ce8-a60a-ee8a668291f1.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-15",
+                          "questionNumber":  15,
+                          "finalApprovedQuestion":  "頼まれごとが重なっています。\n\nひとつだけ断るなら、最後の決め手は何ですか？",
+                          "answers":  {
+                                          "A":  "みんなに迷惑が少ない方にしよう。",
+                                          "B":  "今の自分には、無理だと感じる。",
+                                          "C":  "今、一番大切なことを優先したい。",
+                                          "D":  "心が「違う」と言っている気がする。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-91bbbf78-8776-4175-a85d-184e66dedb05.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-16",
+                          "questionNumber":  16,
+                          "finalApprovedQuestion":  "みんなで話しているのに、話がなかなかまとまりません。\n\nあなたなら、次に何を提案しますか？",
+                          "answers":  {
+                                          "A":  "まず、気になっていることを全部出してみよう。",
+                                          "B":  "今までにない方法も考えてみよう。",
+                                          "C":  "とりあえず、できることから始めてみよう。",
+                                          "D":  "一人ずつ、どう思っているか聞いてみよう。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-d2d27bbd-159c-4ae4-936b-abcf23847a9e.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-17",
+                          "questionNumber":  17,
+                          "finalApprovedQuestion":  "頑張って作ったものに、思ったより厳しい意見が返ってきました。\n\n最初に浮かぶのは何ですか？",
+                          "answers":  {
+                                          "A":  "どこを直せばもっと良くなるかな。",
+                                          "B":  "何か大事なことを見落としていたかも。",
+                                          "C":  "違うやり方も試してみよう。",
+                                          "D":  "この意見、本当に自分に合っているかな。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-ea3d87e2-194d-4e34-bc3c-353011e942f1.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-18",
+                          "questionNumber":  18,
+                          "finalApprovedQuestion":  "「これから、どんな毎日になったらいい？」\n\nそう聞かれたら、最初に思い浮かぶのは何ですか？",
+                          "answers":  {
+                                          "A":  "みんなが自然に助け合えている毎日。",
+                                          "B":  "笑顔が少しずつ増えていく毎日。",
+                                          "C":  "まだ知らない可能性が見つかる毎日。",
+                                          "D":  "毎日、新しい発見がある毎日。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-bfcbe472-48ed-43b0-b9e4-c0798c5ead1a.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-19",
+                          "questionNumber":  19,
+                          "finalApprovedQuestion":  "ふと予定が空きました。\n\nあなたなら、その時間をどう使いますか？",
+                          "answers":  {
+                                          "A":  "何もしない時間を楽しむ。",
+                                          "B":  "気になっていたことを試してみる。",
+                                          "C":  "やるべきことを一つ終わらせる。",
+                                          "D":  "誰かに連絡してみる。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-fafda700-3318-489d-a574-9c6a3d8f1046.png"
+                      },
+                      {
+                          "questionId":  "n11-intuitive-20",
+                          "questionNumber":  20,
+                          "finalApprovedQuestion":  "今日一日を振り返っています。\n\n「いい一日だったな」と思えるのは、どんな日ですか？",
+                          "answers":  {
+                                          "A":  "心のままに動けた日。",
+                                          "B":  "明日が少し楽しみになった日。",
+                                          "C":  "新しい発見があった日。",
+                                          "D":  "昨日より少し成長できた日。"
+                                      },
+                          "hiroApprovalStatus":  "Approved",
+                          "juzaFinalStatus":  "Final",
+                          "questionDesignVersion":  "3.5",
+                          "evidenceReference":  "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f11c2019-f552-4022-bce0-65ecdd744341.png"
+                      }
+                  ]
+}

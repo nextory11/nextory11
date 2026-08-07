@@ -1,0 +1,129 @@
+{
+  "type": "evolver",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "status": "Reference Implementation Version 1.0 — Approved",
+  "questions": [
+    {
+      "questionId": "n11-evolver-01", "questionNumber": 1,
+      "finalApprovedQuestion": "長く使ってきたやり方が、最近は少し合わなくなってきたと感じました。\n\nそんなとき、あなたが最初に考えることは何ですか？",
+      "answers": {"A": "「もっと自分に合うやり方があるかもしれない」と考える", "B": "「今まで積み重ねてきた経験を、別の形で活かせないかな」と思う", "C": "「何が変わったのかを、一度整理してみよう」と考える", "D": "「焦らず、今の自分に必要な変化を見つけよう」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q01"
+    },
+    {
+      "questionId": "n11-evolver-02", "questionNumber": 2,
+      "finalApprovedQuestion": "お気に入りのお店へ行くと、「来月で閉店することになりました。」という張り紙が目に入りました。\n\n少し寂しい気持ちになりながら店を出るとき、あなたは何を思いますか？",
+      "answers": {"A": "「新しい場所で、また素敵な出会いがあるかもしれない」と思う", "B": "「今までたくさん楽しませてもらえたことに感謝したい」と思う", "C": "「どうして閉店することになったんだろう」と理由が気になる", "D": "「変わっていくからこそ、新しい価値も生まれるんだろうな」と感じる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q02"
+    },
+    {
+      "questionId": "n11-evolver-03", "questionNumber": 3,
+      "finalApprovedQuestion": "休日、部屋の片づけをしていると、ずっと使っていない物がたくさん出てきました。\n\nそのまま取っておくか、手放すか迷ったとき、あなたが最初にとる行動は何ですか？",
+      "answers": {"A": "「これからの自分に必要かどうか」を考えながら整理する", "B": "思い出がある物は、一つひとつ手に取りながら見返す", "C": "使い道を変えたり、新しい活かし方ができないか考える", "D": "今すぐ決めず、少し時間を置いてからもう一度考える"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q03"
+    },
+    {
+      "questionId": "n11-evolver-04", "questionNumber": 4,
+      "finalApprovedQuestion": "ある日、長年続けてきた趣味のイベントが今年で最後になると知りました。\n\n「最後だから行こうかな、それとも新しいことを始めようかな。」\n\nそう考えたとき、あなたは何を基準に選びますか？",
+      "answers": {"A": "これからの自分につながる一歩になるかどうか", "B": "今しか味わえない時間を大切にできるかどうか", "C": "新しい楽しみや可能性が広がるかどうか", "D": "後から振り返って、自分で納得できる選択かどうか"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q04"
+    },
+    {
+      "questionId": "n11-evolver-05", "questionNumber": 5,
+      "finalApprovedQuestion": "久しぶりに会った友人から、\n\n「なんだか最近、雰囲気が変わったね。」\n\nと言われました。\n\nその言葉を聞いたとき、あなたが最初に気になることは何ですか？",
+      "answers": {"A": "「自分のどんなところが変わったんだろう」と考える", "B": "「その変化は、自分にとって良いことだったのかな」と思う", "C": "「自分では気づいていない変化もあるのかもしれない」と感じる", "D": "「これから先は、どんな自分になっていくんだろう」と想像する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q05"
+    },
+    {
+      "questionId": "n11-evolver-06", "questionNumber": 6,
+      "finalApprovedQuestion": "何年かぶりに母校の前を通ると、校舎はそのままなのに、周りの景色が少し変わっていました。\n\nその景色を見たとき、あなたはどんなことを思い浮かべますか？",
+      "answers": {"A": "「あの頃の自分が、今の自分を見たら何と言うだろう」と想像する", "B": "「変わったものもあるけれど、大切なものは残っているんだな」と感じる", "C": "「これから先の自分は、どんな景色を見ているんだろう」と考える", "D": "「時間が経つことで、人も場所も少しずつ育っていくんだな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q06"
+    },
+    {
+      "questionId": "n11-evolver-07", "questionNumber": 7,
+      "finalApprovedQuestion": "旅行先を歩いていると、予定にはなかった小さなお店を見つけました。\n\n「ちょっと入ってみようかな。」\n\nそう思ったとき、あなたの背中を押すものは何ですか？",
+      "answers": {"A": "「新しい出会いがあるかもしれない」という期待", "B": "「今しか味わえないかもしれない」という気持ち", "C": "「知らないことを知るきっかけになるかもしれない」という好奇心", "D": "「予定を変えてみるのも面白そう」という柔軟な発想"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q07"
+    },
+    {
+      "questionId": "n11-evolver-08", "questionNumber": 8,
+      "finalApprovedQuestion": "家で料理をしていると、思っていた味とは少し違う仕上がりになってしまいました。\n\n「失敗したかな」と思ったそのあと、あなたが自然と考えることは何ですか？",
+      "answers": {"A": "「少し工夫すれば、もっとおいしくできるかもしれない」", "B": "「これはこれで、新しい発見だったのかもしれない」", "C": "「どうしてこうなったのか、一度振り返ってみよう」", "D": "「次は違うやり方も試してみよう」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q08"
+    },
+    {
+      "questionId": "n11-evolver-09", "questionNumber": 9,
+      "finalApprovedQuestion": "休日に部屋を整理していると、昔よく読んでいた本が出てきました。\n\n「今の自分が読み返したら、どんなふうに感じるんだろう。」\n\nそう思ったとき、あなたが一番大切にしたいことは何ですか？",
+      "answers": {"A": "今の自分だから気づける新しい発見を大切にしたい", "B": "昔の自分が何を感じていたのかを思い出したい", "C": "今の自分と昔の自分の違いを楽しみたい", "D": "これからの自分に活かせることを見つけたい"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q09"
+    },
+    {
+      "questionId": "n11-evolver-10", "questionNumber": 10,
+      "finalApprovedQuestion": "ある日、ふとこんなことを考えました。\n\n「5年後の自分が、今の自分に何か一つアドバイスをくれるとしたら、何と言うだろう。」\n\nそんなことを思い浮かべたとき、あなたが一番しっくりくる言葉はどれですか？",
+      "answers": {"A": "「迷ってもいいから、変化を恐れず一歩踏み出してみよう。」", "B": "「焦らなくても大丈夫。積み重ねたことは、ちゃんと力になっているよ。」", "C": "「今の失敗も、未来では大切な経験になっているよ。」", "D": "「答えを急がなくても、自分らしい道は少しずつ見えてくるよ。」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q10"
+    },
+    {
+      "questionId": "n11-evolver-11", "questionNumber": 11,
+      "finalApprovedQuestion": "予定どおりに進めていたはずなのに、途中で「このまま続けても、うまくいかないかもしれない」と感じました。\n\nそんなとき、あなたが最初に見直したくなるのは何ですか？",
+      "answers": {"A": "今のやり方に、無理が出ている部分はないか", "B": "最初に目指していたものが、今の自分にも必要か", "C": "ここまでの経験を、別の形で活かせないか", "D": "少し方向を変えることで、新しい道が見えないか"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q11"
+    },
+    {
+      "questionId": "n11-evolver-12", "questionNumber": 12,
+      "finalApprovedQuestion": "ある日、昔の自分が書いたメモを偶然見つけました。\n\nそこには、今では忘れていた目標や夢が書かれていました。\n\nそのメモを読んだとき、あなたの心に一番近いものはどれですか？",
+      "answers": {"A": "「まだ挑戦してみたい気持ちは残っている」と感じる", "B": "「あの頃とは違うけれど、今だから見えるものもある」と思う", "C": "「今の自分なら、もっと違う形で実現できるかもしれない」と考える", "D": "「ここまで歩いてきた時間にも意味があったんだな」と感じる"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q12"
+    },
+    {
+      "questionId": "n11-evolver-13", "questionNumber": 13,
+      "finalApprovedQuestion": "休日に予定を立てようと思っていたのに、気づけば何も決めないまま時間が過ぎていました。\n\nその時間を振り返ったとき、あなたは何を感じますか？",
+      "answers": {"A": "「何もしない時間にも、大切な意味がある」と感じる", "B": "「こんな日があるから、また新しいことに挑戦できる」と思う", "C": "「予定どおりではなかったけれど、心は少し整った気がする」と感じる", "D": "「今日は流れに任せたからこそ、気づけたことがあった」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q13"
+    },
+    {
+      "questionId": "n11-evolver-14", "questionNumber": 14,
+      "finalApprovedQuestion": "以前、一度挑戦して途中でやめてしまったことが、ふと目の前に戻ってきました。\n\n「今なら、もう一度やってみてもいいかもしれない。」\n\nそんな気持ちになったとき、あなたの心を動かすものは何ですか？",
+      "answers": {"A": "「あの頃とは違う自分で挑戦できる」という期待", "B": "「前よりも楽しめるかもしれない」という気持ち", "C": "「以前できなかった理由が、今なら分かるかもしれない」という興味", "D": "「あの経験があったからこそ、今の自分がいる」という実感"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q14"
+    },
+    {
+      "questionId": "n11-evolver-15", "questionNumber": 15,
+      "finalApprovedQuestion": "いつもの道を歩いていると、新しくできた小さな公園が目に入りました。\n\n昨日まで何もなかった場所に、人が集まり、子どもたちが楽しそうに遊んでいます。\n\nその景色を見たとき、あなたが自然と感じることは何ですか？",
+      "answers": {"A": "「こうやって街も、人も少しずつ変わっていくんだな」と感じる", "B": "「新しい場所には、新しい思い出が生まれていくんだろうな」と思う", "C": "「何もなかった場所にも、新しい可能性は生まれるんだな」と感じる", "D": "「また数年後に来たら、どんな景色になっているんだろう」と想像する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q15"
+    },
+    {
+      "questionId": "n11-evolver-16", "questionNumber": 16,
+      "finalApprovedQuestion": "仕事帰り、駅のホームでこんな会話が耳に入りました。\n\n「最初は失敗だと思ったけど、あの経験があったから今の自分がいるんだよ。」\n\nその言葉が耳に入ったとき、あなたは何を思いますか？",
+      "answers": {"A": "「失敗も、未来につながることがあるんだな」と感じる", "B": "「今うまくいかないことも、あとで意味が分かるのかもしれない」と思う", "C": "「人は経験を重ねながら変わっていくものなんだな」と感じる", "D": "「自分にも、そんなふうに振り返れる日が来るといいな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q16"
+    },
+    {
+      "questionId": "n11-evolver-17", "questionNumber": 17,
+      "finalApprovedQuestion": "休日、カフェで過ごしていると、隣の席からこんな会話が聞こえてきました。\n\n「昔は失敗するのが怖かった。でも今は、やってみない方が後悔する気がするんだ。」\n\nその言葉が耳に入ったとき、あなたは何を思いますか？",
+      "answers": {"A": "「人は経験を重ねることで、考え方も変わっていくんだな」と感じる", "B": "「自分にも、そんなふうに変われるきっかけがあるかもしれない」と思う", "C": "「後悔するくらいなら、一歩踏み出す方がいいのかもしれない」と考える", "D": "「その人に、そう思える出来事があったんだろうな」と想像する"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q17"
+    },
+    {
+      "questionId": "n11-evolver-18", "questionNumber": 18,
+      "finalApprovedQuestion": "夕方、公園のベンチで休んでいると、小さな男の子が何度も転びながら自転車の練習をしていました。\n\n何度転んでも立ち上がり、少しずつ前へ進んでいます。\n\nその様子を見たとき、あなたは何を思いますか？",
+      "answers": {"A": "「少しずつでも前に進めば、それで十分なんだな」と感じる", "B": "「できるようになるまで挑戦を続ける姿って素敵だな」と思う", "C": "「人は失敗を繰り返しながら成長していくんだな」と感じる", "D": "「自分も、もう一度挑戦してみたいことがあるな」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q18"
+    },
+    {
+      "questionId": "n11-evolver-19", "questionNumber": 19,
+      "finalApprovedQuestion": "仕事帰り、駅のホームでこんな会話が耳に入りました。\n\n「最初は遠回りだと思っていたけど、今振り返ると、あの時間が一番大事だった気がする。」\n\nその言葉が耳に入ったとき、あなたは何を思いますか？",
+      "answers": {"A": "「遠回りに見える時間にも、大切な意味があるんだな」と感じる", "B": "「今の自分にも、あとで意味が分かる出来事があるのかもしれない」と思う", "C": "「結果だけじゃなく、その過程も人を育てるんだな」と感じる", "D": "「焦らず、自分のペースで進んでもいいのかもしれない」と思う"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q19"
+    },
+    {
+      "questionId": "n11-evolver-20", "questionNumber": 20,
+      "finalApprovedQuestion": "一日の終わり、鏡に映った自分を見ながら、ふと「少し前の自分とは、考え方も選ぶものも変わってきたな」と感じました。\n\nそんな自分に、今いちばんかけたい言葉はどれですか？",
+      "answers": {"A": "「変わってきた自分も、ちゃんと自分なんだよ」", "B": "「ここまで選んできた道にも、きっと意味があるよ」", "C": "「まだ途中だから、これからも少しずつ進めばいいよ」", "D": "「次の自分に出会うことを、楽しみにしていていいよ」"},
+      "hiroApprovalStatus": "Approved", "juzaFinalStatus": "Final", "questionDesignVersion": "3.5", "evidenceReference": "docs/Evolver_Final_Approved_Source.md#q20"
+    }
+  ]
+}

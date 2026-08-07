@@ -1,0 +1,309 @@
+{
+  "type": "pioneer",
+  "questionDesignVersion": "3.5",
+  "approvalAuthority": "HIRO",
+  "contentAuthority": "JUZA Final",
+  "questions": [
+    {
+      "questionId": "n11-pioneer-01",
+      "questionNumber": 1,
+      "finalApprovedQuestion": "誰もやったことがないことを任されました。\n\n正解も進め方もまだ決まっていません。\n\n最初に考えることは何ですか？",
+      "answers": {
+        "A": "まず、目指したい形を思い描いてみよう。",
+        "B": "できる方法を探して、小さく試してみよう。",
+        "C": "これまでの経験から使えるものを探そう。",
+        "D": "誰も決めていないなら、自分が最初の道を作ろう。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-b909df53-0df7-46d0-a290-3738a45ce9ec.png"
+    },
+    {
+      "questionId": "n11-pioneer-02",
+      "questionNumber": 2,
+      "finalApprovedQuestion": "海外で日本料理店を開きました。\n\n現地の食材で新しい料理を作ると、\n\n「これは日本料理じゃない」と言われました。\n\nその時、心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "形が変わっても、日本料理の心は変わらない。",
+        "B": "この土地だから生まれる料理を、もっと追求したい。",
+        "C": "認めてもらえるまで、自分の道を磨き続けたい。",
+        "D": "いつか、この料理にも日本の心を感じてもらえるはず。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-d3386b00-30f3-4a55-a9a5-f77d4e30c9dd.png"
+    },
+    {
+      "questionId": "n11-pioneer-03",
+      "questionNumber": 3,
+      "finalApprovedQuestion": "新しいことを始めました。\n\n周りには、まだ良さが伝わっていません。\n\nそれでも続ける時、心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "いつか必要としてくれる人に届くはず。",
+        "B": "もっと良くする方法を探してみよう。",
+        "C": "自分が信じた理由を忘れないでいよう。",
+        "D": "まだ見えていない可能性を試してみたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-eb42787c-ead5-4a91-8434-c5390bf693f4.png"
+    },
+    {
+      "questionId": "n11-pioneer-04",
+      "questionNumber": 4,
+      "finalApprovedQuestion": "苦手な教科で、何度考えても解けない問題が出ました。\n\nあなたの心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "先生に聞いて、解き方への道を見つけたい。",
+        "B": "まだ分からないだけだから、自分で答えまで辿り着きたい。",
+        "C": "別の方法を試したら、解けるかもしれない。",
+        "D": "今は難しくても、いつか解ける自分になりたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-a432be3c-1ce7-4bcc-a6aa-94375454def1.png"
+    },
+    {
+      "questionId": "n11-pioneer-05",
+      "questionNumber": 5,
+      "finalApprovedQuestion": "今までうまくいっていた方法が、通用しなくなりました。\n\n新しいやり方を探す時、最初にすることは何ですか？",
+      "answers": {
+        "A": "まず試してみて、そこから答えを見つけたい。",
+        "B": "今までの経験から使えるものを探したい。",
+        "C": "違う視点を取り入れて、新しい方法を考えたい。",
+        "D": "誰も試していない方法にも挑戦してみたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-d498722b-e3fc-48cf-bafe-848cb8d6f6b5.png"
+    },
+    {
+      "questionId": "n11-pioneer-06",
+      "questionNumber": 6,
+      "finalApprovedQuestion": "慣れた場所を離れて、新しい環境へ行くことになりました。\n\nまだ何が待っているか分かりません。\n\n最初に考えることは何ですか？",
+      "answers": {
+        "A": "まず、自分で試せることから始めてみよう。",
+        "B": "今までの経験で使えるものを探そう。",
+        "C": "新しい場所だからこそできることを見つけたい。",
+        "D": "失敗しても、そこから道を作っていこう。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-7bb6684f-512d-49ee-add8-bf54c4bc91aa.png"
+    },
+    {
+      "questionId": "n11-pioneer-07",
+      "questionNumber": 7,
+      "finalApprovedQuestion": "大きな道路を渡れず、困っている高齢者の方がいます。\n\n周りには助ける人がまだいません。\n\nあなたなら、どうしますか？",
+      "answers": {
+        "A": "安全を確認して、まず自分が声をかける。",
+        "B": "どうすれば安全に渡れるか方法を考える。",
+        "C": "周りの人にも協力してもらえるよう声をかける。",
+        "D": "この状況を変えるために、自分ができることを探す。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-85202f42-db9a-454c-8e86-dffda6f9a28c.png"
+    },
+    {
+      "questionId": "n11-pioneer-08",
+      "questionNumber": 8,
+      "finalApprovedQuestion": "「誰もやったことがないことを任せたい」\n\nそう言われました。\n\n不安もあります。\n\nその時、最初に思うことは何ですか？",
+      "answers": {
+        "A": "どこまでできるか、自分で試してみたい。",
+        "B": "今までにない方法を考えるチャンスかもしれない。",
+        "C": "必要な知識や準備を集めてから挑みたい。",
+        "D": "誰も進んだことがないなら、自分が最初になろう。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-c5694ec0-e52c-4693-b492-115e60bcc024.png"
+    },
+    {
+      "questionId": "n11-pioneer-09",
+      "questionNumber": 9,
+      "finalApprovedQuestion": "初めて挑戦することに取り組んでいます。\n\n正しい答えは、まだ誰にも分かりません。\n\nそんな時、あなたが頼りにするものは何ですか？",
+      "answers": {
+        "A": "まず試して、結果から次の方法を見つけたい。",
+        "B": "これまでの経験から使えるものを探したい。",
+        "C": "約束したことを守りながら進みたい。",
+        "D": "完璧じゃなくても、進みながら道を作りたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-a6a294fd-a545-4117-84e8-e20da5b84c59.png"
+    },
+    {
+      "questionId": "n11-pioneer-10",
+      "questionNumber": 10,
+      "finalApprovedQuestion": "大きな挑戦が失敗しました。\n\nみんなが「もう無理かもしれない」と感じています。\n\nあなたが最初にすることは何ですか？",
+      "answers": {
+        "A": "もう一度挑戦できる方法を考えたい。",
+        "B": "何が原因だったのか、次につながる答えを探したい。",
+        "C": "まだ残っている可能性を見つけたい。",
+        "D": "今までになかった進め方を作り直したい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-f3e42ff6-dfcc-4164-adcc-8fe71f2f4803.png"
+    },
+    {
+      "questionId": "n11-pioneer-11",
+      "questionNumber": 11,
+      "finalApprovedQuestion": "一生懸命考えたアイデアが、うまくいきませんでした。\n\nでも、まだ可能性が残っている気がします。\n\nあなたなら、どうしますか？",
+      "answers": {
+        "A": "どこを変えれば、もう一度挑戦できるか考える。",
+        "B": "最初とは違う形で、新しい道を探してみる。",
+        "C": "使う人の声を聞いて、もう一度作り直す。",
+        "D": "まだ誰も気づいていない価値を見つけたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-89ef2eba-38ac-4f48-984b-750f2a8d85af.png"
+    },
+    {
+      "questionId": "n11-pioneer-12",
+      "questionNumber": 12,
+      "finalApprovedQuestion": "会社が危機に直面しています。\n\nそんな中、誰も行きたがらない土地への移転が決まりました。\n\nそこに未来を変える可能性があるとしたら、あなたはどうしますか？",
+      "answers": {
+        "A": "誰も行かないなら、自分が最初の一歩を踏み出したい。",
+        "B": "本当に未来につながる道なのか、見極めたい。",
+        "C": "残っている仲間と一緒に、この場所を立て直したい。",
+        "D": "新しい環境で、自分自身の可能性も試してみたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-b90e0fca-7556-4005-8e0b-76001f71b818.png"
+    },
+    {
+      "questionId": "n11-pioneer-13",
+      "questionNumber": 13,
+      "finalApprovedQuestion": "大切な人が困っています。\n\nでも、自分一人の力では解決できません。\n\nそんな時、あなたはどうしますか？",
+      "answers": {
+        "A": "今できる方法を探して、まず動いてみる。",
+        "B": "必要な人や情報を集めて、新しい解決策を考える。",
+        "C": "相手自身が望む方法を一緒に探す。",
+        "D": "今までになかった方法でも、可能性があるなら試したい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-58493da0-f37d-48a1-ac85-d7e633b3169f.png"
+    },
+    {
+      "questionId": "n11-pioneer-14",
+      "questionNumber": 14,
+      "finalApprovedQuestion": "あなたには、これまで歩んできた道があります。\n\n次の世代へ、何か一つ残せるなら何を伝えますか？",
+      "answers": {
+        "A": "失敗しても、自分だけの道を探し続けてほしい。",
+        "B": "受け継いだものを大切にしながら、新しい答えを見つけてほしい。",
+        "C": "小さな一歩でも、未来の道を作る力になると伝えたい。",
+        "D": "まだ誰も見たことのない可能性へ挑戦してほしい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-9440e20e-44a8-4b72-9fd3-4163182688ef.png"
+    },
+    {
+      "questionId": "n11-pioneer-15",
+      "questionNumber": 15,
+      "finalApprovedQuestion": "人生の大きな選択を前にしています。\n\n正解はまだ分かりません。\n\n最後に背中を押すものは何ですか？",
+      "answers": {
+        "A": "まだ誰も歩いていない道に挑戦できるか。",
+        "B": "未来の自分が納得できる選択か。",
+        "C": "今までの経験を、新しい形で活かせるか。",
+        "D": "その選択が、次の可能性につながるか。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-cc1b5675-4e81-4b0f-bf6d-63cb33ac736a.png"
+    },
+    {
+      "questionId": "n11-pioneer-16",
+      "questionNumber": 16,
+      "finalApprovedQuestion": "友人と新しい事業を始めました。\n\nしかし、始めて間もなく、友人が辞めたいと言いました。\n\n一人になったあなたは、どうしますか？",
+      "answers": {
+        "A": "この事業への想いは変わらない。自分の力で続けてみたい。",
+        "B": "新しい仲間を探して、もう一度挑戦したい。",
+        "C": "今の形では難しいなら、別の形に変えて続けたい。",
+        "D": "一度立ち止まって、本当に進むべき道か考え直したい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-915d2c23-bcd9-4b5e-b116-4074a810b8f4.png"
+    },
+    {
+      "questionId": "n11-pioneer-17",
+      "questionNumber": 17,
+      "finalApprovedQuestion": "自分が信じて進めてきた方法に、改善した方がいいと言われました。\n\nその時、あなたはどう考えますか？",
+      "answers": {
+        "A": "本当に良くなるなら、新しい方法も取り入れたい。",
+        "B": "まず、自分が大切にしてきた理由を伝えたい。",
+        "C": "その意見から、まだ見えていない可能性を探したい。",
+        "D": "自分の考えと組み合わせて、もっと良い形を作りたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-8cfc7137-cb87-4fcc-bd90-7616e098af03.png"
+    },
+    {
+      "questionId": "n11-pioneer-18",
+      "questionNumber": 18,
+      "finalApprovedQuestion": "尊敬する師匠から、プレゼントをいただきました。\n\nでも、それは自分があまり興味のないものでした。\n\nその時、あなたの心に浮かぶことは何ですか？",
+      "answers": {
+        "A": "物ではなく、込められた気持ちを大切にしたい。",
+        "B": "自分には合わないけど、誰かの役に立つ形を探したい。",
+        "C": "なぜこれを選んでくれたのか、その意味を考えてみたい。",
+        "D": "この気持ちを受け取った上で、自分らしい形に活かしたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-9b877d24-e63a-48b1-866d-fbed93cfd346.png"
+    },
+    {
+      "questionId": "n11-pioneer-19",
+      "questionNumber": 19,
+      "finalApprovedQuestion": "古い建物を任されました。\n\n壊して新しくすることもできます。\n\nでも、まだ使える価値が残っているかもしれません。\n\nあなたなら、どうしますか？",
+      "answers": {
+        "A": "残せるものを探して、新しい形で活かしたい。",
+        "B": "今の時代に合うように、思い切って作り変えたい。",
+        "C": "まず、その建物が持つ意味を知りたい。",
+        "D": "誰も考えていない使い方を見つけたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-dceaf4f9-d32d-4b71-bc87-a0731e419172.png"
+    },
+    {
+      "questionId": "n11-pioneer-20",
+      "questionNumber": 20,
+      "finalApprovedQuestion": "長い挑戦を終えました。\n\n振り返ると、まだ誰も歩いていなかった道でした。\n\nその道を作ったあなたが、最後に大切にしたいことは何ですか？",
+      "answers": {
+        "A": "次に続く人が、もっと遠くまで進める道を残したい。",
+        "B": "自分が信じてきた想いを、形として残したい。",
+        "C": "共に歩いてくれた人たちへの感謝を忘れたくない。",
+        "D": "また新しい未知の道へ挑戦していきたい。"
+      },
+      "hiroApprovalStatus": "Approved",
+      "juzaFinalStatus": "Final",
+      "questionDesignVersion": "3.5",
+      "evidenceReference": "C:\\Users\\hiyuh\\AppData\\Local\\Temp\\codex-clipboard-420f7872-81e6-47be-80ab-fc85e382c137.png"
+    }
+  ]
+}
+
