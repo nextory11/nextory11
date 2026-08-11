@@ -66,7 +66,7 @@ function PremiumCard({ checkoutError, isEnabled, isLoading, onClick, resultType 
     ? "Stripe Checkoutへ移動中"
     : isEnabled
       ? "980円のプレミアムレポートを購入する"
-      : "プライベートプレビュー中";
+      : "現在、プレミアムレポートを調整中です";
 
   useLayoutEffect(() => {
     const report = reportRef.current;

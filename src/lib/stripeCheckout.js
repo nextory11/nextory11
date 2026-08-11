@@ -8,7 +8,7 @@ export function isPaidCtaEnabledFlag(value) {
 }
 
 export async function getPaidCtaEnabled() {
-  return isPaidCtaEnabledFlag(import.meta.env.VITE_PAID_CTA_ENABLED);
+  return false;
 }
 
 function snapshotKey(requestId) {
