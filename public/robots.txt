@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /official-preview
+Disallow: /api/
+
+Sitemap: https://nextory11.com/sitemap.xml

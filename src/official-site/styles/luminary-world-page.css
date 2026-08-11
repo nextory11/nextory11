@@ -1,0 +1,13 @@
+.luminaryWorldPage{min-height:100svh;background:#02050a;overflow:hidden}
+.luminaryWorldPage__desktop{position:relative;width:100%;aspect-ratio:3/2;margin:0 auto;overflow:hidden}
+.luminaryWorldPage__master{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+.luminaryWorldPage__diagnosisCta{position:absolute;z-index:3;left:81.6%;top:68.4%;width:14.3%;height:17.9%;border-radius:1rem;outline:0;-webkit-tap-highlight-color:transparent}
+.luminaryWorldPage__diagnosisCta:focus-visible{box-shadow:0 0 0 2px #dff5ff,0 0 24px rgba(137,207,255,.62)}
+.luminaryWorldPage__mobile{display:none}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){
+  .luminaryWorldPage{display:none}
+  .luminaryWorldPage__mobile{position:relative;display:block;width:100%;aspect-ratio:864/1821;margin:0 auto;overflow:hidden;background:#020710}
+  .luminaryWorldPage__mobileMaster{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+  .luminaryWorldPage__mobileDiagnosisCta{position:absolute;z-index:3;left:15.8%;top:84.2%;width:68.3%;height:6.3%;border-radius:.5rem;outline:0;-webkit-tap-highlight-color:transparent}
+  .luminaryWorldPage__mobileDiagnosisCta:focus-visible{box-shadow:0 0 0 2px #e7f7ff,0 0 24px rgba(137,207,255,.64)}
+}

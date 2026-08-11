@@ -1,9 +1,30 @@
 {
   "rewrites": [
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/how-to-use", "destination": "/index.html" },
+    { "source": "/types", "destination": "/index.html" },
+    { "source": "/types/(.*)", "destination": "/index.html" },
+    { "source": "/why-nextory11", "destination": "/index.html" },
+    { "source": "/philosophy", "destination": "/index.html" },
+    { "source": "/diagnosis", "destination": "/index.html" },
+    { "source": "/official-preview", "destination": "/index.html" },
+    { "source": "/official-preview/(.*)", "destination": "/index.html" },
     { "source": "/payment-success", "destination": "/index.html" },
     { "source": "/payment-cancel", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/official-preview",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+      ]
+    },
+    {
+      "source": "/official-preview/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+      ]
+    },
     {
       "source": "/",
       "headers": [

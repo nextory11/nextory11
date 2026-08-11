@@ -1,0 +1,13 @@
+.guardianWorldPage{min-height:100svh;background:#020508;overflow:hidden}
+.guardianWorldPage__desktop{position:relative;width:100%;aspect-ratio:3/2;margin:0 auto;overflow:hidden}
+.guardianWorldPage__master{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+.guardianWorldPage__diagnosisCta{position:absolute;z-index:3;left:80.7%;top:69%;width:16.2%;height:18%;border-radius:1rem;outline:0;-webkit-tap-highlight-color:transparent}
+.guardianWorldPage__diagnosisCta:focus-visible{box-shadow:0 0 0 2px #f4f0df,0 0 24px rgba(226,232,238,.58)}
+.guardianWorldPage__mobile{display:none}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){
+  .guardianWorldPage{display:none}
+  .guardianWorldPage__mobile{position:relative;display:block;width:100%;aspect-ratio:864/1821;overflow:hidden;background:#020305}
+  .guardianWorldPage__mobileMaster{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+  .guardianWorldPage__mobileDiagnosisCta{position:absolute;z-index:3;left:17%;top:84.95%;width:66.2%;height:6.65%;border-radius:.8rem;outline:0;-webkit-tap-highlight-color:transparent}
+  .guardianWorldPage__mobileDiagnosisCta:focus-visible{box-shadow:0 0 0 2px #f4f0df,0 0 20px rgba(226,232,238,.58)}
+}

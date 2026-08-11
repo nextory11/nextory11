@@ -10,14 +10,14 @@ export const TRUST_ROUTES = {
 };
 
 export const TRUST_LINKS = [
-  { href: "/#/terms", label: "利用規約" },
-  { href: "/#/privacy", label: "プライバシー" },
-  { href: "/#/refund-policy", label: "返金・キャンセル" },
-  { href: "/#/commercial-disclosure", label: "特定商取引法に基づく表記" },
-  { href: "/#/operator", label: "運営者情報" },
-  { href: "/#/faq", label: "FAQ" },
-  { href: "/#/why-nextory11", label: "Why NEXTORY11" },
-  { href: "/#/contact", label: "お問い合わせ" },
+  { href: "/diagnosis#/terms", label: "利用規約" },
+  { href: "/diagnosis#/privacy", label: "プライバシー" },
+  { href: "/diagnosis#/refund-policy", label: "返金・キャンセル" },
+  { href: "/diagnosis#/commercial-disclosure", label: "特定商取引法に基づく表記" },
+  { href: "/diagnosis#/operator", label: "運営者情報" },
+  { href: "/diagnosis#/faq", label: "FAQ" },
+  { href: "/about", label: "NEXTORY11とは？" },
+  { href: "/diagnosis#/contact", label: "お問い合わせ" },
 ];
 
 export const SUPPORT_EMAIL = "support@nextory11.com";

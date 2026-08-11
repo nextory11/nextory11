@@ -1,0 +1,9 @@
+.evolverWorldPage{min-height:100svh;background:#08040d;overflow:hidden}
+.evolverWorldPage__desktop{position:relative;width:100%;aspect-ratio:4/3;margin:0 auto;overflow:hidden}
+.evolverWorldPage__master{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+.evolverWorldPage__mobile{display:none}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){
+  .evolverWorldPage{display:none}
+  .evolverWorldPage__mobile{display:block;width:100%;aspect-ratio:864/1821;margin:0 auto;overflow:hidden;background:#08040d}
+  .evolverWorldPage__mobileMaster{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+}

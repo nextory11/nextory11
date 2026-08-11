@@ -1,0 +1,85 @@
+.officialSite--types,.worldsPage{background:#020713}.worldsPage{min-height:100svh;overflow:hidden}.worldsPage__canvas{position:relative;width:100%;aspect-ratio:3/2;margin:0 auto;overflow:hidden}.worldsPage__master{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}.worldsPage__portals{position:absolute;inset:0}.worldsPage__portal{position:absolute;z-index:2;left:var(--planet-left);top:var(--planet-top);width:10.5%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;color:#f7dfaa;cursor:pointer;outline:0;-webkit-tap-highlight-color:transparent}.worldsPage__planetCrop{position:absolute;inset:0;overflow:hidden;border-radius:50%;transform:translateY(0) scale(1);filter:brightness(1);transition:transform 420ms cubic-bezier(.2,.8,.2,1),filter 420ms ease,box-shadow 420ms ease}.worldsPage__planetImage{position:absolute;inset:0;background:url('/official-site/images/types/nextory11-11-worlds-desktop-final-approved.png') no-repeat;background-size:952.381% 869.565%;background-position:var(--crop-x) var(--crop-y)}.worldsPage__portal::before,.worldsPage__portal::after{content:"";position:absolute;border-radius:50%;pointer-events:none;opacity:0;transition:opacity 420ms ease,transform 420ms cubic-bezier(.2,.8,.2,1)}.worldsPage__portal::before{inset:-7%;z-index:-1;border:1px solid color-mix(in srgb,var(--planet-color) 72%,#f4d57d);box-shadow:0 0 16px color-mix(in srgb,var(--planet-color) 58%,transparent),0 0 34px color-mix(in srgb,var(--planet-color) 34%,transparent)}.worldsPage__portal::after{inset:10%;z-index:3;background:radial-gradient(circle at 42% 35%,rgba(255,255,255,.2),transparent 42%);mix-blend-mode:screen}.worldsPage__portalName{position:absolute;left:50%;top:101%;translate:-50% 0;padding:.18em .5em;border-radius:999px;background:rgba(2,7,19,.76);color:#f5dfad;font-family:Georgia,"Times New Roman",serif;font-size:clamp(.55rem,.78vw,.82rem);line-height:1;letter-spacing:.035em;opacity:0;white-space:nowrap;transform:translateY(-3px);transition:opacity 300ms ease,color 300ms ease,transform 300ms ease}.worldsPage__portal:hover,.worldsPage__portal:focus-visible{z-index:5}.worldsPage__portal:hover .worldsPage__planetCrop,.worldsPage__portal:focus-visible .worldsPage__planetCrop{transform:translateY(-5%) scale(1.075);filter:brightness(1.14) saturate(1.06);box-shadow:0 10px 22px rgba(0,0,0,.42),0 0 22px color-mix(in srgb,var(--planet-color) 54%,transparent)}.worldsPage__portal:hover::before,.worldsPage__portal:hover::after,.worldsPage__portal:focus-visible::before,.worldsPage__portal:focus-visible::after,.worldsPage__portal:hover .worldsPage__portalName,.worldsPage__portal:focus-visible .worldsPage__portalName{opacity:1}.worldsPage__portal:hover::before,.worldsPage__portal:focus-visible::before{transform:translateY(-4%) scale(1.04)}.worldsPage__portal:hover .worldsPage__portalName,.worldsPage__portal:focus-visible .worldsPage__portalName{color:#fff1c8;transform:translateY(0)}.worldsPage__srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.officialPlaceholder__return{display:inline-flex;margin-top:1.6rem;color:#d9b75f;text-decoration:none}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait){.worldsPage__portal{width:12.8%}}
+@media(prefers-reduced-motion:reduce){.worldsPage__portal,.worldsPage__planetCrop,.worldsPage__portal::before,.worldsPage__portal::after,.worldsPage__portalName{transition:none}.worldsPage__portal:hover .worldsPage__planetCrop,.worldsPage__portal:focus-visible .worldsPage__planetCrop{transform:none}}
+
+.worldsPage__canvas picture{display:contents}.worldsPage__portal{touch-action:manipulation}.worldsPage__portal--active{z-index:5}.worldsPage__portal--active .worldsPage__planetCrop{transform:translateY(-5%) scale(1.075);filter:brightness(1.14) saturate(1.06);box-shadow:0 10px 22px rgba(0,0,0,.42),0 0 22px color-mix(in srgb,var(--planet-color) 54%,transparent)}.worldsPage__portal--active::before,.worldsPage__portal--active::after,.worldsPage__portal--active .worldsPage__portalName{opacity:1}.worldsPage__portal--active::before{transform:translateY(-4%) scale(1.04)}.worldsPage__diagnosisCta{position:absolute;z-index:4;left:58%;top:84%;width:18%;height:6%;border-radius:1rem;outline:0;-webkit-tap-highlight-color:transparent}
+
+.officialSite--types .officialTopLink,.officialSite--types .officialMenu__trigger{color:transparent;border-color:transparent;background:transparent;box-shadow:none;text-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;filter:none}.officialSite--types .officialMenu__triggerIcon i{background:transparent}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){.worldsPage__canvas{aspect-ratio:853/1844}.worldsPage__portal{left:var(--mobile-left);top:var(--mobile-top);width:14%}.worldsPage__planetImage{background-image:url('/official-site/images/types/mobile/nextory11-11-worlds-mobile-final-approved.webp');background-size:714.286% 1550%;background-position:var(--mobile-crop-x) var(--mobile-crop-y)}.worldsPage__portalName{display:none}.worldsPage__diagnosisCta{left:18%;top:91.15%;width:64%;height:5%;border-radius:1rem}}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){.worldsPage__portal{width:13%}.worldsPage__planetImage{background-size:769.231% 1662.7%}}
+
+.worldsPage__planetImage{background-image:url('/official-site/images/types/nextory11-11-worlds-desktop-final-approved-v2.webp');background-size:952.381% 1428.571%}.worldsPage__desktopLabelCorrections{position:absolute;inset:0;z-index:1;pointer-events:none}.worldsPage__desktopLabelCorrections span{position:absolute;translate:-50% 0;display:grid;justify-items:center;width:13%;padding:.15% .5% .55%;background:radial-gradient(ellipse at center,rgba(2,7,19,.98) 45%,rgba(2,7,19,.82) 68%,transparent 100%);font-family:Georgia,"Times New Roman",serif;text-align:center;white-space:nowrap}.worldsPage__desktopLabelCorrections strong{color:#f1cf83;font-size:clamp(.62rem,1.08vw,1rem);font-weight:400;line-height:1.15}.worldsPage__desktopLabelCorrections small{margin-top:.18em;color:#f4ead8;font-size:clamp(.45rem,.74vw,.7rem);line-height:1.15}.worldsPage__diagnosisCta{left:70.2%;top:82.5%;width:27%;height:11%}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){.worldsPage__desktopLabelCorrections{display:none}.worldsPage__planetImage{background-image:url('/official-site/images/types/mobile/nextory11-11-worlds-mobile-final-approved.webp');background-size:769.231% 1662.7%}.worldsPage__diagnosisCta{left:18%;top:91.15%;width:64%;height:5%}}
+
+.worldsPage__planetCrop{opacity:0;transition:opacity 100ms ease,transform 420ms cubic-bezier(.2,.8,.2,1),filter 420ms ease,box-shadow 420ms ease}.worldsPage__portal:hover .worldsPage__planetCrop,.worldsPage__portal:focus-visible .worldsPage__planetCrop,.worldsPage__portal--active .worldsPage__planetCrop{opacity:1}
+.worldsPage__desktopLabelCorrections span{width:16%;background:linear-gradient(90deg,transparent,rgba(2,7,19,.96) 18%,#020713 32%,#020713 68%,rgba(2,7,19,.96) 82%,transparent)}
+@media(min-width:1100px),(min-width:768px) and (max-width:1099px) and (orientation:landscape) and (min-height:601px){.worldsPage__portal{width:6.5%}.worldsPage__planetImage{background-size:1538.462% 2307.692%}}
+@media(min-width:1100px),(min-width:768px) and (max-width:1099px) and (orientation:landscape) and (min-height:601px){.worldsPage__portal{width:5%}.worldsPage__planetImage{background-size:2000% 3000%}}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){.worldsPage__planetCrop{opacity:1}}
+
+/* Desktop 11 WORLDS portal polish: preserve the planet's circular geometry. */
+@media(min-width:1100px),(min-width:768px) and (max-width:1099px) and (orientation:landscape) and (min-height:601px){
+  .worldsPage__planetImage{
+    background-size:2000% 1333.333%;
+    background-position:var(--crop-x) calc(var(--crop-y) * 1.045 - 2.252%);
+  }
+  .worldsPage__planetCrop{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    transform-origin:50% 50%;
+    transition:opacity 100ms ease,transform 280ms cubic-bezier(.2,.75,.25,1),filter 280ms ease,box-shadow 280ms ease;
+  }
+  .worldsPage__portal::before,.worldsPage__portal::after{
+    transition:opacity 280ms ease,transform 280ms cubic-bezier(.2,.75,.25,1);
+  }
+  .worldsPage__portal:hover .worldsPage__planetCrop,
+  .worldsPage__portal:focus-visible .worldsPage__planetCrop,
+  .worldsPage__portal--active .worldsPage__planetCrop{
+    transform:translateY(-2px) scale(1);
+    filter:brightness(1.1) saturate(1.025);
+    box-shadow:0 0 10px color-mix(in srgb,var(--planet-color) 68%,transparent),0 0 22px color-mix(in srgb,var(--planet-color) 36%,transparent);
+  }
+  .worldsPage__portal:hover::before,
+  .worldsPage__portal:focus-visible::before,
+  .worldsPage__portal--active::before{
+    inset:0;
+    border:0;
+    transform:translateY(-2px) scale(1);
+    opacity:.78;
+    box-shadow:0 0 8px color-mix(in srgb,var(--planet-color) 70%,transparent),0 0 18px color-mix(in srgb,var(--planet-color) 38%,transparent);
+  }
+  .worldsPage__portal:hover::after,
+  .worldsPage__portal:focus-visible::after,
+  .worldsPage__portal--active::after{opacity:0}
+  .worldsPage__portalName{display:none}
+}
+
+/* Mobile/portrait portal response: fixed planet size with an edge-aligned glow. */
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){
+  .worldsPage__planetCrop{
+    opacity:0;
+    transform:translateY(0) scale(1);
+    transform-origin:50% 50%;
+    transition:opacity 100ms ease,transform 280ms cubic-bezier(.2,.75,.25,1),filter 280ms ease,box-shadow 280ms ease;
+  }
+  .worldsPage__portal:hover .worldsPage__planetCrop,
+  .worldsPage__portal:focus-visible .worldsPage__planetCrop,
+  .worldsPage__portal--active .worldsPage__planetCrop{
+    opacity:0;
+    transform:translateY(0) scale(1);
+    filter:none;
+    box-shadow:none;
+  }
+  .worldsPage__portal:hover::before,
+  .worldsPage__portal:focus-visible::before,
+  .worldsPage__portal--active::before{
+    inset:var(--mobile-glow-inset);
+    border:0;
+    transform:translateY(0) scale(1);
+    opacity:.78;
+    box-shadow:0 0 8px color-mix(in srgb,var(--planet-color) 70%,transparent),0 0 18px color-mix(in srgb,var(--planet-color) 38%,transparent);
+  }
+  .worldsPage__portal:hover::after,
+  .worldsPage__portal:focus-visible::after,
+  .worldsPage__portal--active::after{opacity:0}
+}

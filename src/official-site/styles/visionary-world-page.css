@@ -1,0 +1,62 @@
+.visionaryWorldPage {
+  min-height: 100svh;
+  background: #030811;
+  overflow: hidden;
+}
+
+.visionaryWorldPage__master {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.visionaryWorldPage__mobile {
+  display: none;
+}
+
+@media (max-width: 767px),
+  (min-width: 768px) and (max-width: 1099px) and (orientation: portrait),
+  (max-height: 600px) and (orientation: landscape) {
+  .officialSite--visionary .officialTopLink {
+    min-height: 44px;
+  }
+
+  .visionaryWorldPage {
+    display: none;
+  }
+
+  .visionaryWorldPage__mobile {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 864 / 1821;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #030811;
+  }
+
+  .visionaryWorldPage__mobile::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 6.4rem;
+    height: 4.4rem;
+    background: radial-gradient(ellipse at 22% 18%, #030712 0 48%, rgb(3 7 18 / 88%) 64%, transparent 100%);
+    content: "";
+    pointer-events: none;
+  }
+
+  .visionaryWorldPage__mobileMaster {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+  }
+}

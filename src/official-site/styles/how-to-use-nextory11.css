@@ -1,0 +1,583 @@
+.howToDesktop {
+  display: none;
+}
+
+.howToMobile {
+  display: none;
+}
+
+.howTo {
+  display: none;
+  --how-to-gold: #d8b267;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #030817;
+  color: #f5f3ee;
+}
+
+@media (min-width: 1100px),
+  (min-width: 768px) and (max-width: 1099px) and (orientation: landscape) and (min-height: 601px) {
+  .howTo {
+    display: none;
+  }
+
+  .howToDesktop {
+    position: relative;
+    display: block;
+    width: min(100%, 1536px);
+    margin: 0 auto;
+    overflow: hidden;
+    background: #020817;
+  }
+
+  .howToDesktop__master {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+  }
+
+  .howToDesktop__cta {
+    position: absolute;
+    z-index: 2;
+    right: 31.2%;
+    bottom: 5.2%;
+    left: 31.2%;
+    height: 9.2%;
+    border: 0;
+    background: transparent;
+  }
+
+  .howToDesktop__cta:focus-visible {
+    outline: 1px solid rgb(229 190 91 / 82%);
+    outline-offset: -3px;
+  }
+
+  .howToDesktop__semantics {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .officialSite--how-to-use .officialTopLink {
+    top: 0;
+    left: 0;
+    width: 12%;
+    height: 10%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: transparent;
+    backdrop-filter: none;
+  }
+
+  .officialSite--how-to-use .officialTopLink span {
+    color: transparent;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger,
+  .officialSite--how-to-use .officialMenu__trigger[aria-expanded="true"] {
+    top: 0;
+    right: 0;
+    width: 12%;
+    height: 10%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger > span:first-child,
+  .officialSite--how-to-use .officialMenu__triggerIcon {
+    opacity: 0;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger::after {
+    display: none;
+  }
+
+  .officialSite--how-to-use .officialTopLink:focus-visible,
+  .officialSite--how-to-use .officialMenu__trigger:focus-visible {
+    outline: 1px solid rgb(229 190 91 / 82%);
+    outline-offset: -3px;
+  }
+}
+
+@media (max-width: 767px),
+  (min-width: 768px) and (max-width: 1099px) and (orientation: portrait),
+  (min-width: 768px) and (max-width: 1099px) and (max-height: 600px) {
+  .howToMobile {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #020817;
+  }
+
+  .howToMobile__master {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+  }
+
+  .howToMobile__cta {
+    position: absolute;
+    z-index: 2;
+    right: 13.5%;
+    bottom: 1.7%;
+    left: 13.5%;
+    height: 7.2%;
+    border: 0;
+    background: transparent;
+  }
+
+  .howToMobile__cta:focus-visible {
+    outline: 1px solid rgb(229 190 91 / 82%);
+    outline-offset: -3px;
+  }
+
+  .howToMobile__semantics {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .officialSite--how-to-use .officialTopLink {
+    top: 0;
+    left: 0;
+    width: 23%;
+    height: 7%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: transparent;
+    backdrop-filter: none;
+    text-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .officialSite--how-to-use .officialTopLink span {
+    color: transparent;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger,
+  .officialSite--how-to-use .officialMenu__trigger[aria-expanded="true"] {
+    top: 0;
+    right: 0;
+    width: 23%;
+    height: 7%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    color: transparent;
+    text-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger > span:first-child,
+  .officialSite--how-to-use .officialMenu__triggerIcon {
+    opacity: 0;
+  }
+
+  .officialSite--how-to-use .officialMenu__trigger::after {
+    display: none;
+  }
+
+  .officialSite--how-to-use .officialTopLink:focus-visible,
+  .officialSite--how-to-use .officialMenu__trigger:focus-visible {
+    outline: 0;
+    box-shadow: inset 0 -1px 0 rgb(229 190 91 / 58%);
+    filter: drop-shadow(0 0 0.3rem rgb(229 190 91 / 32%));
+  }
+
+  .officialSite--how-to-use .officialTopLink:active,
+  .officialSite--how-to-use .officialMenu__trigger:active {
+    color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.howTo__intro {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  min-height: 34rem;
+  padding: clamp(7rem, 10vw, 10rem) 2rem clamp(9rem, 12vw, 12rem);
+  background:
+    radial-gradient(circle at 50% 18%, rgb(255 255 255 / 70%), transparent 23rem),
+    linear-gradient(180deg, #f1eee8, #e9e2d8);
+  color: #4a351b;
+  text-align: center;
+}
+
+.howTo__intro::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: -5rem;
+  height: 9rem;
+  border-bottom: 1px solid rgb(216 178 103 / 78%);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  background: #e9e2d8;
+}
+
+.howTo__marker {
+  margin: 0 0 1.5rem;
+  color: #9c702e;
+  font: 500 0.78rem/1.2 Georgia, "Times New Roman", serif;
+  letter-spacing: 0.24em;
+}
+
+.howTo__intro h2 {
+  margin: 0;
+  color: #5a3d1e;
+  font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+}
+
+.howTo__message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: clamp(2rem, 3vw, 3rem) 0 0;
+  color: #72501f;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  line-height: 1.7;
+  letter-spacing: 0.07em;
+}
+
+.howTo__message span {
+  color: #a16e24;
+  font-size: 0.72em;
+  letter-spacing: 0.16em;
+}
+
+.howTo__support {
+  margin: 1.5rem 0 0;
+  color: rgb(62 50 38 / 72%);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(0.92rem, 1.2vw, 1.08rem);
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+.howTo__introStar {
+  display: block;
+  margin-top: 2rem;
+  color: #b07a2b;
+  font-size: 1.2rem;
+}
+
+.howTo__universe {
+  position: relative;
+  z-index: 1;
+  min-height: 75rem;
+  padding: clamp(10rem, 14vw, 14rem) clamp(2rem, 5vw, 5rem) clamp(8rem, 12vw, 12rem);
+  background:
+    radial-gradient(ellipse at 13% 34%, rgb(67 54 158 / 31%), transparent 31rem),
+    radial-gradient(ellipse at 86% 28%, rgb(132 41 104 / 21%), transparent 28rem),
+    radial-gradient(ellipse at 52% 75%, rgb(23 104 170 / 27%), transparent 34rem),
+    radial-gradient(ellipse at 72% 91%, rgb(149 83 35 / 12%), transparent 27rem),
+    linear-gradient(180deg, #040818, #071124 48%, #020713);
+}
+
+.howTo__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgb(255 223 154 / 80%) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 72% 16%, rgb(168 201 255 / 75%) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 43% 58%, rgb(255 255 255 / 58%) 0 0.8px, transparent 1.4px),
+    radial-gradient(circle at 88% 71%, rgb(220 172 255 / 62%) 0 0.8px, transparent 1.4px);
+  background-size: 13rem 17rem, 19rem 21rem, 11rem 15rem, 17rem 13rem;
+  opacity: 0.66;
+}
+
+.howTo__universe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 8% 58%, rgb(113 73 202 / 13%), transparent 24rem),
+    radial-gradient(ellipse at 94% 55%, rgb(42 111 189 / 15%), transparent 27rem),
+    linear-gradient(90deg, rgb(1 5 15 / 20%), transparent 32% 72%, rgb(1 5 15 / 18%));
+  mix-blend-mode: screen;
+}
+
+.howTo__journey {
+  position: relative;
+  width: min(100%, 88rem);
+  min-height: 38rem;
+  margin: 0 auto;
+}
+
+.howTo__path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: rgb(216 178 103 / 30%);
+  stroke-dasharray: 2 5;
+  stroke-width: 1;
+  filter: drop-shadow(0 0 0.45rem rgb(216 178 103 / 30%));
+}
+
+.howTo__path circle {
+  fill: rgb(243 202 113 / 80%);
+  stroke: none;
+}
+
+.howTo__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.howTo__step {
+  position: relative;
+  text-align: center;
+}
+
+.howTo__step:nth-child(2),
+.howTo__step:nth-child(4) { margin-top: 10rem; }
+
+.howTo__step article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.howTo__stepNumber {
+  margin: 0 0 1rem;
+  color: #cda75c;
+  font: 500 0.75rem/1.2 Georgia, "Times New Roman", serif;
+  letter-spacing: 0.2em;
+}
+
+.howTo__symbol {
+  --symbol-color: #d8b267;
+  position: relative;
+  display: grid;
+  width: clamp(8rem, 12vw, 11rem);
+  height: clamp(8rem, 12vw, 11rem);
+  place-items: center;
+  color: var(--symbol-color);
+  filter: drop-shadow(0 0 1.5rem color-mix(in srgb, var(--symbol-color) 36%, transparent));
+}
+
+.howTo__symbol--question { --symbol-color: #e4b85c; }
+.howTo__symbol--discovery { --symbol-color: #b68bea; }
+.howTo__symbol--juza { --symbol-color: #6fc9ea; }
+.howTo__symbol--premium { --symbol-color: #efc86b; }
+
+.howTo__symbolGlow {
+  position: absolute;
+  inset: 23%;
+  border-radius: 50%;
+  background: radial-gradient(circle, white 0 5%, color-mix(in srgb, var(--symbol-color) 78%, white) 9%, color-mix(in srgb, var(--symbol-color) 24%, transparent) 38%, transparent 72%);
+  box-shadow: 0 0 2rem color-mix(in srgb, var(--symbol-color) 52%, transparent);
+}
+
+.howTo__symbol svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.75;
+}
+
+.howTo__symbolOrbit { opacity: 0.45; }
+.howTo__symbolOrbit--inner { stroke-dasharray: 2 4; opacity: 0.28; }
+.howTo__symbolRay { fill: color-mix(in srgb, var(--symbol-color) 42%, transparent); }
+.howTo__symbolRay--soft { opacity: 0.38; stroke-width: 0.45; }
+.howTo__symbolCore { fill: white; stroke: none; filter: drop-shadow(0 0 5px white); }
+
+.howTo__step h3 {
+  min-height: 2.7em;
+  margin: 1rem 0 0.8rem;
+  color: #f0d395;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.2rem, 1.55vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+}
+
+.howTo__stepCopy {
+  max-width: 18em;
+  margin: 0;
+  color: rgb(243 243 248 / 75%);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+
+.howTo__destination {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: clamp(7rem, 10vw, 11rem) auto 0;
+  text-align: center;
+}
+
+.howTo__destinationLight {
+  position: relative;
+  display: grid;
+  width: clamp(15rem, 25vw, 23rem);
+  height: clamp(9rem, 15vw, 14rem);
+  place-items: center;
+  background: radial-gradient(ellipse, rgb(255 244 203 / 90%) 0 2%, rgb(240 185 72 / 42%) 7%, rgb(213 124 36 / 16%) 22%, transparent 66%);
+  filter: drop-shadow(0 0 3rem rgb(225 157 49 / 42%));
+}
+
+.howTo__destinationLight::before,
+.howTo__destinationLight::after {
+  content: "";
+  position: absolute;
+  width: 74%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f4c66d, white, #f4c66d, transparent);
+}
+
+.howTo__destinationLight::after { width: 38%; transform: rotate(90deg); }
+
+.howTo__destinationLight i {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: #fff3c4;
+  clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%);
+}
+
+.howTo__destination > p {
+  margin: -1rem 0 2.5rem;
+  color: #e7c372;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  letter-spacing: 0.1em;
+}
+
+.howTo__cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  min-width: clamp(18rem, 24vw, 22rem);
+  min-height: 4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.9rem 1.5rem 0.9rem 2.8rem;
+  border: 1px solid rgb(224 181 66 / 88%);
+  border-radius: 0.25rem;
+  background: linear-gradient(105deg, rgb(37 12 57 / 74%), rgb(5 11 27 / 88%) 54%, rgb(24 14 30 / 80%));
+  box-shadow: inset 0 0 0 3px rgb(1 4 14 / 76%), inset 0 0 0 4px rgb(212 175 55 / 34%), 0 0 2rem rgb(91 43 158 / 24%);
+  color: #f1cd6d;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.howTo__cta svg {
+  width: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.35;
+}
+
+.howTo__cta:focus-visible { outline: 2px solid #fff1bd; outline-offset: 5px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .howTo__cta:hover { transform: scale(1.012); box-shadow: inset 0 0 0 3px rgb(1 4 14 / 76%), inset 0 0 0 4px rgb(232 194 93 / 44%), 0 0 2.5rem rgb(91 43 158 / 34%); }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .howTo__intro { min-height: 32rem; padding-inline: 3rem; }
+  .howTo__universe { padding-inline: 3rem; }
+  .howTo__journey { min-height: 66rem; }
+  .howTo__path { display: none; }
+  .howTo__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7rem 4rem; }
+  .howTo__step:nth-child(2), .howTo__step:nth-child(4) { margin-top: 7rem; }
+  .howTo__step:nth-child(3) { margin-top: -1rem; }
+  .howTo__step::after { content: ""; position: absolute; top: 7rem; right: -2rem; width: 4rem; height: 1px; background: linear-gradient(90deg, transparent, rgb(216 178 103 / 45%), transparent); }
+  .howTo__step:nth-child(2)::after, .howTo__step:nth-child(4)::after { display: none; }
+}
+
+@media (max-width: 767px) {
+  .howTo__intro { min-height: 0; padding: 7rem 1.25rem 9rem; }
+  .howTo__intro h2 { font-size: clamp(2.25rem, 10vw, 3rem); line-height: 1.3; }
+  .howTo__message { margin-top: 1.8rem; font-size: 1.1rem; }
+  .howTo__support { font-size: 0.9rem; }
+  .howTo__support br { display: none; }
+  .howTo__universe { min-height: 0; padding: 10rem 1.25rem 8rem; }
+  .howTo__journey { min-height: 0; }
+  .howTo__path { display: none; }
+  .howTo__steps { display: flex; flex-direction: column; gap: 9rem; }
+  .howTo__step, .howTo__step:nth-child(2), .howTo__step:nth-child(4) { margin-top: 0; }
+  .howTo__step:not(:last-child)::after { content: ""; position: absolute; left: 50%; bottom: -7rem; width: 1px; height: 5rem; background: linear-gradient(transparent, rgb(216 178 103 / 55%), transparent); }
+  .howTo__step:not(:last-child)::before { content: ""; position: absolute; z-index: 1; left: calc(50% - 2px); bottom: -4.6rem; width: 5px; height: 5px; border-radius: 50%; background: #e1b85f; box-shadow: 0 0 0.7rem #d7a948; }
+  .howTo__symbol { width: 9rem; height: 9rem; }
+  .howTo__step h3 { min-height: 0; font-size: 1.25rem; }
+  .howTo__stepCopy { max-width: 19em; font-size: 0.94rem; }
+  .howTo__destination { margin-top: 8rem; }
+  .howTo__destinationLight { width: 17rem; height: 11rem; }
+  .howTo__destination > p { margin-top: -0.5rem; font-size: 1.15rem; }
+  .howTo__cta { width: min(100%, 20rem); min-width: 0; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .howTo__cta { transition: none; }
+}

@@ -1,0 +1,13 @@
+.explorerWorldPage{min-height:100svh;background:#02030a;overflow:hidden}
+.explorerWorldPage__desktop{position:relative;width:100%;aspect-ratio:3/2;margin:0 auto;overflow:hidden}
+.explorerWorldPage__master{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+.explorerWorldPage__diagnosisCta{position:absolute;z-index:3;left:79.7%;top:71.4%;width:15%;height:17.3%;border-radius:1rem;outline:0;-webkit-tap-highlight-color:transparent}
+.explorerWorldPage__diagnosisCta:focus-visible{box-shadow:0 0 0 2px #3ca7ff,0 0 24px rgba(35,137,255,.72)}
+.explorerWorldPage__mobile{display:none}
+@media(max-width:767px),(min-width:768px) and (max-width:1099px) and (orientation:portrait),(max-height:600px) and (orientation:landscape){
+  .explorerWorldPage{display:none}
+  .explorerWorldPage__mobile{position:relative;display:block;width:100%;aspect-ratio:863/1822;overflow:hidden;background:#010208}
+  .explorerWorldPage__mobileMaster{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+  .explorerWorldPage__mobileDiagnosisCta{position:absolute;z-index:3;left:49%;top:83.85%;width:44.25%;height:7.15%;border-radius:.8rem;outline:0;-webkit-tap-highlight-color:transparent}
+  .explorerWorldPage__mobileDiagnosisCta:focus-visible{box-shadow:0 0 0 2px #3ca7ff,0 0 20px rgba(35,137,255,.72)}
+}
