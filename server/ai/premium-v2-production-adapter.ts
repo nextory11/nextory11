@@ -1,4 +1,4 @@
-import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json";
+import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json" with { type: "json" };
 import { buildPremiumReportProfile } from "../reports/build-premium-profile.js";
 import type { NormalizedDiagnosisAnswer } from "../reports/result-calculator.js";
 import { createPremiumV2Profile, type PremiumV2Profile } from "./premium-v2-profile.js";
