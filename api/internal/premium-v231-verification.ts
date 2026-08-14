@@ -13,12 +13,23 @@ import { generateAccessToken, hashAccessToken } from "../../server/security/toke
 const VERIFY_GATE = "PREMIUM_V231_INTERNAL_VERIFICATION_ENABLED";
 const VERIFY_SECRET = "PREMIUM_V231_INTERNAL_VERIFICATION_SECRET";
 const VERIFY_HEADER = "x-nextory-verification-token";
+const CLEANUP_SECRET = "PREMIUM_V231_INTERNAL_CLEANUP_SECRET";
+const CLEANUP_HEADER = "x-nextory-cleanup-token";
 const LIFECYCLE_LABEL = "premium-v231-final-production-verification";
 
 const requestSchema = z.discriminatedUnion("action", [
   z.object({ action: z.literal("run") }).strict(),
-  z.object({ action: z.literal("cleanup"), cleanupToken: z.string().regex(/^[a-f0-9]{64}$/u) }).strict(),
+  z.object({ action: z.literal("cleanup") }).strict(),
 ]);
+
+type CleanupResiduals = {
+  reportRequests: number;
+  payments: number;
+  entitlements: number;
+  reports: number;
+  accessTokens: number;
+  total: number;
+};
 
 type SyntheticIdentity = {
   requestId: string;
@@ -31,7 +42,7 @@ type SyntheticIdentity = {
 type HandlerDependencies = {
   setupSynthetic(): Promise<SyntheticIdentity>;
   generate(requestId: string): ReturnType<typeof generatePremiumReportVersioned>;
-  cleanupSynthetic(): Promise<number>;
+  cleanupSynthetic(): Promise<number | CleanupResiduals>;
 };
 
 function sha256(value: string) {
@@ -47,8 +58,8 @@ function cleanupToken(secret: string, requestId: string) {
   return createHmac("sha256", secret).update(`cleanup:${requestId}`, "utf8").digest("hex");
 }
 
-function authorized(request: VercelRequestLike, expected: string) {
-  const raw = request.headers[VERIFY_HEADER];
+function authorized(request: VercelRequestLike, expected: string, header = VERIFY_HEADER) {
+  const raw = request.headers[header];
   const supplied = Array.isArray(raw) ? raw[0] : raw;
   if (!supplied) return false;
   const left = Buffer.from(sha256(supplied), "hex");
@@ -136,9 +147,24 @@ async function cleanupProductionSynthetic() {
     await tx.delete(payments).where(and(eq(payments.reportRequestId, requestId), eq(payments.id, paymentId)));
     await tx.delete(reportRequests).where(eq(reportRequests.id, requestId));
   });
-  const [residual] = await db.select({ id: reportRequests.id }).from(reportRequests)
-    .where(eq(reportRequests.id, requestId)).limit(1);
-  return residual ? 1 : 0;
+  const [requestResidual, paymentResidual, entitlementResidual, reportResidual, accessTokenResidual] = await Promise.all([
+    db.select({ id: reportRequests.id }).from(reportRequests).where(eq(reportRequests.id, requestId)).limit(1),
+    db.select({ id: payments.id }).from(payments)
+      .where(and(eq(payments.reportRequestId, requestId), eq(payments.id, paymentId))).limit(1),
+    db.select({ id: entitlements.id }).from(entitlements)
+      .where(and(eq(entitlements.reportRequestId, requestId), eq(entitlements.paymentId, paymentId))).limit(1),
+    db.select({ id: reports.id }).from(reports).where(eq(reports.reportRequestId, requestId)).limit(1),
+    db.select({ id: reportAccessTokens.id }).from(reportAccessTokens)
+      .where(eq(reportAccessTokens.reportRequestId, requestId)).limit(1),
+  ]);
+  const residuals = {
+    reportRequests: requestResidual.length,
+    payments: paymentResidual.length,
+    entitlements: entitlementResidual.length,
+    reports: reportResidual.length,
+    accessTokens: accessTokenResidual.length,
+  };
+  return { ...residuals, total: Object.values(residuals).reduce((sum, count) => sum + count, 0) };
 }
 
 const productionDependencies: HandlerDependencies = {
@@ -153,18 +179,24 @@ export function createPremiumV231VerificationHandler(dependencies: HandlerDepend
     const config = verificationConfig();
     if (!config) return response.status(404).json({ error: "not_found" });
     if (request.method !== "POST") return response.status(404).json({ error: "not_found" });
-    if (!authorized(request, config.secret)) return response.status(404).json({ error: "not_found" });
+    const cleanupRequested = request.body?.action === "cleanup";
+    const expectedSecret = cleanupRequested ? process.env[CLEANUP_SECRET] : config.secret;
+    const authHeader = cleanupRequested ? CLEANUP_HEADER : VERIFY_HEADER;
+    if (!expectedSecret || expectedSecret.length < 32 || !authorized(request, expectedSecret, authHeader)) {
+      return response.status(404).json({ error: "not_found" });
+    }
     const parsed = requestSchema.safeParse(request.body);
     if (!parsed.success) return response.status(400).json({ error: "invalid_verification_request" });
 
     if (parsed.data.action === "cleanup") {
-      const requestId = deterministicUuid(config.secret, "request");
-      const expected = cleanupToken(config.secret, requestId);
-      if (!timingSafeEqual(Buffer.from(parsed.data.cleanupToken, "hex"), Buffer.from(expected, "hex"))) {
-        return response.status(404).json({ error: "not_found" });
-      }
-      const residualRows = await dependencies.cleanupSynthetic();
-      return response.status(residualRows === 0 ? 200 : 500).json({ status: residualRows === 0 ? "cleaned" : "cleanup_failed", residualRows });
+      const cleanupResult = await dependencies.cleanupSynthetic();
+      const residuals = typeof cleanupResult === "number"
+        ? { reportRequests: cleanupResult, payments: 0, entitlements: 0, reports: 0, accessTokens: 0, total: cleanupResult }
+        : cleanupResult;
+      return response.status(residuals.total === 0 ? 200 : 500).json({
+        status: residuals.total === 0 ? "cleaned" : "cleanup_failed",
+        residuals,
+      });
     }
 
     let synthetic: SyntheticIdentity | undefined;
