@@ -1,7 +1,7 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json";
+import officialPack from "../../src/data/questionBank/nextory11-question-pack-v1.json" with { type: "json" };
 import { premiumV231ReportEnvelopeSchema } from "../../server/ai/premium-v2-envelope.js";
 import { getDatabase } from "../../server/db/client.js";
 import { entitlements, payments, reportAccessTokens, reportRequests, reports } from "../../server/db/schema.js";
