@@ -1,7 +1,8 @@
 import { ServerConfigurationError } from "../../../server/config/env.js";
 import type { VercelRequestLike, VercelResponseLike } from "../../../server/http/vercel.js";
 import { logger } from "../../../server/logging/logger.js";
-import { generatePremiumReport, PremiumReportGenerationError } from "../../../server/reports/generate-premium-report.js";
+import { PremiumReportGenerationError } from "../../../server/reports/generate-premium-report.js";
+import { generatePremiumReportVersioned } from "../../../server/reports/generate-premium-report-versioned.js";
 import { authorizeReportAccess } from "../../../server/security/authorize-report-access.js";
 import { requestIdSchema } from "../../../server/validation/identifiers.js";
 
@@ -13,7 +14,7 @@ export default async function handler(request: VercelRequestLike, response: Verc
   if (!parsed.success) return response.status(400).json({ error: "invalid_request_id" });
   try {
     if (!await authorizeReportAccess(request, parsed.data)) return response.status(404).json({ error: "report_unavailable" });
-    const result = await generatePremiumReport(parsed.data);
+    const result = await generatePremiumReportVersioned(parsed.data);
     return response.status(result.created ? 201 : 200).json({ status: "completed" });
   } catch (error) {
     if (error instanceof PremiumReportGenerationError) return response.status(error.statusCode).json({ error: error.code });

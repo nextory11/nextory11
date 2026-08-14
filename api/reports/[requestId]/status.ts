@@ -7,27 +7,22 @@ import type {
   VercelRequestLike,
   VercelResponseLike,
 } from "../../../server/http/vercel.js";
-import { resolveResultTypeDisplay } from "../../../src/data/resultTypes.js";
 import { logger } from "../../../server/logging/logger.js";
 import { requestIdSchema } from "../../../server/validation/identifiers.js";
+import { mapStoredReportForCustomer } from "../../../server/reports/premium-report-presentation.js";
 
 export function toSafeReportStatus(
   status: Awaited<ReturnType<ReportRequestsRepository["findStatusById"]>> & {},
   entitlement: Awaited<ReturnType<EntitlementsRepository["findStatusByRequestId"]>>,
   storedReport?: Awaited<ReturnType<ReportsRepository["findLatestByRequestId"]>>,
 ) {
-  const rawReport = storedReport?.reportJson as Record<string, unknown> | undefined;
-  const storedResult = rawReport?.result as Record<string, unknown> | undefined;
-  const resultType = typeof storedResult?.type === "string" ? storedResult.type : "";
-  const resultDisplay = resolveResultTypeDisplay(resultType, {
-    nameJa: storedResult?.nameJa,
-    nameEn: storedResult?.nameEn,
-  });
-  const canonicalReport = rawReport && storedResult ? {
-    ...rawReport,
-    result: { ...storedResult, nameJa: resultDisplay.ja, nameEn: resultDisplay.en },
-  } : rawReport;
-  const publicReport = canonicalReport ? Object.fromEntries(Object.entries(canonicalReport).filter(([key]) => key !== "metadata")) : null;
+  const publicReport = storedReport
+    ? mapStoredReportForCustomer(storedReport.reportJson, {
+      resultType: status.resultType,
+      resultNameJa: status.resultNameJa,
+      resultNameEn: status.resultNameEn,
+    })
+    : null;
   return {
     requestId: status.id,
     createdAt: status.createdAt.toISOString(),

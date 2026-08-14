@@ -65,6 +65,12 @@ const reportAccessEnvSchema = serverEnvSchema.extend({
   REPORT_LINK_TTL_SECONDS: z.coerce.number().int().positive().default(2_592_000),
 });
 
+const premiumV231EnvSchema = serverEnvSchema.extend({
+  OPENAI_API_KEY: z.string().startsWith("sk-"),
+  AI_REPORT_PROVIDER: z.literal("openai"),
+  AI_REPORT_MODEL: z.string().min(1),
+});
+
 export type ServerEnv = z.infer<typeof serverEnvSchema>;
 
 export class ServerConfigurationError extends Error {
@@ -118,5 +124,12 @@ export function parseAiReportEnv(source: NodeJS.ProcessEnv = process.env): AiRep
 export function parseReportAccessEnv(source: NodeJS.ProcessEnv = process.env) {
   const parsed = reportAccessEnvSchema.safeParse(source);
   if (!parsed.success) throw new ServerConfigurationError(parsed.error.issues.map((issue) => issue.path.join(".") || "report access environment"));
+  return parsed.data;
+}
+
+export type PremiumV231Env = z.infer<typeof premiumV231EnvSchema>;
+export function parsePremiumV231Env(source: NodeJS.ProcessEnv = process.env): PremiumV231Env {
+  const parsed = premiumV231EnvSchema.safeParse(source);
+  if (!parsed.success) throw new ServerConfigurationError(parsed.error.issues.map((issue) => issue.path.join(".") || "Premium V2.3.1 environment"));
   return parsed.data;
 }

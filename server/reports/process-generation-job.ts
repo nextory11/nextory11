@@ -1,12 +1,10 @@
 import { JobsRepository } from "../db/repositories/jobs.js";
-import {
-  generatePremiumReport,
-  PremiumReportGenerationError,
-} from "./generate-premium-report.js";
+import { PremiumReportGenerationError } from "./generate-premium-report.js";
+import { generatePremiumReportVersioned } from "./generate-premium-report-versioned.js";
 
 type GenerationJobDependencies = {
   jobs?: Pick<JobsRepository, "markRunning" | "markCompleted" | "markFailed">;
-  generate?: typeof generatePremiumReport;
+  generate?: typeof generatePremiumReportVersioned;
 };
 
 export async function processDurableGenerationJob(
@@ -14,7 +12,7 @@ export async function processDurableGenerationJob(
   dependencies: GenerationJobDependencies = {},
 ) {
   const jobs = dependencies.jobs ?? new JobsRepository();
-  const generate = dependencies.generate ?? generatePremiumReport;
+  const generate = dependencies.generate ?? generatePremiumReportVersioned;
   await jobs.markRunning(reportRequestId);
   try {
     const result = await generate(reportRequestId);
