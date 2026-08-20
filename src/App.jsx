@@ -19,13 +19,26 @@ import "./styles/premium-mobile-shared.css";
 import "./styles/premium-report-universal.css";
 import "./styles/premium-cta-frame-system.css";
 import "./styles/dev-result-scene-viewer.css";
+import "./styles/challenge-result-gold-review.css";
 import "./styles/hero/hero-design-master.css";
+import "./styles/explorer-star-reading-review.css";
+import "./styles/global-star-reading-template.css";
+import "./styles/guardian-mobile-refinement.css";
+import "./styles/luminary-mobile-refinement.css";
+import "./styles/creator-mobile-refinement.css";
+import "./styles/pioneer-mobile-refinement.css";
+import "./styles/evolver-mobile-refinement.css";
+import "./styles/empath-mobile-refinement.css";
+import "./styles/intuitive-mobile-refinement.css";
+import "./styles/desktop-ai-juza-scroll-standard.css";
+import "./styles/guardian-desktop-visual-refinement.css";
 
 import { questions } from "./data/questions";
 import { resultTypes } from "./data/resultTypes";
 import { resultScenes } from "./data/resultScenes";
 
 import Hero from "./components/Hero";
+import OfficialPreview from "./official-site/OfficialPreview.jsx";
 import ProgressBar from "./components/ProgressBar.jsx";
 import QuestionCard from "./components/QuestionCard.jsx";
 import ResultCard from "./components/ResultCard.jsx";
@@ -57,6 +70,30 @@ import { parseDevResultPreview } from "./lib/devResultPreview.js";
 
 const TrustExperience = lazy(() => import("./components/TrustExperience.jsx"));
 const DevResultSceneViewer = lazy(() => import("./components/DevResultSceneViewer.jsx"));
+const ChallengeResultGoldReview = lazy(() => import("./components/ChallengeResultGoldReview.jsx"));
+// Vite replaces import.meta.env.DEV at build time. Keeping the import inside
+// this branch removes the review component and fixtures from customer builds.
+const PremiumV2Review = import.meta.env.DEV
+  ? lazy(() => import("./components/PremiumV2Review.jsx"))
+  : null;
+
+const RESULT_REVIEW_ROUTES = Object.freeze({
+  explorer: "explorer",
+  harmony: "harmonizer",
+  visionary: "visionary",
+  guardian: "guardian",
+  luminary: "light-bringer",
+  creator: "creator",
+  pioneer: "pioneer",
+  evolver: "evolver",
+  empath: "empath",
+  intuitive: "intuitive",
+});
+
+const RESULT_REVIEW_LINKS = Object.freeze([
+  "challenge", "explorer", "harmony", "visionary", "guardian", "luminary",
+  "creator", "pioneer", "evolver", "empath", "intuitive",
+]);
 
 const configuredQuestionBankFlag = import.meta.env.VITE_ENABLE_QUESTION_BANK_V1;
 const questionBankEnabled = configuredQuestionBankFlag === undefined || configuredQuestionBankFlag === ""
@@ -88,11 +125,36 @@ function getTrustRoute() {
 }
 
 function getDevPreviewRequest() {
+  if (import.meta.env.DEV) {
+    const routeType = window.location.pathname.match(/^\/result-review\/([^/]+)\/?$/)?.[1];
+    if (routeType && RESULT_REVIEW_ROUTES[routeType]) {
+      return { previewType: RESULT_REVIEW_ROUTES[routeType], section: "full", controls: "hidden" };
+    }
+  }
   // Preview query parameters are deliberately ignored by every production build.
   return parseDevResultPreview({ isDev: import.meta.env.DEV, search: window.location.search });
 }
 
-function App() {
+function ResultReviewIndex() {
+  return (
+    <main style={{ minHeight: "100vh", padding: "48px", color: "#f4dfad", background: "#05070c", fontFamily: "system-ui, sans-serif" }}>
+      <h1>NEXTORY11 Desktop Result Review</h1>
+      <p>Local development review routes</p>
+      <nav style={{ display: "grid", gap: "12px", maxWidth: "520px", marginTop: "32px" }}>
+        {RESULT_REVIEW_LINKS.map((type, index) => (
+          <a key={type} href={`/result-review/${type}`} style={{ padding: "14px 18px", color: "#f4cf76", border: "1px solid #8b6728", borderRadius: "8px", textDecoration: "none" }}>
+            {String(index + 1).padStart(2, "0")} · {type[0].toUpperCase() + type.slice(1)}
+          </a>
+        ))}
+      </nav>
+    </main>
+  );
+}
+
+function DiagnosisApp() {
+  const challengeGoldReview = import.meta.env.DEV && window.location.pathname === "/result-review/challenge";
+  const resultReviewIndex = import.meta.env.DEV && /^\/result-review\/?$/.test(window.location.pathname);
+  const premiumV2Review = import.meta.env.DEV && window.location.pathname === "/premium-v2-review";
   const devPreview = getDevPreviewRequest();
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
@@ -150,6 +212,22 @@ function App() {
 
   const finished = step >= activeQuestions.length;
   const paymentRoute = getPaymentRoute();
+
+  if (challengeGoldReview) {
+    return (
+      <Suspense fallback={<main className="challengeGoldReview__loading" aria-busy="true" />}>
+        <ChallengeResultGoldReview />
+      </Suspense>
+    );
+  }
+
+  if (resultReviewIndex) {
+    return <ResultReviewIndex />;
+  }
+
+  if (premiumV2Review && PremiumV2Review) {
+    return <Suspense fallback={<main aria-busy="true" />}><PremiumV2Review /></Suspense>;
+  }
 
   if (devPreview) {
     return (
@@ -407,6 +485,14 @@ function App() {
       </section>
     </main>
   );
+}
+
+function App() {
+  if (/^\/official-preview(?:\/|$)/.test(window.location.pathname)) {
+    return <OfficialPreview />;
+  }
+
+  return <DiagnosisApp />;
 }
 
 export default App;

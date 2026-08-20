@@ -1,0 +1,463 @@
+/* HIRO / JUZA approved global STAR READING panel chrome.
+   Structure and interaction stay shared; scene color remains type-specific. */
+
+/* Explorer and Harmony use the same four-card render path at every viewport. */
+#root .resultHero[data-star-type="explorer"] .resultGrid,
+#root .resultHero[data-star-type="thinker"] .resultGrid {
+  display: none !important;
+}
+
+#root .resultHero[data-star-type="explorer"] .explorerDesktopReadings,
+#root .resultHero[data-star-type="thinker"] .harmonyDesktopReadings {
+  display: grid !important;
+}
+
+#root .starReadingPanel.is-active :is(.explorerReadingCard__summary, .harmonyReadingCard__summary) {
+  display: none !important;
+}
+
+#root .starReadingPanel :is(.explorerReadingCard__fullText, .harmonyReadingCard__fullText)[hidden] {
+  display: none !important;
+}
+
+#root .starReadingPanel.is-active :is(.explorerReadingCard__fullText, .harmonyReadingCard__fullText) {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+#root .starReadingPanel > button[aria-expanded="false"]::after {
+  content: " ＋";
+}
+
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings,
+  #root .resultHero[data-star-type="thinker"] .harmonyDesktopReadings {
+    position: relative;
+    left: 50%;
+    width: min(1228px, calc(100vw - 72px));
+    margin-inline: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+    transform: translateX(-50%);
+  }
+
+  #root .starReadingPanel {
+    box-sizing: border-box;
+    position: relative;
+    height: 320px;
+    min-height: 320px;
+    padding: 15px 14px 42px !important;
+    overflow: hidden;
+    border: 1px solid rgba(231, 190, 112, .66) !important;
+    border-radius: 9px !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 238, 192, .07),
+      inset 0 1px 0 rgba(255, 246, 218, .16),
+      0 0 8px rgba(231, 190, 112, .18),
+      0 18px 44px rgba(0, 0, 0, .34) !important;
+  }
+
+  #root .starReadingPanel:is(.is-active, :has(details[open])) {
+    height: auto;
+    overflow: visible;
+  }
+
+  #root .starReadingPanel :is(.challengeReadingCard__heading, .explorerReadingCard__heading, .harmonyReadingCard__heading) {
+    min-height: 62px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(231, 190, 112, .28);
+  }
+
+  #root .starReadingPanel :is(.challengeReadingCard__icon, .adviceBox__icon) {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #root .starReadingPanel h2 {
+    margin: 0;
+    font-size: clamp(.95rem, 1.15vw, 1.18rem);
+    line-height: 1.38;
+  }
+
+  #root .starReadingPanel :is(.challengeReadingCard__copy p, .explorerReadingCard__summary, .explorerReadingCard__fullText, .harmonyReadingCard__summary, .harmonyReadingCard__fullText) {
+    font-size: .64rem;
+    line-height: 1.58;
+  }
+
+  #root .starReadingPanel > button,
+  #root .starReadingPanel summary {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 92px;
+    min-height: 0;
+    margin: 0;
+    padding: 4px 12px;
+    border: 1px solid rgba(231, 190, 112, .62);
+    border-radius: 999px;
+    color: #e8c77d;
+    background: rgba(8, 12, 25, .48);
+    box-shadow: inset 0 0 0 2px rgba(231, 190, 112, .06);
+    font: 600 .5rem/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .12em;
+    text-align: center;
+  }
+
+  #root .starReadingPanel > button:hover,
+  #root .starReadingPanel > button:focus-visible,
+  #root .starReadingPanel summary:hover,
+  #root .starReadingPanel summary:focus-visible {
+    border-color: #f0cf84;
+    box-shadow:
+      inset 0 0 0 2px rgba(231, 190, 112, .13),
+      0 0 12px rgba(231, 190, 112, .22);
+    outline: none;
+  }
+}
+
+/* Challenge Mobile is the shared phone/tablet-portrait structure. */
+@media (max-width: 799px), (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings,
+  #root .resultHero[data-star-type="thinker"] .harmonyDesktopReadings {
+    position: relative;
+    left: auto;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    transform: none;
+  }
+
+  #root .starReadingPanel {
+    box-sizing: border-box;
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    min-height: 220px;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 20px 18px 62px !important;
+    overflow: hidden !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-radius: 13px !important;
+  }
+
+  #root .starReadingPanel.is-active {
+    overflow: visible !important;
+  }
+
+  #root .starReadingPanel :is(.challengeReadingCard__heading, .explorerReadingCard__heading, .harmonyReadingCard__heading) {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    min-height: 70px;
+    margin: 0 0 12px;
+    padding: 0 0 12px;
+  }
+
+  #root .starReadingPanel :is(.challengeReadingCard__icon, .adviceBox__icon) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 58px !important;
+    height: 58px !important;
+    margin: 0 !important;
+  }
+
+  #root .starReadingPanel h2 {
+    margin: 0 !important;
+    font-size: clamp(1.03rem, 4.7vw, 1.35rem) !important;
+    line-height: 1.48 !important;
+    text-align: left !important;
+  }
+
+  #root .starReadingPanel :is(.explorerReadingCard__summary, .explorerReadingCard__fullText, .harmonyReadingCard__summary, .harmonyReadingCard__fullText) {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(14px, 3.7vw, 16px) !important;
+    line-height: 1.78 !important;
+    text-align: left !important;
+  }
+
+  #root .starReadingPanel.is-active :is(.explorerReadingCard__fullText, .harmonyReadingCard__fullText) {
+    margin-top: 0 !important;
+    border-top: 0 !important;
+  }
+
+  #root .starReadingPanel > button {
+    position: absolute !important;
+    left: 18px !important;
+    bottom: 18px !important;
+    justify-self: auto !important;
+    box-sizing: border-box;
+    width: auto !important;
+    min-width: 112px !important;
+    min-height: 28px !important;
+    margin: 0 !important;
+    padding: 7px 14px !important;
+    border-radius: 999px !important;
+    font: 600 .62rem/1 Georgia, "Yu Mincho", serif !important;
+    letter-spacing: .12em !important;
+  }
+}
+
+/* Type identity is limited to glass, glow color, and icon. */
+#root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+  border-color: rgba(82, 155, 242, .76) !important;
+  background:
+    linear-gradient(118deg, rgba(220, 242, 255, .16), rgba(220, 242, 255, .04) 22%, transparent 46%),
+    radial-gradient(circle at 82% 10%, rgba(48, 136, 241, .18), transparent 38%),
+    linear-gradient(145deg, rgba(5, 42, 91, .54), rgba(2, 18, 52, .7)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(206, 237, 255, .08),
+    inset 0 1px 0 rgba(225, 245, 255, .17),
+    0 0 9px rgba(53, 140, 244, .3),
+    0 18px 44px rgba(0, 5, 24, .36) !important;
+  backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+  -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+}
+
+#root .resultHero[data-star-type="thinker"] .harmonyReadingCard {
+  border-color: rgba(132, 221, 202, .58) !important;
+  background:
+    linear-gradient(118deg, rgba(212, 255, 245, .16), rgba(212, 255, 245, .04) 22%, transparent 46%),
+    radial-gradient(circle at 82% 10%, rgba(139, 92, 196, .16), transparent 38%),
+    linear-gradient(145deg, rgba(4, 68, 67, .48), rgba(7, 28, 47, .65) 58%, rgba(33, 20, 61, .62)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(202, 255, 244, .07),
+    inset 0 1px 0 rgba(220, 255, 248, .16),
+    0 0 9px rgba(82, 214, 190, .26),
+    0 18px 44px rgba(0, 13, 20, .34) !important;
+  backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+  -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+}
+
+/* One global component. Challenge owns every structural value below. */
+#root .starReadingSection {
+  position: relative;
+  left: 50%;
+  display: grid;
+  box-sizing: border-box;
+  width: min(1228px, calc(100vw - 72px));
+  margin: 0 auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+  transform: translateX(-50%);
+}
+
+#root .starReadingSection .starReadingPanel {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  align-content: start;
+  padding: 15px 14px 42px !important;
+  overflow: hidden;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 9px !important;
+  color: rgba(251, 247, 235, .96);
+}
+
+#root .starReadingSection .starReadingPanel.is-active {
+  height: auto;
+  min-height: 320px;
+  overflow: visible;
+}
+
+#root .starReadingPanel__heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  min-height: 62px;
+  margin: 0 0 10px;
+  padding: 0 0 8px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+#root .starReadingPanel__heading > :is(.starReadingPanel__icon, .adviceBox__icon) {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 48px !important;
+  height: 48px !important;
+  margin: 0 !important;
+  border-radius: 50%;
+}
+
+#root .starReadingPanel__heading > .starReadingPanel__icon {
+  border: 1px solid currentColor;
+  font-size: 1.35rem;
+}
+
+#root .starReadingPanel__heading h2 {
+  min-height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font: 500 clamp(.95rem, 1.15vw, 1.18rem)/1.38 Georgia, "Yu Mincho", serif !important;
+  text-align: left !important;
+}
+
+#root .starReadingPanel__body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font-size: .78rem;
+  line-height: 1.72;
+  text-align: left;
+  white-space: pre-line;
+}
+
+#root .starReadingPanel__body p {
+  margin: 0 0 .85em;
+}
+
+#root .starReadingPanel:not(.is-active) .starReadingPanel__body p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+}
+
+#root .starReadingPanel.is-active .starReadingPanel__body p {
+  display: block;
+  overflow: visible;
+}
+
+#root .starReadingPanel.is-active .starReadingPanel__body {
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding-top: 10px;
+  overflow: visible;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+#root .starReadingSection .starReadingPanel > button {
+  position: absolute !important;
+  left: 14px !important;
+  bottom: 12px !important;
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 92px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 4px 12px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 999px !important;
+  background: rgba(8, 12, 25, .48) !important;
+  font: 600 .5rem/1 Georgia, "Yu Mincho", serif !important;
+  letter-spacing: .12em !important;
+  text-align: center;
+}
+
+/* Type tokens: color, glow and icon color only. */
+#root .starReadingPanel--challenge {
+  border-color: rgba(231, 190, 112, .66) !important;
+  background: linear-gradient(145deg, rgba(69, 31, 26, .7), rgba(10, 9, 18, .84)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 238, 192, .07), inset 0 1px 0 rgba(255, 246, 218, .16), 0 0 8px rgba(231, 190, 112, .18), 0 18px 44px rgba(0, 0, 0, .34) !important;
+  backdrop-filter: blur(16px) saturate(122%);
+}
+
+#root .starReadingPanel--challenge :is(.starReadingPanel__heading, .starReadingPanel__body) { border-color: rgba(231, 190, 112, .28); }
+#root .starReadingPanel--challenge :is(h2, .starReadingPanel__icon, button) { color: #e8c77d; }
+
+#root .starReadingPanel--explorer {
+  border-color: rgba(82, 155, 242, .76) !important;
+  background: linear-gradient(118deg, rgba(220,242,255,.16), rgba(220,242,255,.04) 22%, transparent 46%), radial-gradient(circle at 82% 10%, rgba(48,136,241,.18), transparent 38%), linear-gradient(145deg, rgba(5,42,91,.54), rgba(2,18,52,.7)) !important;
+  box-shadow: inset 0 0 0 1px rgba(206,237,255,.08), inset 0 1px 0 rgba(225,245,255,.17), 0 0 9px rgba(53,140,244,.3), 0 18px 44px rgba(0,5,24,.36) !important;
+  backdrop-filter: blur(16px) saturate(122%);
+}
+
+#root .starReadingPanel--explorer :is(.starReadingPanel__heading, .starReadingPanel__body) { border-color: rgba(126,183,239,.24); }
+#root .starReadingPanel--explorer :is(h2, .adviceBox__icon, button) { color: #8ed1ff; }
+
+#root .starReadingPanel--harmony {
+  border-color: rgba(132,221,202,.58) !important;
+  background: linear-gradient(118deg, rgba(212,255,245,.16), rgba(212,255,245,.04) 22%, transparent 46%), radial-gradient(circle at 82% 10%, rgba(139,92,196,.16), transparent 38%), linear-gradient(145deg, rgba(4,68,67,.48), rgba(7,28,47,.65) 58%, rgba(33,20,61,.62)) !important;
+  box-shadow: inset 0 0 0 1px rgba(202,255,244,.07), inset 0 1px 0 rgba(220,255,248,.16), 0 0 9px rgba(82,214,190,.26), 0 18px 44px rgba(0,13,20,.34) !important;
+  backdrop-filter: blur(16px) saturate(122%);
+}
+
+#root .starReadingPanel--harmony :is(.starReadingPanel__heading, .starReadingPanel__body) { border-color: rgba(161,219,205,.24); }
+#root .starReadingPanel--harmony :is(h2, .adviceBox__icon, button) { color: #90e5d7; }
+
+#root .starReadingPanel--visionary {
+  border-color: rgba(119, 153, 255, .72) !important;
+  background: linear-gradient(118deg, rgba(221,232,255,.15), rgba(221,232,255,.04) 22%, transparent 46%), radial-gradient(circle at 82% 10%, rgba(139,88,226,.19), transparent 38%), linear-gradient(145deg, rgba(12,38,99,.58), rgba(4,16,54,.74) 58%, rgba(36,15,82,.67)) !important;
+  box-shadow: inset 0 0 0 1px rgba(213,226,255,.08), inset 0 1px 0 rgba(231,238,255,.17), 0 0 9px rgba(91,129,255,.3), 0 18px 44px rgba(0,4,28,.36) !important;
+  backdrop-filter: blur(16px) saturate(122%);
+}
+
+#root .starReadingPanel--visionary :is(.starReadingPanel__heading, .starReadingPanel__body) { border-color: rgba(150,178,255,.25); }
+#root .starReadingPanel--visionary :is(h2, .adviceBox__icon, button) { color: #a9c8ff; }
+
+@media (max-width: 799px), (max-width: 1099px) and (orientation: portrait) {
+  #root .starReadingSection {
+    left: auto;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    transform: none;
+  }
+
+  #root .starReadingSection .starReadingPanel {
+    min-height: 220px;
+    height: auto;
+    padding: 20px 18px 62px !important;
+    border-radius: 13px !important;
+  }
+
+  #root .starReadingPanel__heading {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 70px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  #root .starReadingPanel__heading > :is(.starReadingPanel__icon, .adviceBox__icon) {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  #root .starReadingPanel__heading h2 {
+    font-size: clamp(1.03rem, 4.7vw, 1.35rem) !important;
+    line-height: 1.48 !important;
+  }
+
+  #root .starReadingPanel__body {
+    font-size: clamp(14px, 3.7vw, 16px);
+    line-height: 1.78;
+  }
+
+  #root .starReadingSection .starReadingPanel > button {
+    left: 18px !important;
+    bottom: 18px !important;
+    min-width: 112px !important;
+    padding: 7px 14px !important;
+    font-size: .62rem !important;
+  }
+}

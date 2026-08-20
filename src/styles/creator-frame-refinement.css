@@ -291,9 +291,18 @@
   content: "" !important;
   position: absolute;
   z-index: 1;
-  inset: 18% 3.8% 16% 6%;
-  background: linear-gradient(105deg, rgba(8, 3, 25, .72), rgba(8, 3, 25, .62) 62%, rgba(8, 3, 25, .68));
-  box-shadow: inset 0 1px rgba(255, 238, 194, .035);
+  inset: 20% 5.5% 15% 28%;
+  border: 1px solid rgba(211, 225, 137, .2);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(174, 224, 129, .15), transparent 58%),
+    linear-gradient(105deg, rgba(13, 43, 34, .56), rgba(8, 31, 27, .46) 62%, rgba(7, 27, 24, .52));
+  box-shadow:
+    inset 0 1px rgba(245, 239, 186, .12),
+    inset 0 0 18px rgba(82, 167, 111, .08),
+    0 8px 22px rgba(2, 10, 8, .12);
+  backdrop-filter: blur(6px) saturate(112%);
+  -webkit-backdrop-filter: blur(6px) saturate(112%);
   pointer-events: none;
 }
 
@@ -354,8 +363,7 @@
   }
 
   .resultHero[data-star-type="creator"] .adviceBox::before {
-    inset: 19% 3.8% 18% 6.5%;
-    border-radius: 8px;
+    inset: 20% 5.5% 16% 28%;
   }
 }
 
@@ -739,8 +747,7 @@
   }
 
   .resultHero[data-star-type="creator"] .adviceBox::before {
-    inset: 18% 3.8% 16% 6%;
-    border-radius: 8px;
+    inset: 18% 5.5% 16% 28%;
   }
 
   .resultHero[data-star-type="creator"] .adviceBox__icon {

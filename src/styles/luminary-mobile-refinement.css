@@ -1,0 +1,218 @@
+/* Luminary phone / portrait-tablet only. */
+.luminaryJuzaMobileGlass,
+.luminaryJuzaPortraitV2,
+.luminaryJuzaPortraitFrameOfficial,
+.luminaryJuzaMobilePortraitFrame,
+.luminaryJuzaMobileOuterFrame,
+.luminaryJuzaMobileHeading,
+.luminaryJuzaMobileReadAll,
+.starReadingSection--luminary { display: none; }
+
+@media (max-width: 799px), (min-width: 800px) and (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="expression"] .resultCard { width: min(100%, 700px); overflow: visible; }
+
+  #root .resultHero[data-star-type="expression"] .resultLead {
+    width: min(calc(100% - 28px), 620px);
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="expression"] .resultLead::before {
+    box-sizing: border-box;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    padding: 7px 25px 8px;
+    border: 0;
+    border-radius: 0;
+    background:
+      linear-gradient(to bottom, rgba(230, 244, 255, .2) 0 1px, transparent 1px calc(100% - 1px), rgba(244, 218, 157, .15) calc(100% - 1px)),
+      linear-gradient(90deg, transparent 0%, rgba(10, 32, 76, .45) 12%, rgba(5, 23, 63, .76) 34%, rgba(3, 18, 55, .82) 50%, rgba(5, 23, 63, .76) 66%, rgba(10, 32, 76, .45) 88%, transparent 100%);
+    box-shadow:
+      inset 0 0 16px rgba(152, 199, 255, .07),
+      0 6px 15px rgba(2, 9, 35, .14);
+    backdrop-filter: blur(6px) saturate(112%);
+    -webkit-backdrop-filter: blur(6px) saturate(112%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    color: #f8f4e9;
+    line-height: 1.7;
+    text-shadow: 0 1px 2px rgba(2, 8, 28, .82), 0 0 10px rgba(214, 234, 255, .24);
+  }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage {
+    position: relative;
+    left: auto;
+    right: auto;
+    box-sizing: border-box;
+    width: min(700px, calc(100vw - 12px), calc(100% - 4px));
+    min-height: clamp(500px, 132vw, 590px);
+    margin: 24px auto;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 0 !important;
+    border-radius: 20px;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage > :is(.panelFrameOrnaments, .creatorFrameAsset, .typeFrameAsset--juza, .luminaryJuzaPortrait, .luminaryJuzaForeground, .luminaryGlass--juza, .juzaMessage__particles) { display: none !important; }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileGlass {
+    position: absolute;
+    z-index: 1;
+    inset: 10.2% 11.2% 8.8%;
+    display: block;
+    border: 1px solid rgba(235, 243, 255, .3);
+    border-radius: clamp(34px, 10vw, 52px) clamp(34px, 10vw, 52px) clamp(28px, 8vw, 44px) clamp(28px, 8vw, 44px);
+    clip-path: inset(0 round clamp(34px, 10vw, 52px) clamp(34px, 10vw, 52px) clamp(28px, 8vw, 44px) clamp(28px, 8vw, 44px));
+    background: linear-gradient(125deg, rgba(255,255,255,.16), transparent 26%), radial-gradient(circle at 20% 22%, rgba(121,179,255,.18), transparent 39%), linear-gradient(150deg, rgba(16,53,112,.66), rgba(4,17,54,.79) 62%, rgba(40,26,83,.7));
+    box-shadow: inset 0 0 34px rgba(196, 224, 255, .12);
+    backdrop-filter: blur(13px) saturate(120%);
+    -webkit-backdrop-filter: blur(13px) saturate(120%);
+  }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaPortraitV2 {
+    position: absolute;
+    z-index: 3;
+    top: clamp(114px, 29vw, 140px);
+    left: 7.2%;
+    display: block;
+    width: 28.4%;
+    height: clamp(257px, 65.5vw, 318px);
+    object-fit: cover;
+    object-position: 50% 15%;
+    clip-path: inset(1% 4% 2% round 45% 45% 7% 7%);
+  }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobilePortraitFrame {
+    position: absolute;
+    z-index: 4;
+    top: clamp(88px, 22.5vw, 110px);
+    left: 4.4%;
+    display: none;
+    width: 36%;
+    height: clamp(318px, 81.5vw, 394px);
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaPortraitFrameOfficial {
+    position: absolute !important;
+    z-index: 4 !important;
+    top: clamp(88px, 22.5vw, 110px) !important;
+    left: 3.8% !important;
+    display: block !important;
+    width: 35.8% !important;
+    height: clamp(318px, 81.5vw, 394px) !important;
+    object-fit: contain;
+    object-position: 50% 50%;
+    translate: none;
+    pointer-events: none;
+    filter: drop-shadow(0 0 13px rgba(145, 205, 255, .2));
+  }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileOuterFrame {
+    position: absolute;
+    z-index: 7;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileHeading {
+    position: absolute;
+    z-index: 5;
+    top: clamp(105px, 26.5vw, 130px);
+    right: 5.5%;
+    left: 38.5%;
+    display: grid;
+    gap: 5px;
+    box-sizing: border-box;
+    padding: 5px 7px 6px;
+    color: #f2d58e;
+    text-align: left;
+    isolation: isolate;
+  }
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileHeading::before {
+    content: none;
+    display: none;
+  }
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileHeading span { position:relative; z-index:1; color:#eaf4ff; font:600 clamp(7px,1.9vw,9px)/1.2 Georgia,serif; letter-spacing:.045em; white-space:nowrap; }
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileHeading strong { position:relative; z-index:1; font:500 clamp(12px,3.3vw,16px)/1.35 Georgia,"Yu Mincho",serif; letter-spacing:.01em; white-space:nowrap; }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p {
+    position: absolute;
+    z-index: 5;
+    top: clamp(170px,43.5vw,213px);
+    right: 6%;
+    bottom: clamp(108px,25vw,122px);
+    left: 39.5%;
+    box-sizing: border-box;
+    height: clamp(220px, 58vw, 255px);
+    max-height: clamp(220px, 58vw, 255px);
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 12px 20px 14px 14px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    border: 1px solid rgba(224,237,255,.32);
+    border-radius: 13px;
+    color: rgba(255,255,252,.98);
+    background: rgba(3,17,52,.4);
+    font-size: clamp(12px,3.35vw,16px) !important;
+    line-height: 1.82 !important;
+    text-align: left !important;
+    white-space: pre-line;
+    scrollbar-color: #f0cd79 rgba(76,121,193,.28);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    touch-action: pan-y;
+  }
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar { width:4px; }
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar-track { background:rgba(93,137,202,.24); }
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar-thumb { border-radius:999px; background:linear-gradient(#fff,#89c9ff,#e7bd61); }
+
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaMobileReadAll {
+    position:absolute;
+    z-index:6;
+    right:auto;
+    bottom:clamp(50px,12.5vw,60px);
+    left:50%;
+    display:block;
+    box-sizing:border-box;
+    width:44%;
+    max-width:180px;
+    min-height:44px;
+    padding:7px 14px;
+    border:1px solid rgba(239,205,126,.88);
+    border-radius:999px;
+    color:#f4d991;
+    background:rgba(4,20,59,.72);
+    box-shadow:0 0 12px rgba(145,205,255,.16);
+    font:600 clamp(10px,2.8vw,13px)/1 Georgia,"Yu Mincho",serif;
+    letter-spacing:.1em;
+    transform:translateX(-50%);
+  }
+
+  #root .resultHero[data-star-type="expression"] .resultGrid { display:none !important; }
+  #root .resultHero[data-star-type="expression"] .starReadingSection--luminary { display:grid; order:6; width:min(100%,700px); margin:30px auto 24px; align-items:start; }
+
+  #root .starReadingPanel--luminary {
+    align-self:start;
+    height:auto;
+    border-color:rgba(181,214,255,.78) !important;
+    background:linear-gradient(118deg,rgba(255,255,255,.17),rgba(231,241,255,.04) 24%,transparent 47%),radial-gradient(circle at 84% 8%,rgba(118,181,255,.2),transparent 38%),linear-gradient(145deg,rgba(18,58,121,.58),rgba(3,18,55,.74) 58%,rgba(42,27,87,.64)) !important;
+    box-shadow:inset 0 0 0 1px rgba(242,248,255,.1),inset 0 1px 0 rgba(255,255,255,.2),0 0 10px rgba(110,179,255,.3),0 18px 44px rgba(0,5,28,.35) !important;
+    backdrop-filter:blur(16px) saturate(124%);
+    -webkit-backdrop-filter:blur(16px) saturate(124%);
+  }
+  #root .starReadingPanel--luminary :is(.starReadingPanel__heading,.starReadingPanel__body){border-color:rgba(207,228,255,.3)}
+  #root .starReadingPanel--luminary :is(h2,.adviceBox__icon,button){color:#e9f4ff}
+}

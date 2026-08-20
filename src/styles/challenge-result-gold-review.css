@@ -1,0 +1,775 @@
+.challengeGoldReview {
+  --gold: #e7be70;
+  --champagne: rgba(240, 204, 135, .78);
+  --warm-white: #f5efe4;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--warm-white);
+  background: #020712;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  isolation: isolate;
+}
+
+.challengeGoldReview__cosmos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(4,3,8,.04), rgba(2,5,12,.62)),
+    radial-gradient(circle at 14% 22%, rgba(179,33,12,.22), transparent 34%),
+    radial-gradient(circle at 82% 30%, rgba(26,69,137,.18), transparent 38%),
+    url("/images/result-scenes/challenge/backgrounds/design_master2.png") center top / cover fixed;
+}
+
+.challengeGoldReview__outerFrame {
+  position: fixed;
+  inset: 10px 12px;
+  z-index: 0;
+  pointer-events: none;
+  border: 12px solid transparent;
+  border-image: url("/images/result-scenes/challenge/overlays/frame.png") 118 / 12px / 0 stretch;
+  outline: 1px solid rgba(198, 126, 28, .76);
+  outline-offset: -5px;
+  background:
+    radial-gradient(circle at 18px 18px, #effcff 0 2px, #4eb8ff 3px 7px, #03152d 8px 11px, #f1ba52 12px 14px, transparent 15px),
+    radial-gradient(circle at calc(100% - 18px) 18px, #effcff 0 2px, #4eb8ff 3px 7px, #03152d 8px 11px, #f1ba52 12px 14px, transparent 15px),
+    radial-gradient(circle at 18px calc(100% - 18px), #effcff 0 2px, #4eb8ff 3px 7px, #03152d 8px 11px, #f1ba52 12px 14px, transparent 15px),
+    radial-gradient(circle at calc(100% - 18px) calc(100% - 18px), #effcff 0 2px, #4eb8ff 3px 7px, #03152d 8px 11px, #f1ba52 12px 14px, transparent 15px);
+  box-shadow:
+    inset 0 0 0 8px rgba(238, 166, 54, .16),
+    inset 0 0 22px rgba(28, 113, 218, .08),
+    0 0 10px rgba(255, 156, 31, .2);
+  opacity: .96;
+}
+
+.challengeGoldReview__outerFrame::before,
+.challengeGoldReview__outerFrame::after {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  color: #f5c763;
+  border-inline: 1px solid rgba(238, 174, 61, .82);
+  background: rgba(2, 7, 18, .72);
+  text-shadow: 0 0 10px #ff941d;
+}
+.challengeGoldReview__outerFrame::before {
+  top: -1px;
+  border-inline: 0;
+  background: transparent;
+}
+.challengeGoldReview__outerFrame::after {
+  bottom: -1px;
+  border-inline: 0;
+  background: transparent;
+}
+
+.challengeGoldReview__cosmos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 16%, transparent 0 20%, rgba(1,5,14,.18) 55%, rgba(1,5,14,.58) 100%);
+}
+
+.challengeGoldHero,
+.challengeGoldReview__content,
+.challengeGoldReview__footer { position: relative; z-index: 1; }
+
+.challengeReviewControls {
+  position: fixed;
+  z-index: 20;
+  top: 84px;
+  right: 34px;
+  width: 176px;
+  padding: 12px;
+  border: 1px solid rgba(231,190,112,.44);
+  border-radius: 12px;
+  color: var(--gold);
+  background: rgba(2,7,18,.86);
+  box-shadow: 0 14px 40px rgba(0,0,0,.55);
+  backdrop-filter: blur(14px);
+}
+.challengeReviewControls summary { color:var(--gold); cursor:pointer; list-style:none; font:600 .56rem/1.2 system-ui,sans-serif; letter-spacing:.12em; text-align:center; writing-mode:vertical-rl; }
+.challengeReviewControls summary::-webkit-details-marker { display:none; }
+.challengeReviewControls div { display:grid; grid-template-columns:repeat(5,1fr); gap:5px; }
+.challengeReviewControls button { aspect-ratio:1; padding:0; border:1px solid rgba(231,190,112,.35); border-radius:50%; color:#d8bb83; background:rgba(4,10,23,.7); font:600 .62rem/1 system-ui,sans-serif; cursor:pointer; }
+.challengeReviewControls button[aria-pressed="true"] { color:#160b01; background:linear-gradient(135deg,#fff1b8,#d89a37); box-shadow:0 0 15px rgba(234,168,65,.35); }
+.challengeReviewControls button:focus-visible,
+.challengeReadingCard summary:focus-visible { outline:2px solid #ffe3a1; outline-offset:3px; }
+
+.challengeGoldHero {
+  min-height: min(690px, 82vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 54px 24px 72px;
+  text-shadow: 0 3px 22px #02050c;
+}
+
+.challengeGoldHero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 240px;
+  background: linear-gradient(transparent, #020712);
+  pointer-events: none;
+}
+
+.challengeGoldHero__emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(176px, 17vw, 260px);
+  aspect-ratio: 1;
+  margin: 4px 0 2px;
+}
+.challengeGoldHero__emblem::before,
+.challengeGoldHero__emblem::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(255, 204, 111, .38);
+  border-radius: 50%;
+  box-shadow: 0 0 45px rgba(255, 82, 18, .2), inset 0 0 30px rgba(255, 177, 53, .12);
+}
+.challengeGoldHero__emblem::after { inset: 2%; border-style: dotted; opacity: .58; }
+.challengeGoldHero__emblem img { width: 100%; filter: drop-shadow(0 0 30px rgba(255,113,20,.45)); }
+.challengeGoldHero__eyebrow, .challengeGoldHero__kicker { color: var(--gold); letter-spacing: .28em; font-size: .8rem; }
+.challengeGoldHero h1 { margin: 8px 0 0; color: #fff7e8; font-size: clamp(4rem, 7vw, 7rem); font-weight: 400; letter-spacing: .08em; line-height: .9; text-shadow:0 0 22px rgba(255,112,26,.2), 0 4px 30px #000; }
+.challengeGoldHero__ja { margin: 20px 0; color: var(--gold); font-size: clamp(1.35rem, 2vw, 2rem); letter-spacing: .18em; }
+.challengeGoldHero__quote { max-width: 720px; margin: 14px 0 20px; font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 2; }
+.challengeGoldHero > span { color: var(--gold); letter-spacing: .28em; font-size: .76rem; }
+
+.challengeGoldReview__content { width: min(1360px, calc(100% - 108px)); margin: 0 auto; padding-bottom: 72px; }
+
+@media (min-width: 901px) {
+  #root .challengeGoldReview__content > .starReadingSection--challenge {
+    margin-top: 38px;
+  }
+}
+.cosmicGlass {
+  position: relative;
+  height: auto;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(166,72,22,.12), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.065), transparent 24%),
+    linear-gradient(145deg, rgba(3,11,27,.76), rgba(3,5,13,.88));
+  border: 1px solid rgba(244, 196, 109, .8);
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 4px rgba(213,151,53,.05), inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(229,181,86,.12), 0 22px 62px rgba(0,0,0,.4), 0 0 30px rgba(205,99,28,.1);
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+.cosmicGlass::before, .cosmicGlass::after { content:"✦"; position:absolute; display:grid; place-items:center; width:34px; height:34px; color:#ffd47e; font-size:.72rem; text-shadow:0 0 12px #ff8b1f; pointer-events:none; }
+.cosmicGlass::before { top:-17px; left:-17px; border-top:1px solid rgba(255,233,183,.78); border-left:1px solid rgba(255,233,183,.78); }
+.cosmicGlass::after { right:-17px; bottom:-17px; border-right:1px solid rgba(255,233,183,.78); border-bottom:1px solid rgba(255,233,183,.78); }
+.cosmicGlass__eyebrow { color: var(--gold); letter-spacing: .2em; font-size: .74rem; }
+
+.challengeJuzaGlass { display:grid; grid-template-columns: 220px minmax(0,1fr); gap:48px; height:650px; padding:42px 52px; border-color: rgba(255,191,74,.94); box-shadow: inset 0 0 0 5px rgba(223,149,47,.05), inset 0 1px 0 rgba(255,255,255,.22), 0 28px 80px rgba(0,0,0,.5), 0 0 44px rgba(244,88,22,.16); overflow:hidden; }
+.challengeJuzaGlass::before { content:none; }
+.challengeJuzaGlass::after {
+  content:"";
+  position:absolute;
+  inset:-5px;
+  z-index:2;
+  width:auto;
+  height:auto;
+  border:0;
+  background:url("/images/result-scenes/challenge/overlays/premium_outer_frame.png") center / 100% 100% no-repeat;
+  filter:drop-shadow(0 0 8px rgba(255,153,26,.32));
+  pointer-events:none;
+}
+.challengeJuzaGlass__portrait { position:relative; align-self:center; padding:11px; border:1px solid rgba(235,185,86,.6); border-radius:50%; box-shadow:inset 0 0 28px rgba(241,132,35,.14),0 0 30px rgba(226,142,47,.18); }
+.challengeJuzaGlass__portrait::after { content:"✦"; position:absolute; inset:auto 0 -12px; margin:auto; width:24px; color:#80c8ff; text-align:center; text-shadow:0 0 14px #1d8cff; }
+.challengeJuzaGlass__portrait img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; border:1px solid var(--gold); box-shadow:0 0 30px rgba(226,142,47,.25); }
+.challengeJuzaGlass__portrait,
+.challengeJuzaGlass__body { z-index:3; }
+.challengeJuzaGlass__body { display:flex; min-height:0; flex-direction:column; }
+.challengeJuzaGlass h2 { margin:4px 0 22px; color:var(--gold); font-weight:500; font-size:2rem; }
+.challengeJuzaGlass__messageShell { position:relative; min-height:0; flex:1; overflow:hidden; border-top:1px solid rgba(228,183,97,.25); }
+.challengeJuzaGlass__message { height:100%; max-width:840px; padding:22px 30px 48px 2px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#e1b565 rgba(219,163,69,.08); scroll-behavior:smooth; }
+.challengeJuzaGlass__message::-webkit-scrollbar { width:7px; }
+.challengeJuzaGlass__message::-webkit-scrollbar-track { background:rgba(219,163,69,.08); border-radius:999px; }
+.challengeJuzaGlass__message::-webkit-scrollbar-thumb { background:linear-gradient(#f8daa0,#b97a25); border-radius:999px; box-shadow:0 0 8px rgba(255,188,84,.38); }
+.challengeJuzaGlass__message:focus-visible { outline:1px solid #f1c16e; outline-offset:-3px; }
+.challengeJuzaGlass__message p { margin:0 0 1.25em; font-size:1.05rem; line-height:2; letter-spacing:.045em; }
+.challengeJuzaGlass__scrollHint { position:absolute; right:24px; bottom:0; left:0; padding:28px 5px 9px; color:#e8c17a; background:linear-gradient(transparent,rgba(3,8,19,.97) 72%); text-align:right; font-size:.72rem; letter-spacing:.12em; pointer-events:none; }
+
+.challengeReadingGrid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:start; gap:18px; margin-top:34px; }
+.challengeReadingCard { padding:28px 24px 30px; }
+.challengeReadingCard__heading { display:flex; align-items:center; gap:24px; padding-bottom:22px; margin-bottom:26px; border-bottom:1px solid rgba(231,190,112,.28); }
+.challengeReadingCard__icon { display:grid; place-items:center; width:58px; height:58px; flex:0 0 auto; border:1px solid rgba(231,190,112,.55); border-radius:50%; color:var(--gold); font-size:1.55rem; box-shadow:inset 0 0 24px rgba(218,133,37,.12),0 0 20px rgba(218,133,37,.08); }
+.challengeReadingCard__heading p { margin:0 0 5px; color:var(--gold); font-size:.75rem; letter-spacing:.18em; }
+.challengeReadingCard h2 { margin:0; color:var(--gold); font-size:clamp(1.18rem,1.45vw,1.65rem); font-weight:500; line-height:1.45; }
+.challengeReadingCard__copy { max-width:64ch; margin:auto; }
+.challengeReadingCard__copy p { margin:0 0 1.1em; font-size:clamp(.92rem,.95vw,1.02rem); line-height:1.9; letter-spacing:.035em; }
+.challengeReadingCard__copy p:nth-last-child(1) { color:#f7d999; }
+.challengeReadingCard details { margin-top:18px; border-top:1px solid rgba(231,190,112,.2); }
+.challengeReadingCard summary { padding:16px 0 0; color:var(--gold); cursor:pointer; list-style:none; font-size:.84rem; letter-spacing:.14em; }
+.challengeReadingCard summary::-webkit-details-marker { display:none; }
+.challengeReadingCard summary::after { content:"＋"; float:right; }
+.challengeReadingCard details[open] summary { margin-bottom:18px; }
+.challengeReadingCard details[open] summary::after { content:"−"; }
+.challengeReadingCard__less, .challengeReadingCard details[open] .challengeReadingCard__more { display:none; }
+.challengeReadingCard details[open] .challengeReadingCard__less { display:inline; }
+
+.challengePremiumPause { margin-top:42px; padding:38px; text-align:center; }
+.challengePremiumPause::before,
+.challengePremiumPause::after { content:none; display:none; }
+.challengePremiumPause > p:first-child { color:var(--gold); letter-spacing:.22em; font-size:.76rem; }
+.challengePremiumPause h2 { color:var(--gold); font-weight:500; }
+.challengePremiumPause button { margin-top:16px; min-height:54px; padding:0 28px; border:1px solid rgba(231,190,112,.45); border-radius:999px; color:#d8c49e; background:rgba(3,8,18,.65); }
+.challengeClosingMessage { position:relative; padding:54px 24px 18px; text-align:center; text-shadow:0 2px 18px #000; }
+.challengeClosingMessage > span { display:block; color:#ffcb69; font-size:1.4rem; text-shadow:0 0 18px #ff871f; }
+.challengeClosingMessage > p { margin:10px 0; color:var(--gold); font-size:.75rem; letter-spacing:.28em; }
+.challengeClosingMessage h2 { margin:8px auto 12px; color:#f2c674; font-size:clamp(1.7rem,2.4vw,2.65rem); font-weight:400; letter-spacing:.06em; }
+.challengeClosingMessage small { color:#f5efe4; font-size:1rem; letter-spacing:.08em; }
+.challengeGoldReview__footer { padding:34px; text-align:center; color:var(--gold); letter-spacing:.2em; }
+
+@media (min-width: 1100px) {
+  .challengeGoldReview {
+    min-height: 100vh;
+  }
+
+  .challengeGoldReview__cosmos {
+    background:
+      linear-gradient(180deg, rgba(4,3,8,.02), rgba(2,5,12,.46)),
+      radial-gradient(circle at 50% 36%, rgba(249,93,21,.09), transparent 34%),
+      url("/images/result-scenes/challenge/backgrounds/design_master2.png") center top / cover fixed;
+  }
+
+  .challengeGoldReview__outerFrame {
+    inset: 8px;
+    z-index: 0;
+    opacity: .96;
+  }
+
+  .challengeReviewControls {
+    top: 50%;
+    right: 10px;
+    width: auto;
+    padding: 8px 5px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+  }
+  .challengeReviewControls[open] { width: 44px; border-radius: 14px; }
+  .challengeReviewControls[open] summary { margin: 0 auto 6px; writing-mode:horizontal-tb; }
+  .challengeReviewControls div { grid-template-columns: 1fr; gap: 4px; }
+  .challengeReviewControls button { width: 32px; height: 32px; margin: auto; }
+
+  .challengeGoldHero {
+    min-height: 0;
+    height: 304px;
+    justify-content: flex-start;
+    padding: 40px 80px 4px;
+    isolation: isolate;
+  }
+  .challengeGoldHero > * {
+    position: relative;
+    z-index: 1;
+  }
+  .challengeGoldHero::after {
+    inset: 20% 12% -18px;
+    z-index: 0;
+    height: auto;
+    background: radial-gradient(
+      ellipse at 50% 56%,
+      rgba(2,7,18,.72) 0%,
+      rgba(2,7,18,.54) 42%,
+      rgba(2,7,18,.18) 68%,
+      transparent 82%
+    );
+    filter: blur(8px);
+  }
+  .challengeGoldHero__eyebrow {
+    margin: 0 0 2px;
+    font-size: .64rem;
+  }
+  .challengeGoldHero__emblem {
+    width: 126px;
+    margin: 0;
+  }
+  .challengeGoldHero__emblem::before,
+  .challengeGoldHero__emblem::after { display: none; }
+  .challengeGoldHero h1 {
+    margin: 0 0 8px;
+    font-size: clamp(3rem, 3.7vw, 3.8rem);
+    line-height: .94;
+  }
+  .challengeGoldHero__ja {
+    margin: 10px 0 9px;
+    font-size: 1.25rem;
+  }
+  .challengeGoldHero__quote {
+    margin: 0 0 9px;
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+  .challengeGoldHero > span { font-size: .61rem; }
+
+  .challengeGoldReview__content {
+    width: min(1228px, calc(100% - 308px));
+    padding-top: 88px;
+    padding-bottom: 0;
+  }
+
+  .cosmicGlass {
+    border-radius: 9px;
+    backdrop-filter: blur(13px) saturate(110%);
+    -webkit-backdrop-filter: blur(13px) saturate(110%);
+  }
+  .cosmicGlass::before,
+  .cosmicGlass::after { width: 22px; height: 22px; font-size: .55rem; }
+  .cosmicGlass::before { top: -11px; left: -11px; }
+  .cosmicGlass::after { right: -11px; bottom: -11px; }
+
+  .challengeJuzaGlass::before {
+    content: "";
+    display: block;
+    inset: 31px 66px 0;
+    z-index: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background:
+      linear-gradient(118deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.055) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(255,177,88,.15), transparent 38%),
+      linear-gradient(145deg, rgba(20,36,55,.38), rgba(7,13,25,.56));
+    border: 1px solid rgba(255,219,151,.82);
+    border-radius: 28px;
+    box-shadow:
+      inset 0 0 0 2px rgba(255,255,255,.06),
+      inset 0 2px 1px rgba(255,255,255,.24),
+      inset 0 -1px 0 rgba(229,181,86,.16),
+      0 22px 62px rgba(0,0,0,.4),
+      0 0 30px rgba(205,99,28,.12);
+    backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+    -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+  }
+  .challengeJuzaGlass::after {
+    inset: -30px -38px;
+    width: auto;
+    height: auto;
+    border: 0;
+    background: url("/images/result-scenes/challenge/overlays/premium_outer_frame.png") center / 100% 100% no-repeat;
+  }
+
+  .challengeJuzaGlass {
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 45px;
+    height: 270px;
+    padding: 38px 50px;
+    overflow: visible;
+    isolation: isolate;
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .challengeJuzaGlass__portrait {
+    isolation: isolate;
+    width: 180px;
+    justify-self: center;
+    padding: 7px;
+    transform: translate(22px, 10px);
+  }
+  .challengeJuzaGlass__portrait::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    z-index: 2;
+    background: url("/images/result-scenes/challenge/overlays/juza_portrait_ornate_ring.png") center / contain no-repeat;
+    filter: drop-shadow(0 0 7px rgba(255,170,45,.32));
+    pointer-events: none;
+  }
+  .challengeJuzaGlass__portrait::after { display: none; }
+  .challengeJuzaGlass__body { padding-top: 22px; }
+  .cosmicGlass__eyebrow { margin: 0; font-size: .62rem; }
+  .challengeJuzaGlass h2 {
+    margin: 2px 0 6px;
+    font-size: 1.34rem;
+  }
+  .challengeJuzaGlass__messageShell { border-top: 0; }
+  .challengeJuzaGlass__message {
+    max-width: none;
+    padding: 5px 25px 12px 0;
+  }
+  .challengeJuzaGlass__scrollHint {
+    padding: 13px 5px 3px;
+    background: linear-gradient(transparent, rgba(255,255,255,.025));
+    text-shadow: 0 1px 8px rgba(0,0,0,.9);
+  }
+  .challengeJuzaGlass__message p {
+    margin: 0 0 .7em;
+    font-size: .76rem;
+    line-height: 1.75;
+    letter-spacing: .025em;
+  }
+  .challengeJuzaGlass__scrollHint {
+    right: 20px;
+    padding: 18px 2px 3px;
+    font-size: .58rem;
+  }
+
+  .challengeReadingGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 70px;
+  }
+  .challengeReadingCard {
+    height: 320px;
+    min-height: 320px;
+    padding: 15px 14px 42px;
+    overflow: hidden;
+    background:
+      linear-gradient(118deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.055) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(255,177,88,.15), transparent 38%),
+      linear-gradient(145deg, rgba(20,36,55,.38), rgba(7,13,25,.56));
+    box-shadow:
+      inset 0 0 0 2px rgba(255,255,255,.045),
+      inset 0 2px 1px rgba(255,255,255,.18),
+      inset 0 -1px 0 rgba(229,181,86,.14),
+      0 18px 44px rgba(0,0,0,.34),
+      0 0 24px rgba(205,99,28,.1);
+    backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+    -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+  }
+  .challengeReadingCard:has(details[open]) {
+    height: auto;
+    overflow: visible;
+  }
+  .challengeReadingCard__heading {
+    gap: 10px;
+    min-height: 62px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .challengeReadingCard__icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    background:
+      radial-gradient(circle, rgba(255,201,96,.16), transparent 58%),
+      repeating-conic-gradient(from 0deg, rgba(244,194,92,.46) 0 1deg, transparent 1deg 22.5deg);
+    box-shadow:
+      inset 0 0 18px rgba(218,133,37,.16),
+      0 0 14px rgba(218,133,37,.14);
+  }
+  .challengeReadingCard__heading p { margin-bottom: 2px; font-size: .62rem; }
+  .challengeReadingCard h2 {
+    font-size: clamp(.95rem, 1.15vw, 1.18rem);
+    line-height: 1.38;
+  }
+  .challengeReadingCard__copy p {
+    margin-bottom: .55em;
+    font-size: .64rem;
+    line-height: 1.58;
+  }
+  .challengeReadingCard details {
+    margin-top: 0;
+    border-top: 0;
+  }
+  .challengeReadingCard summary {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    min-width: 92px;
+    padding: 4px 12px;
+    border: 1px solid rgba(231,190,112,.52);
+    border-radius: 999px;
+    font-size: .5rem;
+    line-height: 1;
+    text-align: center;
+  }
+  .challengeReadingCard summary::after { content: "＋"; margin-left: 5px; float: none; }
+  .challengeReadingCard details[open] summary::after { content: "−"; }
+
+  .challengePremiumPause {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 28px;
+    margin-top: 12px;
+    padding: 12px 28px;
+    text-align: left;
+  }
+  .challengePremiumPause > p:first-child {
+    grid-column: 1;
+    margin: 0 0 2px;
+    font-size: .62rem;
+  }
+  .challengePremiumPause h2 {
+    grid-column: 1;
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  .challengePremiumPause > p:not(:first-child) {
+    grid-column: 1;
+    margin: 3px 0 0;
+    font-size: .7rem;
+  }
+  .challengePremiumPause button {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 28px;
+    font-size: .72rem;
+  }
+
+  .challengeGoldReview__footer {
+    padding: 12px 34px 22px;
+    font-size: .75rem;
+  }
+
+  .challengeReadingCard--02,
+  .challengeReadingCard--03 { background-color:rgba(3,7,16,.08); }
+}
+
+@media (max-width: 1099px) and (min-width: 761px) {
+  .challengeReviewControls { top:22px; right:26px; }
+  .challengeReadingGrid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 760px) {
+  .challengeGoldReview { overflow-x: clip; }
+  .challengeGoldReview__outerFrame {
+    display: block;
+    position: absolute;
+    inset: 7px;
+    z-index: 8;
+    border-width: 8px;
+    border-image-width: 8px;
+    outline-offset: -3px;
+    opacity: .96;
+  }
+  .challengeGoldReview__outerFrame::before,
+  .challengeGoldReview__outerFrame::after { display: none; }
+  .challengeReviewControls { display:none; }
+
+  .challengeGoldHero {
+    min-height: 590px;
+    justify-content: flex-start;
+    padding: 62px 28px 76px;
+  }
+  .challengeGoldHero::after { height: 150px; }
+  .challengeGoldHero__eyebrow { font-size: .68rem; }
+  .challengeGoldHero__emblem {
+    width: 176px;
+    margin: 18px 0 24px;
+  }
+  .challengeGoldHero h1 {
+    margin: 0 0 18px;
+    font-size: clamp(2.5rem, 12vw, 3rem);
+    line-height: 1;
+    letter-spacing: .025em;
+  }
+  .challengeGoldHero__ja {
+    margin: 0 0 20px;
+    font-size: 1.22rem;
+    letter-spacing: .14em;
+  }
+  .challengeGoldHero__quote {
+    max-width: 310px;
+    margin: 0 0 24px;
+    font-size: .92rem;
+    line-height: 1.9;
+  }
+  .challengeGoldHero > span { font-size: .64rem; }
+
+  .challengeGoldReview__content {
+    width: min(100% - 42px, 620px);
+    padding-bottom: 54px;
+  }
+
+  .challengeJuzaGlass {
+    grid-template-columns: 104px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    height: 370px;
+    padding: 34px 22px 30px;
+    overflow: visible;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 12px;
+    box-shadow:
+      0 28px 80px rgba(0,0,0,.5),
+      0 0 44px rgba(244,88,22,.16);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .challengeJuzaGlass::before {
+    content: "";
+    position: absolute;
+    inset: 50px 18px 16px;
+    z-index: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 28px;
+    background:
+      linear-gradient(118deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.025) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(255,177,88,.08), transparent 38%),
+      linear-gradient(145deg, rgba(4,13,26,.9), rgba(2,6,14,.97));
+    backdrop-filter: blur(15px) saturate(112%);
+    -webkit-backdrop-filter: blur(15px) saturate(112%);
+    pointer-events: none;
+  }
+  .challengeJuzaGlass::after {
+    inset: -11px;
+    background-size: 100% 100%;
+  }
+  .challengeJuzaGlass__portrait {
+    width: 74px;
+    align-self: start;
+    justify-self: end;
+    padding: 5px;
+    transform: translate(-11px, 52px);
+  }
+  .challengeJuzaGlass__portrait::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    z-index: 3;
+    background: url("/images/result-scenes/challenge/overlays/juza_portrait_ornate_ring.png") center / contain no-repeat;
+    filter: drop-shadow(0 0 7px rgba(255,170,45,.32));
+    pointer-events: none;
+  }
+  .challengeJuzaGlass__portrait::after { display: none; }
+  .challengeJuzaGlass__portrait img {
+    position: relative;
+    z-index: 1;
+  }
+  .challengeJuzaGlass__body {
+    min-width: 0;
+    height: 302px;
+    padding-top: 38px;
+  }
+  .cosmicGlass__eyebrow {
+    margin: 0 0 4px;
+    font-size: .52rem;
+    letter-spacing: .15em;
+  }
+  .challengeJuzaGlass h2 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .challengeJuzaGlass__messageShell {
+    min-height: 0;
+    border-top: 0;
+  }
+  .challengeJuzaGlass__message {
+    max-width: none;
+    padding: 2px 14px 48px 0;
+  }
+  .challengeJuzaGlass__message p {
+    margin: 0 0 .8em;
+    font-size: .64rem;
+    line-height: 1.72;
+    letter-spacing: .02em;
+  }
+  .challengeJuzaGlass__scrollHint {
+    right: 12px;
+    bottom: 12px;
+    padding: 18px 2px 4px;
+    font-size: .56rem;
+    background: linear-gradient(transparent, rgba(2,7,17,.78));
+  }
+
+  .challengeReadingGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 54px;
+  }
+  .challengeReadingCard {
+    height: auto;
+    min-height: 0;
+    padding: 20px 18px 18px;
+    overflow: visible;
+    background:
+      linear-gradient(118deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.055) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(255,177,88,.15), transparent 38%),
+      linear-gradient(145deg, rgba(20,36,55,.38), rgba(7,13,25,.56));
+    box-shadow:
+      inset 0 0 0 2px rgba(255,255,255,.045),
+      inset 0 2px 1px rgba(255,255,255,.18),
+      inset 0 -1px 0 rgba(229,181,86,.14),
+      0 18px 44px rgba(0,0,0,.34),
+      0 0 24px rgba(205,99,28,.1);
+    backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+    -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.08);
+  }
+  .challengeReadingCard::before,
+  .challengeReadingCard::after { display: none; }
+  .challengeReadingCard__heading {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    min-height: 0;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .challengeReadingCard__icon {
+    width: 58px;
+    height: 58px;
+    font-size: 1.35rem;
+  }
+  .challengeReadingCard__heading p {
+    margin: 0 0 4px;
+    font-size: .6rem;
+  }
+  .challengeReadingCard h2 {
+    font-size: 1.02rem;
+    line-height: 1.45;
+  }
+  .challengeReadingCard__copy { max-width: none; }
+  .challengeReadingCard__copy > p {
+    margin-bottom: .7em;
+    font-size: .76rem;
+    line-height: 1.72;
+  }
+  .challengeReadingCard__copy > p:nth-of-type(n + 2) { display: none; }
+  .challengeReadingCard:has(details[open]) .challengeReadingCard__copy > p { display: block; }
+  .challengeReadingCard details {
+    margin-top: 12px;
+    border-top: 1px solid rgba(231,190,112,.2);
+  }
+  .challengeReadingCard summary {
+    position: static;
+    width: fit-content;
+    min-width: 100px;
+    margin: 12px 0 0 auto;
+    padding: 7px 14px;
+    border: 1px solid rgba(231,190,112,.52);
+    border-radius: 999px;
+    font-size: .62rem;
+    line-height: 1;
+    text-align: center;
+  }
+  .challengeReadingCard details[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .challengeReadingCard details[open] > :not(summary) { order: 1; }
+  .challengeReadingCard details[open] summary {
+    order: 2;
+    margin-top: 14px;
+  }
+  .challengePremiumPause::before,
+  .challengePremiumPause::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .challengeGoldReview *, .challengeGoldReview *::before, .challengeGoldReview *::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }

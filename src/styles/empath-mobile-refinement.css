@@ -1,0 +1,55 @@
+/* Empath Mobile / portrait-tablet only. Desktop remains locked. */
+.empathJuzaMobileGlass,.empathJuzaPortraitV2,.empathJuzaMobilePortraitFrame,
+.empathJuzaMobileOuterFrame,.empathJuzaMobileHeading,.empathJuzaMobileReadAll,
+.starReadingSection--empath{display:none}
+
+/* EMPATH desktop reuses the Challenge desktop STAR READING geometry verbatim. */
+@media (min-width:1100px){
+  #root .resultHero[data-star-type="empathy"] .resultGrid{display:none!important}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath{
+    display:grid;
+    order:6;
+    left:auto;
+    width:min(1228px,calc(100vw - 72px));
+    margin:-22px auto 0;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    align-items:start;
+    gap:12px;
+    transform:none;
+    --star-reading-accent:#e7a6df;
+    --star-reading-accent-rgb:231,166,223;
+  }
+  #root .resultHero[data-star-type="empathy"] .starReadingPanel--empath{
+    border-color:rgba(225,145,211,.68)!important;
+    background:linear-gradient(118deg,rgba(255,227,248,.14),rgba(255,227,248,.035) 22%,transparent 46%),radial-gradient(circle at 82% 10%,rgba(219,99,191,.17),transparent 38%),linear-gradient(145deg,rgba(68,20,65,.61),rgba(25,10,43,.78) 58%,rgba(68,22,74,.66))!important;
+    box-shadow:inset 0 0 0 1px rgba(255,225,248,.07),inset 0 1px 0 rgba(255,236,251,.16),0 0 9px rgba(226,118,205,.25),0 18px 44px rgba(19,2,25,.35)!important;
+    backdrop-filter:blur(16px) saturate(122%);
+  }
+  #root .resultHero[data-star-type="empathy"] .starReadingPanel--empath :is(.starReadingPanel__heading,.starReadingPanel__body){border-color:rgba(232,166,218,.26)}
+  #root .resultHero[data-star-type="empathy"] .starReadingPanel--empath :is(h2,.adviceBox__icon,button){color:#efb9e6}
+  #root .resultHero[data-star-type="empathy"] .starReadingPanel--empath .starReadingPanel__heading>.adviceBox__icon{position:static!important;inset:auto!important;grid-column:auto!important;grid-row:auto!important;transform:none!important}
+}
+
+@media (max-width:799px),(min-width:800px) and (max-width:1099px) and (orientation:portrait){
+  #root .resultHero[data-star-type="empathy"]{overflow-x:clip}
+  #root .resultHero[data-star-type="empathy"] .resultCard{display:flex;flex-direction:column;width:100%}
+  #root .resultHero[data-star-type="empathy"] .juzaMessage{order:5;position:relative;display:grid!important;grid-template-columns:33% minmax(0,67%);grid-template-rows:auto minmax(0,1fr) auto;column-gap:clamp(10px,2.8vw,18px);align-self:center;width:min(calc(100vw - 40px),672px)!important;max-width:672px!important;min-height:clamp(488px,128vw,548px)!important;margin:18px auto 0!important;padding:clamp(62px,16vw,75px) clamp(14px,3.6vw,28px) clamp(54px,14vw,67px)!important;border:0!important;border-radius:24px!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;overflow:hidden!important;isolation:isolate;transform:translateX(-6px)!important}
+  #root .resultHero[data-star-type="empathy"] .juzaMessage::before,#root .resultHero[data-star-type="empathy"] .juzaMessage::after,#root .resultHero[data-star-type="empathy"] .typeFrameAsset--juza{display:none!important}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileGlass{display:block!important;position:absolute!important;inset:22px 22px -2px!important;z-index:0!important;box-sizing:border-box;border:1px solid rgba(224,148,237,.58);border-radius:12px;background:linear-gradient(135deg,rgba(25,8,45,.84),rgba(69,25,92,.67) 50%,rgba(38,19,65,.75));box-shadow:inset 0 1px rgba(255,255,255,.18),inset 0 0 38px rgba(189,92,216,.16);backdrop-filter:blur(11px) saturate(1.16)}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileOuterFrame{display:block!important;position:absolute;inset:0;z-index:4;width:100%;height:100%;object-fit:fill;pointer-events:none;filter:drop-shadow(0 0 5px rgba(244,188,117,.34))}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaPortraitV2{display:block!important;grid-column:1;grid-row:1/4;align-self:center;justify-self:center;width:92%;height:clamp(300px,82vw,370px);object-fit:cover;object-position:50% 29%;clip-path:ellipse(38% 43% at 50% 50%);z-index:1;transform:translateX(6px)}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobilePortraitFrame{display:block!important;grid-column:1;grid-row:1/4;align-self:center;justify-self:center;width:142%;height:clamp(338px,92vw,412px);object-fit:fill;z-index:2;pointer-events:none;transform:translateX(6px)}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileHeading{display:flex!important;grid-column:2;grid-row:1;z-index:2;flex-direction:column;gap:5px;align-self:end;text-align:left;color:#e5b3f2}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileHeading span{font:600 clamp(7px,2vw,10px)/1.2 Georgia,serif;letter-spacing:.08em}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileHeading strong{color:#f1ca83;font:500 clamp(14px,4vw,20px)/1.35 Georgia,"Yu Mincho",serif}
+  #root .resultHero[data-star-type="empathy"] .juzaMessage>p{display:block!important;grid-column:2;grid-row:2;z-index:2;box-sizing:border-box;justify-self:start;width:100%;min-width:0;max-height:clamp(250px,67vw,305px);margin:10px 0 8px!important;padding:10px 15px 10px 10px!important;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;color:#fff7ff;font-size:clamp(11px,3vw,15px)!important;line-height:1.85!important;white-space:pre-line;scrollbar-width:thin;scrollbar-color:#cf7be5 transparent;transform:translateX(-10px)}
+  #root .resultHero[data-star-type="empathy"] .juzaMessage>p::-webkit-scrollbar{width:4px}
+  #root .resultHero[data-star-type="empathy"] .juzaMessage>p::-webkit-scrollbar-thumb{background:linear-gradient(#f0cb79,#c267dc);border-radius:99px}
+  #root .resultHero[data-star-type="empathy"] .empathJuzaMobileReadAll{display:block!important;grid-column:2;grid-row:3;z-index:3;justify-self:center;width:80%;height:34px;align-self:start;border:1px solid rgba(229,189,108,.84);border-radius:999px;color:#f8dca4;background:linear-gradient(90deg,rgba(35,10,52,.88),rgba(91,31,109,.7));font:500 12px/1 "Yu Mincho",serif;transform:translateX(-5px)}
+  #root .resultHero[data-star-type="empathy"] .resultGrid{display:none!important}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath{display:grid;order:6;width:min(calc(100% - 36px),700px);margin:30px auto 24px;--star-reading-accent:#df9aef;--star-reading-accent-rgb:223,154,239}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath .starReadingPanel{background:linear-gradient(125deg,rgba(34,10,54,.8),rgba(77,29,94,.66) 54%,rgba(50,24,69,.75))!important;border-color:rgba(224,151,232,.64)!important;box-shadow:inset 0 1px rgba(255,255,255,.14),0 0 18px rgba(202,104,222,.17)!important;backdrop-filter:blur(10px) saturate(1.14)}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath .starReadingPanel button{border:1px solid rgba(238,197,119,.9)!important;color:#fff4dc!important;background:linear-gradient(110deg,rgba(45,15,65,.9),rgba(88,38,104,.82))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 0 7px rgba(227,170,102,.2)!important;text-shadow:0 1px 2px rgba(12,2,19,.75)}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath .starReadingPanel button:is(:hover,:focus-visible){border-color:#f5d799!important;color:#fffaf0!important;background:linear-gradient(110deg,rgba(65,23,86,.96),rgba(113,49,127,.9))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 0 10px rgba(239,190,111,.34)!important;outline:none}
+  #root .resultHero[data-star-type="empathy"] .starReadingSection--empath .starReadingPanel button:active{background:rgba(50,17,70,.96)!important;box-shadow:inset 0 1px 4px rgba(10,0,20,.45),0 0 6px rgba(232,179,106,.24)!important}
+}

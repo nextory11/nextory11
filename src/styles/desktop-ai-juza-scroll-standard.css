@@ -1,0 +1,111 @@
+/*
+ * NEXTORY11 desktop AI JUZA text-scroll standard.
+ * Geometry remains owned by each approved type stylesheet; only the message
+ * text viewport and its native scrollbar are standardized here.
+ */
+@media (min-width: 1100px),
+  (min-width: 900px) and (orientation: landscape) {
+  #root .resultHero:is(
+    [data-star-type="persistence"],
+    [data-star-type="creator"],
+    [data-star-type="action"],
+    [data-star-type="adaptability"],
+    [data-star-type="empathy"],
+    [data-star-type="intuition"],
+    [data-star-type="explorer"]
+  ) {
+    --desktop-juza-scroll-height: clamp(220px, 24vw, 310px);
+    --desktop-juza-scroll-thumb-start: #edf7ff;
+    --desktop-juza-scroll-thumb-mid: #83c5f4;
+    --desktop-juza-scroll-thumb-end: #d8b766;
+    --desktop-juza-scroll-track: rgba(18, 43, 86, .25);
+  }
+
+  #root .resultHero[data-star-type="creator"] {
+    --desktop-juza-scroll-thumb-mid: #d27bea;
+    --desktop-juza-scroll-track: rgba(48, 18, 72, .28);
+  }
+
+  #root .resultHero[data-star-type="adaptability"] {
+    --desktop-juza-scroll-thumb-mid: #65cf8a;
+    --desktop-juza-scroll-track: rgba(9, 55, 31, .28);
+  }
+
+  #root .resultHero[data-star-type="empathy"] {
+    --desktop-juza-scroll-thumb-mid: #cf87e4;
+    --desktop-juza-scroll-track: rgba(55, 20, 72, .28);
+  }
+
+  #root .resultHero[data-star-type="intuition"] {
+    --desktop-juza-scroll-thumb-mid: #8199ee;
+    --desktop-juza-scroll-track: rgba(15, 26, 76, .28);
+  }
+
+  #root .resultHero:is(
+    [data-star-type="persistence"],
+    [data-star-type="creator"],
+    [data-star-type="action"],
+    [data-star-type="adaptability"],
+    [data-star-type="empathy"],
+    [data-star-type="intuition"],
+    [data-star-type="explorer"]
+  ) .juzaMessage > p {
+    box-sizing: border-box;
+    height: var(--desktop-juza-scroll-height) !important;
+    min-height: 0 !important;
+    max-height: var(--desktop-juza-scroll-height) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: var(--desktop-juza-scroll-thumb-mid) var(--desktop-juza-scroll-track);
+    scroll-behavior: smooth;
+    scroll-padding-block: 1em;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="persistence"],
+    [data-star-type="creator"],
+    [data-star-type="action"],
+    [data-star-type="adaptability"],
+    [data-star-type="empathy"],
+    [data-star-type="intuition"],
+    [data-star-type="explorer"]
+  ) .juzaMessage > p::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  #root .resultHero:is(
+    [data-star-type="persistence"],
+    [data-star-type="creator"],
+    [data-star-type="action"],
+    [data-star-type="adaptability"],
+    [data-star-type="empathy"],
+    [data-star-type="intuition"],
+    [data-star-type="explorer"]
+  ) .juzaMessage > p::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: var(--desktop-juza-scroll-track);
+  }
+
+  #root .resultHero:is(
+    [data-star-type="persistence"],
+    [data-star-type="creator"],
+    [data-star-type="action"],
+    [data-star-type="adaptability"],
+    [data-star-type="empathy"],
+    [data-star-type="intuition"],
+    [data-star-type="explorer"]
+  ) .juzaMessage > p::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: linear-gradient(
+      180deg,
+      var(--desktop-juza-scroll-thumb-start),
+      var(--desktop-juza-scroll-thumb-mid) 58%,
+      var(--desktop-juza-scroll-thumb-end)
+    );
+    box-shadow: 0 0 7px color-mix(in srgb, var(--desktop-juza-scroll-thumb-mid) 28%, transparent);
+  }
+}

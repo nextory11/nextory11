@@ -1,0 +1,642 @@
+/* Explorer Desktop STAR READING review refinement.
+   Mobile and every other result type intentionally retain their existing layout. */
+.explorerDesktopReadings { display: none; }
+.explorerJuzaHeading,
+.explorerJuzaReadAll { display: none; }
+
+/* Explorer phone + portrait-tablet implementation.
+   The Design Master is a composition reference only. Every visible section is
+   rendered by the real UI over the official Explorer world assets. */
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  #root .resultScene--designMaster[data-master-scene="explorer"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden;
+  }
+
+  #root .resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__background {
+    inset: 0 !important;
+    background-image: url("/images/result-scenes/explorer/backgrounds/Observatory_Sky.png") !important;
+    background-position: top center !important;
+    background-repeat: repeat-y !important;
+    background-size: 100% auto !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #root .resultScene--designMaster[data-master-scene="explorer"] :is(
+    .designMasterScene__atmosphere,
+    .designMasterScene__bloom,
+    .designMasterScene__lensFlare,
+    .designMasterScene__stars,
+    .designMasterScene__dust,
+    .designMasterScene__constellation,
+    .designMasterScene__pointerLight
+  ) {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(30px, 8vw, 64px) clamp(12px, 4vw, 28px) 72px !important;
+    overflow-x: clip !important;
+    background-color: #020a1c !important;
+    background-image:
+      linear-gradient(180deg, rgba(1, 8, 25, .24), rgba(1, 9, 28, .48) 48%, rgba(1, 7, 22, .78)),
+      url("/images/result-scenes/explorer/backgrounds/Observatory_Sky.png"),
+      url("/images/result-scenes/explorer/backgrounds/Milky_Way.png") !important;
+    background-position: top center, top center, center bottom !important;
+    background-repeat: no-repeat, no-repeat, repeat-y !important;
+    background-size: 100% 100%, 100% auto, auto 900px !important;
+    border: 0;
+    border-image: none;
+  }
+
+  #root .resultScene--designMaster[data-master-scene="explorer"] .designMasterScene__outerFrame {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultCard {
+    box-sizing: border-box;
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    margin-inline: auto !important;
+    padding: clamp(74px, 19vw, 112px) clamp(8px, 3vw, 24px) 0 !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultCard__aura { display: none !important; }
+
+  #root .resultHero[data-star-type="explorer"] :is(.resultKicker, .resultTitle, .english, .resultLead) {
+    position: relative;
+    z-index: 2;
+    display: block !important;
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="explorer"] :is(.resultBadge, .resultRealm, .resultIcon) { display: none !important; }
+
+  #root .resultHero[data-star-type="explorer"] .resultKicker {
+    margin: 6px 0 4px !important;
+    color: #e7c36d !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] :is(.resultBadge, .resultRealm) {
+    margin-bottom: clamp(14px, 3.8vw, 26px) !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultIcon {
+    margin-block: clamp(16px, 4vw, 30px) !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultTitle {
+    max-width: 100%;
+    margin-block: 14px 12px !important;
+    font-size: clamp(1.9rem, 9.5vw, 3.4rem) !important;
+    line-height: 1.06 !important;
+    letter-spacing: .03em;
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .english,
+  #root .resultHero[data-star-type="explorer"] .resultLead {
+    width: 100% !important;
+    max-width: min(100%, 34em) !important;
+    margin-inline: auto !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .english::after {
+    position: relative !important;
+    left: 50% !important;
+    display: block !important;
+    width: max-content !important;
+    text-align: center !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultLead {
+    margin-block: 18px clamp(64px, 16vw, 98px) !important;
+    line-height: 1.85 !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 auto clamp(62px, 14vw, 96px) !important;
+    padding: clamp(210px, 55vw, 270px) clamp(22px, 6vw, 46px) 30px !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: clamp(22px, 6vw, 34px) !important;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.13), transparent 28%),
+      radial-gradient(circle at 50% 14%, rgba(43,126,230,.22), transparent 40%),
+      linear-gradient(150deg, rgba(5,31,72,.68), rgba(2,16,43,.76)) !important;
+    box-shadow:
+      inset 0 1px rgba(213, 239, 255, .3),
+      inset 0 0 34px rgba(21, 100, 205, .18) !important;
+    backdrop-filter: blur(12px) saturate(1.16);
+    -webkit-backdrop-filter: blur(12px) saturate(1.16);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage::after {
+    top: 30px !important;
+    left: 50% !important;
+    width: clamp(148px, 42vw, 206px) !important;
+    height: clamp(148px, 42vw, 206px) !important;
+    background-position: calc(50% - 10px) 50%, center !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .typeFrameAsset--juza {
+    display: block !important;
+    position: absolute !important;
+    z-index: 3 !important;
+    top: 16px !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+    width: clamp(188px, 52vw, 236px) !important;
+    height: clamp(188px, 52vw, 236px) !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+    clip-path: circle(46% at 50% 50%) !important;
+    border-radius: 50%;
+    transform: translateX(-50%) !important;
+    pointer-events: none;
+    opacity: .96;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage::before {
+    content: "" !important;
+    position: absolute !important;
+    z-index: 5 !important;
+    inset: -8px !important;
+    display: block !important;
+    width: calc(100% + 16px) !important;
+    height: calc(100% + 16px) !important;
+    background: url("/images/result-scenes/explorer/overlays/ai_juza_outer_frame_mobile.png") center / 100% 100% no-repeat !important;
+    border-radius: 0 !important;
+    clip-path: inset(0 18px) !important;
+    transform: none !important;
+    animation: none !important;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerJuzaHeading {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    gap: 5px;
+    margin: 0 0 18px;
+    color: #e9c975;
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerJuzaHeading span {
+    font: 600 .64rem/1.3 Georgia, serif;
+    letter-spacing: .17em;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerJuzaHeading strong {
+    font: 500 clamp(1.28rem, 5.5vw, 1.75rem)/1.35 Georgia, "Yu Mincho", serif;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage > p {
+    position: relative;
+    z-index: 4;
+    box-sizing: border-box;
+    width: 100% !important;
+    min-height: 0 !important;
+    max-height: 228px;
+    margin: 0 !important;
+    padding: 14px 15px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    color: rgba(248, 252, 255, .98) !important;
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    line-height: 1.82 !important;
+    text-align: left !important;
+    background: linear-gradient(135deg, rgba(3,16,44,.42), rgba(8,39,78,.26)) !important;
+    border: 1px solid rgba(119, 183, 241, .2) !important;
+    border-radius: 14px;
+    scrollbar-width: thin;
+    scrollbar-color: #56a9ee rgba(5,25,57,.42);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage.is-message-expanded > p {
+    max-height: min(48vh, 390px);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .juzaMessage > p::-webkit-scrollbar { width: 4px; }
+  #root .resultHero[data-star-type="explorer"] .juzaMessage > p::-webkit-scrollbar-track { background: rgba(5,25,57,.42); }
+  #root .resultHero[data-star-type="explorer"] .juzaMessage > p::-webkit-scrollbar-thumb { background: linear-gradient(#65b8ff,#d2ad5b); border-radius: 999px; }
+
+  #root .resultHero[data-star-type="explorer"] .explorerJuzaReadAll {
+    position: relative;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-width: min(100%, 250px);
+    min-height: 46px;
+    margin-top: 18px;
+    padding: 10px 22px;
+    border: 1px solid rgba(222, 185, 101, .75);
+    border-radius: 999px;
+    color: #ebca7a;
+    background: rgba(4, 19, 48, .72);
+    font: 600 .84rem/1.2 Georgia, "Yu Mincho", serif;
+    letter-spacing: .1em;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultGrid {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    width: 100%;
+    margin: 0 auto clamp(58px, 13vw, 88px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(18px, 4.6vw, 28px);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    column-gap: 16px;
+    width: 100%;
+    min-width: 0;
+    min-height: 220px;
+    padding: 24px 20px 22px;
+    overflow: hidden;
+    border: 1px solid rgba(49, 125, 218, .88);
+    border-radius: 20px;
+    color: #f1f7ff;
+    background:
+      linear-gradient(125deg, rgba(255,255,255,.13), rgba(255,255,255,.02) 28%, transparent 52%),
+      radial-gradient(circle at 85% 8%, rgba(48,136,241,.2), transparent 42%),
+      linear-gradient(145deg, rgba(4,27,67,.8), rgba(2,15,43,.88));
+    box-shadow: inset 0 1px rgba(211,237,255,.24), inset 0 0 30px rgba(38,119,225,.13), 0 0 18px rgba(26,103,225,.3);
+    backdrop-filter: blur(11px) saturate(1.15);
+    -webkit-backdrop-filter: blur(11px) saturate(1.15);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard > :not(.typeFrameAsset) {
+    position: relative;
+    z-index: 2;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard > :is(.panelFrameOrnaments, .typeFrameAsset--insight) {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard .adviceBox__icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 58px !important;
+    height: 58px !important;
+    margin: 0;
+    color: #72bdff;
+    filter: drop-shadow(0 0 12px rgba(54,155,255,.48));
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__number {
+    grid-column: 2;
+    margin: 3px 0 5px;
+    color: #dfbd6a;
+    font: 600 .66rem/1.3 Georgia, serif;
+    letter-spacing: .14em;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard h2 {
+    grid-column: 2;
+    margin: 0 0 14px;
+    color: #efcc78;
+    font: 500 clamp(1.03rem, 4.7vw, 1.35rem)/1.48 Georgia, "Yu Mincho", serif;
+    overflow-wrap: anywhere;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__summary,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText {
+    grid-column: 1 / -1;
+    margin: 8px 0 0;
+    color: #f2f7ff;
+    font-size: clamp(14px, 3.7vw, 16px);
+    line-height: 1.78;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText[hidden] {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText p { margin: 0 0 .9em; }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button {
+    grid-column: 1 / -1;
+    justify-self: end;
+    min-width: 132px;
+    min-height: 44px;
+    margin-top: 18px;
+    padding: 9px 18px;
+    border: 1px solid rgba(220,183,98,.72);
+    border-radius: 999px;
+    color: #e8c36e;
+    background: rgba(3,18,47,.68);
+    font: 600 .72rem/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .1em;
+  }
+}
+
+@media (min-width: 1100px), (min-width: 900px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="explorer"] .juzaMessage::after {
+    background-position: calc(50% - 8px) 50%, center !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .resultGrid {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    width: min(1320px, calc(100vw - 64px));
+    margin: 70px auto 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-rows: 56px auto auto minmax(82px, 1fr) auto;
+    min-width: 0;
+    height: 330px;
+    padding: 34px 28px 24px;
+    overflow: clip;
+    border: 1px solid rgba(42, 117, 214, .9);
+    border-radius: 16px;
+    color: #edf6ff;
+    background:
+      linear-gradient(125deg, rgba(255,255,255,.13), rgba(255,255,255,.025) 22%, transparent 48%),
+      radial-gradient(circle at 78% 12%, rgba(55,145,255,.2), transparent 40%),
+      linear-gradient(145deg, rgba(3,21,55,.7), rgba(3,15,38,.78));
+    box-shadow:
+      inset 0 1px 0 rgba(176, 220, 255, .22),
+      inset 0 0 30px rgba(35, 105, 208, .13),
+      0 20px 52px rgba(0,7,27,.42),
+      0 0 8px rgba(28, 105, 226, .82),
+      0 0 22px rgba(21, 78, 180, .48);
+    backdrop-filter: blur(12px) saturate(1.16);
+    -webkit-backdrop-filter: blur(12px) saturate(1.16);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard > .panelFrameOrnaments {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard > .typeFrameAsset--insight {
+    display: none;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard > :not(.typeFrameAsset) {
+    position: relative;
+    z-index: 2;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard .adviceBox__icon {
+    width: 54px !important;
+    height: 54px !important;
+    margin: 0 auto;
+    color: #8ed1ff;
+    filter: drop-shadow(0 0 12px rgba(69,166,255,.38));
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__number {
+    margin: 10px 0 5px;
+    color: #d9b96f;
+    font: 600 .65rem/1.2 Georgia, serif;
+    letter-spacing: .16em;
+    text-align: center;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard h2 {
+    min-height: 52px;
+    margin: 0;
+    color: #f0cf84;
+    font: 500 clamp(.96rem, 1.12vw, 1.12rem)/1.45 Georgia, "Yu Mincho", serif;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0,8,27,.98);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__summary,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText {
+    margin: 0;
+    color: #eef7ff;
+    font-size: .76rem;
+    line-height: 1.7;
+    text-align: left;
+    text-shadow: 0 1px 4px rgba(0,5,18,.98);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText[hidden] {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText {
+    min-height: 0;
+    padding: 2px 8px 2px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #7abfff rgba(7,33,72,.42);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText::-webkit-scrollbar { width: 5px; }
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText::-webkit-scrollbar-track { background: rgba(7,33,72,.42); border-radius: 999px; }
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText::-webkit-scrollbar-thumb { background: linear-gradient(#8ed1ff,#b58a38); border-radius: 999px; }
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText p { margin: 0 0 .85em; }
+
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button {
+    justify-self: center;
+    min-width: 112px;
+    margin-top: 12px;
+    padding: 7px 14px;
+    border: 1px solid rgba(217,185,111,.58);
+    border-radius: 999px;
+    color: #e8c77d;
+    background: rgba(3,18,46,.56);
+    font: 600 .62rem/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .12em;
+    cursor: pointer;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button:hover,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button:focus-visible {
+    border-color: #9ed8ff;
+    color: #f8e2aa;
+    box-shadow: 0 0 16px rgba(65,157,255,.28);
+    outline: none;
+  }
+}
+
+/* Global STAR READING template: Challenge structure, Explorer color system. */
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    min-height: 0;
+    padding: 20px 18px 18px;
+    overflow: visible;
+    border-radius: 13px;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__heading {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(126, 183, 239, .24);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard .adviceBox__icon {
+    grid-column: auto;
+    grid-row: auto;
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__number,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard h2,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__summary,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button {
+    grid-column: auto;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__number { margin: 0 0 4px; }
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard h2 { margin: 0; }
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__summary,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText { margin-top: 0; }
+}
+
+@media (min-width: 1100px), (min-width: 800px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="explorer"] .explorerDesktopReadings {
+    display: grid;
+    width: min(1228px, calc(100vw - 72px));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+    position: relative;
+    height: 320px;
+    min-height: 320px;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    padding: 15px 14px 42px;
+    overflow: hidden;
+    border-radius: 9px !important;
+    background:
+      linear-gradient(118deg, rgba(220, 242, 255, .17) 0%, rgba(220, 242, 255, .045) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(48, 136, 241, .18), transparent 38%),
+      linear-gradient(145deg, rgba(5, 42, 91, .48), rgba(2, 18, 52, .66));
+    backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+    -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard.is-active {
+    height: auto;
+    overflow: visible;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard.is-active .explorerReadingCard__summary {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__heading {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    min-height: 62px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(126, 183, 239, .24);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard .adviceBox__icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__number {
+    margin: 0 0 2px;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard h2 {
+    min-height: 0;
+    margin: 0;
+    font-size: clamp(.95rem, 1.15vw, 1.18rem);
+    line-height: 1.38;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__summary,
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText {
+    font-size: .64rem;
+    line-height: 1.58;
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard__fullText {
+    overflow: visible;
+    margin-top: 18px;
+    padding: 18px 0 8px;
+    border-top: 1px solid rgba(126, 183, 239, .22);
+  }
+
+  #root .resultHero[data-star-type="explorer"] .explorerReadingCard button {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    justify-self: auto;
+    min-width: 92px;
+    min-height: 0;
+    margin: 0;
+    padding: 4px 12px;
+    font-size: .5rem;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,64 @@
+/* GUARDIAN desktop-only visual refinements. Mobile geometry is intentionally untouched. */
+@media (min-width: 1100px),
+  (min-width: 900px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="persistence"] .resultLead {
+    box-sizing: border-box;
+    display: block;
+    width: fit-content;
+    max-width: min(820px, calc(100% - 80px));
+    margin-inline: auto;
+    padding: 8px clamp(50px, 6vw, 88px) 9px;
+    text-align: center;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(224, 242, 255, .2) 0 1px,
+        transparent 1px calc(100% - 1px),
+        rgba(239, 211, 148, .15) calc(100% - 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(9, 32, 82, .38) 13%,
+        rgba(5, 25, 68, .76) 34%,
+        rgba(3, 18, 55, .84) 50%,
+        rgba(5, 25, 68, .76) 66%,
+        rgba(9, 32, 82, .38) 87%,
+        transparent 100%
+      );
+    box-shadow:
+      inset 0 1px rgba(229, 244, 255, .08),
+      inset 0 0 20px rgba(96, 168, 255, .08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  /* The exported frame is 112% x 126% and centered on the stage. These
+     offsets follow its real inner opening, keeping one continuous glass
+     surface under the portrait/text while the opaque architecture remains
+     above it. */
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaGlass {
+    position: absolute;
+    z-index: 0;
+    inset: 22.2% .7% 13.4% 4.6%;
+    display: block !important;
+    overflow: hidden;
+    border: 1px solid rgba(196, 226, 255, .18);
+    border-radius: 46px 46px 34px 34px;
+    clip-path: inset(0 round 46px 46px 34px 34px);
+    background:
+      radial-gradient(circle at 24% 42%, rgba(76, 151, 235, .18), transparent 38%),
+      radial-gradient(circle at 76% 18%, rgba(131, 187, 255, .1), transparent 34%),
+      linear-gradient(135deg, rgba(6, 29, 76, .86), rgba(2, 17, 52, .78) 58%, rgba(12, 43, 92, .72));
+    box-shadow:
+      inset 0 1px rgba(235, 247, 255, .16),
+      inset 0 0 38px rgba(86, 165, 246, .12),
+      inset 0 -24px 42px rgba(0, 10, 38, .18),
+      0 16px 40px rgba(0, 9, 33, .2);
+    backdrop-filter: blur(8px) saturate(112%);
+    -webkit-backdrop-filter: blur(8px) saturate(112%);
+    pointer-events: none;
+  }
+}

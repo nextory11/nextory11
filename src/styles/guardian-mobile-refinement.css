@@ -1,0 +1,271 @@
+/* Guardian phone / portrait-tablet refinement only. Desktop is intentionally untouched. */
+.guardianJuzaGlass,
+.guardianJuzaPortraitV2,
+.guardianJuzaMobilePortraitFrame,
+.guardianJuzaMobileOuterFrame,
+.guardianJuzaHeading,
+.guardianJuzaReadAll,
+.starReadingSection--guardian {
+  display: none;
+}
+
+@media (min-width: 1100px), (min-width: 800px) and (max-width: 1099px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="persistence"] .starReadingSection--guardian {
+    display: grid;
+  }
+}
+
+@media (max-width: 799px), (min-width: 800px) and (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="persistence"] .resultLead {
+    box-sizing: border-box;
+    width: min(calc(100% - 28px), 620px);
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 7px clamp(30px, 10vw, 58px) 8px;
+    text-align: center;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(224, 242, 255, .2) 0 1px,
+        transparent 1px calc(100% - 1px),
+        rgba(239, 211, 148, .15) calc(100% - 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(9, 32, 82, .4) 11%,
+        rgba(5, 25, 68, .78) 29%,
+        rgba(3, 18, 55, .86) 50%,
+        rgba(5, 25, 68, .78) 71%,
+        rgba(9, 32, 82, .4) 89%,
+        transparent 100%
+      );
+    box-shadow:
+      inset 0 1px rgba(229, 244, 255, .09),
+      inset 0 0 18px rgba(96, 168, 255, .09);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  }
+
+  #root .resultHero[data-star-type="persistence"] .resultCard {
+    width: min(100%, 700px);
+    overflow: visible;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .juzaMessage {
+    --guardian-portrait-unit-shift-x: 1.5%;
+    --guardian-portrait-unit-shift-y: 14px;
+    position: relative;
+    left: -1.5px;
+    box-sizing: border-box;
+    width: min(700px, calc(100% + 3px));
+    min-height: clamp(500px, 132vw, 590px);
+    margin: 24px auto 24px;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 0 !important;
+    border-radius: 20px;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > :is(.panelFrameOrnaments, .typeFrameAsset--juza, .guardianJuzaPortrait, .juzaMessage__particles) {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaGlass {
+    position: absolute;
+    z-index: 1;
+    inset: 4.8% 3.8% 4.2%;
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(205, 224, 255, .2);
+    border-radius: 18px;
+    background:
+      linear-gradient(125deg, rgba(246, 250, 255, .13), transparent 27%),
+      radial-gradient(circle at 22% 24%, rgba(43, 108, 215, .17), transparent 38%),
+      linear-gradient(150deg, rgba(8, 38, 91, .68), rgba(2, 13, 43, .8));
+    box-shadow: inset 0 0 34px rgba(117, 178, 255, .1);
+    backdrop-filter: blur(13px) saturate(118%);
+    -webkit-backdrop-filter: blur(13px) saturate(118%);
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaPortraitV2 {
+    position: absolute;
+    z-index: 3;
+    top: calc(clamp(116px, 29.5vw, 142px) + var(--guardian-portrait-unit-shift-y));
+    left: calc(8.1% + var(--guardian-portrait-unit-shift-x));
+    display: block;
+    width: 28.5%;
+    height: clamp(255px, 65vw, 315px);
+    object-fit: cover;
+    object-position: 50% 16%;
+    clip-path: inset(1% 5% 2% round 46% 46% 8% 8%);
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaMobilePortraitFrame {
+    position: absolute;
+    z-index: 4;
+    top: calc(clamp(91px, 23vw, 112px) + var(--guardian-portrait-unit-shift-y));
+    left: calc(4.6% + var(--guardian-portrait-unit-shift-x));
+    display: block;
+    width: 35.5%;
+    height: clamp(314px, 80.5vw, 390px);
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaMobileOuterFrame {
+    position: absolute;
+    z-index: 7;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaHeading {
+    position: absolute;
+    z-index: 5;
+    top: clamp(105px, 26.5vw, 130px);
+    right: 7.5%;
+    left: 42%;
+    display: grid;
+    gap: 5px;
+    margin: 0;
+    color: #f1d48d;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaHeading span {
+    font: 600 clamp(8px, 2.35vw, 12px)/1.2 Georgia, serif;
+    letter-spacing: .14em;
+    color: #dbeaff;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaHeading strong {
+    font: 500 clamp(16px, 4.7vw, 25px)/1.35 Georgia, "Yu Mincho", serif;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > p {
+    position: absolute;
+    z-index: 5;
+    top: clamp(170px, 43.5vw, 213px);
+    right: 7.2%;
+    bottom: clamp(94px, 24vw, 116px);
+    left: 42%;
+    box-sizing: border-box;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 12px 18px 14px 12px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgba(192, 217, 255, .25);
+    border-radius: 13px;
+    color: rgba(251, 250, 245, .97);
+    background: rgba(2, 15, 45, .34);
+    font-size: clamp(12px, 3.35vw, 16px) !important;
+    line-height: 1.82 !important;
+    text-align: left !important;
+    white-space: pre-line;
+    scrollbar-color: #dfbc68 rgba(19, 60, 122, .28);
+    scrollbar-width: thin;
+    touch-action: pan-y;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > p::-webkit-scrollbar { width: 4px; }
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > p::-webkit-scrollbar-track { background: rgba(25, 70, 135, .25); }
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > p::-webkit-scrollbar-thumb { border-radius: 999px; background: linear-gradient(#eef5ff, #d5ac50); }
+
+  #root .resultHero[data-star-type="persistence"] .guardianJuzaReadAll {
+    position: absolute;
+    z-index: 6;
+    right: 8%;
+    bottom: clamp(54px, 13.8vw, 68px);
+    display: block;
+    box-sizing: border-box;
+    width: 49%;
+    min-height: 38px;
+    padding: 8px 18px;
+    border: 1px solid rgba(224, 188, 101, .82);
+    border-radius: 999px;
+    color: #f2d58e;
+    background: rgba(3, 18, 54, .74);
+    font: 600 clamp(11px, 3.1vw, 14px)/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .1em;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .resultGrid {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="persistence"] .starReadingSection--guardian {
+    display: grid;
+    width: min(100%, 700px);
+    margin: 30px auto 24px;
+  }
+
+  #root .starReadingPanel--guardian {
+    border-color: rgba(132, 180, 248, .74) !important;
+    background:
+      linear-gradient(118deg, rgba(246, 250, 255, .16), rgba(222, 236, 255, .04) 24%, transparent 47%),
+      radial-gradient(circle at 84% 8%, rgba(70, 139, 244, .18), transparent 38%),
+      linear-gradient(145deg, rgba(14, 54, 112, .6), rgba(2, 17, 53, .76)) !important;
+    box-shadow: inset 0 0 0 1px rgba(230, 240, 255, .09), inset 0 1px 0 rgba(255, 255, 255, .17), 0 0 10px rgba(65, 132, 236, .28), 0 18px 44px rgba(0, 5, 28, .36) !important;
+    backdrop-filter: blur(16px) saturate(122%);
+    -webkit-backdrop-filter: blur(16px) saturate(122%);
+  }
+
+  #root .starReadingPanel--guardian :is(.starReadingPanel__heading, .starReadingPanel__body) { border-color: rgba(183, 211, 255, .27); }
+  #root .starReadingPanel--guardian :is(h2, .adviceBox__icon, button) { color: #dbeaff; }
+}
+
+/* Guardian-only sacred glass: the translucent surface begins inside the
+   shared frame, so its blue field never covers the border or ornaments. */
+#root .resultHero[data-star-type="persistence"] .starReadingPanel--guardian {
+  isolation: isolate;
+  border-color: rgba(185, 218, 255, .84) !important;
+  background: transparent !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 225, 156, .16),
+    inset 0 1px 0 rgba(248, 252, 255, .42),
+    0 0 7px rgba(154, 207, 255, .42),
+    0 0 18px rgba(70, 135, 232, .22),
+    0 16px 38px rgba(0, 8, 34, .34) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#root .resultHero[data-star-type="persistence"] .starReadingPanel--guardian::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 1px;
+  border: 1px solid rgba(224, 239, 255, .14);
+  border-radius: 7px;
+  clip-path: inset(0 round 7px);
+  background:
+    linear-gradient(120deg, rgba(246, 251, 255, .16), transparent 28%),
+    radial-gradient(circle at 82% 9%, rgba(91, 158, 255, .19), transparent 38%),
+    linear-gradient(148deg, rgba(19, 63, 132, .62), rgba(3, 24, 68, .72) 58%, rgba(2, 13, 43, .78));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .24),
+    inset 0 0 24px rgba(132, 190, 255, .09);
+  backdrop-filter: blur(11px) saturate(116%);
+  -webkit-backdrop-filter: blur(11px) saturate(116%);
+  pointer-events: none;
+}
+
+#root .resultHero[data-star-type="persistence"] .starReadingPanel--guardian > :is(.starReadingPanel__heading, .starReadingPanel__body) {
+  position: relative;
+  z-index: 1;
+}
+
+#root .resultHero[data-star-type="persistence"] .starReadingPanel--guardian > button {
+  z-index: 2;
+}

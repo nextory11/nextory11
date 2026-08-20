@@ -1,0 +1,76 @@
+/* Intuitive Mobile / portrait-tablet only. Desktop remains locked. */
+.intuitiveJuzaMobileGlass,.intuitiveJuzaPortraitV2,.intuitiveJuzaMobilePortraitFrame,
+.intuitiveJuzaMobileOuterFrame,.intuitiveJuzaMobileHeading,.intuitiveJuzaMobileReadAll,
+.starReadingSection--intuitive{display:none}
+.intuitiveDesktopInsights .starReadingSection--intuitive{display:grid}
+.intuitiveMobileInsights{display:none}
+
+/* Keep the global button geometry; only raise INTUITIVE contrast and affordance. */
+#root .starReadingSection--intuitive .starReadingPanel>button{
+  border-color:rgba(222,190,116,.86)!important;
+  color:#fff8e7!important;
+  background:linear-gradient(135deg,rgba(22,38,82,.9),rgba(15,25,61,.84))!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.12),inset 0 0 12px rgba(93,120,214,.12),0 0 8px rgba(222,184,102,.16)!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.82),0 0 5px rgba(255,235,190,.16)
+}
+#root .starReadingSection--intuitive .starReadingPanel>button:hover,
+#root .starReadingSection--intuitive .starReadingPanel>button:focus-visible{
+  border-color:#f0d494!important;
+  color:#fffdf5!important;
+  background:linear-gradient(135deg,rgba(30,49,99,.94),rgba(25,34,78,.9))!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.17),0 0 11px rgba(229,190,105,.25)!important;
+  outline:1px solid rgba(255,241,206,.72)!important;
+  outline-offset:2px
+}
+#root .starReadingSection--intuitive .starReadingPanel>button:active,
+#root .starReadingSection--intuitive .starReadingPanel>button[aria-expanded="true"]{
+  border-color:rgba(238,205,132,.92)!important;
+  color:#fffaf0!important;
+  background:linear-gradient(135deg,rgba(19,32,73,.96),rgba(33,27,76,.92))!important;
+  box-shadow:inset 0 1px 4px rgba(0,0,0,.28),0 0 9px rgba(222,184,102,.2)!important
+}
+
+@media (min-width:1100px){
+  #root .starReadingPanel--intuitive .starReadingPanel__heading>.adviceBox__icon{
+    position:static!important;
+    inset:auto!important;
+    transform:none!important
+  }
+
+  #root .starReadingPanel--intuitive{
+    border-color:rgba(111,137,231,.72)!important;
+    background:linear-gradient(118deg,rgba(219,228,255,.13),rgba(219,228,255,.035) 23%,transparent 47%),radial-gradient(circle at 82% 10%,rgba(126,83,206,.17),transparent 38%),linear-gradient(145deg,rgba(6,22,62,.7),rgba(5,14,43,.8) 58%,rgba(31,18,67,.72))!important;
+    box-shadow:inset 0 0 0 1px rgba(211,222,255,.075),inset 0 1px rgba(231,237,255,.16),0 0 9px rgba(98,116,225,.27),0 18px 44px rgba(0,3,25,.35)!important;
+    backdrop-filter:blur(16px) saturate(122%);
+    -webkit-backdrop-filter:blur(16px) saturate(122%)
+  }
+  #root .starReadingPanel--intuitive :is(.starReadingPanel__heading,.starReadingPanel__body){border-color:rgba(143,159,226,.25)}
+  #root .starReadingPanel--intuitive :is(h2,.adviceBox__icon){color:#aebeff}
+}
+
+@media (max-width:799px),(min-width:800px) and (max-width:1099px) and (orientation:portrait){
+  .intuitiveDesktopInsights{display:none}
+  .intuitiveMobileInsights{display:contents}
+  #root .resultHero[data-star-type="intuition"]{overflow-x:clip}
+  #root .resultHero[data-star-type="intuition"] .resultCard{display:flex;flex-direction:column;width:100%}
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame{display:contents!important}
+  #root .resultHero[data-star-type="intuition"] .intuitiveGuidanceFrame__asset{display:none!important}
+  #root .resultHero[data-star-type="intuition"] .juzaMessage{order:5;position:relative;display:grid!important;grid-template-columns:105px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:8px;width:calc(100% + 28px)!important;max-width:none!important;min-height:clamp(500px,132vw,565px)!important;margin:18px -14px 0!important;padding:clamp(64px,17vw,78px) 22px clamp(56px,15vw,70px)!important;border:0!important;border-radius:24px!important;background:transparent!important;overflow:hidden!important;isolation:isolate}
+  #root .resultHero[data-star-type="intuition"] .juzaMessage::before,#root .resultHero[data-star-type="intuition"] .juzaMessage::after,#root .resultHero[data-star-type="intuition"] .typeFrameAsset--juza,#root .resultHero[data-star-type="intuition"] .juzaMessage>.panelFrameOrnaments{display:none!important}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileGlass{display:block!important;position:absolute!important;inset:24px 22px!important;z-index:0!important;border:1px solid rgba(91,124,229,.44);border-radius:20px;background:linear-gradient(135deg,rgba(3,10,31,.86),rgba(12,28,70,.72) 48%,rgba(29,17,62,.76));box-shadow:inset 0 1px rgba(255,255,255,.12),inset 0 0 38px rgba(68,96,202,.18),0 0 24px rgba(105,77,216,.14);backdrop-filter:blur(11px) saturate(1.14)}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileOuterFrame{display:block!important;position:absolute;inset:0;z-index:4;width:100%;height:100%;object-fit:fill;pointer-events:none}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaPortraitV2{display:block!important;grid-column:1;grid-row:1/4;align-self:center;justify-self:center;width:100%;height:clamp(300px,82vw,370px);object-fit:cover;object-position:50% 34%;clip-path:ellipse(37% 42% at 50% 50%);z-index:1}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobilePortraitFrame{display:block!important;grid-column:1;grid-row:1/4;align-self:center;justify-self:center;width:120%;height:clamp(338px,92vw,412px);object-fit:fill;z-index:2;pointer-events:none}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileHeading{display:flex!important;grid-column:2;grid-row:1;z-index:2;flex-direction:column;gap:5px;align-self:end;text-align:left;color:#a8baff}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileHeading span{font:600 clamp(7px,2vw,10px)/1.2 Georgia,serif;letter-spacing:.08em}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileHeading strong{color:#e7c476;font:500 clamp(14px,4vw,20px)/1.35 Georgia,"Yu Mincho",serif;white-space:nowrap}
+  #root .resultHero[data-star-type="intuition"] .juzaMessage>p{display:block!important;grid-column:2;grid-row:2;z-index:2;min-width:0;max-height:clamp(250px,67vw,305px);margin:10px 0 8px!important;padding:10px 15px 10px 0!important;overflow-y:auto!important;overscroll-behavior:contain;color:#f3f4ff;font-size:clamp(11px,3vw,15px)!important;line-height:1.85!important;white-space:pre-line;scrollbar-width:thin;scrollbar-color:#788ff0 rgba(3,9,28,.46)}
+  #root .resultHero[data-star-type="intuition"] .juzaMessage>p::-webkit-scrollbar{width:4px}
+  #root .resultHero[data-star-type="intuition"] .juzaMessage>p::-webkit-scrollbar-thumb{background:linear-gradient(#dfbd70,#7188ee,#7754d9);border-radius:99px}
+  #root .resultHero[data-star-type="intuition"] .intuitiveJuzaMobileReadAll{display:block!important;grid-column:2;grid-row:3;z-index:3;width:min(100%,150px);height:32px;align-self:start;justify-self:center;margin-top:4px;border:1px solid rgba(216,181,105,.84);border-radius:999px;color:#f4d99c;background:linear-gradient(90deg,rgba(4,12,36,.9),rgba(28,23,70,.75));font:500 12px/1 "Yu Mincho",serif}
+  #root .resultHero[data-star-type="intuition"] .resultGrid{display:none!important}
+  #root .resultHero[data-star-type="intuition"] .starReadingSection--intuitive{display:grid;order:6;width:calc(100% + 12px);max-width:none;margin:30px -6px 24px;--star-reading-accent:#8199f2;--star-reading-accent-rgb:129,153,242}
+  #root .resultHero[data-star-type="intuition"] .starReadingSection--intuitive .starReadingPanel{height:clamp(384.75px,calc(55.66vw + 167.68px),407.02px);min-height:384.75px;background:linear-gradient(125deg,rgba(5,14,42,.82),rgba(18,35,78,.68) 54%,rgba(35,22,67,.76))!important;border-color:rgba(111,137,231,.66)!important;box-shadow:inset 0 1px rgba(255,255,255,.13),0 0 18px rgba(84,98,211,.17)!important;backdrop-filter:blur(10px) saturate(1.13)}
+  #root .resultHero[data-star-type="intuition"] .starReadingSection--intuitive .starReadingPanel__heading>.adviceBox__icon{position:static!important;inset:auto!important;transform:none!important}
+  #root .resultHero[data-star-type="intuition"] .starReadingSection--intuitive .starReadingPanel.is-active{height:auto;min-height:384.75px}
+}

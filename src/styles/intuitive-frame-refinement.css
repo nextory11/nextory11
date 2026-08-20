@@ -245,7 +245,7 @@
 }
 
 #root .resultHero[data-star-type="intuition"] .resultLead::before {
-  content: "言葉になる前の気配を感じ、見えないつながりを読み取る人";
+  content: "自分の直感を信じ、その感覚で進む道を選ぶ人";
   display: block;
   font-size: clamp(14px, 1.45vw, 18px);
 }
@@ -1436,7 +1436,7 @@
 
   #root .resultHero[data-star-type="intuition"] .juzaMessage {
     margin-block-end: 28px !important;
-    translate: 0 20px;
+    translate: 0 108px;
   }
 
   #root .resultHero[data-star-type="intuition"] .resultGrid {

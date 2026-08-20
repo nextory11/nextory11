@@ -14,7 +14,210 @@
   pointer-events: none;
 }
 
-.resultScene[data-master-scene="harmonizer"] .designMasterScene__pointerLight {
+/* Harmony mobile Design Master correction: portrait-led 40/60 composition. */
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    width: min(680px, calc(100% - 24px));
+    min-height: clamp(500px, 132vw, 590px);
+    margin-block: clamp(42px, 10vw, 64px) clamp(52px, 12vw, 72px);
+    padding: 0 !important;
+    border-radius: 30px;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobileOuterFrame {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    top: clamp(96px, 25vw, 132px);
+    left: 22%;
+    width: clamp(94px, 25vw, 132px);
+    height: clamp(250px, 66vw, 320px);
+    object-position: center 14%;
+    border-radius: 48% 48% 45% 45%;
+    transform: translateX(-50%);
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobilePortraitFrame {
+    top: clamp(70px, 18vw, 96px);
+    left: 22%;
+    width: clamp(120px, 32vw, 164px);
+    transform: translateX(-50%);
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading {
+    top: clamp(64px, 16vw, 88px);
+    right: clamp(30px, 8vw, 50px);
+    left: 43%;
+    gap: 5px;
+    text-align: left;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading span {
+    font-size: clamp(8px, 2.15vw, 11px);
+    letter-spacing: .11em;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading strong {
+    font-size: clamp(16px, 4.25vw, 22px);
+    letter-spacing: .025em;
+    white-space: nowrap;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    position: absolute;
+    z-index: 7;
+    top: clamp(126px, 32vw, 168px);
+    right: clamp(28px, 7vw, 46px);
+    bottom: clamp(78px, 20vw, 100px);
+    left: 43%;
+    width: auto;
+    max-height: none;
+    margin: 0;
+    padding: 12px 10px 16px;
+    font-size: clamp(11px, 2.9vw, 14px);
+    line-height: 1.75;
+    border-radius: 13px;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaReadAll {
+    right: clamp(30px, 8vw, 50px);
+    bottom: clamp(25px, 6.5vw, 38px);
+    min-width: clamp(132px, 37vw, 184px);
+    min-height: 36px;
+    padding: 8px 14px;
+    font-size: clamp(11px, 2.9vw, 14px);
+  }
+}
+
+/* Harmony mobile AI JUZA design-master frame extraction. Desktop remains on
+   the approved existing composition. */
+#root .resultHero[data-star-type="thinker"] :is(
+  .harmonizerJuzaMobileOuterFrame,
+  .harmonizerJuzaMobilePortraitFrame,
+  .harmonizerJuzaPortraitV2,
+  .harmonizerJuzaHeading,
+  .harmonizerJuzaReadAll
+) { display: none; }
+
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    min-height: clamp(690px, 177vw, 780px);
+    padding: clamp(326px, 83vw, 372px) clamp(34px, 9vw, 58px) 82px !important;
+    border: 0 !important;
+    border-radius: 34px;
+  }
+
+  #root .resultHero[data-star-type="thinker"] :is(.harmonizerJuzaFrame, .typeFrameAsset--juza, .harmonizerJuzaGlass) {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage::before,
+  #root .resultHero[data-star-type="thinker"] .juzaMessage::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobileOuterFrame {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: block !important;
+    width: calc(100% + 8px);
+    height: auto;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 12px rgba(76, 225, 205, .2));
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    z-index: 4;
+    top: clamp(54px, 14vw, 78px);
+    left: 50%;
+    width: clamp(126px, 34vw, 174px);
+    height: clamp(226px, 60vw, 302px);
+    object-fit: cover;
+    object-position: center 16%;
+    border-radius: 48% 48% 45% 45%;
+    transform: translateX(-50%);
+    animation: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobilePortraitFrame {
+    position: absolute;
+    z-index: 5;
+    top: clamp(32px, 8vw, 48px);
+    left: 50%;
+    display: block !important;
+    width: clamp(154px, 42vw, 214px);
+    height: auto;
+    max-width: none;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 13px rgba(72, 222, 207, .2));
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading {
+    position: absolute;
+    z-index: 7;
+    top: clamp(288px, 74vw, 330px);
+    right: 38px;
+    left: 38px;
+    display: grid !important;
+    gap: 5px;
+    color: #d7c379;
+    font-family: Georgia, "Yu Mincho", serif;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(86, 221, 207, .23), 0 1px 3px rgba(0, 0, 0, .92);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading span {
+    color: #76e2d3;
+    font-size: clamp(10px, 2.7vw, 13px);
+    letter-spacing: .16em;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading strong {
+    font-size: clamp(20px, 5.6vw, 27px);
+    font-weight: 500;
+    letter-spacing: .055em;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    max-height: clamp(244px, 63vw, 292px);
+    padding: 15px 13px 22px;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaReadAll {
+    position: absolute;
+    z-index: 11;
+    right: clamp(36px, 10vw, 62px);
+    bottom: 28px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 144px;
+    min-height: 38px;
+    padding: 8px 18px;
+    color: #e5ce78;
+    font: 600 13px/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .08em;
+    background: rgba(3, 30, 39, .72);
+    border: 1px solid rgba(218, 184, 83, .72);
+    border-radius: 999px;
+    box-shadow: inset 0 1px rgba(255,255,255,.09), 0 0 12px rgba(71, 218, 201, .12);
+    cursor: pointer;
+  }
+}
+
+.resultScene[data-master-scene="harmonizer"] .designMasterScene__pointerLight,
+.resultScene[data-master-scene="harmonizer"] .designMasterScene__constellation {
   display: none;
 }
 
@@ -249,11 +452,11 @@
 #root .resultHero[data-star-type="thinker"] .harmonizerJuzaGlass {
   position: absolute;
   z-index: 1;
-  inset: 19% 4.5% 19% 42.6%;
+  inset: 22% 1% 22% 42%;
   display: block;
   margin: 0;
   border: 1px solid rgba(154, 239, 226, .15);
-  border-radius: 38px;
+  border-radius: 38px 155px 155px 38px;
   background:
     linear-gradient(125deg, rgba(219, 255, 248, .055), transparent 34%),
     linear-gradient(105deg, rgba(1, 26, 35, .78), rgba(4, 38, 49, .68) 58%, rgba(16, 20, 47, .76));
@@ -268,10 +471,10 @@
     content: "" !important;
     position: absolute;
     z-index: 1;
-    top: 13.8%;
-    left: 8.4%;
-    width: 31.8%;
-    height: 64.4%;
+    top: 20.8%;
+    left: 12.5%;
+    width: 25.1%;
+    height: 58.4%;
     display: block !important;
     border: 0 !important;
     border-radius: 50%;
@@ -280,10 +483,175 @@
     box-shadow:
       inset 0 0 36px rgba(91, 225, 212, .11),
       inset 0 -22px 34px rgba(17, 11, 46, .22);
-    backdrop-filter: blur(7px) saturate(112%);
-    -webkit-backdrop-filter: blur(7px) saturate(112%);
-    clip-path: ellipse(48% 49% at 50% 50%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    clip-path: ellipse(44% 47% at 50% 50%);
     pointer-events: none;
+  }
+}
+
+/* Harmony Desktop STAR READING — approved four-card expansion.
+   Mobile/tablet keep the established three-card implementation. */
+.harmonyDesktopReadings {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  #root .resultHero[data-star-type="thinker"] .resultGrid {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyDesktopReadings {
+    position: relative;
+    left: 50%;
+    display: grid;
+    width: min(1228px, calc(100vw - 72px));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+    margin: 0 auto;
+    transform: translateX(-50%);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard {
+    box-sizing: border-box;
+    position: relative;
+    display: grid;
+    min-width: 0;
+    height: 320px;
+    min-height: 320px;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    align-content: start;
+    padding: 15px 14px 42px !important;
+    overflow: hidden;
+    border: 1px solid rgba(132, 221, 202, .46);
+    border-radius: 9px !important;
+    background:
+      linear-gradient(118deg, rgba(212, 255, 245, .16) 0%, rgba(212, 255, 245, .045) 18%, transparent 42%),
+      radial-gradient(circle at 82% 10%, rgba(139, 92, 196, .16), transparent 38%),
+      linear-gradient(145deg, rgba(4, 68, 67, .42), rgba(7, 28, 47, .61) 58%, rgba(33, 20, 61, .58));
+    box-shadow:
+      inset 0 0 0 2px rgba(202, 255, 244, .035),
+      inset 0 2px 1px rgba(220, 255, 248, .15),
+      inset 0 -1px 0 rgba(214, 183, 101, .13),
+      0 18px 44px rgba(0, 13, 20, .32),
+      0 0 22px rgba(82, 214, 190, .11);
+    backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+    -webkit-backdrop-filter: blur(16px) saturate(122%) brightness(1.05);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard.is-active {
+    height: auto;
+    min-height: 320px;
+    grid-template-rows: auto auto auto auto;
+    overflow: visible;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard::before,
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard::after { display: none !important; }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__heading {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    min-height: 62px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(161, 219, 205, .24);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard .adviceBox__icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0;
+    color: #90e5d7;
+    filter: drop-shadow(0 0 9px rgba(131, 236, 220, .38));
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__number {
+    width: 100%;
+    margin: 0 0 2px !important;
+    color: #d9bd73;
+    font: 600 .63rem/1.3 Georgia, serif;
+    letter-spacing: .13em;
+    text-align: left !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard h2 {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #ead28c;
+    font: 500 clamp(.95rem, 1.15vw, 1.18rem)/1.38 Georgia, "Yu Mincho", serif;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__summary,
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText {
+    width: 100%;
+    margin: 0 !important;
+    color: rgba(242, 255, 251, .96);
+    font-size: .64rem;
+    line-height: 1.58;
+    text-align: left !important;
+    text-shadow: 0 1px 5px rgba(0, 9, 20, .88);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText[hidden] {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard.is-active .harmonyReadingCard__summary {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText {
+    min-height: 0;
+    margin-top: 10px !important;
+    padding: 0 8px 0 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 220, 203, .82) rgba(49, 25, 70, .34);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard.is-active .harmonyReadingCard__fullText {
+    overflow: visible;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 18px 0 0 !important;
+    padding: 18px 0 8px;
+    border-top: 1px solid rgba(137, 224, 209, .22);
+    background: transparent;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText p {
+    width: 100%;
+    margin: 0 0 .85em;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText::-webkit-scrollbar { width: 4px; }
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText::-webkit-scrollbar-track { background: rgba(49, 25, 70, .34); border-radius: 999px; }
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard__fullText::-webkit-scrollbar-thumb { background: linear-gradient(#d1b96d, #76d8c8, #9d75cf); border-radius: 999px; }
+
+  #root .resultHero[data-star-type="thinker"] .harmonyReadingCard button {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    min-width: 92px;
+    min-height: 0;
+    margin: 0;
+    padding: 4px 12px;
+    border: 1px solid rgba(216, 187, 111, .62);
+    border-radius: 999px;
+    color: #e5ca82;
+    background: linear-gradient(135deg, rgba(12, 61, 67, .58), rgba(43, 25, 75, .54));
+    font: 600 .5rem/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .12em;
   }
 }
 
@@ -446,6 +814,135 @@
   }
 }
 
+/* Harmony mobile / portrait tablet: preserve the approved garden scene and
+   existing assets while containing AI JUZA copy in one independent panel. */
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    position: relative;
+    box-sizing: border-box;
+    width: min(680px, calc(100% - 24px));
+    min-height: clamp(650px, 172vw, 760px);
+    margin: clamp(42px, 10vw, 64px) auto clamp(52px, 12vw, 72px);
+    padding: clamp(218px, 56vw, 292px) clamp(20px, 6vw, 42px) 68px !important;
+    overflow: hidden;
+    border: 1px solid rgba(132, 221, 202, .56) !important;
+    border-radius: 28px;
+    background:
+      linear-gradient(125deg, rgba(218, 255, 247, .1), transparent 30%),
+      radial-gradient(circle at 82% 14%, rgba(145, 94, 196, .15), transparent 38%),
+      linear-gradient(150deg, rgba(3, 58, 63, .66), rgba(5, 31, 48, .74) 58%, rgba(29, 20, 62, .7)) !important;
+    box-shadow:
+      inset 0 1px rgba(224, 255, 249, .16),
+      inset 0 0 42px rgba(62, 218, 202, .08),
+      0 22px 54px rgba(0, 13, 26, .36),
+      0 0 18px rgba(91, 226, 210, .14) !important;
+    backdrop-filter: blur(12px) saturate(118%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(118%) !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaFrame {
+    top: 0;
+    width: 100%;
+    transform: translate(-50%, 0);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .typeFrameAsset--juza,
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaGlass {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage::after {
+    content: "A MESSAGE FROM AI JUZA\A AI JUZAからの言葉" !important;
+    position: absolute;
+    z-index: 6;
+    top: clamp(172px, 44vw, 226px);
+    right: 22px;
+    left: 22px;
+    display: block !important;
+    width: auto;
+    height: auto;
+    color: #d8c77e;
+    font: 600 clamp(11px, 3vw, 14px)/1.8 Georgia, "Yu Mincho", serif;
+    letter-spacing: .13em;
+    text-align: center;
+    white-space: pre;
+    text-shadow: 0 0 12px rgba(86, 221, 207, .2), 0 1px 3px rgba(0, 0, 0, .9);
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage::before {
+    content: "全文を読む  ↓" !important;
+    position: absolute;
+    z-index: 7;
+    top: auto;
+    right: clamp(28px, 8vw, 54px);
+    bottom: 22px;
+    left: auto;
+    display: block !important;
+    width: auto;
+    height: auto;
+    color: #d8c77e;
+    font: 600 12px/1.4 Georgia, "Yu Mincho", serif;
+    letter-spacing: .1em;
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    clip-path: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    top: clamp(22px, 5.7vw, 38px);
+  }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: clamp(330px, 88vw, 390px);
+    margin: 0;
+    padding: 16px 14px 34px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    color: rgba(249, 255, 253, .98);
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.85;
+    text-align: left;
+    white-space: pre-line;
+    background: linear-gradient(145deg, rgba(1, 24, 33, .46), rgba(15, 16, 48, .38));
+    border: 1px solid rgba(150, 230, 217, .2);
+    border-radius: 16px;
+    box-shadow: inset 0 1px rgba(226, 255, 248, .08), inset 0 0 24px rgba(68, 209, 194, .07);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(118, 221, 203, .9) rgba(48, 25, 69, .32);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root .starReadingSection--harmony .starReadingPanel:not(.is-active) {
+    height: 390px;
+    min-height: 390px;
+  }
+
+  #root .starReadingSection--harmony .starReadingPanel > button {
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1099px) and (orientation: portrait) {
+  #root .starReadingSection--harmony .starReadingPanel:not(.is-active) {
+    height: 300px;
+    min-height: 300px;
+  }
+}
+
 /* Owner spacing polish: bring the three insight frames closer to AI JUZA
    while retaining a clear ornamental safe gap. */
 @media (min-width: 900px) {
@@ -454,9 +951,21 @@
   }
 
   #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
-    width: calc(100% - 20px);
-    margin-inline-start: 20px;
+    width: calc(100% - 36px);
+    max-height: clamp(168px, 14vw, 220px);
+    margin-inline-start: 36px;
+    padding-right: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(118, 221, 203, .88) rgba(48, 25, 69, .34);
+    -webkit-overflow-scrolling: touch;
   }
+
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p::-webkit-scrollbar { width: 5px; }
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p::-webkit-scrollbar-track { background: rgba(48, 25, 69, .34); border-radius: 999px; }
+  #root .resultHero[data-star-type="thinker"] .juzaMessage > p::-webkit-scrollbar-thumb { background: linear-gradient(#d6bc72, #78dccc, #a379d2); border-radius: 999px; }
 
   #root .resultHero[data-star-type="thinker"] .resultGrid {
     position: relative;
@@ -477,5 +986,132 @@
   #root .resultHero[data-star-type="thinker"] .adviceBox > .typeFrameAsset--insight {
     width: calc(100% + 12px) !important;
     height: calc(100% + 12px) !important;
+  }
+}
+
+/* Final mobile-only cascade for the extracted Design Master frames. */
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    min-height: clamp(690px, 177vw, 780px);
+    padding: clamp(326px, 83vw, 372px) clamp(34px, 9vw, 58px) 82px !important;
+    border: 0 !important;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] :is(.harmonizerJuzaFrame, .typeFrameAsset--juza, .harmonizerJuzaGlass) { display: none !important; }
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage::before,
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage::after { content: none !important; display: none !important; }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobileOuterFrame {
+    position: absolute; z-index: 10; top: 50%; left: 50%; display: block !important;
+    width: calc(100% + 8px); height: auto; max-width: none;
+    transform: translate(-50%, -50%); pointer-events: none;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    z-index: 4; top: clamp(62px, 16vw, 82px); left: 50%;
+    width: clamp(88px, 24vw, 116px); height: clamp(164px, 44vw, 210px);
+    object-fit: cover; object-position: center 16%; border-radius: 48% 48% 45% 45%;
+    transform: translateX(-50%); animation: none;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobilePortraitFrame {
+    position: absolute; z-index: 5; top: clamp(34px, 9vw, 50px); left: 50%;
+    display: block !important; width: clamp(108px, 29vw, 142px); height: auto; max-width: none;
+    transform: translateX(-50%); pointer-events: none;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading {
+    position: absolute; z-index: 7; top: clamp(288px, 74vw, 330px); right: 38px; left: 38px;
+    display: grid !important; gap: 5px; color: #d7c379; font-family: Georgia, "Yu Mincho", serif;
+    text-align: center; text-shadow: 0 0 12px rgba(86,221,207,.23), 0 1px 3px rgba(0,0,0,.92);
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading span { color:#76e2d3; font-size:clamp(10px,2.7vw,13px); letter-spacing:.16em; }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading strong { font-size:clamp(20px,5.6vw,27px); font-weight:500; letter-spacing:.055em; }
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    max-height: clamp(218px, 56vw, 264px);
+    margin-top: 36px;
+    padding: 15px 13px 22px;
+  }
+
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaReadAll {
+    position:absolute; z-index:11; right:clamp(36px,10vw,62px); bottom:28px;
+    display:inline-flex !important; align-items:center; justify-content:center; gap:12px;
+    min-width:144px; min-height:38px; padding:8px 18px; color:#e5ce78;
+    font:600 13px/1 Georgia,"Yu Mincho",serif; letter-spacing:.08em;
+    background:rgba(3,30,39,.72); border:1px solid rgba(218,184,83,.72); border-radius:999px;
+    box-shadow:inset 0 1px rgba(255,255,255,.09),0 0 12px rgba(71,218,201,.12); cursor:pointer;
+  }
+}
+
+@media (max-width: 899px), (max-width: 1099px) and (orientation: portrait) {
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage {
+    width: min(700px, calc(100% + 3px));
+    min-height: clamp(500px, 132vw, 590px);
+    left: -1.5px;
+    margin-top: clamp(-68px, -15vw, -54px) !important;
+    margin-bottom: clamp(-72px, -16.5vw, -60px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaGlass {
+    position: absolute;
+    z-index: 1;
+    inset: 15% 3.5% 17%;
+    display: block !important;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(154, 239, 226, .15);
+    border-radius: 18px;
+    background:
+      linear-gradient(125deg, rgba(218, 255, 247, .1), transparent 30%),
+      radial-gradient(circle at 82% 14%, rgba(145, 94, 196, .15), transparent 38%),
+      linear-gradient(150deg, rgba(3, 58, 63, .66), rgba(5, 31, 48, .74) 58%, rgba(29, 20, 62, .7));
+    box-shadow: inset 0 1px rgba(224, 255, 249, .16), inset 0 0 42px rgba(62, 218, 202, .08);
+    backdrop-filter: blur(12px) saturate(118%);
+    -webkit-backdrop-filter: blur(12px) saturate(118%);
+    pointer-events: none;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobileOuterFrame {
+    inset: 0; width: 100%; height: 100%; transform: none;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortrait {
+    display: none !important;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaPortraitV2 {
+    position: absolute;
+    z-index: 4;
+    top: clamp(108px, 28vw, 140px);
+    left: 23%;
+    display: block !important;
+    width: clamp(104px, 27vw, 138px);
+    height: clamp(220px, 57vw, 284px);
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 48% 48% 45% 45%;
+    clip-path: ellipse(43% 47% at 50% 50%);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaMobilePortraitFrame {
+    top:clamp(84px,21.5vw,110px); left:23%; width:clamp(124px,32vw,164px); transform:translateX(-50%);
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading {
+    top:clamp(104px,26vw,130px); right:clamp(24px,6vw,42px); left:41%; gap:5px; text-align:left;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading span { font-size:clamp(8px,2.15vw,11px); letter-spacing:.11em; }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaHeading strong { font-size:clamp(16px,4.25vw,22px); letter-spacing:.025em; white-space:nowrap; }
+  html #root .resultHero[data-star-type="thinker"] .juzaMessage > p {
+    position:absolute; z-index:7; top:clamp(154px,39vw,192px); right:clamp(22px,5.5vw,38px);
+    bottom:clamp(166px,42vw,202px); left:41%; width:auto; max-height:none; margin:0;
+    padding:12px 11px 16px; font-size:clamp(10.5px,2.7vw,13px); line-height:1.68; border-radius:13px;
+  }
+  html #root .resultHero[data-star-type="thinker"] .harmonizerJuzaReadAll {
+    right:clamp(24px,6vw,42px); bottom:clamp(116px,29vw,138px); min-width:clamp(136px,38vw,190px);
+    min-height:36px; padding:8px 14px; font-size:clamp(11px,2.9vw,14px);
   }
 }

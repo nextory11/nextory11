@@ -1779,6 +1779,12 @@
   background: linear-gradient(90deg, rgba(1, 15, 40, .48), rgba(2, 22, 55, .26) 78%, transparent);
 }
 
+@media (min-width: 900px) {
+  .resultHero[data-star-type="explorer"] .juzaMessage > p {
+    transform: translateX(8%);
+  }
+}
+
 @media (min-width: 521px) and (max-width: 899px) {
   #root .resultHero[data-star-type="explorer"] .juzaMessage {
     padding: 118px 58px 86px 252px !important;

@@ -147,12 +147,24 @@
 }
 
 .resultHero[data-star-type="expression"] .resultLead::before {
-  content: "人の中にある光を見つけ、希望と可能性を照らす人";
-  display: block;
-  color: #172342;
+  content: "人の中にある光を見つけ、希望と可能性を与える人";
+  box-sizing: border-box;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px clamp(44px, 5vw, 78px) 9px;
+  color: #f8f4e9;
+  background:
+    linear-gradient(to bottom, rgba(230, 244, 255, .2) 0 1px, transparent 1px calc(100% - 1px), rgba(244, 218, 157, .16) calc(100% - 1px)),
+    linear-gradient(90deg, transparent 0%, rgba(8, 27, 69, .42) 13%, rgba(4, 20, 58, .78) 34%, rgba(3, 17, 52, .84) 50%, rgba(4, 20, 58, .78) 66%, rgba(8, 27, 69, .42) 87%, transparent 100%);
+  box-shadow: inset 0 0 18px rgba(137, 193, 255, .08);
+  backdrop-filter: blur(6px) saturate(110%);
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   font: 600 clamp(16px, 1.45vw, 21px)/1.65 "Yu Mincho", "Hiragino Mincho ProN", serif;
   letter-spacing: .12em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .96), 0 0 14px rgba(255, 240, 204, .85);
+  text-shadow: 0 1px 2px rgba(0, 7, 31, .96), 0 0 10px rgba(218, 237, 255, .28);
 }
 
 .resultHero[data-star-type="expression"] .resultLead::after {
@@ -221,12 +233,14 @@
   left: 22% !important;
   width: 26% !important;
   height: 52% !important;
-  object-fit: cover;
-  object-position: 50% 36%;
+  /* The approved desktop source is already a square, circular-window bust.
+     Preserve that complete composition instead of cropping into the face. */
+  object-fit: contain;
+  object-position: 50% 50%;
   border-radius: 50%;
   clip-path: circle(47.5% at 50% 50%);
+  translate: -50% -50%;
   transform: scale(.94);
-  translate: -50% -50% !important;
   transform-origin: 50% 50%;
   opacity: 1 !important;
   filter:
@@ -236,6 +250,33 @@
     drop-shadow(0 0 30px rgba(255, 225, 161, .16));
   pointer-events: none;
   animation: luminaryJuzaPresence 8.5s ease-in-out infinite;
+}
+
+.resultHero[data-star-type="expression"] .luminaryJuzaPortraitFrameOfficial {
+  display: none !important;
+}
+
+/* Desktop is HIRO-approved and locked. Mobile-only portrait layers must never
+   enter the landscape/desktop composition, including portrait tablets. */
+@media (min-width: 1100px),
+  (min-width: 800px) and (max-width: 1099px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="expression"] .luminaryJuzaPortrait {
+    display: block !important;
+    object-fit: contain !important;
+    object-position: 50% 50% !important;
+  }
+
+  #root .resultHero[data-star-type="expression"] :is(
+    .luminaryJuzaPortraitFrameOfficial,
+    .luminaryJuzaPortraitV2,
+    .luminaryJuzaMobileGlass,
+    .luminaryJuzaMobilePortraitFrame,
+    .luminaryJuzaMobileOuterFrame,
+    .luminaryJuzaMobileHeading,
+    .luminaryJuzaMobileReadAll
+  ) {
+    display: none !important;
+  }
 }
 
 .resultHero[data-star-type="expression"] .luminaryJuzaForeground {
@@ -296,6 +337,52 @@
 .resultHero[data-star-type="expression"] .juzaMessage p::before {
   content: none;
   display: none;
+}
+
+/* Keep the approved LUMINARY stage fixed while long AI JUZA copy scrolls
+   inside its own text pane, matching the established result-page pattern. */
+@media (min-width: 1100px),
+  (min-width: 800px) and (max-width: 1099px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p {
+    box-sizing: border-box;
+    height: clamp(220px, 24vw, 310px);
+    max-height: clamp(220px, 24vw, 310px);
+    padding: 4px 24px 4px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(143, 205, 255, .92) rgba(23, 55, 105, .26);
+    scroll-behavior: smooth;
+  }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(23, 55, 105, .26);
+  }
+
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f5f8ff, #8dcfff 58%, #e2be6a);
+    box-shadow: 0 0 7px rgba(132, 202, 255, .26);
+  }
+}
+
+/* Desktop-only reading-area refinement. Keep the approved stage and portrait
+   untouched while giving the copy a wider, slightly higher safe area. */
+@media (min-width: 1100px) {
+  #root .resultHero[data-star-type="expression"] .juzaMessage > p {
+    left: clamp(-24px, -1.5vw, -16px);
+    top: -12px;
+    width: calc(100% + clamp(40px, 4vw, 64px));
+    padding: 4px 24px 22px 0;
+    scroll-padding-bottom: 22px;
+  }
 }
 
 .resultHero[data-star-type="expression"] .resultGrid {
@@ -673,7 +760,7 @@
     width: 106px !important;
     height: 106px !important;
     object-position: 50% 33%;
-    translate: -50% 0 !important;
+    translate: -50% 0;
   }
 
   .resultHero[data-star-type="expression"] .juzaMessage p {
@@ -777,6 +864,143 @@
   .resultHero[data-star-type="expression"] .premiumButton {
     min-height: 58px;
     padding-inline: 18px;
+  }
+}
+
+/* LUMINARY Desktop Final repair: approved sequence is Hero -> AI JUZA ->
+   four STAR READING panels -> lower report. Phone/portrait-tablet rules live
+   in luminary-mobile-refinement.css and remain untouched. */
+@media (min-width: 1100px), (min-width: 800px) and (max-width: 1099px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="expression"] .resultCard {
+    width: min(1440px, calc(100vw - 80px));
+    max-width: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .resultGrid {
+    display: none !important;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingSection--luminary {
+    position: relative;
+    left: 50%;
+    order: 6;
+    display: grid !important;
+    box-sizing: border-box;
+    width: min(1360px, calc(100vw - 112px));
+    margin: 26px auto 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(12px, 1.25vw, 20px);
+    transform: translateX(-50%);
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 330px;
+    height: auto;
+    align-self: start;
+    padding: 22px 20px 58px !important;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(221, 232, 255, .78) !important;
+    border-radius: 12px !important;
+    color: #f8f5eb;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.13), transparent 24%),
+      radial-gradient(circle at 84% 10%, rgba(88,154,255,.18), transparent 34%),
+      linear-gradient(150deg, rgba(13,38,84,.78), rgba(3,13,37,.9) 62%, rgba(20,17,54,.84)) !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,246,215,.09),
+      inset 0 1px 0 rgba(255,255,255,.2),
+      0 0 14px rgba(115,179,255,.24),
+      0 18px 42px rgba(0,4,24,.42) !important;
+    backdrop-filter: blur(15px) saturate(118%);
+    -webkit-backdrop-filter: blur(15px) saturate(118%);
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 5px;
+    border: 1px solid rgba(231, 202, 137, .42);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary .starReadingPanel__heading {
+    display: grid;
+    min-height: 82px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(231, 202, 137, .35);
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary .adviceBox__icon {
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    color: #f2d58d;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary h2 {
+    color: #f3dda3;
+    font-size: clamp(.94rem, 1.15vw, 1.16rem);
+    line-height: 1.38;
+    text-align: left;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary .starReadingPanel__body {
+    flex: 1;
+    min-width: 0;
+    color: rgba(255,255,252,.96);
+    font-size: clamp(.72rem, .77vw, .86rem);
+    line-height: 1.82;
+    text-align: left;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary .starReadingPanel__body p {
+    margin: 0 0 12px;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary > button {
+    position: absolute;
+    right: 20px;
+    bottom: 17px;
+    left: 20px;
+    width: calc(100% - 40px);
+    min-height: 30px;
+    padding: 7px 12px;
+    border: 1px solid rgba(233,205,139,.7);
+    border-radius: 999px;
+    color: #f3d995;
+    background: rgba(5,18,48,.72);
+    box-shadow: inset 0 0 12px rgba(130,190,255,.1), 0 0 9px rgba(130,190,255,.16);
+    font: 600 .66rem/1 Georgia, "Yu Mincho", serif;
+    letter-spacing: .12em;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary > button:is(:hover, :focus-visible) {
+    border-color: #f5dfaa;
+    box-shadow: inset 0 0 14px rgba(130,190,255,.18), 0 0 14px rgba(169,211,255,.3);
+    outline: none;
+  }
+
+  #root .resultHero[data-star-type="expression"] .starReadingPanel--luminary.is-active {
+    overflow: visible;
   }
 }
 
