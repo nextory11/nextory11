@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PremiumCard from "./PremiumCard";
 import StarReadingSection from "./StarReadingSection";
 import { selectRandomMessageIndex } from "../lib/aiJuza/randomSelection";
 import { challengeAiJuzaMessages, challengeStarReadings } from "../data/challengeOfficialResultCopy";
@@ -64,12 +65,15 @@ function ChallengeResultGoldReview() {
           theme="challenge"
         />
 
-        <section className="challengePremiumPause cosmicGlass" aria-label="Premium Report">
-          <p>PREMIUM REPORT</p>
-          <h2>もっと深く、あなたの星を知るために</h2>
-          <p>より良いレポートをお届けするため、現在受付を一時停止しています。</p>
-          <button type="button" disabled>現在、プレミアムレポートを調整中です</button>
-        </section>
+        <div className="resultHero challengePremiumRestoreScope" data-star-type="challenger">
+          <PremiumCard
+            checkoutError=""
+            isEnabled={false}
+            isLoading={false}
+            onClick={() => {}}
+            resultType="challenger"
+          />
+        </div>
       </div>
       <footer className="challengeGoldReview__footer">― Find Your Star. ―</footer>
     </main>

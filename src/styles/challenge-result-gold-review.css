@@ -222,12 +222,16 @@
 .challengeReadingCard__less, .challengeReadingCard details[open] .challengeReadingCard__more { display:none; }
 .challengeReadingCard details[open] .challengeReadingCard__less { display:inline; }
 
-.challengePremiumPause { margin-top:42px; padding:38px; text-align:center; }
-.challengePremiumPause::before,
-.challengePremiumPause::after { content:none; display:none; }
-.challengePremiumPause > p:first-child { color:var(--gold); letter-spacing:.22em; font-size:.76rem; }
-.challengePremiumPause h2 { color:var(--gold); font-weight:500; }
-.challengePremiumPause button { margin-top:16px; min-height:54px; padding:0 28px; border:1px solid rgba(231,190,112,.45); border-radius:999px; color:#d8c49e; background:rgba(3,8,18,.65); }
+.challengePremiumRestoreScope.resultHero {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background: transparent;
+  overflow: visible;
+}
 .challengeClosingMessage { position:relative; padding:54px 24px 18px; text-align:center; text-shadow:0 2px 18px #000; }
 .challengeClosingMessage > span { display:block; color:#ffcb69; font-size:1.4rem; text-shadow:0 0 18px #ff871f; }
 .challengeClosingMessage > p { margin:10px 0; color:var(--gold); font-size:.75rem; letter-spacing:.28em; }
@@ -495,39 +499,6 @@
   .challengeReadingCard summary::after { content: "＋"; margin-left: 5px; float: none; }
   .challengeReadingCard details[open] summary::after { content: "−"; }
 
-  .challengePremiumPause {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    column-gap: 28px;
-    margin-top: 12px;
-    padding: 12px 28px;
-    text-align: left;
-  }
-  .challengePremiumPause > p:first-child {
-    grid-column: 1;
-    margin: 0 0 2px;
-    font-size: .62rem;
-  }
-  .challengePremiumPause h2 {
-    grid-column: 1;
-    margin: 0;
-    font-size: 1.15rem;
-  }
-  .challengePremiumPause > p:not(:first-child) {
-    grid-column: 1;
-    margin: 3px 0 0;
-    font-size: .7rem;
-  }
-  .challengePremiumPause button {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    min-height: 42px;
-    margin: 0;
-    padding: 0 28px;
-    font-size: .72rem;
-  }
-
   .challengeGoldReview__footer {
     padding: 12px 34px 22px;
     font-size: .75rem;
@@ -768,8 +739,6 @@
     order: 2;
     margin-top: 14px;
   }
-  .challengePremiumPause::before,
-  .challengePremiumPause::after { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) { .challengeGoldReview *, .challengeGoldReview *::before, .challengeGoldReview *::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }

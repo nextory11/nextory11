@@ -33,5 +33,8 @@ describe("CHALLENGE final result copy", () => {
     expect(resultCard).not.toContain("{insightSection}\n        </section>");
     expect(review).toContain("challengeStarReadings.map((section)");
     expect(review).not.toContain("cards={CONTENT.map");
+    expect(review).toContain('import PremiumCard from "./PremiumCard"');
+    expect(review).toContain('resultType="challenger"');
+    expect(review).not.toContain("challengePremiumPause");
   });
 });
