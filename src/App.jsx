@@ -60,6 +60,7 @@ import {
   saveQuestionHistory,
 } from "./lib/questionBank/session.js";
 import {
+  clearActiveDiagnosisSession,
   clearActiveDiagnosisPointer,
   createDiagnosisSession,
   readActiveDiagnosisSession,
@@ -163,6 +164,10 @@ function DiagnosisApp() {
 
   useEffect(() => {
     if (devPreview || !questionBankEnabled) return;
+    if (new URLSearchParams(window.location.search).get("new") === "1") {
+      handleNewDiagnosis();
+      return;
+    }
     const restored = readActiveDiagnosisSession();
     if (!restored) return;
     setQuestionSession({
@@ -309,9 +314,14 @@ function DiagnosisApp() {
     setAnswers([]);
   }
 
-  function handlePaymentRestart() {
-    window.history.replaceState({}, "", "/");
+  function handleNewDiagnosis() {
+    clearActiveDiagnosisSession();
+    window.history.replaceState({}, "", "/diagnosis");
     handleStart();
+  }
+
+  function handlePaymentRestart() {
+    handleNewDiagnosis();
   }
 
   function handleReturnToResult() {
@@ -440,8 +450,8 @@ function DiagnosisApp() {
           />
 
           <div className="buttonGroup">
-            <button type="button" className="subButton" onClick={handleRestart}>
-              もう一度、星を見つける
+            <button type="button" className="subButton" onClick={handleNewDiagnosis}>
+              もう一度診断する
             </button>
           </div>
           <TrustFooter compact />

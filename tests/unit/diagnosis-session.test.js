@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
+  clearActiveDiagnosisSession,
   COMPLETED_DIAGNOSIS_TTL_MS,
   createDiagnosisSession,
   DIAGNOSIS_SESSION_POINTER_KEY,
@@ -73,6 +74,22 @@ describe("persisted diagnosis sessions", () => {
     );
     expect(second.record.diagnosisSessionId).not.toBe(first.record.diagnosisSessionId);
     expect(readDiagnosisSession(first.record.diagnosisSessionId, storage).record.completionStatus).toBe("completed");
+  });
+
+  it("clears only the active diagnosis when a different user starts and preserves purchase access data", () => {
+    const storage = memoryStorage();
+    const first = createDiagnosisSession(
+      createOfficialQuestionSession({ rng: seeded(25), storage }),
+      storage,
+    );
+    const diagnosisKey = `${DIAGNOSIS_SESSION_PREFIX}${first.record.diagnosisSessionId}`;
+    storage.setItem("nextory11.checkoutSnapshot.active.v2", "purchased-report-reference");
+
+    clearActiveDiagnosisSession(storage);
+
+    expect(storage.getItem(DIAGNOSIS_SESSION_POINTER_KEY)).toBeNull();
+    expect(storage.getItem(diagnosisKey)).toBeNull();
+    expect(storage.getItem("nextory11.checkoutSnapshot.active.v2")).toBe("purchased-report-reference");
   });
 
   it("removes corrupt and expired incomplete records without deleting valid completed records", () => {

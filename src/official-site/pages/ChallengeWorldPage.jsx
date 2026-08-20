@@ -15,7 +15,7 @@ function ChallengeWorldPage() {
         />
         <a
           className="challengeWorldPage__diagnosisCta"
-          href="/diagnosis"
+          href="/diagnosis?new=1"
           aria-label="自分の星を見つける — NEXTORY11を診断する"
         />
       </div>
@@ -30,7 +30,7 @@ function ChallengeWorldPage() {
           />
           <a
             className="challengeWorldPage__mobileDiagnosisCta"
-            href="/diagnosis"
+            href="/diagnosis?new=1"
             aria-label="自分の星を見つける — NEXTORY11を診断する"
           />
         </div>

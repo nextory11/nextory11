@@ -140,3 +140,10 @@ export function updateDiagnosisSession(id, updates, storage) {
 export function clearActiveDiagnosisPointer(storage) {
   storageOrDefault(storage).removeItem(DIAGNOSIS_SESSION_POINTER_KEY);
 }
+
+export function clearActiveDiagnosisSession(storage) {
+  const target = storageOrDefault(storage);
+  const activeId = target.getItem(DIAGNOSIS_SESSION_POINTER_KEY);
+  if (activeId) target.removeItem(sessionKey(activeId));
+  target.removeItem(DIAGNOSIS_SESSION_POINTER_KEY);
+}

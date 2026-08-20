@@ -1,5 +1,5 @@
 export const OFFICIAL_PREVIEW_PREFIX = "/official-preview";
-export const DIAGNOSIS_PATH = "/diagnosis";
+export const DIAGNOSIS_PATH = "/diagnosis?new=1";
 
 const productionOfficialPattern = /^\/(?:about|how-to-use|types(?:\/[a-z-]+)?|why-nextory11|philosophy)?$/;
 

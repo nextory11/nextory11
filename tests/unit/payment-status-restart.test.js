@@ -8,9 +8,11 @@ describe("PaymentStatus restart flow", () => {
       /function handlePaymentRestart\(\) \{(?<body>[\s\S]*?)\n  \}/u,
     );
 
-    expect(callback?.groups?.body).toContain('window.history.replaceState({}, "", "/")');
-    expect(callback?.groups?.body).toContain("handleStart()");
+    expect(callback?.groups?.body).toContain("handleNewDiagnosis()");
     expect(callback?.groups?.body).not.toContain("redirectToStripeCheckout");
     expect(source).toContain("onRestart={handlePaymentRestart}");
+    expect(source).toContain("clearActiveDiagnosisSession()");
+    expect(source).toContain('window.history.replaceState({}, "", "/diagnosis")');
+    expect(source).toContain("もう一度診断する");
   });
 });

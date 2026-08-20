@@ -57,7 +57,7 @@ function HowToUseNextory11() {
         />
         <a
           className="howToDesktop__cta"
-          href="/diagnosis"
+          href="/diagnosis?new=1"
           aria-label="自分の星を見つける"
         />
         <div className="howToDesktop__semantics">
@@ -83,7 +83,7 @@ function HowToUseNextory11() {
         />
         <a
           className="howToMobile__cta"
-          href="/diagnosis"
+          href="/diagnosis?new=1"
           aria-label="自分の星を見つける"
         />
         <div className="howToMobile__semantics">
@@ -132,7 +132,7 @@ function HowToUseNextory11() {
         <div className="howTo__destination">
           <span className="howTo__destinationLight" aria-hidden="true"><i /></span>
           <p>まだ知らない自分に出会う。</p>
-          <a className="howTo__cta" href="/diagnosis">
+          <a className="howTo__cta" href="/diagnosis?new=1">
             <span>自分の星を見つける</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
           </a>

@@ -153,7 +153,7 @@ function OfficialHero() {
 
           <p className="officialHero__signature" lang="en">— Find Your Star. —</p>
 
-          <a className="officialHero__cta" href="/diagnosis">
+          <a className="officialHero__cta" href="/diagnosis?new=1">
             <span>自分の星を見つける</span>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h13M14 7l5 5-5 5" />

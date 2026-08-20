@@ -16,7 +16,7 @@ function CreatorWorldPage() {
           />
           <a
             className="creatorWorldPage__diagnosisCta"
-            href="/diagnosis"
+            href="/diagnosis?new=1"
             aria-label="自分の星を見つける — NEXTORY11を診断する"
           />
         </div>
@@ -31,7 +31,7 @@ function CreatorWorldPage() {
         />
         <a
           className="creatorWorldPage__mobileDiagnosisCta"
-          href="/diagnosis"
+          href="/diagnosis?new=1"
           aria-label="自分の星を見つける — NEXTORY11を診断する"
         />
       </div>

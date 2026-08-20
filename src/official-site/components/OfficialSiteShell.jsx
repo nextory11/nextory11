@@ -129,7 +129,7 @@ function OfficialSiteShell({ children, pageTitle, pageKey, seo }) {
 
     const destination = new URL(anchor.href, window.location.href);
     if (destination.origin !== window.location.origin) return;
-    if (destination.pathname === DIAGNOSIS_PATH) return;
+    if (destination.pathname === new URL(DIAGNOSIS_PATH, window.location.origin).pathname) return;
     if (!toPreviewRoute(destination.pathname).startsWith("/official-preview")) return;
     if (`${destination.pathname}${destination.search}${destination.hash}` === `${window.location.pathname}${window.location.search}${window.location.hash}`) return;
 
