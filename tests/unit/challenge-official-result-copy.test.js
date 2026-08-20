@@ -35,6 +35,8 @@ describe("CHALLENGE final result copy", () => {
     expect(review).not.toContain("cards={CONTENT.map");
     expect(review).toContain('import PremiumCard from "./PremiumCard"');
     expect(review).toContain('resultType="challenger"');
+    expect(review).toContain("isEnabled\n");
+    expect(review).not.toContain("isEnabled={false}");
     expect(review).not.toContain("challengePremiumPause");
   });
 });

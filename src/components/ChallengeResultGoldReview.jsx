@@ -68,7 +68,7 @@ function ChallengeResultGoldReview() {
         <div className="resultHero challengePremiumRestoreScope" data-star-type="challenger">
           <PremiumCard
             checkoutError=""
-            isEnabled={false}
+            isEnabled
             isLoading={false}
             onClick={() => {}}
             resultType="challenger"
