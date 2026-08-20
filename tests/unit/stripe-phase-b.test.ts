@@ -2,10 +2,7 @@ import { readFile } from "node:fs/promises";
 import { Readable } from "node:stream";
 import Stripe from "stripe";
 import { describe, expect, it, vi } from "vitest";
-import checkoutSessionsHandler, {
-  checkoutRequestBodySchema,
-  PREMIUM_NEW_SALES_PAUSED,
-} from "../../api/checkout-sessions.js";
+import { checkoutRequestBodySchema } from "../../api/checkout-sessions.js";
 import { toSafeReportStatus } from "../../api/reports/[requestId]/status.js";
 import { readRawBody } from "../../api/stripe/webhook.js";
 import {
@@ -201,23 +198,6 @@ function stripeWithSession(value: Stripe.Checkout.Session) {
 }
 
 describe("Phase B Checkout Session creation", () => {
-  it("blocks new Checkout Sessions while Premium sales are paused", async () => {
-    const json = vi.fn();
-    const status = vi.fn(() => ({ json }));
-    const response = { setHeader: vi.fn(), status };
-
-    await checkoutSessionsHandler({
-      method: "POST",
-      headers: {},
-      query: {},
-      body: { reportRequestId: requestId },
-    }, response as never);
-
-    expect(PREMIUM_NEW_SALES_PAUSED).toBe(true);
-    expect(status).toHaveBeenCalledWith(503);
-    expect(json).toHaveBeenCalledWith({ error: "premium_sales_paused" });
-  });
-
   it("creates a test Checkout Session from server-owned configuration", async () => {
     const create = vi.fn().mockResolvedValue({
       id: "cs_test_created",

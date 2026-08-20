@@ -8,16 +8,12 @@ import {
 import { continueAuthorizedCheckout } from "../server/stripe/continue-checkout.js";
 
 export const checkoutRequestBodySchema = z.object({ reportRequestId: z.string().uuid() }).strict();
-export const PREMIUM_NEW_SALES_PAUSED = true;
 
 export default async function handler(request: VercelRequestLike, response: VercelResponseLike) {
   response.setHeader("Cache-Control", "no-store");
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ error: "method_not_allowed" });
-  }
-  if (PREMIUM_NEW_SALES_PAUSED) {
-    return response.status(503).json({ error: "premium_sales_paused" });
   }
   const body = checkoutRequestBodySchema.safeParse(request.body);
   if (!body.success) return response.status(400).json({ error: "invalid_checkout_request" });
