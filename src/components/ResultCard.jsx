@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createAiJuzaReading, createJuzaContext } from "../lib/aiJuza";
 import { selectRandomMessageIndex } from "../lib/aiJuza/randomSelection";
-import { challengeAiJuzaMessages } from "../data/challengeOfficialResultCopy";
+import { challengeAiJuzaMessages, challengeStarReadings } from "../data/challengeOfficialResultCopy";
 import { explorerAiJuzaMessages, explorerStarReadings } from "../data/explorerOfficialResultCopy";
 import { harmonyAiJuzaMessages, harmonyStarReadings } from "../data/harmonyOfficialResultCopy";
 import { visionaryAiJuzaMessages, visionaryStarReadings, visionaryTypeDescriptor } from "../data/visionaryOfficialResultCopy";
@@ -611,6 +611,17 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
     previewText: card.fullText.slice(0, 3).join("\n"),
   }));
 
+  const challengeReadingSection = isChallenge ? (
+    <StarReadingSection
+      cards={challengeStarReadings.map((card) => ({
+        ...card,
+        previewText: card.fullText.slice(0, 3).join("\n\n"),
+      }))}
+      renderIcon={(_, index) => <CelestialTraitIcon type="challenger" index={index} />}
+      theme="challenge"
+    />
+  ) : null;
+
   const explorerDesktopReadingSection = isExplorer ? (
     <StarReadingSection
       cards={explorerReadingCards}
@@ -723,7 +734,7 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
             <p className="resultLead challengeIdentity__lead">Break the limit. Become your future.</p>
           </header>
           {juzaPanel}
-          {insightSection}
+          {challengeReadingSection}
         </section>
       ) : (
         <>

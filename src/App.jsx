@@ -71,11 +71,6 @@ import { parseDevResultPreview } from "./lib/devResultPreview.js";
 const TrustExperience = lazy(() => import("./components/TrustExperience.jsx"));
 const DevResultSceneViewer = lazy(() => import("./components/DevResultSceneViewer.jsx"));
 const ChallengeResultGoldReview = lazy(() => import("./components/ChallengeResultGoldReview.jsx"));
-// Vite replaces import.meta.env.DEV at build time. Keeping the import inside
-// this branch removes the review component and fixtures from customer builds.
-const PremiumV2Review = import.meta.env.DEV
-  ? lazy(() => import("./components/PremiumV2Review.jsx"))
-  : null;
 
 const RESULT_REVIEW_ROUTES = Object.freeze({
   explorer: "explorer",
@@ -154,7 +149,6 @@ function ResultReviewIndex() {
 function DiagnosisApp() {
   const challengeGoldReview = import.meta.env.DEV && window.location.pathname === "/result-review/challenge";
   const resultReviewIndex = import.meta.env.DEV && /^\/result-review\/?$/.test(window.location.pathname);
-  const premiumV2Review = import.meta.env.DEV && window.location.pathname === "/premium-v2-review";
   const devPreview = getDevPreviewRequest();
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
@@ -223,10 +217,6 @@ function DiagnosisApp() {
 
   if (resultReviewIndex) {
     return <ResultReviewIndex />;
-  }
-
-  if (premiumV2Review && PremiumV2Review) {
-    return <Suspense fallback={<main aria-busy="true" />}><PremiumV2Review /></Suspense>;
   }
 
   if (devPreview) {
