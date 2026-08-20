@@ -4,7 +4,14 @@ import StarReadingSection from "./StarReadingSection";
 import { selectRandomMessageIndex } from "../lib/aiJuza/randomSelection";
 import { challengeAiJuzaMessages, challengeStarReadings } from "../data/challengeOfficialResultCopy";
 
-function ChallengeResultGoldReview() {
+function ChallengeResultGoldReview({
+  afterContent = null,
+  checkoutError = "",
+  isPremiumEnabled = true,
+  isPremiumLoading = false,
+  onPremiumClick = () => {},
+  showReviewControls = false,
+}) {
   const [selectedMessage, setSelectedMessage] = useState(
     () => selectRandomMessageIndex(challengeAiJuzaMessages),
   );
@@ -18,14 +25,16 @@ function ChallengeResultGoldReview() {
     <main className="challengeGoldReview">
       <div className="challengeGoldReview__cosmos" aria-hidden="true" />
       <div className="challengeGoldReview__outerFrame" aria-hidden="true" />
-      <details className="challengeReviewControls">
-        <summary>REVIEW</summary>
-        <div>
-          {challengeAiJuzaMessages.map((_, index) => (
-            <button key={index} type="button" aria-pressed={selectedMessage === index} onClick={() => setSelectedMessage(index)}>{String(index + 1).padStart(2, "0")}</button>
-          ))}
-        </div>
-      </details>
+      {showReviewControls ? (
+        <details className="challengeReviewControls">
+          <summary>REVIEW</summary>
+          <div>
+            {challengeAiJuzaMessages.map((_, index) => (
+              <button key={index} type="button" aria-pressed={selectedMessage === index} onClick={() => setSelectedMessage(index)}>{String(index + 1).padStart(2, "0")}</button>
+            ))}
+          </div>
+        </details>
+      ) : null}
       <header className="challengeGoldHero">
         <p className="challengeGoldHero__eyebrow">YOUR STAR TYPE</p>
         <div className="challengeGoldHero__emblem">
@@ -67,13 +76,14 @@ function ChallengeResultGoldReview() {
 
         <div className="resultHero challengePremiumRestoreScope" data-star-type="challenger">
           <PremiumCard
-            checkoutError=""
-            isEnabled
-            isLoading={false}
-            onClick={() => {}}
+            checkoutError={checkoutError}
+            isEnabled={isPremiumEnabled}
+            isLoading={isPremiumLoading}
+            onClick={onPremiumClick}
             resultType="challenger"
           />
         </div>
+        {afterContent}
       </div>
       <footer className="challengeGoldReview__footer">― Find Your Star. ―</footer>
     </main>

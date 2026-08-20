@@ -53,7 +53,7 @@ import {
 } from "./lib/stripeCheckout.js";
 import { scoreQuestionnaire } from "./lib/questionBank/scoring.js";
 import { createQuestionBankContext } from "./lib/questionBank/context.js";
-import { OFFICIAL_PERSONALITY_SLUGS, OFFICIAL_TO_LEGACY_TYPE } from "./lib/questionBank/officialPack.js";
+import { OFFICIAL_TO_LEGACY_TYPE } from "./lib/questionBank/officialPack.js";
 import {
   createOfficialQuestionSession,
   QUESTION_BANK_SELECTION_COUNT,
@@ -67,13 +67,13 @@ import {
   updateDiagnosisSession,
 } from "./lib/questionBank/diagnosisSession.js";
 import { TRUST_ROUTES } from "./data/trustContent.js";
-import { parseDevResultPreview } from "./lib/devResultPreview.js";
+import { createPreviewAnswers, parseDevResultPreview } from "./lib/devResultPreview.js";
 
 const TrustExperience = lazy(() => import("./components/TrustExperience.jsx"));
-const DevResultSceneViewer = lazy(() => import("./components/DevResultSceneViewer.jsx"));
 const ChallengeResultGoldReview = lazy(() => import("./components/ChallengeResultGoldReview.jsx"));
 
 const RESULT_REVIEW_ROUTES = Object.freeze({
+  challenge: "challenge",
   explorer: "explorer",
   harmony: "harmonizer",
   visionary: "visionary",
@@ -148,16 +148,19 @@ function ResultReviewIndex() {
 }
 
 function DiagnosisApp() {
-  const challengeGoldReview = import.meta.env.DEV && window.location.pathname === "/result-review/challenge";
   const resultReviewIndex = import.meta.env.DEV && /^\/result-review\/?$/.test(window.location.pathname);
   const devPreview = getDevPreviewRequest();
-  const [started, setStarted] = useState(false);
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const previewResultType = devPreview ? OFFICIAL_TO_LEGACY_TYPE[devPreview.previewType] : null;
+  const previewAnswers = previewResultType
+    ? createPreviewAnswers(previewResultType, Object.keys(resultTypes))
+    : [];
+  const [started, setStarted] = useState(Boolean(previewResultType));
+  const [step, setStep] = useState(previewAnswers.length);
+  const [answers, setAnswers] = useState(previewAnswers);
   const [checkoutError, setCheckoutError] = useState("");
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const checkoutInFlightRef = useRef(false);
-  const [paidCtaEnabled, setPaidCtaEnabled] = useState(false);
+  const [paidCtaEnabled, setPaidCtaEnabled] = useState(Boolean(previewResultType));
   const [questionSession, setQuestionSession] = useState(null);
   const [activeQuestions, setActiveQuestions] = useState(questions);
   const [trustRoute, setTrustRoute] = useState(getTrustRoute);
@@ -212,30 +215,8 @@ function DiagnosisApp() {
   const finished = step >= activeQuestions.length;
   const paymentRoute = getPaymentRoute();
 
-  if (challengeGoldReview) {
-    return (
-      <Suspense fallback={<main className="challengeGoldReview__loading" aria-busy="true" />}>
-        <ChallengeResultGoldReview />
-      </Suspense>
-    );
-  }
-
   if (resultReviewIndex) {
     return <ResultReviewIndex />;
-  }
-
-  if (devPreview) {
-    return (
-      <Suspense fallback={<main className="devResultPreview__loading" aria-busy="true" />}>
-        <DevResultSceneViewer
-          initialPreviewType={devPreview.previewType}
-          initialSection={devPreview.section}
-          initialControls={devPreview.controls}
-          officialSlugs={OFFICIAL_PERSONALITY_SLUGS}
-          officialToLegacyType={OFFICIAL_TO_LEGACY_TYPE}
-        />
-      </Suspense>
-    );
   }
 
   function handleStart() {
@@ -435,6 +416,29 @@ function DiagnosisApp() {
     const { result, resultType, questionBankContext } = getResultSelection();
     const scene = resultScenes[resultType] ?? resultScenes.action;
 
+    if (resultType === "challenger") {
+      return (
+        <Suspense fallback={<main className="challengeGoldReview__loading" aria-busy="true" />}>
+          <ChallengeResultGoldReview
+            afterContent={(
+              <>
+                <div className="buttonGroup">
+                  <button type="button" className="subButton" onClick={handleNewDiagnosis}>
+                    もう一度診断する
+                  </button>
+                </div>
+                <TrustFooter compact />
+              </>
+            )}
+            checkoutError={checkoutError}
+            isPremiumEnabled={devPreview ? true : paidCtaEnabled}
+            isPremiumLoading={checkoutLoading}
+            onPremiumClick={devPreview ? () => {} : () => handlePremiumCheckout(result, resultType, questionBankContext)}
+          />
+        </Suspense>
+      );
+    }
+
     return (
       <main className="app">
         <section className="resultHero" data-star-type={resultType}>
@@ -443,9 +447,9 @@ function DiagnosisApp() {
 
           <PremiumCard
             checkoutError={checkoutError}
-            isEnabled={paidCtaEnabled}
+            isEnabled={devPreview ? true : paidCtaEnabled}
             isLoading={checkoutLoading}
-            onClick={() => handlePremiumCheckout(result, resultType, questionBankContext)}
+            onClick={devPreview ? () => {} : () => handlePremiumCheckout(result, resultType, questionBankContext)}
             resultType={resultType}
           />
 
