@@ -168,6 +168,12 @@
 }
 
 @media print {
+  .reportApp,
+  .reportApp * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   .reportApp {
     background: #fff;
   }
@@ -187,11 +193,55 @@
     break-inside: avoid;
   }
 
+  .reportPreviewLabel,
+  .reportEyebrow,
+  .reportSectionSeal span,
+  .reportWeek > span,
+  .reportReflection strong {
+    color: #704b0d !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+
+  .reportHeader h1,
+  .reportSection h2,
+  .reportWeek h3,
+  .purchaseRecord h2 {
+    color: #211708 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+
+  .reportEnglish {
+    color: #173d59 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+
+  .reportOpening,
+  .reportSectionSummary,
+  .reportReflection,
+  .reportWeek p,
+  .reportWeek li,
+  .reportClosing blockquote,
+  .purchaseRecord,
+  .purchaseRecord dt,
+  .purchaseRecord dd {
+    color: #222 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+
   .reportSection p,
   .reportSection li,
   .reportDisclosure,
   .reportRequestId {
-    color: #222;
+    color: #292929 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
   }
 
   .noPrint {
