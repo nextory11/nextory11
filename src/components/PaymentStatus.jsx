@@ -4,7 +4,7 @@ import ReportPreview from "./ReportPreview";
 import { recoverCheckoutSnapshot } from "../lib/stripeCheckout";
 import { resolveResultTypeDisplay } from "../data/resultTypes";
 
-function PaymentStatus({ request: initialRequest, result: initialResult, status, onReturnToResult, onCheckoutIncomplete, onRestart }) {
+function PaymentStatus({ request: initialRequest, result: initialResult, status, onReturnToResult, onCheckoutIncomplete, onRestart, onReturnToTop }) {
   const isSuccessRoute = status === "success";
   const [request, setRequest] = useState(initialRequest);
   const [result, setResult] = useState(initialResult);
@@ -119,6 +119,7 @@ function PaymentStatus({ request: initialRequest, result: initialResult, status,
         }}
         onReturnToResult={onReturnToResult}
         onRestart={onRestart}
+        onReturnToTop={onReturnToTop}
       />
     );
   }
@@ -164,7 +165,7 @@ function PaymentStatus({ request: initialRequest, result: initialResult, status,
             </section>
           ) : null}
           {retryable ? <button type="button" className="reportPrimaryButton" disabled={generationPending} onClick={() => { generationRequested.current = true; requestGeneration().then((accepted) => { if (!accepted) generationRequested.current = false; }); }}>{generationPending ? "再生成を準備しています…" : "レポート生成をもう一度試す"}</button> : null}
-          <div className="paymentActions">{result ? <button type="button" className="paymentSecondaryButton" onClick={onReturnToResult}>結果画面に戻る</button> : null}<button type="button" className="paymentSecondaryButton" onClick={onRestart}>もう一度診断する</button></div>
+          <div className="paymentActions">{result ? <button type="button" className="paymentSecondaryButton" onClick={onReturnToResult}>結果画面に戻る</button> : null}<button type="button" className="paymentSecondaryButton" onClick={onRestart}>もう一度診断する</button><button type="button" className="paymentSecondaryButton" onClick={onReturnToTop}>TOPへ戻る</button></div>
           <p className="paymentFootnote">NEXTORY11 · YOUR STORY BEGINS AMONG THE STARS</p>
         </div>
       </section>

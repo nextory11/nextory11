@@ -1,3 +1,5 @@
+export const explorerTypeDescriptor = "未知の世界に惹かれ、新しい自分を見つけに行く人";
+
 export const explorerStarReadings = [
   {
     number: "01",

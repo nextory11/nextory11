@@ -47,6 +47,16 @@ function WhyNextory11() {
           <img src={`${assetRoot}/slice-06-earth.png`} alt="" width="1536" height="94" loading="lazy" decoding="async" />
         </div>
       </div>
+
+      <button
+        className="why__backToTop"
+        type="button"
+        aria-label="ページ上部へ戻る"
+        onClick={() => window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        })}
+      />
     </section>
   );
 }

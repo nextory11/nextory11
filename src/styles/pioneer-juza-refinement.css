@@ -42,7 +42,7 @@
 #root .resultHero[data-star-type="action"] .pioneerJuzaGlass {
   position: absolute;
   z-index: 1;
-  inset: 18.8% 5.5% 22% 37.1%;
+  inset: 18.8% 5.5% 22% 35.8%;
   display: block;
   border: 1px solid rgba(155, 207, 244, .16);
   clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
@@ -231,6 +231,14 @@
   #root .resultHero[data-star-type="action"] .juzaMessage {
     margin-block-end: -48px !important;
   }
+
+  #root .resultHero[data-star-type="action"] .juzaMessage > p {
+    width: calc(100% - 18px);
+    padding-inline: clamp(28px, 2.6vw, 38px) !important;
+    scroll-padding-inline: clamp(28px, 2.6vw, 38px);
+    transform: translate(18px, -14px);
+  }
+
 }
 
 @media (max-width: 899px) {

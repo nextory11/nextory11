@@ -208,7 +208,7 @@
 
 #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__perimeter {
   z-index: 3 !important;
-  display: block !important;
+  display: none !important;
   inset: 3px !important;
   border-radius: var(--cta-v2-radius) !important;
   background:
@@ -218,7 +218,8 @@
       rgba(var(--cta-v2-metal), 1) 85%,
       rgba(var(--cta-v2-primary), .92) 89%,
       transparent 95%) !important;
-  opacity: .58 !important;
+  opacity: 0 !important;
+  animation: none !important;
 }
 
 #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__corner {
@@ -239,7 +240,7 @@
 
 #root .resultHero[data-star-type] .premiumReport .premiumButtonFrame__ornament {
   z-index: 4 !important;
-  display: block !important;
+  display: none !important;
   width: 13px !important;
   height: 13px !important;
   border-color: rgba(var(--cta-v2-metal), .96) !important;

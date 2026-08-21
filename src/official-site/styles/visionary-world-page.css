@@ -41,12 +41,13 @@
 
   .visionaryWorldPage__mobile::before {
     position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 6.4rem;
-    height: 4.4rem;
-    background: radial-gradient(ellipse at 22% 18%, #030712 0 48%, rgb(3 7 18 / 88%) 64%, transparent 100%);
+    z-index: 2;
+    top: 0.7%;
+    left: 1.2%;
+    width: 20%;
+    height: 3.2%;
+    border-radius: 0.2rem;
+    background: #030811;
     content: "";
     pointer-events: none;
   }

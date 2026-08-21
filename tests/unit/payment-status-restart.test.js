@@ -12,7 +12,8 @@ describe("PaymentStatus restart flow", () => {
     expect(callback?.groups?.body).not.toContain("redirectToStripeCheckout");
     expect(source).toContain("onRestart={handlePaymentRestart}");
     expect(source).toContain("clearActiveDiagnosisSession()");
-    expect(source).toContain('window.history.replaceState({}, "", "/diagnosis")');
+    expect(source).toContain('window.location.assign("/diagnosis?new=1")');
+    expect(source).not.toContain('window.history.replaceState({}, "", "/diagnosis")');
     expect(source).toContain("もう一度診断する");
   });
 });

@@ -145,14 +145,68 @@
 .challengeGoldHero__eyebrow, .challengeGoldHero__kicker { color: var(--gold); letter-spacing: .28em; font-size: .8rem; }
 .challengeGoldHero h1 { margin: 8px 0 0; color: #fff7e8; font-size: clamp(4rem, 7vw, 7rem); font-weight: 400; letter-spacing: .08em; line-height: .9; text-shadow:0 0 22px rgba(255,112,26,.2), 0 4px 30px #000; }
 .challengeGoldHero__ja { margin: 20px 0; color: var(--gold); font-size: clamp(1.35rem, 2vw, 2rem); letter-spacing: .18em; }
-.challengeGoldHero__quote { max-width: 720px; margin: 14px 0 20px; font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 2; }
+.challengeGoldHero__quote {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 14px 0 20px;
+  padding: 9px 36px 10px;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 2;
+}
+.challengeGoldHero__quote::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(880px, 92vw);
+  background:
+    linear-gradient(90deg, transparent, rgba(255,214,149,.14) 28%, rgba(255,238,200,.2) 50%, rgba(255,214,149,.14) 72%, transparent) top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(197,103,38,.1) 28%, rgba(240,174,88,.16) 50%, rgba(197,103,38,.1) 72%, transparent) bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(7,18,39,.44) 18%, rgba(10,24,50,.72) 38%, rgba(7,19,42,.76) 50%, rgba(10,24,50,.72) 62%, rgba(7,18,39,.44) 82%, transparent);
+  box-shadow: inset 0 0 28px rgba(37,84,145,.12);
+  backdrop-filter: blur(7px) saturate(112%);
+  -webkit-backdrop-filter: blur(7px) saturate(112%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
 .challengeGoldHero > span { color: var(--gold); letter-spacing: .28em; font-size: .76rem; }
+
+@media (min-width: 1100px) {
+  .challengeGoldHero__ja {
+    font-size: clamp(2.2rem, 2.7vw, 3rem);
+  }
+
+  .challengeGoldHero__quote {
+    max-width: 980px;
+    font-size: clamp(1.55rem, 1.95vw, 2rem);
+    line-height: 1.75;
+  }
+}
 
 .challengeGoldReview__content { width: min(1360px, calc(100% - 108px)); margin: 0 auto; padding-bottom: 72px; }
 
 @media (min-width: 901px) {
   #root .challengeGoldReview__content > .starReadingSection--challenge {
     margin-top: 38px;
+  }
+
+  #root .challengePremiumRestoreScope.resultHero {
+    min-height: 0 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  #root .challengePremiumRestoreScope.resultHero::before,
+  #root .challengePremiumRestoreScope.resultHero::after {
+    display: none !important;
   }
 }
 .cosmicGlass {
@@ -272,7 +326,7 @@
 
   .challengeGoldHero {
     min-height: 0;
-    height: 304px;
+    height: 382px;
     justify-content: flex-start;
     padding: 40px 80px 4px;
     isolation: isolate;
@@ -311,14 +365,18 @@
   }
   .challengeGoldHero__ja {
     margin: 10px 0 9px;
-    font-size: 1.25rem;
+    font-size: clamp(2rem, 2.35vw, 2.65rem);
   }
   .challengeGoldHero__quote {
     margin: 0 0 9px;
-    font-size: .84rem;
-    line-height: 1.55;
+    max-width: 980px;
+    font-size: clamp(1.35rem, 1.65vw, 1.75rem);
+    line-height: 1.65;
   }
-  .challengeGoldHero > span { font-size: .61rem; }
+  .challengeGoldHero > span {
+    margin-top: 7px;
+    font-size: .72rem;
+  }
 
   .challengeGoldReview__content {
     width: min(1228px, calc(100% - 308px));
@@ -554,9 +612,11 @@
   .challengeGoldHero__quote {
     max-width: 310px;
     margin: 0 0 24px;
+    padding: 8px 14px 9px;
     font-size: .92rem;
     line-height: 1.9;
   }
+  .challengeGoldHero__quote::before { width: min(430px, calc(100vw - 28px)); }
   .challengeGoldHero > span { font-size: .64rem; }
 
   .challengeGoldReview__content {
@@ -606,7 +666,7 @@
     align-self: start;
     justify-self: end;
     padding: 5px;
-    transform: translate(-11px, 52px);
+    transform: translate(-3px, 60px);
   }
   .challengeJuzaGlass__portrait::before {
     content: "";

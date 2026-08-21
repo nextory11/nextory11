@@ -145,7 +145,7 @@ function OfficialSiteShell({ children, pageTitle, pageKey, seo }) {
 
   return (
     <div
-      className={`officialSite officialSite--${pageKey}${isWarping ? " officialSite--warping" : ""}${isEntering ? " officialSite--entering" : ""}`}
+      className={`officialSite officialSite--${pageKey}${isTypeWorldPage ? " officialSite--type-world" : ""}${isWarping ? " officialSite--warping" : ""}${isEntering ? " officialSite--entering" : ""}`}
       onClickCapture={handleOfficialNavigation}
     >
       <div className="officialSite__world">

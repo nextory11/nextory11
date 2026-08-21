@@ -58,7 +58,7 @@
     --guardian-portrait-unit-shift-x: 1.5%;
     --guardian-portrait-unit-shift-y: 14px;
     position: relative;
-    left: -1.5px;
+    left: .5px;
     box-sizing: border-box;
     width: min(700px, calc(100% + 3px));
     min-height: clamp(500px, 132vw, 590px);
@@ -78,11 +78,15 @@
   #root .resultHero[data-star-type="persistence"] .guardianJuzaGlass {
     position: absolute;
     z-index: 1;
-    inset: 4.8% 3.8% 4.2%;
+    inset:
+      clamp(72px, 18.5vw, 90px)
+      5%
+      clamp(48px, 12vw, 58px);
     display: block;
     overflow: hidden;
     border: 1px solid rgba(205, 224, 255, .2);
-    border-radius: 18px;
+    border-radius: 28px 28px 22px 22px;
+    clip-path: inset(0 round 28px 28px 22px 22px);
     background:
       linear-gradient(125deg, rgba(246, 250, 255, .13), transparent 27%),
       radial-gradient(circle at 22% 24%, rgba(43, 108, 215, .17), transparent 38%),
@@ -148,7 +152,9 @@
   }
 
   #root .resultHero[data-star-type="persistence"] .guardianJuzaHeading strong {
-    font: 500 clamp(16px, 4.7vw, 25px)/1.35 Georgia, "Yu Mincho", serif;
+    white-space: nowrap;
+    font: 500 clamp(14px, 4.05vw, 21px)/1.35 Georgia, "Yu Mincho", serif;
+    letter-spacing: -.02em;
   }
 
   #root .resultHero[data-star-type="persistence"] .juzaMessage > p {
@@ -156,7 +162,7 @@
     z-index: 5;
     top: clamp(170px, 43.5vw, 213px);
     right: 7.2%;
-    bottom: clamp(94px, 24vw, 116px);
+    bottom: clamp(190px, 48vw, 228px);
     left: 42%;
     box-sizing: border-box;
     width: auto !important;
@@ -206,8 +212,16 @@
 
   #root .resultHero[data-star-type="persistence"] .starReadingSection--guardian {
     display: grid;
-    width: min(100%, 700px);
+    width: min(calc(100% - 4px), 700px);
     margin: 30px auto 24px;
+    transform: translateX(2px);
+  }
+
+  #root .resultHero[data-star-type="persistence"] > .paidBox.premiumReport {
+    left: auto !important;
+    width: min(calc(100vw - 44px), 382px) !important;
+    margin-inline: auto !important;
+    transform: translateX(clamp(-20px, -5vw, -18px)) !important;
   }
 
   #root .starReadingPanel--guardian {

@@ -21,10 +21,12 @@
 }
 
 .officialSite--why-nextory11 .why__desktop::after {
-  top: 4.8%;
-  left: 2.7%;
-  width: 11.5%;
-  height: 5.2%;
+  top: 0;
+  left: 0;
+  width: 16%;
+  height: 7.2%;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .why__semantic {
@@ -53,12 +55,46 @@
 
 .why__sliced { display: none; }
 
+.why__backToTop {
+  position: absolute;
+  z-index: 4;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 2vw, 2rem);
+  display: grid;
+  width: clamp(2.75rem, 4vw, 3.25rem);
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 1px solid rgb(221 179 75 / 72%);
+  border-radius: 50%;
+  place-items: center;
+  background: rgb(3 7 18 / 64%);
+  box-shadow: inset 0 0 0.8rem rgb(226 184 79 / 6%), 0 0.45rem 1.2rem rgb(0 0 0 / 28%);
+  color: #e8c66e;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.why__backToTop::before {
+  content: "\2191";
+  font: 400 clamp(1.15rem, 2vw, 1.35rem)/1 Georgia, "Times New Roman", serif;
+  transform: translateY(-0.06em);
+}
+
+.why__backToTop:focus-visible {
+  outline: 1px solid rgb(231 190 91 / 82%);
+  outline-offset: 3px;
+}
+
 @media (max-width: 1099px) {
   .officialSite--why-nextory11 .why__sliceIntroFrame::after {
-    top: 4.8%;
-    left: 6.5%;
-    width: 35%;
-    height: 6.2%;
+    top: 0;
+    left: 0;
+    width: 42%;
+    height: 7.5%;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .why__desktop { display: none; }
@@ -135,5 +171,11 @@
   .why__sliceEarth {
     width: calc(100% + 1.5rem);
     height: 6.5rem;
+  }
+
+  .why__backToTop {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.9rem;
   }
 }

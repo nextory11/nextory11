@@ -1186,6 +1186,11 @@
 }
 
 @media (max-width: 767px) {
+  .officialSite--type-world .officialSite__world {
+    box-sizing: border-box;
+    padding-top: 4rem;
+  }
+
   .officialHero__stage {
     min-height: 100svh;
     padding: 4.2rem 1rem clamp(6rem, 16vh, 8rem);
@@ -1212,7 +1217,14 @@
     width: clamp(11.75rem, 53vw, 14rem);
     height: clamp(8rem, 36vw, 9.52rem);
     margin-bottom: 0.15rem;
+    -webkit-mask-image: radial-gradient(ellipse 58% 66% at 50% 45%, #000 48%, rgb(0 0 0 / 88%) 68%, rgb(0 0 0 / 30%) 86%, transparent 100%);
+    mask-image: radial-gradient(ellipse 58% 66% at 50% 45%, #000 48%, rgb(0 0 0 / 88%) 68%, rgb(0 0 0 / 30%) 86%, transparent 100%);
     transform: translateY(-1.25rem);
+  }
+
+  .officialHero__emblem img {
+    -webkit-mask-image: radial-gradient(ellipse 50% 60% at 50% 45%, #000 44%, rgb(0 0 0 / 88%) 66%, rgb(0 0 0 / 24%) 84%, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 60% at 50% 45%, #000 44%, rgb(0 0 0 / 88%) 66%, rgb(0 0 0 / 24%) 84%, transparent 100%);
   }
 
   .officialHero h1 {

@@ -61,4 +61,11 @@
     -webkit-backdrop-filter: blur(8px) saturate(112%);
     pointer-events: none;
   }
+
+  /* Extend the shorter reading-glass layer beneath the portrait/frame rail.
+     Compensating padding keeps the approved text position unchanged. */
+  #root .resultHero[data-star-type="persistence"] .juzaMessage > p {
+    margin-inline-start: -56px;
+    padding-inline-start: calc(clamp(18px, 2.2vw, 28px) + 56px);
+  }
 }

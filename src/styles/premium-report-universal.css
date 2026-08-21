@@ -137,6 +137,10 @@
   --premium-accent: 225, 178, 89;
   --premium-accent-soft: 44, 124, 201;
   --premium-glow: 102, 206, 244;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 #root .resultHero[data-star-type] .premiumReport__outerFrame {
@@ -1043,6 +1047,13 @@
 }
 
 @media (max-width: 520px) {
+  #root .resultHero[data-star-type="explorer"] > .paidBox.premiumReport {
+    left: auto !important;
+    width: min(calc(100vw - 44px), 382px) !important;
+    margin-inline: auto !important;
+    transform: translateX(clamp(-20px, -5vw, -18px)) !important;
+  }
+
   #root .resultHero[data-star-type="explorer"] .premiumReport__outerFrame {
     inset: 0 !important;
     border-top-width: 58px !important;
@@ -1138,6 +1149,13 @@
 }
 
 @media (max-width: 520px) {
+  #root .resultHero[data-star-type="thinker"] > .paidBox.premiumReport {
+    left: auto !important;
+    width: min(calc(100vw - 44px), 382px) !important;
+    margin-inline: auto !important;
+    transform: translateX(clamp(-20px, -5vw, -18px)) !important;
+  }
+
   #root .resultHero[data-star-type="thinker"] .premiumReport__outerFrame {
     inset: 0 !important;
     border-top-width: 60px !important;

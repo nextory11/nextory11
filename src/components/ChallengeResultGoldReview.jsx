@@ -42,7 +42,7 @@ function ChallengeResultGoldReview({
         </div>
         <h1>CHALLENGE</h1>
         <p className="challengeGoldHero__ja">挑戦力タイプ</p>
-        <p className="challengeGoldHero__quote">恐れは、止まる理由ではなく、進む方向を示す炎。</p>
+        <p className="challengeGoldHero__quote">怖くても一歩を踏み出し、未来を自分で切り開く人</p>
         <span>CREATE THE FUTURE.</span>
       </header>
 

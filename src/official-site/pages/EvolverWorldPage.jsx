@@ -1,5 +1,5 @@
-const EVOLVER_DESKTOP_MASTER = "/official-site/images/types/evolver/desktop/evolver-desktop-final-approved.png";
-const EVOLVER_MOBILE_MASTER = "/official-site/images/types/evolver/mobile/evolver-mobile-final-approved.png";
+const EVOLVER_DESKTOP_MASTER = "/official-site/images/types/evolver/desktop/evolver-desktop-corrected-palette-sunrise.png";
+const EVOLVER_MOBILE_MASTER = "/official-site/images/types/evolver/mobile/evolver-mobile-approved.png";
 
 function EvolverWorldPage() {
   return (

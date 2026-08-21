@@ -35,6 +35,8 @@ function TypesWorldsPage() {
             const slug = type.name.toLowerCase();
             const [left, top] = desktopPositions[index];
             const [mobileLeft, mobileTop] = mobilePositions[index];
+            const desktopCropIndex = index === 8 ? 9 : index === 9 ? 8 : index;
+            const [desktopCropLeft, desktopCropTop] = desktopPositions[desktopCropIndex];
             return (
               <a
                 key={type.name}
@@ -42,7 +44,7 @@ function TypesWorldsPage() {
                 href={toOfficialHref(`/official-preview/types/${slug}`)}
                 aria-label={`${type.name}の世界を見る`}
                 onPointerDown={() => setActivePortal(slug)}
-                style={{ "--planet-color": type.color, "--planet-left": `${left}%`, "--planet-top": `${top}%`, "--mobile-left": `${mobileLeft}%`, "--mobile-top": `${mobileTop}%`, "--mobile-glow-inset": `${mobileGlowInsets[index]}%`, "--crop-x": `${(left - 2.5) / .95}%`, "--crop-y": `${(top - 1.667) / .96666}%`, "--mobile-crop-x": `${(mobileLeft - 6.5) / .87}%`, "--mobile-crop-y": `${(mobileTop - 3.007) / .93986}%` }}
+                style={{ "--planet-color": type.color, "--planet-left": `${left}%`, "--planet-top": `${top}%`, "--mobile-left": `${mobileLeft}%`, "--mobile-top": `${mobileTop}%`, "--mobile-glow-inset": `${mobileGlowInsets[index]}%`, "--crop-x": `${(desktopCropLeft - 2.5) / .95}%`, "--crop-y": `${(desktopCropTop - 1.667) / .96666}%`, "--mobile-crop-x": `${(mobileLeft - 6.5) / .87}%`, "--mobile-crop-y": `${(mobileTop - 3.007) / .93986}%` }}
               >
                 <span className="worldsPage__planetCrop" aria-hidden="true"><span className="worldsPage__planetImage" /></span>
                 <span className="worldsPage__portalName">{type.name}</span>

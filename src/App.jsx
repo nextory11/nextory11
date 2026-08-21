@@ -32,6 +32,7 @@ import "./styles/empath-mobile-refinement.css";
 import "./styles/intuitive-mobile-refinement.css";
 import "./styles/desktop-ai-juza-scroll-standard.css";
 import "./styles/guardian-desktop-visual-refinement.css";
+import "./styles/diagnosis-navigation.css";
 
 import { questions } from "./data/questions";
 import { resultTypes } from "./data/resultTypes";
@@ -90,6 +91,9 @@ const RESULT_REVIEW_LINKS = Object.freeze([
   "challenge", "explorer", "harmony", "visionary", "guardian", "luminary",
   "creator", "pioneer", "evolver", "empath", "intuitive",
 ]);
+
+const DIAGNOSIS_RETURN_MARKER_KEY = "nextory11.diagnosisReturnToResult.v1";
+const DIAGNOSIS_RETURN_SNAPSHOT_KEY = "nextory11.diagnosisReturnSnapshot.v1";
 
 const configuredQuestionBankFlag = import.meta.env.VITE_ENABLE_QUESTION_BANK_V1;
 const questionBankEnabled = configuredQuestionBankFlag === undefined || configuredQuestionBankFlag === ""
@@ -160,15 +164,24 @@ function DiagnosisApp() {
   const [checkoutError, setCheckoutError] = useState("");
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const checkoutInFlightRef = useRef(false);
+  const newDiagnosisStartedRef = useRef(false);
   const [paidCtaEnabled, setPaidCtaEnabled] = useState(Boolean(previewResultType));
   const [questionSession, setQuestionSession] = useState(null);
   const [activeQuestions, setActiveQuestions] = useState(questions);
   const [trustRoute, setTrustRoute] = useState(getTrustRoute);
+  const [canReturnToResult] = useState(() => {
+    const available = window.sessionStorage.getItem(DIAGNOSIS_RETURN_MARKER_KEY) === "1";
+    window.sessionStorage.removeItem(DIAGNOSIS_RETURN_MARKER_KEY);
+    return available;
+  });
 
   useEffect(() => {
     if (devPreview || !questionBankEnabled) return;
     if (new URLSearchParams(window.location.search).get("new") === "1") {
-      handleNewDiagnosis();
+      if (newDiagnosisStartedRef.current) return;
+      newDiagnosisStartedRef.current = true;
+      clearActiveDiagnosisSession();
+      handleStart();
       return;
     }
     const restored = readActiveDiagnosisSession();
@@ -296,9 +309,22 @@ function DiagnosisApp() {
   }
 
   function handleNewDiagnosis() {
+    if (finished && answers.length) {
+      window.sessionStorage.setItem(DIAGNOSIS_RETURN_SNAPSHOT_KEY, JSON.stringify({
+        answers,
+        activeQuestions,
+        questionSetVersion: questionSession?.questionSetVersion ?? null,
+        diagnosisSessionId: questionSession?.diagnosisSessionId ?? null,
+      }));
+    }
     clearActiveDiagnosisSession();
-    window.history.replaceState({}, "", "/diagnosis");
-    handleStart();
+    window.sessionStorage.setItem(DIAGNOSIS_RETURN_MARKER_KEY, "1");
+    window.location.assign("/diagnosis?new=1");
+  }
+
+  function handleReturnToTop() {
+    clearActiveDiagnosisSession();
+    window.location.assign("/");
   }
 
   function handlePaymentRestart() {
@@ -307,8 +333,33 @@ function DiagnosisApp() {
 
   function handleReturnToResult() {
     const snapshot = readCheckoutSnapshot();
+    let diagnosisSnapshot = null;
 
-    if (snapshot?.answers?.length) {
+    try {
+      diagnosisSnapshot = JSON.parse(window.sessionStorage.getItem(DIAGNOSIS_RETURN_SNAPSHOT_KEY) ?? "null");
+    } catch {
+      window.sessionStorage.removeItem(DIAGNOSIS_RETURN_SNAPSHOT_KEY);
+    }
+
+    if (diagnosisSnapshot?.answers?.length && diagnosisSnapshot?.activeQuestions?.length) {
+      const restoredOfficialSession = createOfficialQuestionSession({ count: QUESTION_BANK_SELECTION_COUNT });
+      setAnswers(diagnosisSnapshot.answers);
+      setActiveQuestions(diagnosisSnapshot.activeQuestions);
+      setQuestionSession({
+        ...restoredOfficialSession,
+        questions: diagnosisSnapshot.activeQuestions,
+        questionSetVersion:
+          diagnosisSnapshot.questionSetVersion ??
+          diagnosisSnapshot.questionSession?.questionSetVersion ??
+          restoredOfficialSession.questionSetVersion,
+        diagnosisSessionId:
+          diagnosisSnapshot.diagnosisSessionId ??
+          diagnosisSnapshot.questionSession?.diagnosisSessionId ??
+          null,
+      });
+      setStep(diagnosisSnapshot.activeQuestions.length);
+      setStarted(true);
+    } else if (snapshot?.answers?.length) {
       setAnswers(snapshot.answers.map((answer) => ({
         ...answer,
         text: answer.text ?? answer.answer,
@@ -318,7 +369,6 @@ function DiagnosisApp() {
         : questions);
       setStep(snapshot.answers.length);
       setStarted(true);
-      window.history.replaceState({}, "", "/");
     } else {
       handleRestart();
     }
@@ -396,6 +446,7 @@ function DiagnosisApp() {
         onReturnToResult={handleReturnToResult}
         onCheckoutIncomplete={handleCheckoutIncomplete}
         onRestart={handlePaymentRestart}
+        onReturnToTop={handleReturnToTop}
       />
     );
   }
@@ -423,7 +474,7 @@ function DiagnosisApp() {
             afterContent={(
               <>
                 <div className="buttonGroup">
-                  <button type="button" className="subButton" onClick={handleNewDiagnosis}>
+                  <button type="button" className="subButton rediagnosisButton" onClick={handleNewDiagnosis}>
                     もう一度診断する
                   </button>
                 </div>
@@ -454,7 +505,7 @@ function DiagnosisApp() {
           />
 
           <div className="buttonGroup">
-            <button type="button" className="subButton" onClick={handleNewDiagnosis}>
+            <button type="button" className="subButton rediagnosisButton" onClick={handleNewDiagnosis}>
               もう一度診断する
             </button>
           </div>
@@ -467,7 +518,7 @@ function DiagnosisApp() {
   const currentQuestion = activeQuestions[step];
 
   return (
-    <main className="app">
+    <main className="app diagnosisApp">
       <section className="questionHero">
         <div className="questionCosmos" aria-hidden="true">
           <span className="questionCosmos__nebula questionCosmos__nebula--one" />
@@ -477,6 +528,17 @@ function DiagnosisApp() {
           <span className="questionCosmos__constellation questionCosmos__constellation--right" />
           <span className="questionCosmos__light" />
         </div>
+        <nav className="diagnosisNavigation" aria-label="診断ナビゲーション">
+          {canReturnToResult ? (
+            <button type="button" className="diagnosisNavigation__back" onClick={handleReturnToResult}>
+              <span aria-hidden="true">←</span>
+              <span>診断結果へ戻る</span>
+            </button>
+          ) : <span aria-hidden="true" />}
+          <button type="button" className="diagnosisNavigation__top" onClick={handleReturnToTop}>
+            <span>TOPへ戻る</span>
+          </button>
+        </nav>
         <ProgressBar current={step + 1} total={activeQuestions.length} />
 
         <QuestionCard

@@ -8,7 +8,7 @@ function Frame({ children, className = "" }) {
 function Header({ eyebrow, title, lead }) {
   return (
     <header className="trustHero">
-      <a className="trustHero__back" href="/#/" aria-label="NEXTORY11のトップへ戻る">← TOP</a>
+      <a className="trustHero__back" href="/" aria-label="NEXTORY11のトップへ戻る">← TOP</a>
       <p className="trustHero__eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p className="trustHero__lead">{lead}</p>

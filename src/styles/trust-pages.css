@@ -12,3 +12,53 @@
   justify-content: center;
   padding-inline: 4px;
 }
+
+/* Shared full-bleed cosmos for legal, support, FAQ and operator pages. */
+.trustPage__sky {
+  background-color: #020611;
+  background-image:
+    linear-gradient(180deg, rgba(1, 5, 16, .2), rgba(1, 4, 12, .5)),
+    url("/images/trust/trust-cosmos-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 720px) {
+  .trustPage__sky {
+    background-image:
+      linear-gradient(180deg, rgba(1, 5, 16, .16), rgba(1, 4, 12, .46)),
+      url("/images/trust/trust-cosmos-mobile.png");
+    background-position: center top;
+  }
+}
+
+/* Champagne-gold luminous frames shared by every trust and support page. */
+.trustFrame,
+.trustFaq__item {
+  border-color: rgba(238, 211, 150, .88);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 247, 218, .1),
+    inset 0 0 34px rgba(230, 197, 122, .055),
+    inset 0 18px 44px rgba(94, 157, 229, .05),
+    0 0 9px rgba(255, 226, 160, .28),
+    0 0 24px rgba(218, 180, 94, .18),
+    0 24px 70px rgba(0, 0, 0, .42);
+}
+
+.trustFrame::before,
+.trustFrame::after {
+  content: none;
+}
+
+.trustFaq__item[open],
+.trustFaq__item:hover,
+.trustFaq__item:focus-within {
+  border-color: rgba(255, 225, 157, .98);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 248, 222, .14),
+    inset 0 0 38px rgba(230, 197, 122, .075),
+    0 0 12px rgba(255, 229, 169, .38),
+    0 0 30px rgba(218, 180, 94, .24),
+    0 22px 62px rgba(0, 0, 0, .42);
+}

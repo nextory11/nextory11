@@ -12,6 +12,7 @@ function PhilosophyPage() {
           decoding="async"
           draggable={false}
         />
+        <span className="philosophyPage__bakedNavMask" aria-hidden="true" />
       </div>
 
       <div className="philosophyPage__mobileMaster">
@@ -24,6 +25,7 @@ function PhilosophyPage() {
           draggable={false}
           aria-hidden="true"
         />
+        <span className="philosophyPage__bakedNavMask" aria-hidden="true" />
         <button
           className="philosophyPage__mobileBackToTop"
           type="button"

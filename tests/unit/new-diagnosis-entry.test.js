@@ -30,6 +30,7 @@ describe("explicit new-diagnosis entry", () => {
     const restoration = source.indexOf("readActiveDiagnosisSession()", freshStart);
     expect(freshStart).toBeGreaterThan(-1);
     expect(restoration).toBeGreaterThan(freshStart);
-    expect(source.slice(freshStart, restoration)).toContain("handleNewDiagnosis()");
+    expect(source.slice(freshStart, restoration)).toContain("clearActiveDiagnosisSession()");
+    expect(source.slice(freshStart, restoration)).toContain("handleStart()");
   });
 });

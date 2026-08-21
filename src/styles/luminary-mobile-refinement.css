@@ -11,6 +11,11 @@
 @media (max-width: 799px), (min-width: 800px) and (max-width: 1099px) and (orientation: portrait) {
   #root .resultHero[data-star-type="expression"] .resultCard { width: min(100%, 700px); overflow: visible; }
 
+  #root .resultHero[data-star-type="expression"] .buttonGroup:has(.rediagnosisButton) {
+    position: relative;
+    left: 6px;
+  }
+
   #root .resultHero[data-star-type="expression"] .resultLead {
     width: min(calc(100% - 28px), 620px);
     text-align: center;
@@ -41,12 +46,12 @@
 
   #root .resultHero[data-star-type="expression"] .juzaMessage {
     position: relative;
-    left: auto;
+    left: 50%;
     right: auto;
     box-sizing: border-box;
-    width: min(700px, calc(100vw - 12px), calc(100% - 4px));
+    width: min(700px, calc(100vw - 2px), calc(100% + 30px)) !important;
     min-height: clamp(500px, 132vw, 590px);
-    margin: 24px auto;
+    margin: 24px 0;
     padding: 0 !important;
     overflow: hidden;
     border: 0 !important;
@@ -54,6 +59,7 @@
     background: transparent !important;
     box-shadow: none !important;
     transform: none;
+    translate: -50% 0;
   }
 
   #root .resultHero[data-star-type="expression"] .juzaMessage > :is(.panelFrameOrnaments, .creatorFrameAsset, .typeFrameAsset--juza, .luminaryJuzaPortrait, .luminaryJuzaForeground, .luminaryGlass--juza, .juzaMessage__particles) { display: none !important; }
@@ -83,6 +89,7 @@
     object-fit: cover;
     object-position: 50% 15%;
     clip-path: inset(1% 4% 2% round 45% 45% 7% 7%);
+    scale: .92;
   }
 
   #root .resultHero[data-star-type="expression"] .luminaryJuzaMobilePortraitFrame {
@@ -108,6 +115,7 @@
     object-fit: contain;
     object-position: 50% 50%;
     translate: none;
+    scale: .92;
     pointer-events: none;
     filter: drop-shadow(0 0 13px rgba(145, 205, 255, .2));
   }

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createAiJuzaReading, createJuzaContext } from "../lib/aiJuza";
 import { selectRandomMessageIndex } from "../lib/aiJuza/randomSelection";
 import { challengeAiJuzaMessages, challengeStarReadings } from "../data/challengeOfficialResultCopy";
-import { explorerAiJuzaMessages, explorerStarReadings } from "../data/explorerOfficialResultCopy";
+import { explorerAiJuzaMessages, explorerStarReadings, explorerTypeDescriptor } from "../data/explorerOfficialResultCopy";
 import { harmonyAiJuzaMessages, harmonyStarReadings } from "../data/harmonyOfficialResultCopy";
 import { visionaryAiJuzaMessages, visionaryStarReadings, visionaryTypeDescriptor } from "../data/visionaryOfficialResultCopy";
 import { intuitiveAiJuzaMessages, intuitiveStarReadings } from "../data/intuitiveOfficialResultCopy";
@@ -758,7 +758,7 @@ function ResultCard({ answers, result, resultType, scene, questionBankContext = 
             {isVisionary ? <span className="visionaryMobileCopy">未来創造タイプ</span> : null}
           </div>
           <p className="resultLead">
-            <span className={`visionaryDesktopCopy${isCreator ? " creatorDesktopLead" : ""}`}>{isCreator ? creatorTypeDescriptor : isGuardian ? guardianTypeDescriptor : isVisionary ? visionaryTypeDescriptor : "11の回答から映し出された、今のあなたを導く星の輪郭です。"}</span>
+            <span className={`visionaryDesktopCopy${isCreator ? " creatorDesktopLead" : ""}`}>{isCreator ? creatorTypeDescriptor : isGuardian ? guardianTypeDescriptor : isVisionary ? visionaryTypeDescriptor : isExplorer ? explorerTypeDescriptor : "11の回答から映し出された、今のあなたを導く星の輪郭です。"}</span>
             {isVisionary ? <span className="visionaryMobileCopy">{visionaryTypeDescriptor}</span> : null}
             {isCreator ? <span className="creatorMobileLead">{creatorTypeDescriptor}</span> : null}
           </p>

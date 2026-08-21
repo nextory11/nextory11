@@ -1224,6 +1224,41 @@
   margin-block-end: clamp(96px, 7.5vw, 112px) !important;
 }
 
+@media (min-width: 1100px),
+  (min-width: 900px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="adaptability"] .resultLead {
+    position: relative;
+    isolation: isolate;
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  #root .resultHero[data-star-type="adaptability"] .resultLead::after {
+    content: "";
+    position: absolute;
+    inset: -7px clamp(-120px, -8vw, -64px);
+    z-index: -1;
+    display: block;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent 0,
+      rgba(2, 24, 14, .34) 14%,
+      rgba(3, 32, 18, .5) 32%,
+      rgba(3, 34, 19, .56) 50%,
+      rgba(3, 32, 18, .5) 68%,
+      rgba(2, 24, 14, .34) 86%,
+      transparent 100%
+    );
+    -webkit-backdrop-filter: blur(6px) saturate(1.06);
+    backdrop-filter: blur(6px) saturate(1.06);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+  }
+}
+
 .resultHero:is([data-star-type="empathy"], [data-star-type="adaptability"]) .juzaMessage {
   isolation: isolate;
   width: min(100%, 1120px);
@@ -1866,8 +1901,8 @@
   content: "";
   position: absolute;
   z-index: 0;
-  left: 32%;
-  right: 4%;
+  left: 30%;
+  right: 1.5%;
   top: 17%;
   bottom: 15%;
   border: 1px solid rgba(212, 244, 174, .12);
@@ -1899,6 +1934,16 @@
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   overflow-wrap: anywhere;
+}
+
+@media (min-width: 1100px),
+  (min-width: 900px) and (orientation: landscape) {
+  #root .resultHero[data-star-type="adaptability"] .juzaMessage > p {
+    padding-inline-start: clamp(36px, 3.2vw, 50px);
+    padding-block-end: clamp(20px, 2vw, 28px);
+    scroll-padding-inline-start: clamp(36px, 3.2vw, 50px);
+    scroll-padding-block-end: clamp(20px, 2vw, 28px);
+  }
 }
 
 @keyframes evolverJuzaPresence {

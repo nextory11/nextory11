@@ -35,8 +35,8 @@
   .whatIsDesktop {
     position: relative;
     display: block;
-    width: min(100%, 1536px);
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     overflow: hidden;
     background: #020817;
   }
@@ -122,7 +122,11 @@
     display: none;
   }
 
-  .officialSite--about .officialTopLink:focus-visible,
+  .officialSite--about .officialTopLink:focus-visible {
+    outline: 0;
+    box-shadow: none;
+  }
+
   .officialSite--about .officialMenu__trigger:focus-visible {
     outline: 1px solid rgb(229 190 91 / 82%);
     outline-offset: -3px;
@@ -222,7 +226,11 @@
     display: none;
   }
 
-  .officialSite--about .officialTopLink:focus-visible,
+  .officialSite--about .officialTopLink:focus-visible {
+    outline: 0;
+    box-shadow: none;
+  }
+
   .officialSite--about .officialMenu__trigger:focus-visible {
     outline: 1px solid rgb(229 190 91 / 82%);
     outline-offset: -3px;
@@ -234,6 +242,18 @@
   position: absolute;
   z-index: -1;
   pointer-events: none;
+}
+
+/* The approved master artwork already contains its TOP control. Keep the
+   transparent hit area invisible when a mouse happens to hover over it. */
+@media (hover: hover) and (pointer: fine) {
+  .officialSite--about .officialTopLink:hover {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    color: transparent;
+    filter: none;
+  }
 }
 
 .whatIs::before {

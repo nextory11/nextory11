@@ -183,6 +183,15 @@
       max(8px, env(safe-area-inset-right))
       max(52px, env(safe-area-inset-bottom))
       max(8px, env(safe-area-inset-left));
+    background-color:#01040d;
+    background-image:
+      radial-gradient(circle at 78% 9%, rgba(48,124,232,.18), transparent 35%),
+      radial-gradient(circle at 14% 72%, rgba(111,62,207,.17), transparent 40%),
+      linear-gradient(180deg, rgba(1,4,15,.12), rgba(1,5,18,.42)),
+      url("/images/question/question-cosmos-mobile-v2.png");
+    background-position:center, center, center, center top;
+    background-repeat:no-repeat;
+    background-size:cover;
   }
   .progressContainer { width:calc(100% - 8px); padding:14px 18px 17px; margin-bottom:20px; }
   .progressText { font-size:9px; gap:7px; }

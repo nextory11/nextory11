@@ -124,13 +124,39 @@
     line-height: 1.85 !important;
   }
 
+  #root .resultHero[data-star-type="explorer"] .resultLead > .visionaryDesktopCopy {
+    box-sizing: border-box;
+    display: block !important;
+    width: min(920px, calc(100% - 48px));
+    margin-inline: auto;
+    padding: 8px clamp(42px, 6vw, 76px) 9px;
+    background:
+      linear-gradient(to bottom, rgba(221, 247, 255, .2) 0 1px, transparent 1px calc(100% - 1px), rgba(240, 210, 145, .14) calc(100% - 1px)),
+      linear-gradient(90deg, transparent 0%, rgba(7, 39, 79, .4) 13%, rgba(5, 31, 70, .78) 35%, rgba(3, 22, 58, .86) 50%, rgba(5, 31, 70, .78) 65%, rgba(7, 39, 79, .4) 87%, transparent 100%);
+    box-shadow: inset 0 1px rgba(237, 250, 255, .08), inset 0 0 22px rgba(91, 188, 255, .09);
+    backdrop-filter: blur(6px) saturate(112%);
+    -webkit-backdrop-filter: blur(6px) saturate(112%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  @media (max-width: 520px) {
+    #root .resultHero[data-star-type="explorer"] .resultLead > .visionaryDesktopCopy {
+      width: calc(100% - 8px);
+      padding: 8px 16px 9px;
+      font-size: clamp(15px, 4.1vw, 17px);
+      letter-spacing: .04em;
+    }
+  }
+
   #root .resultHero[data-star-type="explorer"] .juzaMessage {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 100% !important;
+    width: calc(100% + 16px) !important;
+    max-width: none !important;
     min-height: 0 !important;
-    margin: 0 auto clamp(62px, 14vw, 96px) !important;
+    margin: 0 -8px clamp(62px, 14vw, 96px) !important;
     padding: clamp(210px, 55vw, 270px) clamp(22px, 6vw, 46px) 30px !important;
     overflow: visible !important;
     border: 0 !important;
@@ -139,16 +165,17 @@
       linear-gradient(135deg, rgba(255,255,255,.13), transparent 28%),
       radial-gradient(circle at 50% 14%, rgba(43,126,230,.22), transparent 40%),
       linear-gradient(150deg, rgba(5,31,72,.68), rgba(2,16,43,.76)) !important;
-    box-shadow:
-      inset 0 1px rgba(213, 239, 255, .3),
-      inset 0 0 34px rgba(21, 100, 205, .18) !important;
-    backdrop-filter: blur(12px) saturate(1.16);
-    -webkit-backdrop-filter: blur(12px) saturate(1.16);
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: calc(100% - 36px) 100% !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   #root .resultHero[data-star-type="explorer"] .juzaMessage::after {
     top: 30px !important;
-    left: 50% !important;
+    left: calc(50% + 9px) !important;
     width: clamp(148px, 42vw, 206px) !important;
     height: clamp(148px, 42vw, 206px) !important;
     background-position: calc(50% - 10px) 50%, center !important;
@@ -162,7 +189,7 @@
     top: 16px !important;
     right: auto !important;
     bottom: auto !important;
-    left: 50% !important;
+    left: calc(50% + 9px) !important;
     width: clamp(188px, 52vw, 236px) !important;
     height: clamp(188px, 52vw, 236px) !important;
     object-fit: cover !important;
@@ -185,6 +212,11 @@
     background: url("/images/result-scenes/explorer/overlays/ai_juza_outer_frame_mobile.png") center / 100% 100% no-repeat !important;
     border-radius: 0 !important;
     clip-path: inset(0 18px) !important;
+    filter:
+      drop-shadow(0 0 2px rgba(255, 250, 220, .92))
+      drop-shadow(0 0 7px rgba(244, 200, 92, .72))
+      drop-shadow(0 0 15px rgba(76, 169, 255, .62))
+      drop-shadow(0 13px 28px rgba(0, 8, 34, .52));
     transform: none !important;
     animation: none !important;
     pointer-events: none;
@@ -362,6 +394,45 @@
     background: rgba(3,18,47,.68);
     font: 600 .72rem/1 Georgia, "Yu Mincho", serif;
     letter-spacing: .1em;
+  }
+}
+
+/* Explorer STAR READING frame light, shared by desktop and mobile. */
+#root .resultHero[data-star-type="explorer"] .explorerReadingCard {
+  box-shadow:
+    inset 0 1px 0 rgba(218, 240, 255, .25),
+    inset 0 0 28px rgba(42, 119, 222, .14),
+    0 0 7px rgba(112, 202, 255, .72),
+    0 0 20px rgba(37, 122, 237, .46),
+    0 0 34px rgba(232, 198, 113, .16),
+    0 18px 44px rgba(0, 7, 29, .38) !important;
+}
+
+/* Keep the English observatory name cool-white while the Japanese type title
+   carries Explorer's warm celestial accent on both desktop and mobile. */
+#root .resultHero[data-star-type="explorer"] .resultTitle {
+  color: #f3cf78 !important;
+  text-shadow:
+    0 0 8px rgba(255, 221, 142, .58),
+    0 0 20px rgba(82, 184, 255, .64),
+    0 2px 8px rgba(0, 18, 58, .9) !important;
+}
+
+@media (min-width: 900px) {
+  #root .resultHero[data-star-type="explorer"] .resultLead > .visionaryDesktopCopy {
+    box-sizing: border-box;
+    display: block !important;
+    width: min(920px, calc(100% - 48px));
+    margin-inline: auto;
+    padding: 8px clamp(42px, 6vw, 76px) 9px;
+    background:
+      linear-gradient(to bottom, rgba(221, 247, 255, .2) 0 1px, transparent 1px calc(100% - 1px), rgba(240, 210, 145, .14) calc(100% - 1px)),
+      linear-gradient(90deg, transparent 0%, rgba(7, 39, 79, .4) 13%, rgba(5, 31, 70, .78) 35%, rgba(3, 22, 58, .86) 50%, rgba(5, 31, 70, .78) 65%, rgba(7, 39, 79, .4) 87%, transparent 100%);
+    box-shadow: inset 0 1px rgba(237, 250, 255, .08), inset 0 0 22px rgba(91, 188, 255, .09);
+    backdrop-filter: blur(6px) saturate(112%);
+    -webkit-backdrop-filter: blur(6px) saturate(112%);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
   }
 }
 

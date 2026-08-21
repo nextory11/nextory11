@@ -41,7 +41,7 @@ function PurchaseRecord({ record, resultName }) {
   );
 }
 
-function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart }) {
+function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart, onReturnToTop }) {
   const resultDisplay = resolveResultTypeDisplay(report.result.type, report.result);
   return (
     <main className="app reportApp">
@@ -86,7 +86,7 @@ function ReportPreview({ report, purchaseRecord, onReturnToResult, onRestart }) 
 
         <p className="reportDisclosure">このレポートは自己理解と可能性の探索を支えるものであり、医療・心理・法律・金融上の診断や、将来の結果を保証するものではありません。</p>
         <PurchaseRecord record={purchaseRecord} resultName={resultDisplay.ja} />
-        <div className="reportActions noPrint"><PanelFrameOrnaments /><button type="button" className="reportPrimaryButton" onClick={() => window.print()}>印刷・PDFとして保存</button><button type="button" className="reportSecondaryButton" onClick={onReturnToResult}>結果画面に戻る</button><button type="button" className="reportSecondaryButton" onClick={onRestart}>もう一度診断する</button></div>
+        <div className="reportActions noPrint"><PanelFrameOrnaments /><button type="button" className="reportPrimaryButton" onClick={() => window.print()}>印刷・PDFとして保存</button><button type="button" className="reportSecondaryButton" onClick={onReturnToResult}>結果画面に戻る</button><button type="button" className="reportSecondaryButton" onClick={onRestart}>もう一度診断する</button><button type="button" className="reportSecondaryButton" onClick={onReturnToTop}>TOPへ戻る</button></div>
       </section>
     </main>
   );
